@@ -12,6 +12,8 @@ permissions:
 
 env:
   GODOT_VERSION: 4.6.2
+  ITCH_USERNAME: cats-paw
+  ITCH_GAME_ID: 4473392
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,9 +41,11 @@ jobs:
       - name: Deploy to itch.io
         uses: KikimoraGames/itch-publish@v0.0.3
         with:
-          butlerVersion: latest
-          gameKey: cat-s-paw-games/machine-jam
-          itchUsername: cat-s-paw-games
-          itchApiKey: ${{ secrets.ITCH_IO_API_KEY }}
-          buildSource: ./build
-          buildFolder: web
+
+          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+          gameData: ./build
+          itchUsername: ${{env.ITCH_USERNAME}}
+          itchGameId: ${{ env.ITCH_GAME_ID }}
+          buildNumber: ${{ needs.version.outputs.version_hash }}
+
+
