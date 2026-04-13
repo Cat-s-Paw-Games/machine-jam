@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Machine Jam"
-run/main_scene="uid://cjq8iyoqepe60"
+run/main_scene="uid://dy0581aup6kpn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -29,6 +29,11 @@ window/size/viewport_height=1080
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[gui]
+
+theme/custom="uid://cdsksct6tt8bo"
+theme/custom_font="uid://cwqlplweqn43y"
 
 [input_devices]
 
