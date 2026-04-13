@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bp17syrj82idi"]
+
+[ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="1_nv3y7"]
+[ext_resource type="Script" uid="uid://rlemyrl4ndtl" path="res://components/drop_area.gd" id="2_nil2x"]
+[ext_resource type="Texture2D" uid="uid://534rv3scumrs" path="res://assets/images/water_bucket.png" id="3_xy4mh"]
+[ext_resource type="Script" uid="uid://cj3dlf2y28fbr" path="res://components/draggable_item.gd" id="4_ebfen"]
+[ext_resource type="Texture2D" uid="uid://8jcndoaiqdd0" path="res://assets/images/fire_place.png" id="5_ni46i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(308, 412)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(272, 330)
+
+[node name="GeneratorRoom" type="Node2D" unique_id=1999341089]
+
+[node name="Generator" type="Sprite2D" parent="." unique_id=1047135216]
+position = Vector2(359, 440)
+texture = ExtResource("1_nv3y7")
+
+[node name="DropArea" type="Area2D" parent="Generator" unique_id=1509034441]
+script = ExtResource("2_nil2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Generator/DropArea" unique_id=1866731434]
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="WaterBucket" type="TouchScreenButton" parent="." unique_id=282833976]
+position = Vector2(1414, 306)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_xy4mh")
+script = ExtResource("4_ebfen")
+
+[node name="Area2D" type="Area2D" parent="WaterBucket" unique_id=1351404632]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBucket/Area2D" unique_id=1870602040]
+position = Vector2(256, 309)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Fireplace" type="Sprite2D" parent="." unique_id=162611529]
+position = Vector2(344, 715)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_ni46i")
