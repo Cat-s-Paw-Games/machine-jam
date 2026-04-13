@@ -1,0 +1,46 @@
+# Godot RE specific
+.autoconverted/
+
+# Godot specific
+.godot/
+.import/
+
+# Godot 4.x export cache
+.export/
+*.gdc
+
+
+# Mono / C# (se usi Godot Mono)
+.mono/
+.nuget/
+*.csproj
+*.sln
+
+# Build / export
+build/**
+!build/**/
+!build/**/.gitkeep
+!build/**/animation.gif
+bin/
+dist/
+export/
+exports/
+
+# Logs
+*.log
+
+# OS / Editor noise
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup / temp
+*~
+*.tmp
+
+server_config.json

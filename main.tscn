@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cjq8iyoqepe60"]
+
+[ext_resource type="Script" uid="uid://llx5j6e52otr" path="res://main.gd" id="1_h2yge"]
+
+[node name="Main" type="Node" unique_id=738830431]
+script = ExtResource("1_h2yge")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=656720084]
+layer = 0
+
+[node name="GameView" type="CanvasLayer" parent="." unique_id=1662143667]
+unique_name_in_owner = true
