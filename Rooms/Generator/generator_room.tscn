@@ -1,42 +1,51 @@
 [gd_scene format=3 uid="uid://bp17syrj82idi"]
 
-[ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="1_nv3y7"]
-[ext_resource type="Script" uid="uid://rlemyrl4ndtl" path="res://components/drop_area.gd" id="2_nil2x"]
-[ext_resource type="Texture2D" uid="uid://534rv3scumrs" path="res://assets/images/water_bucket.png" id="3_xy4mh"]
-[ext_resource type="Script" uid="uid://cj3dlf2y28fbr" path="res://components/draggable_item.gd" id="4_ebfen"]
+[ext_resource type="PackedScene" uid="uid://byo14qgmc44ta" path="res://Rooms/Generator/generator.tscn" id="1_ni46i"]
+[ext_resource type="PackedScene" uid="uid://cefinofi8gij8" path="res://Items/bucket.tscn" id="3_1wsio"]
+[ext_resource type="PackedScene" uid="uid://bgocahdh3kcbj" path="res://Rooms/Generator/water_puddle.tscn" id="5_52sut"]
 [ext_resource type="Texture2D" uid="uid://8jcndoaiqdd0" path="res://assets/images/fire_place.png" id="5_ni46i"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(308, 412)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
-size = Vector2(272, 330)
+[ext_resource type="Texture2D" uid="uid://c1rpqnfkodep3" path="res://assets/images/dripping_tube.png" id="7_kngxg"]
+[ext_resource type="Texture2D" uid="uid://dwxsxbpddly44" path="res://assets/images/wood_logs.png" id="8_m7aqs"]
+[ext_resource type="Texture2D" uid="uid://bx8ijlr87iggk" path="res://assets/images/wood_logs_hot.png" id="9_7cm5a"]
+[ext_resource type="Texture2D" uid="uid://c1m1bdy1v71se" path="res://assets/images/straw.png" id="10_svtqt"]
+[ext_resource type="Texture2D" uid="uid://dk5r168ejv2g" path="res://assets/images/pointed_stick.png" id="11_3ndnx"]
 
 [node name="GeneratorRoom" type="Node2D" unique_id=1999341089]
 
-[node name="Generator" type="Sprite2D" parent="." unique_id=1047135216]
+[node name="DropArea" parent="." unique_id=295888722 instance=ExtResource("1_ni46i")]
 position = Vector2(359, 440)
-texture = ExtResource("1_nv3y7")
-
-[node name="DropArea" type="Area2D" parent="Generator" unique_id=1509034441]
-script = ExtResource("2_nil2x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Generator/DropArea" unique_id=1866731434]
-shape = SubResource("RectangleShape2D_1bvp3")
-
-[node name="WaterBucket" type="TouchScreenButton" parent="." unique_id=282833976]
-position = Vector2(1414, 306)
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("3_xy4mh")
-script = ExtResource("4_ebfen")
-
-[node name="Area2D" type="Area2D" parent="WaterBucket" unique_id=1351404632]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBucket/Area2D" unique_id=1870602040]
-position = Vector2(256, 309)
-shape = SubResource("RectangleShape2D_7mycd")
 
 [node name="Fireplace" type="Sprite2D" parent="." unique_id=162611529]
 position = Vector2(344, 715)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_ni46i")
+
+[node name="WaterPuddle" parent="." unique_id=2144052388 instance=ExtResource("5_52sut")]
+position = Vector2(1588, 579)
+
+[node name="WaterBucket" parent="." unique_id=1957467327 instance=ExtResource("3_1wsio")]
+position = Vector2(1539, 761)
+
+[node name="DrippingTube" type="Sprite2D" parent="." unique_id=1165582662]
+position = Vector2(1521, 205)
+texture = ExtResource("7_kngxg")
+
+[node name="WoodLogs" type="Sprite2D" parent="." unique_id=1758296482]
+position = Vector2(953.00006, 583)
+scale = Vector2(0.40234375, 0.40234375)
+texture = ExtResource("8_m7aqs")
+
+[node name="WoodLogsHot" type="Sprite2D" parent="." unique_id=1536859799]
+position = Vector2(929, 337)
+scale = Vector2(0.4140625, 0.4140625)
+texture = ExtResource("9_7cm5a")
+
+[node name="Straw" type="Sprite2D" parent="." unique_id=1639488054]
+position = Vector2(683, 552)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("10_svtqt")
+
+[node name="PointedStick" type="Sprite2D" parent="." unique_id=1821512228]
+position = Vector2(1142, 734)
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("11_3ndnx")
