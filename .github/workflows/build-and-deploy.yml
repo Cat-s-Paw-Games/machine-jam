@@ -33,6 +33,36 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
+      - name: Upload build artifact for deploy
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: ./build
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+  deploy-itch:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: ./build
+      - name: Deploy to itch.io
+        uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+          butlerVersion: latest
+          gameKey: cats-paw/machine-jam
+          itchUsername: cats-paw
+          itchApiKey: ${{ secrets.ITCH_IO_API_KEY }}
+          buildSource: ./build
+          buildFolder: web
