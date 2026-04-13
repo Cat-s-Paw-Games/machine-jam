@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ntvmu6siv38r"]
+
+[ext_resource type="PackedScene" uid="uid://cefinofi8gij8" path="res://Items/bucket.tscn" id="1_enjl4"]
+
+[node name="TestRoom" type="Node2D" unique_id=1691897204]
+
+[node name="Bucket" parent="." unique_id=1957467327 instance=ExtResource("1_enjl4")]
+position = Vector2(1425, 631)

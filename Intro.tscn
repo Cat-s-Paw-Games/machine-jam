@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://dy0581aup6kpn"]
+[gd_scene format=3 uid="uid://yisek8q1fdbx"]
 
 [ext_resource type="Script" uid="uid://1347hkb7hyap" path="res://intro.gd" id="1_46ak0"]
 [ext_resource type="Texture2D" uid="uid://8mscq3ia2e88" path="res://assets/images/intro/cog.png" id="1_gjrx4"]
 [ext_resource type="Texture2D" uid="uid://cn80m54s04em0" path="res://assets/images/intro/background_intro.jpg" id="2_iysgs"]
-[ext_resource type="Script" uid="uid://c0x4fcj2tc8dr" path="res://components/rotating_cog.gd" id="2_sb8jg"]
+[ext_resource type="Script" path="res://components/rotating_cog.gd" id="2_sb8jg"]
 [ext_resource type="Texture2D" uid="uid://2b6jcilmvmv2" path="res://assets/images/intro/door_right.png" id="3_33sem"]
 [ext_resource type="Texture2D" uid="uid://bhivbbb8vs4y1" path="res://assets/images/intro/door_left.png" id="4_46ak0"]
 
@@ -116,9 +116,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NewGame" type="Button" parent="CanvasLayer/CenterContainer2" unique_id=871883158]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer2" unique_id=1047495403]
+layout_mode = 2
+
+[node name="NewGame" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=871883158]
 layout_mode = 2
 text = "New Game"
+
+[node name="ParallaxPrototype" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=1263530270]
+layout_mode = 2
+text = "Parallax Prototype"
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1895894889]
 anchors_preset = 10
@@ -137,12 +144,14 @@ text = "Machine Jam"
 
 [node name="DoorRight" type="Sprite2D" parent="CanvasLayer" unique_id=186839944]
 unique_name_in_owner = true
+visible = false
 position = Vector2(1692, 522)
 scale = Vector2(10.313149, 10.313149)
 texture = ExtResource("3_33sem")
 
 [node name="DoorLeft" type="Sprite2D" parent="CanvasLayer" unique_id=696180818]
 unique_name_in_owner = true
+visible = false
 position = Vector2(264, 522)
 scale = Vector2(10.313149, 10.313149)
 texture = ExtResource("4_46ak0")
@@ -151,4 +160,5 @@ texture = ExtResource("4_46ak0")
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_46ak0")
 
-[connection signal="pressed" from="CanvasLayer/CenterContainer2/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/ParallaxPrototype" to="." method="_on_parallax_prototype_pressed"]
