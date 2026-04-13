@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Machine Jam"
-run/main_scene="uid://dy0581aup6kpn"
+run/main_scene="uid://yisek8q1fdbx"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
