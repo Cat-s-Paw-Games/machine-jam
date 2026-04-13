@@ -14,12 +14,15 @@ func use():
 	pass
 
 func _process(_delta: float) -> void:
-	if dragging:
-		global_position = get_global_mouse_position() + drag_offset
+	drag_item()
 	_process_item(_delta)
 
 func _process_item(_delta: float):
 	pass
+
+func drag_item():
+	if dragging:
+		global_position = get_global_mouse_position() + drag_offset
 
 func _on_pressed():
 	dragging = true

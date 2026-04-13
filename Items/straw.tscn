@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2qe81bysixqg"]
+
+[ext_resource type="Texture2D" uid="uid://c1m1bdy1v71se" path="res://assets/images/straw.png" id="1_4two3"]
+[ext_resource type="Script" uid="uid://cagi7ci5yt3j8" path="res://Items/straw.gd" id="2_04jur"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_04jur"]
+radius = 142.22217
+
+[node name="Straw" type="TouchScreenButton" unique_id=1812919842]
+scale = Vector2(0.21093757, 0.21093757)
+texture_normal = ExtResource("1_4two3")
+script = ExtResource("2_04jur")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=284058343]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1053363410]
+position = Vector2(279.7036, 322.37027)
+shape = SubResource("CircleShape2D_04jur")

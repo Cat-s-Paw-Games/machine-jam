@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8jcndoaiqdd0"
-path="res://.godot/imported/fire_place.png-40ae0b93f64ba37cd60daf51c25dc44c.ctex"
+path="res://.godot/imported/wood_logs_fire.png-cec858cfd981774b3dfa6c76a1fddfc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/fire_place.png"
-dest_files=["res://.godot/imported/fire_place.png-40ae0b93f64ba37cd60daf51c25dc44c.ctex"]
+source_file="res://assets/images/wood_logs_fire.png"
+dest_files=["res://.godot/imported/wood_logs_fire.png-cec858cfd981774b3dfa6c76a1fddfc1.ctex"]
 
 [params]
 

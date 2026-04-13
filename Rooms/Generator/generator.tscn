@@ -14,3 +14,9 @@ texture = ExtResource("2_fodvw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=682930390]
 shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="SteamBar" type="ProgressBar" parent="." unique_id=310704217]
+offset_left = -112.0
+offset_top = -251.0
+offset_right = 124.0
+offset_bottom = -224.0

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dgmobo54np2b6"]
+
+[ext_resource type="Texture2D" uid="uid://dwxsxbpddly44" path="res://assets/images/wood_logs.png" id="1_u7sru"]
+[ext_resource type="Script" uid="uid://cq88i8qnevtlb" path="res://Items/wood_logs.gd" id="2_v7qkv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7qkv"]
+radius = 196.41243
+
+[node name="WoodLogs" type="TouchScreenButton" unique_id=1478224087]
+scale = Vector2(0.40234375, 0.40234375)
+texture_normal = ExtResource("1_u7sru")
+script = ExtResource("2_v7qkv")
+metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=817457271]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=739071820]
+position = Vector2(260.9709, 270.91263)
+shape = SubResource("CircleShape2D_v7qkv")
