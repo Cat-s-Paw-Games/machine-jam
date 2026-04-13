@@ -18,10 +18,16 @@ repeat_size = Vector2(7680, 0)
 position = Vector2(976.49994, 540)
 texture = ExtResource("2_1dvc6")
 
+[node name="Rooms" type="Node2D" parent="." unique_id=1355805671]
+
+[node name="GeneratorRoom" parent="Rooms" unique_id=1999341089 instance=ExtResource("3_lxcd3")]
+
+[node name="TestRoom" parent="Rooms" unique_id=1691897204 instance=ExtResource("3_1dvc6")]
+position = Vector2(1920, 27)
+
+[node name="GeneratorRoom2" parent="Rooms" unique_id=1368544652 instance=ExtResource("3_lxcd3")]
+position = Vector2(3840, 0)
+
 [node name="Foreground" type="Parallax2D" parent="." unique_id=1449594444]
+visible = false
 repeat_size = Vector2(3840, 0)
-
-[node name="GeneratorRoom" parent="Foreground" unique_id=1999341089 instance=ExtResource("3_lxcd3")]
-
-[node name="TestRoom" parent="Foreground" unique_id=1691897204 instance=ExtResource("3_1dvc6")]
-position = Vector2(1925, 27)

@@ -1,21 +1,33 @@
 extends Node2D
 
-var is_blocked = false
+@onready var camera := get_viewport().get_camera_2d()
+@onready var rooms = $Rooms.get_children()
+@export var chunk_width: float = 1920.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
+var margin = 10.0
 func _process(delta):
+	if camera == null:
+		return
+
 	var axis = Input.get_axis("ui_left","ui_right")
 	
-	if $Camera2D.position.x > 1920 && axis >= 1:
-		return
+	camera.position.x += axis * 500 * delta
 	
-	$Camera2D.position.x += axis * 500 * delta
+	#var threshold = get_viewport_rect().size.x / 4
+	
+	
 
+	var cam_x = camera.global_position.x
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		is_blocked = true
+	# 1. Apply parallax offset
+	#global_position.x = cam_x
+
+	# 2. Wrap chunks
+	for chunk in rooms:
+		var chunk_global_x = chunk.global_position.x
+		
+		if chunk_global_x + chunk_width < cam_x - margin:
+			chunk.global_position.x += chunk_width * rooms.size()
+		
+		elif chunk_global_x - chunk_width > cam_x + margin:
+			chunk.global_position.x -= chunk_width * rooms.size()
