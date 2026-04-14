@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://kxdbqq3mp058"]
 
 [ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_vijuj"]
-[ext_resource type="Resource" uid="uid://jgjwwbjwho17" path="res://globals/amenities/puddle.tres" id="2_n40of"]
 
 [resource]
 script = ExtResource("1_vijuj")
 name = "Bucket"
 description = "A water bucket"
 reusable = true
-usable_on = [ExtResource("2_n40of")]
 metadata/_custom_type_script = "uid://cs02wdcdcca6e"

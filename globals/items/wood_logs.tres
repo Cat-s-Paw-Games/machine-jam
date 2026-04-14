@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://daejchv1x4ca"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_muk6m"]
+
+[resource]
+script = ExtResource("1_muk6m")
+name = "Wood Logs"
+description = "Some wood logs"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

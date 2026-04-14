@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://buucimbjpkiud"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_kw7tl"]
+
+[resource]
+script = ExtResource("1_kw7tl")
+name = "Pointed Stick"
+description = "A pointed stick"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

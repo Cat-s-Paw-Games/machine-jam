@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Amenity" format=3 uid="uid://bmu334vyy3dah"]
+
+[ext_resource type="Script" uid="uid://br57413md4yx4" path="res://globals/Amenity.gd" id="1_wx26e"]
+[ext_resource type="Resource" uid="uid://daejchv1x4ca" path="res://globals/items/wood_logs.tres" id="2_0u1ve"]
+
+[resource]
+script = ExtResource("1_wx26e")
+name = "Fireplace"
+description = "A dirty place for a fire"
+usables = [ExtResource("2_0u1ve")]
+metadata/_custom_type_script = "uid://br57413md4yx4"

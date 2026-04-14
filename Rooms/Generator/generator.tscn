@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://byo14qgmc44ta"]
 
 [ext_resource type="Script" uid="uid://cwv33g65ktx54" path="res://Rooms/Generator/generator.gd" id="1_wl2ms"]
+[ext_resource type="Resource" uid="uid://4xo7r37tpdcx" path="res://globals/amenities/generator.tres" id="2_13en3"]
 [ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="2_fodvw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
@@ -8,6 +9,7 @@ size = Vector2(308, 412)
 
 [node name="Generator" type="Area2D" unique_id=295888722]
 script = ExtResource("1_wl2ms")
+amenity = ExtResource("2_13en3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=733495611]
 texture = ExtResource("2_fodvw")

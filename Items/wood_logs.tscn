@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwxsxbpddly44" path="res://assets/images/wood_logs.png" id="1_u7sru"]
 [ext_resource type="Script" uid="uid://cq88i8qnevtlb" path="res://Items/wood_logs.gd" id="2_v7qkv"]
+[ext_resource type="Resource" uid="uid://daejchv1x4ca" path="res://globals/items/wood_logs.tres" id="3_cp6tp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7qkv"]
 radius = 196.41243
@@ -10,6 +11,7 @@ radius = 196.41243
 scale = Vector2(0.40234375, 0.40234375)
 texture_normal = ExtResource("1_u7sru")
 script = ExtResource("2_v7qkv")
+item = ExtResource("3_cp6tp")
 metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=817457271]

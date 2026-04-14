@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="Amenity" format=3 uid="uid://jgjwwbjwho17"]
 
 [ext_resource type="Script" uid="uid://br57413md4yx4" path="res://globals/Amenity.gd" id="1_0v73u"]
+[ext_resource type="Resource" uid="uid://kxdbqq3mp058" path="res://globals/items/bucket.tres" id="1_vijuj"]
 
 [resource]
 script = ExtResource("1_0v73u")
 name = "Puddle"
 description = "A puddle of water"
+usables = [ExtResource("1_vijuj")]
 active = true
 metadata/_custom_type_script = "uid://br57413md4yx4"
