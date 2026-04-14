@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://boownc1hoelvo"]
+
+[ext_resource type="Script" uid="uid://b7yocke8wb5sx" path="res://Rooms/LightSwitch/light_switch.gd" id="1_j0tc0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m787b"]
+size = Vector2(100, 100)
+
+[node name="LightSwitchRoom" type="Node2D" unique_id=1691897204]
+script = ExtResource("1_j0tc0")
+
+[node name="Switch" type="TouchScreenButton" parent="." unique_id=1350675866]
+position = Vector2(1113, 164)
+texture_normal = SubResource("PlaceholderTexture2D_m787b")
+
+[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]

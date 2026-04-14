@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dg2l3vko2cnjm"]
+
+[ext_resource type="Script" uid="uid://4drc2hf6i7ev" path="res://Rooms/BlackoutOverlay/blackout_overlay.gd" id="1_21r3j"]
+[ext_resource type="Shader" uid="uid://dphx6y304q3kv" path="res://assets/shaders/pulsing_light.gdshader" id="2_dslfp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8vliq"]
+shader = ExtResource("2_dslfp")
+shader_parameter/center = Vector2(0.3, 0.2)
+shader_parameter/radius = 0.1
+shader_parameter/edge_softness = 0.02
+shader_parameter/pulse_speed = 3.0
+shader_parameter/pulse_amount = 0.001
+shader_parameter/glow_size = 0.1
+shader_parameter/viewport_size = Vector2(1920, 1080)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/glow_color = Color(0.5686275, 0.043137256, 0.23137255, 0.4509804)
+
+[node name="BlackoutOverlay" type="CanvasLayer" unique_id=1387205058]
+script = ExtResource("1_21r3j")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=61696057]
+material = SubResource("ShaderMaterial_8vliq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 5760.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

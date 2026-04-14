@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://llx5j6e52otr" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Generator/generator_room.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bqkv3bn51sr6k" path="res://Experiments/parallax_back.jpg" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/LightSwitch/LightSwitch.tscn" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/TestRoom/TestRoom.tscn" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://dg2l3vko2cnjm" path="res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node" unique_id=738830431]
 script = ExtResource("1_h2yge")
@@ -37,4 +42,47 @@ size_flags_horizontal = 3
 [node name="GameView" type="CanvasLayer" parent="." unique_id=1662143667]
 unique_name_in_owner = true
 
-[node name="GeneratorRoom" parent="GameView" unique_id=1999341089 instance=ExtResource("2_0xm2m")]
+[node name="Camera2D" type="Camera2D" parent="GameView" unique_id=881170521]
+anchor_mode = 0
+
+[node name="Background" type="Parallax2D" parent="GameView" unique_id=2122227839]
+unique_name_in_owner = true
+repeat_size = Vector2(7680, 0)
+repeat_times = 2
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="GameView/Background" unique_id=1366526716]
+position = Vector2(2, 0)
+texture = ExtResource("2_lquwl")
+centered = false
+
+[node name="Rooms" type="Node2D" parent="GameView" unique_id=158874507]
+unique_name_in_owner = true
+
+[node name="LightSwitchRoom" parent="GameView/Rooms" unique_id=1691897204 instance=ExtResource("3_272bh")]
+
+[node name="GeneratorRoom" parent="GameView/Rooms" unique_id=1999341089 instance=ExtResource("2_0xm2m")]
+
+[node name="TestRoom" parent="GameView/Rooms" unique_id=368738704 instance=ExtResource("4_7mycd")]
+position = Vector2(-132, 51)
+
+[node name="GeneratorRoom2" parent="GameView/Rooms" unique_id=94503757 instance=ExtResource("2_0xm2m")]
+position = Vector2(3842, 0)
+
+[node name="Foreground" type="Parallax2D" parent="GameView" unique_id=1502475589]
+unique_name_in_owner = true
+scroll_offset = Vector2(-1, 0)
+repeat_size = Vector2(8000, 0)
+repeat_times = 2
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="GameView/Foreground" unique_id=1811115625]
+texture = ExtResource("5_272bh")
+centered = false
+
+[node name="Blackout" parent="GameView" unique_id=1387205058 instance=ExtResource("6_7mycd")]
+unique_name_in_owner = true
+
+[connection signal="offset_changed" from="." to="GameView/Blackout" method="_on_main_offset_changed"]
