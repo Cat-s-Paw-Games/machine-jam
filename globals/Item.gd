@@ -1,11 +1,22 @@
 extends Resource
 class_name Item
 
+@export var id : String = "item_id"
 @export var name : String = "Item"
 @export_multiline var description : String = "Description"
-@export var reusable : bool = false
+@export var texture : Texture2D
+@export var usable_once : bool = false
 @export var compound : bool = false
-@export_custom(PROPERTY_HINT_ARRAY_TYPE, "Item") var materials : Array = []
+@export var material : String = "item_id"
+@export var transforms_into : String = "item_id"
+@export var station : String = "amenity_id"
+@export var station_timer : float = 5.0
 
-func can_be_compound(item : Item):
-	return item in materials
+func can_be_compound(item_id : String):
+	return item_id == material
+
+func can_be_worked(amenity_id : String):
+	return amenity_id == station
+
+func transform() -> Item:
+	return GameManager.items[transforms_into]

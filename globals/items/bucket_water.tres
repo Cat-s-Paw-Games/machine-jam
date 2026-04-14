@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cdiqjipvcgorj"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_3djaw"]
+[ext_resource type="Texture2D" uid="uid://534rv3scumrs" path="res://assets/images/water_bucket.png" id="2_rdrlw"]
+
+[resource]
+script = ExtResource("1_3djaw")
+id = "bucket_water"
+name = "Water Bucket"
+description = "A bucket full of water"
+texture = ExtResource("2_rdrlw")
+material = ""
+station = "generator"
+transforms_into = "bucket_empty"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

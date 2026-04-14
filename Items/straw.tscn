@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c1m1bdy1v71se" path="res://assets/images/straw.png" id="1_4two3"]
 [ext_resource type="Script" uid="uid://cagi7ci5yt3j8" path="res://Items/straw.gd" id="2_04jur"]
+[ext_resource type="Resource" uid="uid://blpk5ofomj845" path="res://globals/items/straw.tres" id="3_le1f6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_04jur"]
 radius = 142.22217
@@ -10,6 +11,7 @@ radius = 142.22217
 scale = Vector2(0.21093757, 0.21093757)
 texture_normal = ExtResource("1_4two3")
 script = ExtResource("2_04jur")
+item = ExtResource("3_le1f6")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=284058343]
 

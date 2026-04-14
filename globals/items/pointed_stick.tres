@@ -1,9 +1,16 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://buucimbjpkiud"]
 
 [ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_kw7tl"]
+[ext_resource type="Texture2D" uid="uid://dk5r168ejv2g" path="res://assets/images/pointed_stick.png" id="2_5gydj"]
 
 [resource]
 script = ExtResource("1_kw7tl")
+id = "pointed_stick"
 name = "Pointed Stick"
 description = "A pointed stick"
+texture = ExtResource("2_5gydj")
+usable_once = true
+material = ""
+station = ""
+transforms_into = ""
 metadata/_custom_type_script = "uid://cs02wdcdcca6e"

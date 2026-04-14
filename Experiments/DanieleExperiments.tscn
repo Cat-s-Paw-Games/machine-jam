@@ -1,22 +1,35 @@
 [gd_scene format=3 uid="uid://iwkv00jbghq"]
 
 [ext_resource type="Script" uid="uid://l2lpktjeyin2" path="res://Experiments/daniele_experiments.gd" id="1_hhukw"]
-[ext_resource type="Texture2D" uid="uid://wkudawvayldm" path="res://assets/images/parallax.jpg" id="2_lpo3f"]
+[ext_resource type="Texture2D" uid="uid://bqkv3bn51sr6k" path="res://Experiments/parallax_back.jpg" id="2_lpo3f"]
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Generator/generator_room.tscn" id="3_8icyd"]
 [ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/TestRoom/TestRoom.tscn" id="4_2jv4b"]
+[ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_8icyd"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lpo3f"]
+vertices = PackedVector2Array(15346.18, 658, 15353.797, 1065, 2.2109375, 1072.9922, 875, 744.5, 10.7890625, 661.9922, 609, 661.84375, 609, 744.5, 875, 661.7578)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 2), PackedInt32Array(3, 7, 0), PackedInt32Array(3, 2, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1, 652, 15356, 648, 15364, 1075, -8, 1083)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpo3f"]
+size = Vector2(246, 185)
 
 [node name="DanieleExperiments" type="Node2D" unique_id=916344756]
 script = ExtResource("1_hhukw")
+fg_width = 8064.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1712480434]
 anchor_mode = 0
 
-[node name="Background" type="Parallax2D" parent="." unique_id=921606700]
+[node name="Background" type="Parallax2D" parent="." unique_id=2007947404]
 repeat_size = Vector2(7680, 0)
+follow_viewport = false
+ignore_camera_scroll = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=434516359]
-position = Vector2(976.49994, 540)
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1027048351]
+position = Vector2(2, 0)
 texture = ExtResource("2_lpo3f")
+centered = false
 
 [node name="Rooms" type="Node2D" parent="." unique_id=1355805671]
 
@@ -28,6 +41,25 @@ position = Vector2(1920, 27)
 [node name="GeneratorRoom2" parent="Rooms" unique_id=1368544652 instance=ExtResource("3_8icyd")]
 position = Vector2(3840, 0)
 
-[node name="Foreground" type="Parallax2D" parent="." unique_id=1449594444]
-visible = false
-repeat_size = Vector2(3840, 0)
+[node name="Floor" type="Node2D" parent="Rooms" unique_id=2080618901]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Rooms/Floor" unique_id=1206320439]
+navigation_polygon = SubResource("NavigationPolygon_lpo3f")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Rooms/Floor/NavigationRegion2D" unique_id=1239748745]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rooms/Floor/NavigationRegion2D" unique_id=1114714792]
+position = Vector2(742, 642)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Floor/NavigationRegion2D/StaticBody2D" unique_id=2009155607]
+shape = SubResource("RectangleShape2D_lpo3f")
+
+[node name="Foreground" type="Parallax2D" parent="." unique_id=72132773]
+scroll_offset = Vector2(-1, 0)
+repeat_size = Vector2(8000, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=1291137831]
+texture = ExtResource("5_8icyd")
+centered = false

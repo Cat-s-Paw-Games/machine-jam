@@ -1,9 +1,15 @@
 extends Node
 
-var player_data
-var inventory_data
+const ITEMS_DIR : String = "res://globals/items/"
+
+#var amenities : Dictionary = {}
+var items : Dictionary = {}
+
+func _ready() -> void:
+	populate_items()
 
 
-var is_generator_lit = false
-var are_they_attacking = true
-var is_oxygen_running = false
+func populate_items():
+	for item_res in DirAccess.get_files_at(ITEMS_DIR):
+		var item = ResourceLoader.load(ITEMS_DIR + item_res)
+		items[item.id] = item

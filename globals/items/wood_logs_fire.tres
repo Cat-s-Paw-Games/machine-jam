@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://drp1v807h3cq3"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_n8w33"]
+[ext_resource type="Texture2D" uid="uid://8jcndoaiqdd0" path="res://assets/images/wood_logs_fire.png" id="2_resa7"]
+
+[resource]
+script = ExtResource("1_n8w33")
+id = "wood_logs_fire"
+name = "Fire"
+description = "A warm fire"
+texture = ExtResource("2_resa7")
+material = ""
+station = "fire_pit"
+transforms_into = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

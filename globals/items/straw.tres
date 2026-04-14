@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://blpk5ofomj845"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_etdnr"]
+[ext_resource type="Texture2D" uid="uid://c1m1bdy1v71se" path="res://assets/images/straw.png" id="2_fkut8"]
+
+[resource]
+script = ExtResource("1_etdnr")
+id = "straw"
+name = "Straw"
+description = "A tuft of straw"
+texture = ExtResource("2_fkut8")
+usable_once = true
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

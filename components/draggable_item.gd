@@ -11,9 +11,13 @@ var drag_offset = Vector2()
 func _ready():
 	pressed.connect(_on_pressed)
 	released.connect(_on_released)
+	set_item()
 
 func use():
 	pass
+
+func set_item():
+	texture_normal = item.texture
 
 func _process(_delta: float) -> void:
 	drag_item()

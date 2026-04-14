@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b3jx6qx5eggn0"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_f65dy"]
+[ext_resource type="Texture2D" uid="uid://bx8ijlr87iggk" path="res://assets/images/wood_logs_hot.png" id="2_a5xkj"]
+
+[resource]
+script = ExtResource("1_f65dy")
+id = "wood_logs_hot"
+name = "Wood Logs Hot"
+description = "Logs frictioned with a pointed stick"
+texture = ExtResource("2_a5xkj")
+compound = true
+material = "straw"
+station = ""
+transforms_into = "wood_logs_fire"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"
