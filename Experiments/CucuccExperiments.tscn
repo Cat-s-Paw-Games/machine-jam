@@ -19,17 +19,20 @@ follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=434516359]
+position = Vector2(2, 0)
 texture = ExtResource("2_7373w")
 centered = false
 
 [node name="Rooms" type="Node2D" parent="." unique_id=1355805671]
 
 [node name="GeneratorRoom" parent="Rooms" unique_id=1999341089 instance=ExtResource("3_kee1f")]
+visible = false
 
 [node name="TestRoom" parent="Rooms" unique_id=1691897204 instance=ExtResource("4_uqhg1")]
 position = Vector2(-132, 51)
 
 [node name="GeneratorRoom2" parent="Rooms" unique_id=1368544652 instance=ExtResource("3_kee1f")]
+visible = false
 position = Vector2(3842, 0)
 
 [node name="Foreground" type="Parallax2D" parent="." unique_id=1449594444]
