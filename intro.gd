@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	SceneTransitionManager.change_scene_with_wipe("res://main.tscn")
+	SceneTransitionManager.change_scene_with_wipe("res://Prologue.tscn",5.0)
 	
 
 

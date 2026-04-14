@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://chy25pp12xg7a"]
+
+[ext_resource type="PackedScene" uid="uid://ct13difm3isjf" path="res://components/typewriter.tscn" id="1_lxnjk"]
+
+[node name="Prologue" type="Node2D" unique_id=1307798817]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1667272937]
+layer = 5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1120568783]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Typewriter" parent="CanvasLayer" unique_id=1301909371 instance=ExtResource("1_lxnjk")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.0
+offset_bottom = 408.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 40
+text = "What will we do with a drunken sailor?
+What will we do with a drunken sailor?
+What will we do with a drunken sailor?
+Early in the morning
+Way hay and up she rises
+Way hay and up she rises
+Way hay and up she rises
+Early in the morning
+Shave his belly with a rusty razor
+Shave his belly with a rusty razor
+Shave his belly with a rusty razor
+Early in the morning
+Way hay and up she rises
+Way hay and up she rises
+Way hay and up she rises
+Early in the morning
+Put him in a long boat till he's sober
+Put him in a long boat till he's sober
+Put him in a long boat till he's sober
+Early in the morning
+Way hay and up she rises
+Way hay and up she rises
+Way hay and up she rises
+Early in the morning
+"
+horizontal_alignment = 1
+chararacters_for_second = 13.0

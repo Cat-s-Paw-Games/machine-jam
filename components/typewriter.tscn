@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ct13difm3isjf"]
+
+[ext_resource type="Script" uid="uid://bh4au8j6i6noa" path="res://components/typewriter.gd" id="1_prnia"]
+
+[sub_resource type="Animation" id="Animation_rnuej"]
+resource_name = "write"
+length = 5.0333333
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v5e6s"]
+_data = {
+&"write": SubResource("Animation_rnuej")
+}
+
+[node name="Typewriter" type="RichTextLabel" unique_id=1301909371]
+offset_right = 1.0
+fit_content = true
+visible_characters = 0
+script = ExtResource("1_prnia")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=479210818]
+libraries/ = SubResource("AnimationLibrary_v5e6s")
