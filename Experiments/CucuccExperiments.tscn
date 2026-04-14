@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1htkgkfsx5xg"]
 
 [ext_resource type="Script" uid="uid://l2lpktjeyin2" path="res://Experiments/daniele_experiments.gd" id="1_7vxfy"]
-[ext_resource type="Texture2D" uid="uid://wkudawvayldm" path="res://Experiments/parallax.jpg" id="2_8t2h4"]
+[ext_resource type="Texture2D" uid="uid://6f21glbqvcbe" path="res://Experiments/parallax2.jpg" id="2_n2uqf"]
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Generator/generator_room.tscn" id="3_kee1f"]
 [ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/TestRoom/TestRoom.tscn" id="4_uqhg1"]
 
@@ -12,11 +12,11 @@ script = ExtResource("1_7vxfy")
 anchor_mode = 0
 
 [node name="Background" type="Parallax2D" parent="." unique_id=921606700]
-repeat_size = Vector2(7680, 0)
+repeat_size = Vector2(5751, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=434516359]
 position = Vector2(976.49994, 540)
-texture = ExtResource("2_8t2h4")
+texture = ExtResource("2_n2uqf")
 
 [node name="Rooms" type="Node2D" parent="." unique_id=1355805671]
 
