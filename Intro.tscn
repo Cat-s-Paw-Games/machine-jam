@@ -124,13 +124,13 @@ theme_override_constants/separation = 30
 layout_mode = 2
 text = "New Game"
 
-[node name="Daniele Tests" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=1263530270]
+[node name="DanieleExperiments" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=1263530270]
 layout_mode = 2
-text = "Parallax Prototype"
+text = "  Daniele Experiments  "
 
-[node name="Cucucc Tests" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=647296996]
+[node name="CucuccExperiments" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=2071440888]
 layout_mode = 2
-text = "Parallax Prototype"
+text = "  Cucucc Experiments  "
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1895894889]
 anchors_preset = 10
@@ -166,5 +166,5 @@ unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_46ak0")
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/Daniele Tests" to="." method="_on_parallax_prototype_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/Cucucc Tests" to="." method="_on_parallax_prototype_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/DanieleExperiments" to="." method="_on_parallax_prototype_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/CucuccExperiments" to="." method="_on_cucucc_experiments_pressed"]

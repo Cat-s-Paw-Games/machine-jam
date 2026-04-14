@@ -14,4 +14,8 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_parallax_prototype_pressed() -> void:
-	get_tree().change_scene_to_file("res://ParallaxPrototype.tscn")
+	get_tree().change_scene_to_file("res://Experiments/DanieleExperiments.tscn")
+
+
+func _on_cucucc_experiments_pressed() -> void:
+	get_tree().change_scene_to_file("res://Experiments/CucuccExperiments.tscn")
