@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iwkv00jbghq"]
 
 [ext_resource type="Script" uid="uid://l2lpktjeyin2" path="res://Experiments/daniele_experiments.gd" id="1_hhukw"]
-[ext_resource type="Texture2D" uid="uid://wkudawvayldm" path="res://Experiments/parallax.jpg" id="2_lpo3f"]
+[ext_resource type="Texture2D" uid="uid://wkudawvayldm" path="res://assets/images/parallax.jpg" id="2_lpo3f"]
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Generator/generator_room.tscn" id="3_8icyd"]
 [ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/TestRoom/TestRoom.tscn" id="4_2jv4b"]
 
