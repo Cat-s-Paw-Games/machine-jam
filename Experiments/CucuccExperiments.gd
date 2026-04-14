@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 
 	for chunk in rooms:
-		chunk.position.x = fmod((chunk.position.x - axis * step / 360.0 * pano_width) - 1920.0, pano_width) + 1920.0
+		chunk.position.x = fmod((chunk.position.x - axis * step / 360.0 * pano_width) - axis * 1920.0, pano_width) + axis * 1920.0
 		
 
 
