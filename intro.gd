@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://main.tscn")
+	SceneTransitionManager.change_scene_with_wipe("res://main.tscn")
 	
 
 
@@ -18,4 +18,4 @@ func _on_parallax_prototype_pressed() -> void:
 
 
 func _on_cucucc_experiments_pressed() -> void:
-	get_tree().change_scene_to_file("res://Experiments/CucuccExperiments.tscn")
+	SceneTransitionManager.change_scene_with_wipe("res://Experiments/CucuccExperiments.tscn")

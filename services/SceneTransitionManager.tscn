@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://7w81vk3scoi2"]
+
+[ext_resource type="Script" uid="uid://bwhr3xrjqnspp" path="res://services/scene_transition_manager.gd" id="1_bnyb6"]
+[ext_resource type="Shader" uid="uid://cgma2my0wi02n" path="res://assets/shaders/wipe_shader.gdshader" id="2_01v4m"]
+[ext_resource type="Texture2D" uid="uid://ldq7q0durr6b" path="res://assets/shaders/mask_texture.jpg" id="3_0xmb4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0dvh"]
+shader = ExtResource("2_01v4m")
+shader_parameter/mask_texture = ExtResource("3_0xmb4")
+shader_parameter/progress = 0.0
+shader_parameter/invert = true
+
+[node name="SceneTransitionManager" type="CanvasLayer" unique_id=51955704]
+script = ExtResource("1_bnyb6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=630273399]
+material = SubResource("ShaderMaterial_q0dvh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2050645562]

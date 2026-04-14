@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 App="*uid://dydmjnvgendpj"
 GameManager="*uid://d38j4efceaxsb"
+SceneTransitionManager="*uid://7w81vk3scoi2"
 
 [display]
 
