@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dqnar0vp1bw07" path="res://assets/images/empty_bucket.png" id="1_o4uwl"]
 [ext_resource type="Script" uid="uid://t8a5vh4m0nyi" path="res://Items/bucket.gd" id="2_o4uwl"]
+[ext_resource type="Resource" uid="uid://kxdbqq3mp058" path="res://globals/items/bucket.tres" id="3_bfsw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(272, 330)
@@ -10,6 +11,7 @@ size = Vector2(272, 330)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_o4uwl")
 script = ExtResource("2_o4uwl")
+item = ExtResource("3_bfsw6")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=307938199]
 

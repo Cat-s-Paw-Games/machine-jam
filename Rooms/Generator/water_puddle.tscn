@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dq7h5w6yd3u5f" path="res://Rooms/Generator/water_puddle.gd" id="1_8yyys"]
 [ext_resource type="Texture2D" uid="uid://dajdxux0v116u" path="res://assets/images/water_puddle.png" id="1_vf86b"]
+[ext_resource type="Resource" uid="uid://jgjwwbjwho17" path="res://globals/amenities/puddle.tres" id="2_8yyys"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0y5i"]
 radius = 52.255615
@@ -9,6 +10,7 @@ height = 399.8855
 
 [node name="WaterPuddle" type="Area2D" unique_id=409804896]
 script = ExtResource("1_8yyys")
+amenity = ExtResource("2_8yyys")
 metadata/_custom_type_script = "uid://rlemyrl4ndtl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440251985]

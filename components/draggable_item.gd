@@ -6,6 +6,8 @@ signal dropped(item : DraggableItem)
 var dragging = false
 var drag_offset = Vector2()
 
+@export_custom(PROPERTY_HINT_RESOURCE_TYPE, "Item") var item : Item = Item.new()
+
 func _ready():
 	pressed.connect(_on_pressed)
 	released.connect(_on_released)
