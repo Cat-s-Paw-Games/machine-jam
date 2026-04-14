@@ -10,11 +10,11 @@ func _on_item_dropped(item : DraggableItem):
 		logs = item
 		item.placed = true
 		item.global_position = global_position - (item.texture_normal.get_size() * item.scale) / 2
-	if item is PointedStick:
+	if item is PointedStick && logs.item.id == "wood_logs":
 		if item.item.usable_once:
 			item.queue_free()
 		logs.change_to_logs_hot()
-	if item is Straw:
+	if item is Straw && logs.item.id == "wood_logs_hot":
 		if item.item.usable_once:
 			item.queue_free()
 		logs.change_to_logs_fire()
