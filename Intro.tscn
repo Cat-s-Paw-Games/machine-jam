@@ -149,14 +149,12 @@ text = "Machine Jam"
 
 [node name="DoorRight" type="Sprite2D" parent="CanvasLayer" unique_id=186839944]
 unique_name_in_owner = true
-visible = false
 position = Vector2(1692, 522)
 scale = Vector2(10.313149, 10.313149)
 texture = ExtResource("3_33sem")
 
 [node name="DoorLeft" type="Sprite2D" parent="CanvasLayer" unique_id=696180818]
 unique_name_in_owner = true
-visible = false
 position = Vector2(264, 522)
 scale = Vector2(10.313149, 10.313149)
 texture = ExtResource("4_46ak0")
