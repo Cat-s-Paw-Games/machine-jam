@@ -10,8 +10,7 @@ signal offset_changed(offset:int)
 
 
 func _ready() -> void:
-	App.audio.play_loop("main","assets/music/main_loop.mp3")
-	App.audio.set_loop_volume("main",-10)
+	App.audio.set_loop_pitch("main", 1.0)
 	update_layers(0)
 
 func _process(_delta: float) -> void:

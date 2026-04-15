@@ -5,6 +5,8 @@ func _ready() -> void:
 	await get_tree().process_frame
 	%AnimationPlayer.play("RESET")
 	%AnimationPlayer.play("open")
+	App.audio.play_loop("main","assets/music/main_loop.mp3",{"pitch":0.9})
+
 
 
 
