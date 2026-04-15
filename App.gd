@@ -4,8 +4,10 @@ var mouse:MouseService
 var audio:AudioService
 var events: EventService
 var game_status: GameStatusService
+var viewport_size: Vector2
 
 func _ready()->void:
+	viewport_size = get_viewport().size
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	mouse=preload("res://services/mouse_service.gd").new()
 	add_child(mouse)

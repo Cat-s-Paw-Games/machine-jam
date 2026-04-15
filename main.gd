@@ -5,15 +5,15 @@ var view_angle := 0.0
 @export var step := 1.0
 @export var pano_width := 7680.0
 @export var fg_width := 8000.0
-@export var room_width := 1920.0
+@export var room_width := App.viewport_size.x
 signal offset_changed(offset:int)
 
 
 func _ready() -> void:
 	var Blackout: PackedScene = preload("res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn")
 	var blackout_instance = Blackout.instantiate()
-	offset_changed.connect(blackout_instance._on_main_offset_changed)
 	%GameView.add_child(blackout_instance)
+	offset_changed.connect(blackout_instance._on_main_offset_changed)
 	App.audio.set_loop_pitch("main", 1.0)
 	update_layers(0)
 

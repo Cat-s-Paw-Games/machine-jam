@@ -15,7 +15,7 @@ func light_up():
 
 
 func _on_main_offset_changed(offset: int) -> void:
-	var viewport_width = 1920
+	var viewport_width = App.viewport_size.x
 	var bg_offset = offset
 
 	var delta = wrapf(light_world_x - bg_offset + pano_width * 0.5, 0.0, pano_width) - pano_width * 0.5
