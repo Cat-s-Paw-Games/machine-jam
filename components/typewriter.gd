@@ -22,6 +22,8 @@ func recalc_animation():
 	regex.compile(r"\[pause(?:=(\d+\.?\d*))?\]")
 	
 	var text_content = get_parsed_text()
+	if text_content.length() <= 0:
+		return
 	
 	while true:
 		var matched = regex.search(text_content)
