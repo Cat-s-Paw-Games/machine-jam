@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://2qe81bysixqg" path="res://Items/straw.tscn" id="7_ebfen"]
 [ext_resource type="Texture2D" uid="uid://c1rpqnfkodep3" path="res://assets/images/dripping_tube.png" id="7_kngxg"]
 [ext_resource type="PackedScene" uid="uid://cs6dgawmlxa6s" path="res://Items/pointed_stick.tscn" id="8_ebfen"]
+[ext_resource type="Resource" uid="uid://buucimbjpkiud" path="res://globals/items/pointed_stick.tres" id="9_ni46i"]
 
 [node name="GeneratorRoom" type="Node2D" unique_id=1999341089]
 
@@ -19,7 +20,7 @@ fireplace = NodePath("../Fireplace")
 position = Vector2(340, 783)
 
 [node name="WaterPuddle" parent="." unique_id=2144052388 instance=ExtResource("5_52sut")]
-position = Vector2(1588, 579)
+position = Vector2(1627, 725)
 
 [node name="WaterBucket" parent="." unique_id=1957467327 instance=ExtResource("3_1wsio")]
 position = Vector2(1539, 761)
@@ -36,3 +37,4 @@ position = Vector2(698, 567)
 
 [node name="PointedStick" parent="." unique_id=129622970 instance=ExtResource("8_ebfen")]
 position = Vector2(1162.9999, 754.9999)
+item = ExtResource("9_ni46i")

@@ -8,6 +8,7 @@ var is_in_puddle : bool = false
 
 
 func _process_item(delta: float) -> void:
+	super(delta)
 	if !is_full && is_in_puddle && full_ratio < .99:
 		full_ratio += delta
 		if full_ratio >= 1.0:
