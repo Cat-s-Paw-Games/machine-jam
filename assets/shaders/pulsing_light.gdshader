@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
 uniform vec2 center = vec2(0.4, 0.3);
-uniform float radius = 0;
-uniform float edge_softness = 0;
+uniform float radius = 0.0;
+uniform float edge_softness = 0.0;
 uniform float pulse_speed = 2.0;
 uniform float pulse_amount = 0.005;
 uniform float glow_size = 0.05;
@@ -19,18 +19,31 @@ void fragment() {
     vec2 uv = SCREEN_UV;
     vec2 delta = uv - center;
 
-    // correzione aspect ratio: mantiene il foro circolare
     float aspect = viewport_size.x / viewport_size.y;
     delta.x *= aspect;
 
     float d = length(delta);
 
+    // Ombra esterna
     float shadow = smoothstep(r, r + edge_softness, d);
 
+    // Glow sul bordo
     float glow = 1.0 - smoothstep(r, r + glow_size, d);
     glow *= smoothstep(r - edge_softness, r, d);
 
-    vec4 col = vec4(shadow_color.rgb, shadow_color.a * shadow);
+    // Centro pieno
+    float inner_fill = 1.0 - step(r, d);
+
+    vec4 col = vec4(0.0);
+
+    // shadow fuori dal cerchio
+    col += vec4(shadow_color.rgb, shadow_color.a * shadow);
+
+    // riempimento pieno dentro il cerchio
+    col.rgb = mix(col.rgb, glow_color.rgb, inner_fill);
+    col.a = max(col.a, glow_color.a * inner_fill);
+
+    // glow del bordo
     col.rgb += glow_color.rgb * glow * glow_color.a;
     col.a = max(col.a, glow * glow_color.a);
 
