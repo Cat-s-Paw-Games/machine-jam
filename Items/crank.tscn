@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mq84vc0l0b8k"]
 
 [ext_resource type="Texture2D" uid="uid://bkj8a38pj6l46" path="res://assets/images/crank.png" id="1_6wx5b"]
-[ext_resource type="Script" uid="uid://co24os2r717du" path="res://Items/crank.gd" id="2_cqdet"]
+[ext_resource type="Script" path="res://Items/crank.gd" id="2_cqdet"]
 [ext_resource type="Resource" uid="uid://foo5o8qbm5wn" path="res://globals/items/crank_broken.tres" id="3_v5vj5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wx5b"]

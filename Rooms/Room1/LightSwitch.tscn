@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://boownc1hoelvo"]
 
-[ext_resource type="Script" uid="uid://b7yocke8wb5sx" path="res://Rooms/LightSwitch/light_switch.gd" id="1_j0tc0"]
+[ext_resource type="Script" uid="uid://b7yocke8wb5sx" path="res://Rooms/Room1/light_switch.gd" id="1_j0tc0"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5n0b4"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m787b"]

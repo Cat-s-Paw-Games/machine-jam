@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgocahdh3kcbj"]
 
-[ext_resource type="Script" uid="uid://dq7h5w6yd3u5f" path="res://Rooms/Generator/water_puddle.gd" id="1_8yyys"]
+[ext_resource type="Script" uid="uid://dq7h5w6yd3u5f" path="res://Rooms/Room2/water_puddle.gd" id="1_8yyys"]
 [ext_resource type="Texture2D" uid="uid://dajdxux0v116u" path="res://assets/images/water_puddle.png" id="1_vf86b"]
 [ext_resource type="Resource" uid="uid://jgjwwbjwho17" path="res://globals/amenities/puddle.tres" id="2_8yyys"]
 

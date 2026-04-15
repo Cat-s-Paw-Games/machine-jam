@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c3ucvulh3u7ub"]
+
+[ext_resource type="Script" uid="uid://b7q1gg6h3ayiq" path="res://Rooms/Room2/broken_pipe.gd" id="1_vtc3a"]
+[ext_resource type="Resource" uid="uid://jgjwwbjwho17" path="res://globals/amenities/puddle.tres" id="2_sqeu1"]
+[ext_resource type="Texture2D" uid="uid://dilsgb46i8sio" path="res://assets/images/smoke_sheet.png" id="3_mck4e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtc3a"]
+radius = 65.85
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p64og"]
+radius = 74.00675
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1k7v0"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 5
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_r6pky"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.042553194, 0.19101131), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vtc3a"]
+load_path = "res://.godot/imported/crank.png-5adac6a497c975ecd428c8c890040f9d.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mck4e"]
+radius = 165.27
+
+[node name="BrokenPipe" type="Area2D" unique_id=409804896]
+script = ExtResource("1_vtc3a")
+amenity = ExtResource("2_sqeu1")
+metadata/_custom_type_script = "uid://rlemyrl4ndtl"
+
+[node name="Interact" type="TouchScreenButton" parent="." unique_id=1264205970]
+shape = SubResource("CircleShape2D_vtc3a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440251985]
+rotation = -1.5859377
+shape = SubResource("CircleShape2D_p64og")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1090247032]
+material = SubResource("CanvasItemMaterial_1k7v0")
+position = Vector2(168, 0)
+amount = 32
+texture = ExtResource("3_mck4e")
+emission_shape = 1
+emission_sphere_radius = 30.0
+scale_amount_curve = SubResource("Curve_r6pky")
+color = Color(0.13, 0.42000014, 1, 1)
+
+[node name="ValveRepaired" type="Node2D" parent="." unique_id=263678007]
+visible = false
+position = Vector2(2.0000305, -0.99998474)
+scale = Vector2(0.48242188, 0.48242188)
+
+[node name="ValveRepairedButton" type="TouchScreenButton" parent="ValveRepaired" unique_id=1809733605]
+position = Vector2(-256, -256)
+texture_normal = SubResource("CompressedTexture2D_vtc3a")
+shape = SubResource("CircleShape2D_mck4e")
+
+[connection signal="pressed" from="Interact" to="." method="_on_interact_pressed"]
+[connection signal="pressed" from="ValveRepaired/ValveRepairedButton" to="." method="_on_valve_repaired_pressed"]

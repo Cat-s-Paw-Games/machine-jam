@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bbjv367setexj"]
+
+[ext_resource type="Texture2D" uid="uid://bkj8a38pj6l46" path="res://assets/images/crank.png" id="1_vcklk"]
+[ext_resource type="Script" path="res://Items/crank.gd" id="2_5t30r"]
+[ext_resource type="Resource" uid="uid://bb1wucum8duu1" path="res://globals/items/valve_handle.tres" id="3_hcbqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wx5b"]
+radius = 160.17569
+
+[node name="ValveHandle" type="TouchScreenButton" unique_id=1315559793]
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("1_vcklk")
+script = ExtResource("2_5t30r")
+item = ExtResource("3_hcbqv")
+metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2141706974]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=176519866]
+position = Vector2(257.5, 255)
+shape = SubResource("CircleShape2D_6wx5b")
