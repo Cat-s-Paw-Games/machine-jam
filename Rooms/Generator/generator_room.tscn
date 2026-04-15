@@ -22,7 +22,7 @@ position = Vector2(340, 783)
 [node name="WaterPuddle" parent="." unique_id=2144052388 instance=ExtResource("5_52sut")]
 position = Vector2(1627, 725)
 
-[node name="WaterBucket" parent="." unique_id=1957467327 instance=ExtResource("3_1wsio")]
+[node name="Bucket" parent="." unique_id=1957467327 instance=ExtResource("3_1wsio")]
 position = Vector2(1539, 761)
 
 [node name="DrippingTube" type="Sprite2D" parent="." unique_id=1165582662]
