@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://foo5o8qbm5wn"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_n2313"]
+[ext_resource type="Texture2D" uid="uid://bkj8a38pj6l46" path="res://assets/images/crank.png" id="2_tm36t"]
+
+[resource]
+script = ExtResource("1_n2313")
+id = "crank_broken"
+name = "Crank"
+description = "A crank without it's screw"
+texture = ExtResource("2_tm36t")
+compound = true
+material = "screw"
+transforms_into = "crank_repaired"
+station = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

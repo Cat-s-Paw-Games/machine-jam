@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://mq84vc0l0b8k"]
+
+[ext_resource type="Texture2D" uid="uid://bkj8a38pj6l46" path="res://assets/images/crank.png" id="1_6wx5b"]
+[ext_resource type="Script" uid="uid://co24os2r717du" path="res://Items/crank.gd" id="2_cqdet"]
+[ext_resource type="Resource" uid="uid://foo5o8qbm5wn" path="res://globals/items/crank_broken.tres" id="3_v5vj5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wx5b"]
+radius = 160.17569
+
+[node name="Crank" type="TouchScreenButton" unique_id=1315559793]
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("1_6wx5b")
+script = ExtResource("2_cqdet")
+item = ExtResource("3_v5vj5")
+metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2141706974]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=176519866]
+position = Vector2(257.5, 255)
+shape = SubResource("CircleShape2D_6wx5b")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ca66j7bgw5mrn"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_mlx1m"]
+[ext_resource type="Texture2D" uid="uid://dyvmkr6yus8r7" path="res://assets/images/screw.png" id="2_l5bxx"]
+
+[resource]
+script = ExtResource("1_mlx1m")
+id = "screw"
+name = "Screw"
+description = "A simple screw"
+texture = ExtResource("2_l5bxx")
+usable_once = true
+material = ""
+transforms_into = ""
+station = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"
