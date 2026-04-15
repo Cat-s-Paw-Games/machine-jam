@@ -7,15 +7,19 @@ var loop_players:={} # {key: AudioStreamPlayer for loops}
 func setup()->void:
 	pass
 
-func play(key:String,audio_path:NodePath)->void:
+func play(key:String,audio_path:NodePath, config: Dictionary = {})->void:
 	if key in audio_players:
 		audio_players[key].stop()
 	
 	var player:=AudioStreamPlayer.new()
 	player.stream=load(audio_path)
 	add_child(player)
-	player.play()
 	audio_players[key]=player
+	if config.has("volume_db"):
+		player.volume_db = config["volume_db"]
+	if config.has("pitch"):
+		player.pitch_scale = config["pitch"]
+	player.play()
 	
 	await player.finished
 	audio_players.erase(key)
@@ -46,3 +50,7 @@ func stop_all_loops()->void:
 func set_loop_volume(key:String,volume_db:float)->void:
 	if key in loop_players:
 		loop_players[key].volume_db=volume_db
+
+func set_loop_pitch(key:String,pitch:float)->void:
+	if key in loop_players:
+		loop_players[key].pitch_scale=pitch
