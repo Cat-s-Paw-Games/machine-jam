@@ -24,10 +24,10 @@ offset_right = 0.0
 offset_bottom = 408.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 40
-text = "What will we do with a drunken sailor?
-What will we do with a drunken sailor?
-What will we do with a drunken sailor?
-Early in the morning
+text = "What[pause=0.5] will we do with a drunken sailor? [pause]
+What will we do with a drunken sailor? [pause]
+What will we do with a drunken sailor? [pause=2.0]
+Early in the morning [pause][pause]
 Way hay and up she rises
 Way hay and up she rises
 Way hay and up she rises
@@ -50,7 +50,7 @@ Way hay and up she rises
 Early in the morning
 "
 horizontal_alignment = 1
-chararacters_for_second = 13.0
+characters_for_second = 13.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1335549150]
 anchors_preset = 3

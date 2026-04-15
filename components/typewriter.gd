@@ -3,23 +3,55 @@ class_name TypewriterLabel
 
 signal animation_finished()
 
-@export var chararacters_for_second: float = 1.0
+@export var characters_for_second: float = 1.0
+@export var beep_talk: bool = true
 @onready var character_count = get_total_character_count()
 
+var last_visible_characters: int = 0
+var tween: Tween
+var pause_positions: Array[Dictionary] = []  # {pos: int, duration: float}
+
 func _ready() -> void:
-	var animation_time = character_count / chararacters_for_second
-	var anim : Animation = $AnimationPlayer.get_animation("write")
-	var track_index = anim.add_track(Animation.TYPE_VALUE)
-	anim.length = animation_time
-	anim.track_set_path(track_index, ":visible_characters")
-	anim.track_insert_key(track_index, 0.0, 0)
-	anim.track_insert_key(track_index, animation_time, character_count)
-	$AnimationPlayer.play("write")
-	$AnimationPlayer.animation_finished.connect(func():
+	var regex = RegEx.new()
+	regex.compile(r"\[pause(?:=(\d+\.?\d*))?\]")
+	
+	var text_content = text
+	
+	while true:
+		var matched = regex.search(text_content)
+		if matched == null:
+			break
+			
+		var pause_start = matched.get_start()
+		var pause_duration = 1.0
+		if matched.strings.size() > 1 and matched.strings[1]:
+			pause_duration = float(matched.strings[1])
+		pause_positions.append({"pos": pause_start, "duration": pause_duration})
+		text_content = regex.sub(text_content, "")
+	
+	text = text_content
+	character_count = get_total_character_count()
+	
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_LINEAR)
+	
+	for i in range(character_count):
+		for pause in pause_positions:
+			if i == pause["pos"]:
+				tween.tween_interval(pause["duration"])
+		tween.tween_property(self, "visible_characters", i + 1, 1.0 / characters_for_second)
+	
+	tween.finished.connect(func():
 		animation_finished.emit()
 	)
+
+func _process(_delta: float) -> void:
+	if visible_characters > last_visible_characters:
+		if beep_talk: App.audio.play("sfx", "res://assets/music/sfx/text_beep.wav")
+		last_visible_characters = visible_characters
 	
 func finish():
-	$AnimationPlayer.stop()
+	if tween:
+		tween.kill()
 	animation_finished.emit()
 	visible_characters = character_count
