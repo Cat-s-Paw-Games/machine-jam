@@ -5,7 +5,8 @@ var pano_width = 7680
 @export var light_world_x := 200.0
 @export var light_screen_y := 0.2	
 
-
+func _ready() -> void:
+	App.events.switch_lights_on.connect(func(): light_up())
 
 func light_up():
 	queue_free()

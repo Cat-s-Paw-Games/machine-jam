@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dto3sh7eac68s"
-path="res://.godot/imported/crosshair_hover.png-49c8affa93600d234a7748524250524d.ctex"
+uid="uid://dwu3uhsqnwgok"
+path="res://.godot/imported/curs_pick.png-118b0e16670fa18b6ca4d1ad4f155a8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cursors/crosshair_hover.png"
-dest_files=["res://.godot/imported/crosshair_hover.png-49c8affa93600d234a7748524250524d.ctex"]
+source_file="res://assets/cursors/curs_pick.png"
+dest_files=["res://.godot/imported/curs_pick.png-118b0e16670fa18b6ca4d1ad4f155a8b.ctex"]
 
 [params]
 

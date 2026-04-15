@@ -1,5 +1,7 @@
 extends Node
 
+
+
 const ITEMS_DIR : String = "res://globals/items/"
 
 #var amenities : Dictionary = {}

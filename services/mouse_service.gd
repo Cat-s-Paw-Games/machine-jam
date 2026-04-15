@@ -3,8 +3,8 @@ class_name MouseService
 
 var current_item: Node = null
 
-var basic_cursor: Texture2D = preload("res://assets/cursors/crosshair.png")
-var hover_cursor: Texture2D = preload("res://assets/cursors/crosshair_hover.png")
+var basic_cursor: Texture2D = preload("res://assets/cursors/curs_default.png")
+var hover_cursor: Texture2D = preload("res://assets/cursors/curs_pick.png")
 var cursor_center: Vector2 = Vector2(0, 0)
 
 var cursor_instance: GameCursor = null

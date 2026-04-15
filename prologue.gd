@@ -12,3 +12,11 @@ func _on_skip_pressed() -> void:
 func _on_typewriter_animation_finished() -> void:
 	%ContinueButton.text = "Continue"
 	is_continue = true
+
+
+func _on_continue_button_mouse_entered() -> void:
+	App.mouse.hover_on(%ContinueButton)
+
+
+func _on_continue_button_mouse_exited() -> void:
+	App.mouse.hover_out()
