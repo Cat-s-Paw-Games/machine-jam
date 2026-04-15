@@ -69,7 +69,7 @@ process_mode = 3
 position = Vector2(1920, 0)
 
 [node name="BotRoom" parent="GameView/Rooms" unique_id=368738704 instance=ExtResource("4_7mycd")]
-position = Vector2(3840, 51)
+position = Vector2(3840, 0)
 
 [node name="WorkingRoom" parent="GameView/Rooms" unique_id=264598961 instance=ExtResource("6_272bh")]
 position = Vector2(5760, 0)

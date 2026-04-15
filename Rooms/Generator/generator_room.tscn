@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bp17syrj82idi"]
 
+[ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_1wsio"]
 [ext_resource type="PackedScene" uid="uid://byo14qgmc44ta" path="res://Rooms/Generator/generator.tscn" id="1_ni46i"]
 [ext_resource type="PackedScene" uid="uid://b3ur5g1hqc6qe" path="res://Rooms/Generator/fireplace.tscn" id="2_1wsio"]
 [ext_resource type="PackedScene" uid="uid://cefinofi8gij8" path="res://Items/bucket.tscn" id="3_1wsio"]
@@ -11,6 +12,13 @@
 [ext_resource type="Resource" uid="uid://buucimbjpkiud" path="res://globals/items/pointed_stick.tres" id="9_ni46i"]
 
 [node name="GeneratorRoom" type="Node2D" unique_id=1999341089]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=109985545]
+visible = false
+offset_left = -1920.0
+offset_right = 5760.0
+offset_bottom = 1080.0
+texture = ExtResource("1_1wsio")
 
 [node name="Generator" parent="." unique_id=295888722 node_paths=PackedStringArray("fireplace") instance=ExtResource("1_ni46i")]
 position = Vector2(359, 440)
