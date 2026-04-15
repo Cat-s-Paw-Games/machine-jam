@@ -10,6 +10,10 @@ signal offset_changed(offset:int)
 
 
 func _ready() -> void:
+	var Blackout: PackedScene = preload("res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn")
+	var blackout_instance = Blackout.instantiate()
+	offset_changed.connect(blackout_instance._on_main_offset_changed)
+	%GameView.add_child(blackout_instance)
 	App.audio.set_loop_pitch("main", 1.0)
 	update_layers(0)
 

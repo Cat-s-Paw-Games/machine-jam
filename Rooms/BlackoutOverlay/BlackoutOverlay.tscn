@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dg2l3vko2cnjm"]
 
 [ext_resource type="Script" uid="uid://4drc2hf6i7ev" path="res://Rooms/BlackoutOverlay/blackout_overlay.gd" id="1_21r3j"]
-[ext_resource type="Shader" path="res://assets/shaders/pulsing_light.gdshader" id="2_dslfp"]
+[ext_resource type="Shader" uid="uid://dphx6y304q3kv" path="res://assets/shaders/pulsing_light.gdshader" id="2_dslfp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8vliq"]
 shader = ExtResource("2_dslfp")

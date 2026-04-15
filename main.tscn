@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/LightSwitch/LightSwitch.tscn" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/TestRoom/TestRoom.tscn" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_272bh"]
-[ext_resource type="PackedScene" uid="uid://dg2l3vko2cnjm" path="res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node" unique_id=738830431]
 process_mode = 3
@@ -84,8 +83,3 @@ ignore_camera_scroll = true
 [node name="Sprite2D" type="Sprite2D" parent="GameView/Foreground" unique_id=1811115625]
 texture = ExtResource("5_272bh")
 centered = false
-
-[node name="Blackout" parent="GameView" unique_id=1387205058 instance=ExtResource("6_7mycd")]
-unique_name_in_owner = true
-
-[connection signal="offset_changed" from="." to="GameView/Blackout" method="_on_main_offset_changed"]
