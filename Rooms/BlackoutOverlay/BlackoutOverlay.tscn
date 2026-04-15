@@ -16,6 +16,7 @@ shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/glow_color = Color(0.5686275, 0.043137256, 0.23137255, 0.4509804)
 
 [node name="BlackoutOverlay" type="CanvasLayer" unique_id=1387205058]
+process_mode = 3
 script = ExtResource("1_21r3j")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=61696057]

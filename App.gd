@@ -6,6 +6,7 @@ var events: EventService
 var game_status: GameStatusService
 
 func _ready()->void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	mouse=preload("res://services/mouse_service.gd").new()
 	add_child(mouse)
 	mouse.setup()

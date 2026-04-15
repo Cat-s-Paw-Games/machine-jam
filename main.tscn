@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dg2l3vko2cnjm" path="res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node" unique_id=738830431]
+process_mode = 3
 script = ExtResource("1_h2yge")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=656720084]
@@ -59,8 +60,10 @@ centered = false
 
 [node name="Rooms" type="Node2D" parent="GameView" unique_id=158874507]
 unique_name_in_owner = true
+process_mode = 1
 
 [node name="LightSwitchRoom" parent="GameView/Rooms" unique_id=1691897204 instance=ExtResource("3_272bh")]
+process_mode = 3
 
 [node name="GeneratorRoom" parent="GameView/Rooms" unique_id=1999341089 instance=ExtResource("2_0xm2m")]
 
