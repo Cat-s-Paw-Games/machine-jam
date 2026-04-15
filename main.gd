@@ -1,11 +1,11 @@
 extends Node
 
-var view_angle := 0.0
+var view_angle : float = 0.0
 
-@export var step := 1.0
-@export var pano_width := 7680.0
-@export var fg_width := 8000.0
-@export var room_width := App.viewport_size.x
+@export var step : float = 1.0
+@export var pano_width : float = 7680.0
+@export var fg_width : float = 8000.0
+@export var room_width : float = App.viewport_size.x
 signal offset_changed(offset:int)
 
 
