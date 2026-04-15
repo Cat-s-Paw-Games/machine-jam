@@ -12,10 +12,16 @@ var tween: Tween
 var pause_positions: Array[Dictionary] = []  # {pos: int, duration: float}
 
 func _ready() -> void:
+	recalc_animation()
+
+func recalc_animation():
+	last_visible_characters = 0
+	visible_characters = 0
+	pause_positions = []
 	var regex = RegEx.new()
 	regex.compile(r"\[pause(?:=(\d+\.?\d*))?\]")
 	
-	var text_content = text
+	var text_content = get_parsed_text()
 	
 	while true:
 		var matched = regex.search(text_content)
@@ -29,7 +35,7 @@ func _ready() -> void:
 		pause_positions.append({"pos": pause_start, "duration": pause_duration})
 		text_content = regex.sub(text_content, "")
 	
-	text = text_content
+	text = regex.sub(text,"",true)
 	character_count = get_total_character_count()
 	
 	tween = create_tween()
@@ -44,6 +50,7 @@ func _ready() -> void:
 	tween.finished.connect(func():
 		animation_finished.emit()
 	)
+	
 
 func _process(_delta: float) -> void:
 	if visible_characters > last_visible_characters:

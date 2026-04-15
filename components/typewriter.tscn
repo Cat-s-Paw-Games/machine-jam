@@ -13,6 +13,7 @@ _data = {
 
 [node name="Typewriter" type="RichTextLabel" unique_id=1301909371]
 offset_right = 1.0
+bbcode_enabled = true
 fit_content = true
 visible_characters = 0
 script = ExtResource("1_prnia")

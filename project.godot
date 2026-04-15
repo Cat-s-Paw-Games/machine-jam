@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://dni4msy7g2ek5"
 App="*uid://dydmjnvgendpj"
 GameManager="*uid://d38j4efceaxsb"
 SceneTransitionManager="*uid://7w81vk3scoi2"
+UIAnimation="*uid://cawfyydj325or"
 
 [display]
 
@@ -34,6 +35,10 @@ window/size/viewport_height=1080
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_ui_animations/plugin.cfg")
 
 [gui]
 

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bym2nd6ohk6nv"]
+
+[ext_resource type="Script" uid="uid://u3ip2ftt82xe" path="res://components/popup.gd" id="1_cavkf"]
+[ext_resource type="Script" uid="uid://bh4au8j6i6noa" path="res://components/typewriter.gd" id="2_3pvtt"]
+
+[node name="Popup" type="CenterContainer" unique_id=1932771744]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_cavkf")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=51986470]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1836799809]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 29
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer" unique_id=172700158]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("2_3pvtt")
+characters_for_second = 13.0
+metadata/_custom_type_script = "uid://bh4au8j6i6noa"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer" unique_id=1653119168]
+visible = false
+layout_mode = 2
+text = "->"
+
+[connection signal="animation_finished" from="PanelContainer/MarginContainer/RichTextLabel" to="." method="_on_rich_text_label_animation_finished"]

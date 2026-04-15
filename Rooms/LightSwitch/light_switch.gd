@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _on_switch_pressed() -> void:
 	App.events.switch_lights_on.emit()
 
