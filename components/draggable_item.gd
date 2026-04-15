@@ -5,12 +5,17 @@ signal dropped(item : DraggableItem)
 
 var dragging = false
 var drag_offset = Vector2()
+var hitbox: Area2D
 
 @export_custom(PROPERTY_HINT_RESOURCE_TYPE, "Item") var item : Item = Item.new()
 
 func _ready():
 	pressed.connect(_on_pressed)
 	released.connect(_on_released)
+	hitbox = find_child("Area2D") 
+	if hitbox:
+		hitbox.mouse_entered.connect(func(): App.mouse.hover_on(self))
+		hitbox.mouse_exited.connect(func(): App.mouse.hover_out())
 	set_item()
 
 func use():
