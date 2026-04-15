@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boownc1hoelvo"]
 
 [ext_resource type="Script" uid="uid://b7yocke8wb5sx" path="res://Rooms/LightSwitch/light_switch.gd" id="1_j0tc0"]
+[ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5n0b4"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m787b"]
 size = Vector2(100, 100)
@@ -11,8 +12,14 @@ size = Vector2(102, 101)
 [node name="LightSwitchRoom" type="Node2D" unique_id=1691897204]
 script = ExtResource("1_j0tc0")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=272207693]
+visible = false
+offset_right = 7680.0
+offset_bottom = 1080.0
+texture = ExtResource("2_5n0b4")
+
 [node name="Switch" type="TouchScreenButton" parent="." unique_id=1350675866]
-position = Vector2(1113, 164)
+position = Vector2(1321, 340)
 texture_normal = SubResource("PlaceholderTexture2D_m787b")
 
 [node name="Area2D" type="Area2D" parent="Switch" unique_id=406022670]

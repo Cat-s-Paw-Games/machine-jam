@@ -18,6 +18,8 @@ shader_parameter/glow_color = Color(0.92156863, 0, 0.23137255, 0.627451)
 [node name="BlackoutOverlay" type="CanvasLayer" unique_id=1387205058]
 process_mode = 3
 script = ExtResource("1_21r3j")
+light_world_x = 410.0
+light_screen_y = 0.36
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=61696057]
 material = SubResource("ShaderMaterial_8vliq")
