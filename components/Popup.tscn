@@ -14,6 +14,7 @@ script = ExtResource("1_cavkf")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=51986470]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1836799809]
 layout_mode = 2
@@ -24,6 +25,7 @@ theme_override_constants/margin_bottom = 25
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer" unique_id=172700158]
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true

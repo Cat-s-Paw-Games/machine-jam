@@ -10,9 +10,13 @@ signal animation_finished()
 var last_visible_characters: int = 0
 var tween: Tween
 var pause_positions: Array[Dictionary] = []  # {pos: int, duration: float}
+var is_animation_finished:
+	get():
+		return visible_characters == character_count
 
 func _ready() -> void:
 	recalc_animation()
+	
 
 func recalc_animation():
 	last_visible_characters = 0

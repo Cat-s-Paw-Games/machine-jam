@@ -14,7 +14,7 @@ func setup() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 	cursor_layer = CanvasLayer.new()
-	cursor_layer.layer = 1000
+	cursor_layer.layer = 1001
 	add_child(cursor_layer)
 
 	var scene: PackedScene = preload("res://ui/cursor.tscn")

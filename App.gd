@@ -26,17 +26,16 @@ func _ready()->void:
 	add_child(game_status)
 	game_status.setup()
 
-func show_popup(text: String):
-	var popup = get_node("/root/Main").find_child("Popup")
+func show_popup(text: String, close_on_click = false):
+	var popup: PopupContainer = get_node("/root/Main").find_child("Popup")
 	popup.text = text
-	navigation_enabled = false
+	popup.close_on_click = close_on_click
 	await popup.open()
 	
 	
 func hide_popup():
 	var popup = get_node("/root/Main").find_child("Popup")
 	popup.close()
-	navigation_enabled = true
 
 func _process(_delta:float)->void:
 	mouse.update_cursor_position()
