@@ -5,6 +5,7 @@ var audio:AudioService
 var events: EventService
 var game_status: GameStatusService
 var viewport_size: Vector2
+var navigation_enabled:bool = true
 
 func _ready()->void:
 	viewport_size = get_viewport().size
@@ -28,12 +29,14 @@ func _ready()->void:
 func show_popup(text: String):
 	var popup = get_node("/root/Main").find_child("Popup")
 	popup.text = text
+	navigation_enabled = false
 	await popup.open()
 	
 	
 func hide_popup():
 	var popup = get_node("/root/Main").find_child("Popup")
 	popup.close()
+	navigation_enabled = true
 
 func _process(_delta:float)->void:
 	mouse.update_cursor_position()

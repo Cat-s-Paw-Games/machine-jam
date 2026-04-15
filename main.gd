@@ -18,9 +18,10 @@ func _ready() -> void:
 	update_layers(0)
 
 func _process(_delta: float) -> void:
-	var axis = Input.get_axis("ui_left","ui_right")
-	view_angle = wrapf(view_angle + axis * step, 0.0, 360.0)
-	update_layers(axis)
+	if App.navigation_enabled:
+		var axis = Input.get_axis("ui_left","ui_right")
+		view_angle = wrapf(view_angle + axis * step, 0.0, 360.0)
+		update_layers(axis)
 
 func update_layers(axis: int):
 	%Background.screen_offset.x = (view_angle / 360.0) * pano_width
