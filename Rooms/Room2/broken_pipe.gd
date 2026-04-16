@@ -6,9 +6,9 @@ func _on_gui_input():
 	pass
 
 func _on_item_dropped(item : DraggableItem):
-	print(item)
 	if item is ValveHandle:
 		item.queue_free()
+		App.mouse.hover_out()
 		$ValveRepaired.visible = true
 		$Interact.visible = false
 		

@@ -18,6 +18,8 @@
 [node name="GeneratorRoom" type="Node2D" unique_id=1999341089]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=109985545]
+visible = false
+modulate = Color(1, 1, 1, 0.25882354)
 offset_left = -1920.0
 offset_right = 5760.0
 offset_bottom = 1080.0
