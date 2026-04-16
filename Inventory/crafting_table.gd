@@ -3,6 +3,8 @@ extends PanelContainer
 @onready var crafting_grid: GridContainer = %CraftingGrid
 @onready var output_slot: InventorySlot = %OutputSlot
 
+var current_recipe = null
+
 var RECIPES = {
 	"bucket_water": {
 		"ingredients": ["bucket_empty"]
@@ -23,6 +25,14 @@ var current_items = {
 #func _process(delta: float) -> void:
 #	App.events.steam_increase.emit(delta)
 
+func add_steam_warning():
+	%SteamLabel.add_theme_color_override("font_color",Color.RED)
+	%OutputSlotX.visible = true
+
+func remove_steam_warning():
+	%SteamLabel.remove_theme_color_override("font_color")
+	%OutputSlotX.visible = false
+
 func _ready():
 	App.events.steam_changed.connect(func(steam): %SteamLabel.text = str(steam).pad_decimals(2))
 
@@ -37,9 +47,12 @@ func clear_grid():
 		child.empty_slot()
 
 func craft_item():
-	clear_grid()
-	output_slot.empty_slot()
-	App.ui.inventory.add_item("bucket_water")
+	if current_recipe:
+		if current_recipe.has("steam") and current_recipe["steam"] > App.game_status.steam:
+			return
+		App.ui.inventory.add_item(current_recipe["output"])
+		clear_grid()
+		output_slot.empty_slot()
 
 func _on_output_slot_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -56,11 +69,17 @@ func check_recipe():
 		var ingredients = RECIPES[output]["ingredients"]
 		ingredients.sort()
 		if ingredients == items:
+			current_recipe = RECIPES[output]
+			current_recipe["output"] = output
 			output_slot.fill_slot(output)
 			found = true
+			if current_recipe.has("steam") and current_recipe["steam"] > App.game_status.steam:
+				add_steam_warning()
 			
 	if not found:
+		current_recipe = null
 		output_slot.empty_slot()
+		remove_steam_warning()
 			
 
 func _on_inventory_slot_1_added_item_to_slot(item_id: String) -> void:

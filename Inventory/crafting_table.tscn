@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bfk333yixaddu" path="res://Inventory/crafting_table.gd" id="1_ds5yy"]
 [ext_resource type="Script" uid="uid://c6edkyw1p5vw8" path="res://Inventory/inventory_slot.gd" id="1_kttas"]
 [ext_resource type="Texture2D" uid="uid://bsfi77b4euum1" path="res://assets/images/ui/arrow_right.png" id="2_uho73"]
+[ext_resource type="Texture2D" uid="uid://jsixj1c144ly" path="res://assets/images/ui/not_enough_steam.png" id="4_tvks7"]
 
 [node name="CraftingTable" type="PanelContainer" unique_id=397168365]
 anchors_preset = 8
@@ -35,7 +36,7 @@ text = "Steam: "
 [node name="SteamLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1502618207]
 unique_name_in_owner = true
 layout_mode = 2
-text = "-"
+text = "0.0"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=160551335]
 layout_mode = 2
@@ -82,15 +83,48 @@ size_flags_vertical = 4
 texture = ExtResource("2_uho73")
 expand_mode = 1
 
-[node name="OutputSlot" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1758846289]
-unique_name_in_owner = true
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=929094399]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
+
+[node name="OutputSlot" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Control" unique_id=1758846289]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 expand_mode = 1
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="OutputSlotX" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Control" unique_id=185568307]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tvks7")
+expand_mode = 1
 
 [connection signal="added_item_to_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot" to="." method="_on_inventory_slot_1_added_item_to_slot"]
 [connection signal="removed_item_from_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot" to="." method="_on_inventory_slot_1_removed_item_from_slot"]
@@ -100,4 +134,4 @@ metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 [connection signal="removed_item_from_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot3" to="." method="_on_inventory_slot_3_removed_item_from_slot"]
 [connection signal="added_item_to_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot4" to="." method="_on_inventory_slot_4_added_item_to_slot"]
 [connection signal="removed_item_from_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot4" to="." method="_on_inventory_slot_4_removed_item_from_slot"]
-[connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/OutputSlot" to="." method="_on_output_slot_gui_input"]
+[connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/Control/OutputSlot" to="." method="_on_output_slot_gui_input"]
