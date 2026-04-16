@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cwqlplweqn43y"
-path="res://.godot/imported/JackOfGears.ttf-4a6c22073298bcbeb6e90796608bd13c.fontdata"
+uid="uid://ccq1wfh6q6y63"
+path="res://.godot/imported/Asimovian-Regular.ttf-96b0c22d1b283a6ba86bbba511b4e883.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/JackOfGears.ttf"
-dest_files=["res://.godot/imported/JackOfGears.ttf-4a6c22073298bcbeb6e90796608bd13c.fontdata"]
+source_file="res://assets/fonts/Asimovian-Regular.ttf"
+dest_files=["res://.godot/imported/Asimovian-Regular.ttf-96b0c22d1b283a6ba86bbba511b4e883.fontdata"]
 
 [params]
 
@@ -27,15 +27,10 @@ subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
-fallbacks=[Resource("uid://cswfyvem3o15l", "res://assets/fonts/DejaVuSans.ttf")]
+fallbacks=[]
 Compress=null
 compress=true
-preload=[{
-"chars": [],
-"glyphs": [],
-"name": "New Configuration",
-"size": Vector2i(16, 0)
-}]
+preload=[]
 language_support={}
 script_support={}
 opentype_features={}

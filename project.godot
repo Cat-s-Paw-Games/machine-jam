@@ -43,7 +43,7 @@ enabled=PackedStringArray("res://addons/godot_ui_animations/plugin.cfg")
 [gui]
 
 theme/custom="uid://cdsksct6tt8bo"
-theme/custom_font="uid://cwqlplweqn43y"
+theme/custom_font="uid://ccq1wfh6q6y63"
 
 [input_devices]
 
