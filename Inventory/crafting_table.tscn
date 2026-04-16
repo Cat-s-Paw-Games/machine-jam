@@ -76,4 +76,8 @@ expand_mode = 1
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
+[connection signal="added_item_to_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot" to="." method="_on_inventory_slot_1_added_item_to_slot"]
+[connection signal="added_item_to_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot2" to="." method="_on_inventory_slot_2_added_item_to_slot"]
+[connection signal="added_item_to_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot3" to="." method="_on_inventory_slot_3_added_item_to_slot"]
+[connection signal="added_item_to_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot4" to="." method="_on_inventory_slot_4_added_item_to_slot"]
 [connection signal="gui_input" from="MarginContainer/HBoxContainer/OutputSlot" to="." method="_on_output_slot_gui_input"]

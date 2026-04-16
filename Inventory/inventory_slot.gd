@@ -1,6 +1,7 @@
 extends TextureRect
 class_name InventorySlot
 
+signal added_item_to_slot(item_id:String)
 @export var item : Item = null
 
 
@@ -10,6 +11,7 @@ func empty_slot():
 
 func fill_slot(item_id : String):
 	item = App.items[item_id]
+	added_item_to_slot.emit(item_id)
 	update_visual()
 
 func update_visual():
@@ -54,12 +56,11 @@ func swap_items(source_slot):
 			if item.id == source_item.material:
 				combine_items_inverse(source_slot)
 				return
-	
-	item = source_item
-	source_slot.item = temp
-
-	update_visual()
-	source_slot.update_visual()
+	fill_slot(source_item.id)
+	if temp == null:
+		source_slot.empty_slot()
+	else:
+		source_slot.fill_slot(temp.id)
 
 func combine_items(source_slot):
 	source_slot.empty_slot()
