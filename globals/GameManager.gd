@@ -12,6 +12,6 @@ func _ready() -> void:
 
 
 func populate_items():
-	for item_res in DirAccess.get_files_at(ITEMS_DIR):
+	for item_res in ResourceLoader.list_directory(ITEMS_DIR):
 		var item = ResourceLoader.load(ITEMS_DIR + item_res)
 		items[item.id] = item
