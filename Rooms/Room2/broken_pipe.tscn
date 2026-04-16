@@ -43,6 +43,7 @@ material = SubResource("CanvasItemMaterial_1k7v0")
 position = Vector2(168, 0)
 amount = 32
 texture = ExtResource("3_mck4e")
+local_coords = true
 emission_shape = 1
 emission_sphere_radius = 30.0
 scale_amount_curve = SubResource("Curve_r6pky")
