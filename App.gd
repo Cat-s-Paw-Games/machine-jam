@@ -4,6 +4,8 @@ var mouse:MouseService
 var audio:AudioService
 var events: EventService
 var game_status: GameStatusService
+var gamemanager: GameManager
+var items: Dictionary
 var viewport_size: Vector2
 var navigation_enabled:bool = true
 
@@ -25,6 +27,14 @@ func _ready()->void:
 	game_status=preload("res://services/game_status_service.gd").new()
 	add_child(game_status)
 	game_status.setup()
+	
+	gamemanager=preload("res://globals/GameManager.gd").new()
+	add_child(gamemanager)
+	gamemanager.setup()
+	
+	items = gamemanager.items
+	
+	
 	
 
 func show_popup(text: String, close_on_click = false):

@@ -22,7 +22,6 @@ buses/default_bus_layout="uid://dni4msy7g2ek5"
 [autoload]
 
 App="*uid://dydmjnvgendpj"
-GameManager="*uid://d38j4efceaxsb"
 SceneTransitionManager="*uid://7w81vk3scoi2"
 UIAnimation="*uid://cawfyydj325or"
 

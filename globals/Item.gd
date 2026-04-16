@@ -20,4 +20,4 @@ func can_be_worked(amenity_id : String):
 	return amenity_id == station
 
 func transform() -> Item:
-	return GameManager.items[transforms_into]
+	return App.items[transforms_into]

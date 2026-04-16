@@ -29,5 +29,5 @@ func check_state():
 		text += "\n- Water Missing"
 	if !App.game_status.fire_lit:
 		text += "\n- Fire Missing"
-	GameManager.popup.text = text
-	GameManager.popup.open()
+	if text.strip_edges().length() > 0 :
+		App.show_popup(text,true)

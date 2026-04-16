@@ -10,7 +10,7 @@ func empty_slot():
 	texture = null
 
 func fill_slot(item_id : String):
-	item = GameManager.items[item_id]
+	item = App.items[item_id]
 	update_visual()
 
 func update_visual():
