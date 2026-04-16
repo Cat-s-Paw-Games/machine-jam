@@ -73,12 +73,14 @@ func drag_item():
 		global_position = get_global_mouse_position() + drag_offset
 
 func _on_pressed():
+	App.navigation_enabled = false
 	dragging = true
 	drag_offset = global_position - get_global_mouse_position()
 	falling = false
 	fall_velocity = 0.0
 
 func _on_released():
+	App.navigation_enabled = true
 	dragging = false
 	drag_offset = Vector2()
 	dropped.emit(self)

@@ -33,24 +33,3 @@ func update_layers(axis: int):
 	for chunk in %Rooms.get_children():
 		chunk.position.x = fmod((chunk.position.x - axis * step / 360.0 * pano_width) - axis * room_width, pano_width) + axis * room_width
 	offset_changed.emit(%Background.screen_offset.x)
-
-var touch_start := Vector2.ZERO
-var touch_active := false
-const SWIPE_THRESHOLD := 80.0
-func _input(event):
-	if event is InputEventScreenTouch:
-		if event.pressed:
-			touch_start = event.position
-			touch_active = true
-		else:
-			if touch_active:
-				var delta = event.position - touch_start
-				handle_swipe(delta)
-			touch_active = false
-
-func handle_swipe(delta: Vector2) -> void:
-	if delta.length() < SWIPE_THRESHOLD:
-		return
-	var axis = delta.x
-	view_angle = wrapf(view_angle + axis * step, 0.0, 360.0)
-	update_layers(axis)
