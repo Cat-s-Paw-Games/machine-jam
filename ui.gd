@@ -3,7 +3,7 @@ extends CanvasLayer
 var inventory_open = false
 
 func _ready() -> void:
-	App.events.inventory_enabled.connect(func(): 
+	App.events.item_added.connect(func(_id): 
 		App.mouse.hover_out()
 		%InventoryButton.visible = true
 	)

@@ -23,6 +23,7 @@ func get_next_free_slot_id() -> int:
 func add_item(item_id : String):
 	var slot_id = get_next_free_slot_id()
 	if slot_id > -1:
+		App.events.item_added.emit(item_id)
 		get_child(slot_id).fill_slot(item_id)
 		return true
 	return false
