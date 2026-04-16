@@ -1,7 +1,13 @@
 extends Node
 class_name MouseService
 
+enum HOVER_TYPE {
+	NORMAL,
+	DROPPABLE
+}
+
 var current_item: Node = null
+var hover_type = HOVER_TYPE.NORMAL
 
 var basic_cursor: Texture2D = preload("res://assets/cursors/curs_default.png")
 var hover_cursor: Texture2D = preload("res://assets/cursors/curs_pick.png")
@@ -33,15 +39,17 @@ func update_cursor_position() -> void:
 func hover(value: bool) -> void:
 	if cursor_instance == null:
 		return
-
-	cursor_instance.set_texture(hover_cursor if value else basic_cursor)
-	cursor_instance.set_hotspot(cursor_center)
+	
+	if hover_type == HOVER_TYPE.NORMAL:
+		cursor_instance.set_texture(hover_cursor if value else basic_cursor)
+		cursor_instance.set_hotspot(cursor_center)
 
 func is_hovered(node: Node) -> bool:
 	return node == current_item
 
-func hover_on(item: Node) -> void:
+func hover_on(item: Node, type: HOVER_TYPE = HOVER_TYPE.NORMAL) -> void:
 	current_item = item
+	hover_type = type
 	if current_item and current_item is DraggableItem:
 		var resource_item = current_item.item
 		cursor_instance.text = resource_item.name
