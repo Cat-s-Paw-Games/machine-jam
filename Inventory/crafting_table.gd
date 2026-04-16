@@ -36,12 +36,6 @@ func remove_steam_warning():
 func _ready():
 	App.events.steam_changed.connect(func(steam): %SteamLabel.text = str(steam).pad_decimals(2))
 
-	await get_tree().process_frame
-	App.ui.inventory.add_item("bucket_empty")
-	App.ui.inventory.add_item("bucket_empty")
-	App.ui.inventory.add_item("bucket_empty")
-	App.ui.inventory.add_item("bucket_empty")
-
 func clear_grid():
 	for child in crafting_grid.get_children():
 		child.empty_slot()

@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if App.game_status.water_linked && App.game_status.fire_lit:
+		if not App.game_status.generator_active: App.events.activate_generator.emit()
 		App.events.steam_increase.emit(delta)
 
 func _on_mouse_entered() -> void:

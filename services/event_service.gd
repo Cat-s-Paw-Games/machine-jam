@@ -6,6 +6,7 @@ signal item_added(id: String)
 signal steam_increase(delta: float)
 signal steam_decrease(delta: float)
 signal steam_changed(value: float)
+signal activate_generator()
 
 func setup():
 	switch_lights_on.connect(_on_switch_lights)
@@ -17,6 +18,7 @@ func setup():
 		App.game_status.steam -= delta
 		steam_changed.emit(App.game_status.steam)
 	)
+	activate_generator.connect(func(): App.game_status.generator_active = true)
 
 func _on_switch_lights():
 	App.game_status.lights_on = true
