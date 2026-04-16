@@ -33,6 +33,7 @@ grow_vertical = 0
 
 [node name="InventoryButton" type="TouchScreenButton" parent="UI/BoxContainer" unique_id=942772527]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-89, -90)
 scale = Vector2(0.2519531, 0.2519531)
 texture_normal = ExtResource("3_efxa6")
