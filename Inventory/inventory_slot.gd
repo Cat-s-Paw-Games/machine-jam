@@ -85,5 +85,7 @@ func try_drop_into_world(_drag_data):
 	
 	var dropped_on = App.mouse.current_item
 	if dropped_on && dropped_on.has_method("use"):
+		if dropped_on.item.material != _drag_data["item"].id:
+			return
 		dropped_on.use(_drag_data["item"].id)
 		_drag_data["source"].empty_slot()

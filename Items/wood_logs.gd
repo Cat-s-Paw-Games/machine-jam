@@ -8,6 +8,5 @@ func drag_item():
 		super()
 
 func use_after():
-	print(item.id)
 	if item.id == "wood_logs_fire":
 		App.game_status.fire_lit = true

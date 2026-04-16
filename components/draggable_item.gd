@@ -28,7 +28,6 @@ func _ready():
 	set_item()
 
 func use(item_id : String) -> bool:
-	print(item_id)
 	if item_id == item.material:
 		item = item.transform()
 		set_item()
