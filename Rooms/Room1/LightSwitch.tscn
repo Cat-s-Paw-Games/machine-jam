@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b7yocke8wb5sx" path="res://Rooms/Room1/light_switch.gd" id="1_j0tc0"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5n0b4"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m787b"]
-size = Vector2(100, 100)
+[ext_resource type="Texture2D" uid="uid://32ir2hlybsgy" path="res://assets/images/switch_off.png" id="3_osyuf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0tc0"]
-size = Vector2(102, 101)
+size = Vector2(128, 128)
 
 [node name="LightSwitchRoom" type="Node2D" unique_id=1691897204]
 script = ExtResource("1_j0tc0")
@@ -17,15 +15,16 @@ visible = false
 offset_right = 7680.0
 offset_bottom = 1080.0
 texture = ExtResource("2_5n0b4")
+metadata/_edit_use_anchors_ = true
 
 [node name="Switch" type="TouchScreenButton" parent="." unique_id=1350675866]
-position = Vector2(1321, 340)
-texture_normal = SubResource("PlaceholderTexture2D_m787b")
+position = Vector2(1306, 305)
+texture_normal = ExtResource("3_osyuf")
 
 [node name="Area2D" type="Area2D" parent="Switch" unique_id=406022670]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Area2D" unique_id=193640056]
-position = Vector2(51, 49.5)
+position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_j0tc0")
 
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]

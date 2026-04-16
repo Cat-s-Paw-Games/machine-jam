@@ -40,9 +40,6 @@ func _ready()->void:
 	ui.setup()
 	
 	items = item_service.items
-	
-	
-	
 
 func show_popup(text: String, close_on_click = false):
 	var popup: PopupContainer = get_node("/root/UI").find_child("Popup")

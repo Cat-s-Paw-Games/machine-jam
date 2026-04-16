@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(308, 412)
 
-[node name="Generator" type="Area2D" unique_id=295888722]
+[node name="Crafting" type="Area2D" unique_id=295888722]
 script = ExtResource("1_mk0fq")
 amenity = ExtResource("2_teca4")
 

@@ -7,6 +7,7 @@ extends DropArea
 var hover = false
 
 func _ready() -> void:
+	super()
 	App.events.steam_changed.connect(func(steam): steam_bar.value = steam)
 
 func _process(delta: float) -> void:
@@ -14,14 +15,9 @@ func _process(delta: float) -> void:
 		if not App.game_status.generator_active: App.events.activate_generator.emit()
 		App.events.steam_increase.emit(delta)
 
-func _on_mouse_entered() -> void:
-	hover = true
-
-func _on_mouse_exited() -> void:
-	hover = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if hover && event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
+	if App.mouse.is_hovered(self) && event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 		check_state()
 
 func check_state():

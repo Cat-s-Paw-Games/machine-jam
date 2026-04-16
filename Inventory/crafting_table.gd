@@ -114,3 +114,8 @@ func _on_inventory_slot_3_removed_item_from_slot() -> void:
 func _on_inventory_slot_4_removed_item_from_slot() -> void:
 	current_items[3] = null
 	check_recipe()
+
+
+func _on_close_pressed() -> void:
+	
+	App.ui.close_crafting()
