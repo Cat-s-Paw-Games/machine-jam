@@ -5,12 +5,11 @@ var view_angle : float = 0.0
 @export var step : float = 1.0
 @export var pano_width : float = 7680.0
 @export var fg_width : float = 8000.0
-@export var room_width : float = App.viewport_size.x
+@export var room_width : float = 1920.0
 signal offset_changed(offset:int)
 
 
 func _ready() -> void:
-	GameManager.start_game_setup()
 	var Blackout: PackedScene = preload("res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn")
 	var blackout_instance = Blackout.instantiate()
 	%GameView.add_child(blackout_instance)
