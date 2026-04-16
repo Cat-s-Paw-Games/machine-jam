@@ -21,6 +21,7 @@ build/**
 !build/**/
 !build/**/.gitkeep
 !build/**/animation.gif
+!build/**/empty.png
 bin/
 dist/
 export/
