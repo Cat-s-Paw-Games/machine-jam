@@ -58,6 +58,7 @@ func apply_gravity(delta: float):
 		global_position.y = target_floor_y
 		falling = false
 		fall_velocity = 0.0
+		dropped.emit(self)
 
 func drag_item():
 	if dragging:
@@ -72,6 +73,7 @@ func _on_pressed():
 func _on_released():
 	dragging = false
 	drag_offset = Vector2()
+	dropped.emit(self)
 	
 	# Se sono sotto il floor, rimango dove sono
 	if global_position.y >= floor_height:
@@ -90,4 +92,3 @@ func _on_released():
 	
 	falling = true
 	fall_velocity = 0.0
-	dropped.emit(self)

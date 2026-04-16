@@ -1,6 +1,7 @@
 extends Node
 
-
+var popup : PopupContainer
+var inventory : Inventory
 
 const ITEMS_DIR : String = "res://globals/items/"
 
@@ -10,6 +11,9 @@ var items : Dictionary = {}
 func _ready() -> void:
 	populate_items()
 
+func start_game_setup():
+	popup = get_tree().root.get_node("Main/UI/Popup")
+	inventory = get_tree().root.get_node("Main/UI/Inventory")
 
 func populate_items():
 	for item_res in ResourceLoader.list_directory(ITEMS_DIR):

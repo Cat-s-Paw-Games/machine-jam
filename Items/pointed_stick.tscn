@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dk5r168ejv2g" path="res://assets/images/pointed_stick.png" id="1_reumw"]
 [ext_resource type="Script" uid="uid://iwj5a0uh2b33" path="res://Items/pointed_stick.gd" id="2_reumw"]
+[ext_resource type="Resource" uid="uid://buucimbjpkiud" path="res://globals/items/pointed_stick.tres" id="3_kh4gl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_reumw"]
 radius = 26.319916
@@ -11,6 +12,7 @@ height = 415.2942
 scale = Vector2(0.18750048, 0.18750048)
 texture_normal = ExtResource("1_reumw")
 script = ExtResource("2_reumw")
+item = ExtResource("3_kh4gl")
 metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1478403163]

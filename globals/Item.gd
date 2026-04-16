@@ -6,6 +6,7 @@ class_name Item
 @export_multiline var description : String = "Description"
 @export var texture : Texture2D
 @export var usable_once : bool = false
+@export var is_pickable : bool = false
 @export var compound : bool = false
 @export var material : String = "item_id"
 @export var transforms_into : String = "item_id"

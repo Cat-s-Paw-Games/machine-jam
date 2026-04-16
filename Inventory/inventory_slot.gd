@@ -80,26 +80,9 @@ func _notification(what):
 			drag_data = {}
 
 func try_drop_into_world(_drag_data):
-	if _drag_data == {}: return
-	var camera = get_tree().root.get_node("Main/GameView/Camera2D")
-	var space : PhysicsDirectSpaceState2D = camera.get_world_2d().direct_space_state
-	var query = PhysicsPointQueryParameters2D.new()
-	query.position = camera.get_global_mouse_position()
-	query.collide_with_areas = true
-	query.collide_with_bodies = true
+	if _drag_data == {}:
+		return
 	
-	var result = space.intersect_point(query)
-	
-	# THIS DOESN'T WORK BECAUSE CAMERA DOESN'T MOVE
-	
-	print(camera.get_global_mouse_position())
-	print(result)
-	#query.collide_with_areas = true
-	#query.collision_mask = 0xFFFFFFFF
-	#query.position = camera.get_global_mouse_position()
-	#
-	#var result = space.intersect_point(query)
-	#
-	#if result.size() > 0:
-		#print("collided: ", result[0].collider)
-		##result[0].collider.use_item(data)
+	var dropped_on = App.mouse.current_item
+	#if dropped_on.has_method("_on_item_dropped"):
+		#dropped_on._on_item_dropped(_drag_data["item"])

@@ -10,6 +10,7 @@ signal offset_changed(offset:int)
 
 
 func _ready() -> void:
+	GameManager.start_game_setup()
 	var Blackout: PackedScene = preload("res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn")
 	var blackout_instance = Blackout.instantiate()
 	%GameView.add_child(blackout_instance)

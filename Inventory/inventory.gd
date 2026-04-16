@@ -1,4 +1,5 @@
 extends HBoxContainer
+class_name Inventory
 
 const INVENTORY_SLOT = preload("uid://bm847rff3ls1r")
 
@@ -8,10 +9,6 @@ func _ready() -> void:
 	for i in range(slots_number):
 		var slot = INVENTORY_SLOT.instantiate()
 		add_child(slot)
-	add_item("bucket_empty")
-	add_item("crank_broken")
-	add_item("pointed_stick")
-	add_item("screw")
 
 func clear_inventory():
 	for child in get_children():
@@ -27,6 +24,8 @@ func add_item(item_id : String):
 	var slot_id = get_next_free_slot_id()
 	if slot_id > -1:
 		get_child(slot_id).fill_slot(item_id)
+		return true
+	return false
 
 func remove_item(slot_id : int):
 	get_child(slot_id).empty_slot()
