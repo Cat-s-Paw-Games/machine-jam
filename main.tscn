@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://llx5j6e52otr" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Room2/generator_room.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bym2nd6ohk6nv" path="res://components/Popup.tscn" id="2_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bl8nykn5a67ov" path="res://Inventory/inventory.tscn" id="2_kek77"]
 [ext_resource type="Texture2D" uid="uid://bqkv3bn51sr6k" path="res://Experiments/parallax_back.jpg" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/Room1/LightSwitch.tscn" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/TestRoom.tscn" id="4_7mycd"]
@@ -15,6 +16,8 @@ script = ExtResource("1_h2yge")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=656720084]
 layer = 1000
+
+[node name="Inventory" parent="UI" unique_id=353491205 instance=ExtResource("2_kek77")]
 
 [node name="Popup" parent="UI" unique_id=1932771744 instance=ExtResource("2_5vw27")]
 

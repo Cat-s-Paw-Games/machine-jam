@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bl8nykn5a67ov"]
+
+[ext_resource type="Script" uid="uid://dbwu3c86vwjtm" path="res://Inventory/inventory.gd" id="1_uov6c"]
+
+[node name="Inventory" type="HBoxContainer" unique_id=353491205]
+custom_minimum_size = Vector2(0, 40)
+offset_right = 612.0
+offset_bottom = 40.0
+script = ExtResource("1_uov6c")
