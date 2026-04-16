@@ -93,7 +93,7 @@ autowrap_mode = 0
 
 [node name="DoorRight" type="Sprite2D" parent="CanvasLayer" unique_id=186839944]
 unique_name_in_owner = true
-position = Vector2(1436, 538)
+position = Vector2(1439, 538)
 texture = ExtResource("5_iysgs")
 
 [node name="DoorLeft" type="Sprite2D" parent="CanvasLayer" unique_id=696180818]
