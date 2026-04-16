@@ -9,11 +9,11 @@
 [ext_resource type="Resource" uid="uid://c3nym2fy1x1ln" path="res://globals/amenities/pipe_missing_handle.tres" id="5_vmy0s"]
 [ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="6_vw538"]
 [ext_resource type="PackedScene" uid="uid://dgmobo54np2b6" path="res://Items/wood_logs.tscn" id="7_1wsio"]
-[ext_resource type="PackedScene" uid="uid://2qe81bysixqg" path="res://Items/straw.tscn" id="7_ebfen"]
 [ext_resource type="Texture2D" uid="uid://c1rpqnfkodep3" path="res://assets/images/dripping_tube.png" id="7_kngxg"]
 [ext_resource type="PackedScene" uid="uid://cs6dgawmlxa6s" path="res://Items/pointed_stick.tscn" id="8_ebfen"]
 [ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="8_gkdhg"]
-[ext_resource type="Resource" uid="uid://buucimbjpkiud" path="res://globals/items/pointed_stick.tres" id="9_ni46i"]
+[ext_resource type="PackedScene" uid="uid://ct8ivf5wai3op" path="res://Items/scissors.tscn" id="13_gkdhg"]
+[ext_resource type="PackedScene" uid="uid://c3whelvwlsrti" path="res://Items/paper.tscn" id="14_4460h"]
 
 [node name="GeneratorRoom" type="Node2D" unique_id=1999341089]
 
@@ -54,9 +54,11 @@ texture = ExtResource("7_kngxg")
 [node name="WoodLogs" parent="." unique_id=1557513422 instance=ExtResource("7_1wsio")]
 position = Vector2(657, 778)
 
-[node name="Straw" parent="." unique_id=1812919842 instance=ExtResource("7_ebfen")]
-position = Vector2(395.00006, 909.00006)
-
 [node name="PointedStick" parent="." unique_id=129622970 instance=ExtResource("8_ebfen")]
 position = Vector2(1162.9999, 754.9999)
-item = ExtResource("9_ni46i")
+
+[node name="Scissors" parent="." unique_id=706022346 instance=ExtResource("13_gkdhg")]
+position = Vector2(986, 680)
+
+[node name="Paper" parent="." unique_id=2146600251 instance=ExtResource("14_4460h")]
+position = Vector2(189, 912)

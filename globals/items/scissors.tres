@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cr8qsqsshs82n"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_73vdh"]
+[ext_resource type="Texture2D" uid="uid://gn2y2nui8euk" path="res://assets/images/scissors.png" id="2_6kjqn"]
+
+[resource]
+script = ExtResource("1_73vdh")
+id = "scissors"
+name = "Scissors"
+description = "A pair of scissors"
+texture = ExtResource("2_6kjqn")
+is_pickable = true
+material = ""
+transforms_into = ""
+station = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

@@ -27,7 +27,16 @@ func _ready():
 		hitbox.mouse_exited.connect(func(): App.mouse.hover_out())
 	set_item()
 
-func use():
+func use(item_id : String) -> bool:
+	print(item_id)
+	if item_id == item.material:
+		item = item.transform()
+		set_item()
+		use_after()
+		return true
+	return false
+
+func use_after():
 	pass
 
 func set_item():

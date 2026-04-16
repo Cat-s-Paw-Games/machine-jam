@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://nw0n7ry20r4s"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_0qgtv"]
+[ext_resource type="Texture2D" uid="uid://bxqvhecw872sm" path="res://assets/images/paper.png" id="2_u47w6"]
+
+[resource]
+script = ExtResource("1_0qgtv")
+id = "paper"
+name = "Paper"
+description = "A piece of paper"
+texture = ExtResource("2_u47w6")
+usable_once = true
+is_pickable = true
+compound = true
+material = "scissors"
+transforms_into = "straw"
+station = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

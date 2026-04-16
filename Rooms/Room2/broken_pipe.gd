@@ -26,3 +26,4 @@ func _on_valve_repaired_pressed() -> void:
 	tween.play()
 	await tween.finished
 	$CPUParticles2D.emitting = false
+	App.game_status.water_linked = true

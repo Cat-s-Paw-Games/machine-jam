@@ -80,9 +80,10 @@ func _notification(what):
 			drag_data = {}
 
 func try_drop_into_world(_drag_data):
-	if _drag_data == {}:
+	if _drag_data == {} || _drag_data["item"] == null:
 		return
 	
 	var dropped_on = App.mouse.current_item
-	#if dropped_on.has_method("_on_item_dropped"):
-		#dropped_on._on_item_dropped(_drag_data["item"])
+	if dropped_on && dropped_on.has_method("use"):
+		dropped_on.use(_drag_data["item"].id)
+		_drag_data["source"].empty_slot()

@@ -7,10 +7,7 @@ func drag_item():
 	if !placed:
 		super()
 
-func change_to_logs_hot():
-	item = item.transform()
-	set_item()
-
-func change_to_logs_fire():
-	item = item.transform()
-	set_item()
+func use_after():
+	print(item.id)
+	if item.id == "wood_logs_fire":
+		App.game_status.fire_lit = true

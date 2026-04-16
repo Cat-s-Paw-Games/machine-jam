@@ -6,29 +6,12 @@ extends DropArea
 
 var hover = false
 
-var has_water = false
-var has_fire = false
-
-
-
-func _ready() -> void:
-	super()
-	if is_instance_valid(fireplace):
-		fireplace.fire_lit.connect(func(): has_fire = true)
-
 func _process(delta: float) -> void:
-	if has_water && has_fire:
+	if App.game_status.water_linked && App.game_status.fire_lit:
 		steam_bar.value += delta
-
-func _on_item_dropped(item : DraggableItem):
-	if item is Bucket && item.is_full:
-		has_water = true
-		item.change_to_empty_bucket()
-
 
 func _on_mouse_entered() -> void:
 	hover = true
-
 
 func _on_mouse_exited() -> void:
 	hover = false
@@ -39,12 +22,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func check_state():
 	var text = ""
-	var checks = [has_water, has_fire]
+	var checks = [App.game_status.fire_lit, App.game_status.water_linked]
 	if false in checks:
 		text += "Checks failed:"
-	if !has_water:
+	if !App.game_status.water_linked:
 		text += "\n- Water Missing"
-	if !has_fire:
+	if !App.game_status.fire_lit:
 		text += "\n- Fire Missing"
 	GameManager.popup.text = text
 	GameManager.popup.open()

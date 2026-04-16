@@ -19,3 +19,6 @@ func populate_items():
 	for item_res in ResourceLoader.list_directory(ITEMS_DIR):
 		var item = ResourceLoader.load(ITEMS_DIR + item_res)
 		items[item.id] = item
+
+func set_game_var(var_name, value):
+	set(var_name, value)
