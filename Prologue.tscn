@@ -20,36 +20,21 @@ color = Color(0.13682577, 0.13682574, 0.13682571, 1)
 unique_name_in_owner = true
 anchors_preset = 10
 anchor_right = 1.0
-offset_right = 0.0
-offset_bottom = 408.0
+offset_left = 332.0
+offset_top = 268.0
+offset_right = -322.0
+offset_bottom = 736.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 40
-text = "What[pause=0.5] will we do with a drunken sailor? [pause]
-What will we do with a drunken sailor? [pause]
-What will we do with a drunken sailor? [pause=2.0]
-Early in the morning [pause][pause]
-Way hay and up she rises
-Way hay and up she rises
-Way hay and up she rises
-Early in the morning
-Shave his belly with a rusty razor
-Shave his belly with a rusty razor
-Shave his belly with a rusty razor
-Early in the morning
-Way hay and up she rises
-Way hay and up she rises
-Way hay and up she rises
-Early in the morning
-Put him in a long boat till he's sober
-Put him in a long boat till he's sober
-Put him in a long boat till he's sober
-Early in the morning
-Way hay and up she rises
-Way hay and up she rises
-Way hay and up she rises
-Early in the morning
-"
-horizontal_alignment = 1
+theme_override_font_sizes/italics_font_size = 40
+text = "Scavenger Log [pause=0.5]- Unified timedate: 103021.56 [pause]
+Identified a Class III frigate - model X2-1001. [pause=0.5] Massive overgrowth.[pause] The [i]machine[/i] looks abandoned. [pause]
+
+Closing in to assess the resources available. [pause]
+It looks like the frigate is still powered by emergency subsystems. [pause]
+
+Moving in.[pause=0.3].[pause=0.3].[pause=0.3]"
+visible_characters = -1
 characters_for_second = 13.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1335549150]
