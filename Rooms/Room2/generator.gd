@@ -6,9 +6,12 @@ extends DropArea
 
 var hover = false
 
+func _ready() -> void:
+	App.events.steam_changed.connect(func(steam): steam_bar.value = steam)
+
 func _process(delta: float) -> void:
 	if App.game_status.water_linked && App.game_status.fire_lit:
-		steam_bar.value += delta
+		App.events.steam_increase.emit(delta)
 
 func _on_mouse_entered() -> void:
 	hover = true

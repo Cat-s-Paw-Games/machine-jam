@@ -3,9 +3,20 @@ class_name EventService
 
 signal switch_lights_on()
 signal item_added(id: String)
+signal steam_increase(delta: float)
+signal steam_decrease(delta: float)
+signal steam_changed(value: float)
 
 func setup():
 	switch_lights_on.connect(_on_switch_lights)
+	steam_increase.connect(func(delta): 
+		App.game_status.steam += delta
+		steam_changed.emit(App.game_status.steam)
+	)
+	steam_decrease.connect(func(delta): 
+		App.game_status.steam -= delta
+		steam_changed.emit(App.game_status.steam)
+	)
 
 func _on_switch_lights():
 	App.game_status.lights_on = true

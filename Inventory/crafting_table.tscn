@@ -21,44 +21,60 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=160551335]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=454257658]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=945540588]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=828089578]
+layout_mode = 2
+text = "Steam: "
+
+[node name="SteamLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1502618207]
+unique_name_in_owner = true
+layout_mode = 2
+text = "-"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=160551335]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="CraftingGrid" type="GridContainer" parent="MarginContainer/HBoxContainer" unique_id=1923158286]
+[node name="CraftingGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1923158286]
 unique_name_in_owner = true
 layout_mode = 2
 columns = 2
 
-[node name="InventorySlot" type="TextureRect" parent="MarginContainer/HBoxContainer/CraftingGrid" unique_id=1245701690]
+[node name="InventorySlot" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid" unique_id=1245701690]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 expand_mode = 1
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="InventorySlot2" type="TextureRect" parent="MarginContainer/HBoxContainer/CraftingGrid" unique_id=1646772815]
+[node name="InventorySlot2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid" unique_id=1646772815]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 expand_mode = 1
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="InventorySlot3" type="TextureRect" parent="MarginContainer/HBoxContainer/CraftingGrid" unique_id=1458820508]
+[node name="InventorySlot3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid" unique_id=1458820508]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 expand_mode = 1
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="InventorySlot4" type="TextureRect" parent="MarginContainer/HBoxContainer/CraftingGrid" unique_id=1452872181]
+[node name="InventorySlot4" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid" unique_id=1452872181]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 expand_mode = 1
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=2053982084]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2053982084]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -66,7 +82,7 @@ size_flags_vertical = 4
 texture = ExtResource("2_uho73")
 expand_mode = 1
 
-[node name="OutputSlot" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1758846289]
+[node name="OutputSlot" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1758846289]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
@@ -76,12 +92,12 @@ expand_mode = 1
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[connection signal="added_item_to_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot" to="." method="_on_inventory_slot_1_added_item_to_slot"]
-[connection signal="removed_item_from_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot" to="." method="_on_inventory_slot_1_removed_item_from_slot"]
-[connection signal="added_item_to_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot2" to="." method="_on_inventory_slot_2_added_item_to_slot"]
-[connection signal="removed_item_from_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot2" to="." method="_on_inventory_slot_2_removed_item_from_slot"]
-[connection signal="added_item_to_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot3" to="." method="_on_inventory_slot_3_added_item_to_slot"]
-[connection signal="removed_item_from_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot3" to="." method="_on_inventory_slot_3_removed_item_from_slot"]
-[connection signal="added_item_to_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot4" to="." method="_on_inventory_slot_4_added_item_to_slot"]
-[connection signal="removed_item_from_slot" from="MarginContainer/HBoxContainer/CraftingGrid/InventorySlot4" to="." method="_on_inventory_slot_4_removed_item_from_slot"]
-[connection signal="gui_input" from="MarginContainer/HBoxContainer/OutputSlot" to="." method="_on_output_slot_gui_input"]
+[connection signal="added_item_to_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot" to="." method="_on_inventory_slot_1_added_item_to_slot"]
+[connection signal="removed_item_from_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot" to="." method="_on_inventory_slot_1_removed_item_from_slot"]
+[connection signal="added_item_to_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot2" to="." method="_on_inventory_slot_2_added_item_to_slot"]
+[connection signal="removed_item_from_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot2" to="." method="_on_inventory_slot_2_removed_item_from_slot"]
+[connection signal="added_item_to_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot3" to="." method="_on_inventory_slot_3_added_item_to_slot"]
+[connection signal="removed_item_from_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot3" to="." method="_on_inventory_slot_3_removed_item_from_slot"]
+[connection signal="added_item_to_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot4" to="." method="_on_inventory_slot_4_added_item_to_slot"]
+[connection signal="removed_item_from_slot" from="MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/InventorySlot4" to="." method="_on_inventory_slot_4_removed_item_from_slot"]
+[connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/OutputSlot" to="." method="_on_output_slot_gui_input"]

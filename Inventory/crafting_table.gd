@@ -6,6 +6,10 @@ extends PanelContainer
 var RECIPES = {
 	"bucket_water": {
 		"ingredients": ["bucket_empty"]
+	},
+	"bucket_empty": {
+		"ingredients": ["bucket_water"],
+		"steam": 10
 	}
 }
 
@@ -16,7 +20,12 @@ var current_items = {
 	3: null
 }
 
+#func _process(delta: float) -> void:
+#	App.events.steam_increase.emit(delta)
+
 func _ready():
+	App.events.steam_changed.connect(func(steam): %SteamLabel.text = str(steam).pad_decimals(2))
+
 	await get_tree().process_frame
 	App.ui.inventory.add_item("bucket_empty")
 	App.ui.inventory.add_item("bucket_empty")
