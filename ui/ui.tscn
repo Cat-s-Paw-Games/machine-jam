@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://d04oov7bi0duj"]
+
+[ext_resource type="Script" uid="uid://c2v5ct12npmip" path="res://ui.gd" id="1_vkava"]
+[ext_resource type="Texture2D" uid="uid://btuuhvljqn1dx" path="res://assets/images/ui/inventory.png" id="2_tf0e0"]
+[ext_resource type="PackedScene" uid="uid://bl8nykn5a67ov" path="res://Inventory/inventory.tscn" id="3_obcwv"]
+[ext_resource type="PackedScene" uid="uid://bym2nd6ohk6nv" path="res://components/Popup.tscn" id="4_bo1jx"]
+
+[node name="UI" type="CanvasLayer" unique_id=2086083387]
+layer = 1000
+script = ExtResource("1_vkava")
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1660653105]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="InventoryButton" type="TouchScreenButton" parent="BoxContainer" unique_id=352961047]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-89, -90)
+scale = Vector2(0.2519531, 0.2519531)
+texture_normal = ExtResource("2_tf0e0")
+
+[node name="Inventory" parent="." unique_id=353491205 instance=ExtResource("3_obcwv")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 420.0
+offset_right = 0.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Popup" parent="." unique_id=1932771744 instance=ExtResource("4_bo1jx")]
+
+[node name="Button" type="Button" parent="." unique_id=2022605726]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Menu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=358427147]
+visible = false
+offset_right = 188.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1099325884]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=410444071]
+layout_mode = 2
+text = "Oxygen"
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=1472566028]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="BoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
