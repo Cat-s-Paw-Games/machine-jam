@@ -1,6 +1,5 @@
 extends TextureRect
-
-signal item_data_dropped(at_position : Vector2)
+class_name InventorySlot
 
 @export var item : Item = null
 
