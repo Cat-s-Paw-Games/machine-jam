@@ -2,10 +2,12 @@ extends TextureRect
 class_name InventorySlot
 
 signal added_item_to_slot(item_id:String)
+signal removed_item_from_slot()
 @export var item : Item = null
 
 
 func empty_slot():
+	removed_item_from_slot.emit()
 	item = null
 	texture = null
 
