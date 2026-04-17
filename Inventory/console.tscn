@@ -1,0 +1,323 @@
+[gd_scene format=3 uid="uid://cw76x5y26rgqe"]
+
+[ext_resource type="Texture2D" uid="uid://jsixj1c144ly" path="res://assets/images/ui/not_enough_steam.png" id="1_0p6g3"]
+[ext_resource type="Script" uid="uid://boh6i0wp7we52" path="res://Inventory/console.gd" id="1_m7hj2"]
+[ext_resource type="Script" uid="uid://c6edkyw1p5vw8" path="res://Inventory/inventory_slot.gd" id="1_q6d8s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dve5e"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p6g3"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Console" type="PanelContainer" unique_id=264029128]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -400.0
+offset_right = 800.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m7hj2")
+
+[node name="Panel" type="Panel" parent="." unique_id=1997554102]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="Panel" unique_id=760736821]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_bottom = 60.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("1_0p6g3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=397546112]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1203555400]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=378025004]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5626351, 0.8339252, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_dve5e")
+text = "Text 404 incomplete feature"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=981698576]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=1412667832]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="Keys" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=526780160]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=1064710442]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel" unique_id=295698464]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel2" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=1519449218]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel2" unique_id=690067275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel3" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=1845413967]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel3" unique_id=833765186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel4" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=2146750591]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel4" unique_id=2146315340]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel5" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=261129734]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel5" unique_id=911941613]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel6" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=1080663758]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel6" unique_id=116223297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel7" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=611638129]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel7" unique_id=45198389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel8" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=188218010]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel8" unique_id=1023845917]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel9" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=370704601]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel9" unique_id=1504201009]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Buttons" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1898641309]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1639774405]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Button"
+
+[node name="Button2" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1552894783]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Button"
+
+[node name="Button3" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1686856198]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Button"
+
+[node name="Button4" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1585162838]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Button"
+
+[node name="Button5" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1826706937]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Button"
+
+[node name="Button6" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=950125746]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Button"
+
+[node name="Button7" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=450544310]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Button"
+
+[node name="Button8" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1177200267]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Button"
+
+[node name="ConfirmBtn" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1795802557]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
+text = "Confirm"
+
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons/ConfirmBtn" to="." method="_on_confirm_btn_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ct0l8dvsoo67t"]
+
+[ext_resource type="Script" uid="uid://cisn1yggibylp" path="res://Rooms/ConsoleRoom/console.gd" id="1_h1as2"]
+[ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="2_dbsf4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phwel"]
+size = Vector2(314, 422)
+
+[node name="Console" type="Area2D" unique_id=726745843]
+script = ExtResource("1_h1as2")
+metadata/_custom_type_script = "uid://rlemyrl4ndtl"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1732983018]
+rotation = 1.5707964
+texture = ExtResource("2_dbsf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=330888309]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_phwel")

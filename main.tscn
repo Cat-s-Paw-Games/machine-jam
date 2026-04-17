@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/BotRoom.tscn" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://dxgqumcfi5gys" path="res://Rooms/Room4/Room4.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://bvvxweo4ma2s7" path="res://Rooms/ConsoleRoom/console_room.tscn" id="7_5vw27"]
 
 [node name="Main" type="Node" unique_id=738830431]
 process_mode = 3
@@ -48,8 +49,8 @@ position = Vector2(3840, 0)
 [node name="WorkingRoom" parent="GameView/Rooms" unique_id=264598961 instance=ExtResource("6_272bh")]
 position = Vector2(5760, 0)
 
-[node name="Floor" type="Node2D" parent="GameView/Rooms" unique_id=1562519219]
-unique_name_in_owner = true
+[node name="ConsoleRoom" parent="GameView/Rooms" unique_id=536472085 instance=ExtResource("7_5vw27")]
+position = Vector2(3208, 6)
 
 [node name="Foreground" type="Parallax2D" parent="GameView" unique_id=1502475589]
 unique_name_in_owner = true

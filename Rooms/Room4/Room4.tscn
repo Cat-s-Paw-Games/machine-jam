@@ -15,7 +15,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_afiut")
 
-[node name="Generator" parent="." unique_id=295888722 instance=ExtResource("2_afiut")]
+[node name="Crafting" parent="." unique_id=295888722 instance=ExtResource("2_afiut")]
 position = Vector2(835, 629)
 
 [node name="SyncModule" parent="." unique_id=1312642858 instance=ExtResource("4_3uahj")]

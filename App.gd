@@ -1,5 +1,7 @@
 extends Node
 
+signal game_end
+
 var mouse:MouseService
 var audio:AudioService
 var events: EventService
@@ -42,8 +44,17 @@ func _ready()->void:
 	items = item_service.items
 
 func start_game():
-#	ui.ui_instance.menu_btn.show()
+	navigation_enabled = true
+	ui.ui_instance.menu_btn.show()
 	App.audio.create_loop_player("walk")
+
+func end_game():
+	ui.close_every_ui()
+	get_tree().paused = true
+	navigation_enabled = false
+	game_status.game_end = true
+	var end = preload("res://Experiments/GameEnd.tscn").instantiate()
+	App.ui.add_ui_child(end)
 
 func show_popup(text: String, close_on_click = false):
 	var popup: PopupContainer = get_node("/root/UI").find_child("Popup")

@@ -9,7 +9,6 @@ pitch_scale = 0.9
 oversampling = 16
 
 [resource]
-bus/0/volume_db = 3.2424984
 bus/0/effect/0/effect = SubResource("AudioEffectChorus_j3pel")
 bus/0/effect/0/enabled = false
 bus/1/name = &"main"

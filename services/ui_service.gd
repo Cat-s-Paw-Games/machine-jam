@@ -41,7 +41,7 @@ func close_crafting():
 		crafting_canvas = null
 		
 func toggle_inventory():
-	if inventory_open: 
+	if inventory_open:
 		inventory_open = false
 		#App.navigation_enabled = true
 		UIAnimation.animate_slide_to_top(get_tree().root.get_node("UI/Inventory"))
@@ -49,3 +49,33 @@ func toggle_inventory():
 		inventory_open = true
 		#App.navigation_enabled = false
 		UIAnimation.animate_slide_from_top(get_tree().root.get_node("UI/Inventory"))
+
+var console_canvas:CanvasLayer = null
+func open_console():
+	App.navigation_enabled = false
+	console_canvas = CanvasLayer.new()
+	var console_popup = PanelContainer.new()
+	var console = preload("res://Inventory/console.tscn").instantiate()
+	console_popup.set_anchors_preset(Control.PRESET_FULL_RECT)
+	console_popup.anchor_top = 0.05
+	console_popup.anchor_bottom = 0.95
+	console_popup.anchor_left = 0.05
+	console_popup.anchor_right = 0.95
+	console_popup.scale = Vector2(0,0)
+	console_popup.add_child(console)
+	console_canvas.add_child(console_popup)
+	get_tree().root.add_child(console_canvas)
+	UIAnimation.animate_pop(console_popup)
+
+func close_console():
+	if console_canvas:
+		App.navigation_enabled = true
+		UIAnimation.animate_shrink(console_canvas.get_child(0))
+		console_canvas.queue_free()
+		console_canvas = null
+
+func close_every_ui():
+	if inventory_open:
+		toggle_inventory()
+	close_crafting()
+	close_console()

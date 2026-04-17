@@ -7,6 +7,8 @@ var water_linked = false
 var generator_active = false
 var steam := 0.0
 
+var game_end = false
+
 
 func setup():
 	pass
@@ -17,3 +19,5 @@ func reset():
 	water_linked = false
 	generator_active = false
 	steam = 0.0
+	
+	game_end = false
