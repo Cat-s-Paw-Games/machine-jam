@@ -14,7 +14,6 @@ func empty_slot():
 func fill_slot(item_id : String):
 	item = App.items[item_id]
 	added_item_to_slot.emit(item_id)
-	print("emitting", item_id)
 	update_visual()
 
 func update_visual():

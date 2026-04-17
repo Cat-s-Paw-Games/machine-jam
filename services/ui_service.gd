@@ -16,9 +16,10 @@ func setup()->void:
 func add_ui_child(node: Node):
 	get_tree().root.get_node("UI").add_child(node)
 
-var crafting_popup:PanelContainer = null
+var crafting_canvas:CanvasLayer = null
 func open_crafting():
-	crafting_popup = PanelContainer.new()
+	crafting_canvas = CanvasLayer.new()
+	var crafting_popup = PanelContainer.new()
 	var crafting = preload("res://Inventory/crafting_table.tscn").instantiate()
 	crafting_popup.set_anchors_preset(Control.PRESET_FULL_RECT)
 	crafting_popup.anchor_top = 0.05
@@ -27,14 +28,15 @@ func open_crafting():
 	crafting_popup.anchor_right = 0.95
 	crafting_popup.scale = Vector2(0,0)
 	crafting_popup.add_child(crafting)
-	App.ui.add_ui_child(crafting_popup)
+	crafting_canvas.add_child(crafting_popup)
+	get_tree().root.add_child(crafting_canvas)
 	UIAnimation.animate_pop(crafting_popup)
 
 func close_crafting():
-	if crafting_popup:
-		UIAnimation.animate_shrink(crafting_popup)
-		crafting_popup.queue_free()
-		crafting_popup = null
+	if crafting_canvas:
+		UIAnimation.animate_shrink(crafting_canvas.get_child(0))
+		crafting_canvas.queue_free()
+		crafting_canvas = null
 		
 func toggle_inventory():	
 	if inventory_open: 
