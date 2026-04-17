@@ -14,8 +14,9 @@ var RECIPES = {
 		"steam": 10
 	},
 	"bound_relic": {
-		"ingredients": ["sync_module","oscillation_regulator","aether_chamber","spring"]
-	}
+		"ingredients": ["sync_module","oscillation_regulator","aether_chamber","spring"],
+		"steam": 80
+	},
 }
 
 var current_items = {
@@ -38,6 +39,7 @@ func remove_steam_warning():
 
 func _ready():
 	App.events.steam_changed.connect(_on_steam_changed)
+	_on_steam_changed(App.game_status.steam)
 
 func clear_grid():
 	for child in crafting_grid.get_children():
@@ -49,7 +51,7 @@ func craft_item():
 			return
 		App.ui.inventory.add_item(current_recipe["output"])
 		if current_recipe.has("steam"):
-			App.game_status.steam -= current_recipe["steam"]
+			App.events.steam_decrease.emit(current_recipe["steam"])
 		clear_grid()
 		output_slot.empty_slot()
 
