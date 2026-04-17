@@ -6,6 +6,7 @@
 [node name="Inventory" type="Control" unique_id=2017395506]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 3
+anchors_preset = 0
 
 [node name="Panel" type="NinePatchRect" parent="." unique_id=1534534011]
 layout_mode = 1
