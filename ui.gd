@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-var inventory_open = false
 
 @onready var menu_btn: Button = $MenuBtn
 
@@ -11,14 +10,7 @@ func _ready() -> void:
 	)
 
 func _on_inventory_button_pressed() -> void:
-	if inventory_open: 
-		inventory_open = false
-		App.navigation_enabled = true
-		UIAnimation.animate_slide_to_top($Inventory)
-	else:
-		inventory_open = true
-		App.navigation_enabled = false
-		UIAnimation.animate_slide_from_top($Inventory)
+	App.ui.toggle_inventory()
 
 
 func _on_menu_btn_pressed() -> void:

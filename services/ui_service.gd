@@ -1,9 +1,10 @@
 extends Node
 class_name UIService
 
+var inventory_open = false
 var inventory : Inventory:
 	get():
-		return  get_tree().root.get_node("UI/Inventory")
+		return  get_tree().root.get_node("UI/Inventory/MarginContainer/ItemSlotContainer")
 
 var ui_instance
 
@@ -34,3 +35,13 @@ func close_crafting():
 		UIAnimation.animate_shrink(crafting_popup)
 		crafting_popup.queue_free()
 		crafting_popup = null
+		
+func toggle_inventory():	
+	if inventory_open: 
+		inventory_open = false
+		App.navigation_enabled = true
+		UIAnimation.animate_slide_to_top(get_tree().root.get_node("UI/Inventory"))
+	else:
+		inventory_open = true
+		App.navigation_enabled = false
+		UIAnimation.animate_slide_from_top(get_tree().root.get_node("UI/Inventory"))
