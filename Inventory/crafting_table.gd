@@ -34,17 +34,19 @@ func remove_steam_warning():
 	%OutputSlotX.visible = false
 
 func _ready():
-	App.events.steam_changed.connect(func(steam): %SteamLabel.text = str(steam).pad_decimals(2))
+	App.events.steam_changed.connect(_on_steam_changed)
 
 func clear_grid():
 	for child in crafting_grid.get_children():
-		child.empty_slot()
+		child.get_child(0).empty_slot()
 
 func craft_item():
 	if current_recipe:
 		if current_recipe.has("steam") and current_recipe["steam"] > App.game_status.steam:
 			return
 		App.ui.inventory.add_item(current_recipe["output"])
+		if current_recipe.has("steam"):
+			App.game_status.steam -= current_recipe["steam"]
 		clear_grid()
 		output_slot.empty_slot()
 
@@ -117,5 +119,8 @@ func _on_inventory_slot_4_removed_item_from_slot() -> void:
 
 
 func _on_close_pressed() -> void:
-	
 	App.ui.close_crafting()
+
+func _on_steam_changed(steam):
+	%SteamLabel.text = str(steam).pad_decimals(2)
+	check_recipe()
