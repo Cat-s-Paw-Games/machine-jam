@@ -42,7 +42,7 @@ func _ready()->void:
 	items = item_service.items
 
 func start_game():
-	ui.ui_instance.menu_btn.show()
+#	ui.ui_instance.menu_btn.show()
 	App.audio.create_loop_player("walk")
 
 func show_popup(text: String, close_on_click = false):

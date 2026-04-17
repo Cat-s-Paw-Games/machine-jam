@@ -4,7 +4,7 @@ extends Node
 func _ready() -> void:
 	await get_tree().process_frame
 	open_door()
-	App.audio.play_loop("main","assets/music/main_loop.mp3",{"pitch":0.9})
+	App.audio.play_loop("main","assets/music/beauty_flow.mp3")
 
 func open_door():
 	await get_tree().create_timer(0.5).timeout
