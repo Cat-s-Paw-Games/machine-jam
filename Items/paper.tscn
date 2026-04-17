@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://nw0n7ry20r4s" path="res://globals/items/paper.tres" id="3_4gwaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7rmg"]
-size = Vector2(200.66228, 339.15784)
+size = Vector2(345.5904, 417.18805)
 
 [node name="Paper" type="TouchScreenButton" unique_id=1801381149]
 scale = Vector2(0.1796875, 0.1796875)
@@ -17,6 +17,7 @@ metadata/_custom_type_script = "uid://cafqq0iart4ih"
 [node name="Area2D" type="Area2D" parent="." unique_id=314972037]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1368784478]
-position = Vector2(256.00003, 256.00003)
-rotation = 0.6617701
+position = Vector2(264.42252, 262.70883)
+rotation = -1.6038237
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_d7rmg")

@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://bb1wucum8duu1"]
 
 [ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_uh7g2"]
-[ext_resource type="Texture2D" uid="uid://ctq2vtk3pxiwf" path="res://assets/images/crank_repaired.png" id="2_kcnwb"]
+[ext_resource type="Texture2D" uid="uid://bkj8a38pj6l46" path="res://assets/images/crank.png" id="2_uh7g2"]
 
 [resource]
 script = ExtResource("1_uh7g2")
 id = "valve_handle"
 name = "Handle"
 description = "An handle for a valve"
-texture = ExtResource("2_kcnwb")
+texture = ExtResource("2_uh7g2")
 material = ""
 transforms_into = ""
 station = ""
