@@ -26,9 +26,6 @@ var current_items = {
 	3: null
 }
 
-#func _process(delta: float) -> void:
-#	App.events.steam_increase.emit(delta)
-
 func add_steam_warning():
 	%SteamLabel.add_theme_color_override("font_color",Color.RED)
 	%OutputSlotX.visible = true

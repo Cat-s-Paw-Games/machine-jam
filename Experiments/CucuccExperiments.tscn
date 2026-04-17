@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bqkv3bn51sr6k" path="res://Experiments/parallax_back.jpg" id="2_7373w"]
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Room2/generator_room.tscn" id="3_kee1f"]
 [ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/Room1/LightSwitch.tscn" id="3_loltx"]
-[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/TestRoom.tscn" id="4_uqhg1"]
+[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/BotRoom.tscn" id="4_uqhg1"]
 [ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_j4fd6"]
 [ext_resource type="Shader" uid="uid://dphx6y304q3kv" path="res://assets/shaders/pulsing_light.gdshader" id="6_j4fd6"]
 [ext_resource type="Script" uid="uid://coiroyqvw1at1" path="res://Experiments/blackout.gd" id="6_yg00g"]

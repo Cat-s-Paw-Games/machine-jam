@@ -19,6 +19,7 @@ var target_floor_y = 0.0  # Posizione Y target nel pavimento
 @export var item : Item = Item.new()
 
 func _ready():
+	z_index = 25
 	pressed.connect(_on_pressed)
 	released.connect(_on_released)
 	hitbox = find_child("Area2D") 
@@ -84,14 +85,16 @@ func drag_item():
 		global_position = get_global_mouse_position() + drag_offset
 
 func _on_pressed():
-	App.navigation_enabled = false
+	#App.navigation_enabled = false
+	z_index += 10
 	dragging = true
 	drag_offset = global_position - get_global_mouse_position()
 	falling = false
 	fall_velocity = 0.0
 
 func _on_released():
-	App.navigation_enabled = true
+	#App.navigation_enabled = true
+	z_index -= 10
 	dragging = false
 	drag_offset = Vector2()
 	dropped.emit(self)

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_xcmg2"]
 [ext_resource type="PackedScene" uid="uid://sqwm8nnj4ixx" path="res://Items/oscillation_regulator.tscn" id="2_iu26f"]
 
-[node name="TestRoom" type="Node2D" unique_id=1691897204]
+[node name="BotRoom" type="Node2D" unique_id=1691897204]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=265616664]
 visible = false

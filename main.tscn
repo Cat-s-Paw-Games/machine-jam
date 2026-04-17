@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Room2/generator_room.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://bqkv3bn51sr6k" path="res://Experiments/parallax_back.jpg" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/Room1/LightSwitch.tscn" id="3_272bh"]
-[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/TestRoom.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/BotRoom.tscn" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://dxgqumcfi5gys" path="res://Rooms/Room4/Room4.tscn" id="6_272bh"]
 
@@ -20,6 +20,7 @@ anchor_mode = 0
 
 [node name="Background" type="Parallax2D" parent="GameView" unique_id=2122227839]
 unique_name_in_owner = true
+z_index = 1
 repeat_size = Vector2(7680, 0)
 repeat_times = 2
 follow_viewport = false
@@ -33,6 +34,7 @@ centered = false
 [node name="Rooms" type="Node2D" parent="GameView" unique_id=158874507]
 unique_name_in_owner = true
 process_mode = 1
+z_index = 10
 
 [node name="LightSwitchRoom" parent="GameView/Rooms" unique_id=1691897204 instance=ExtResource("3_272bh")]
 process_mode = 3
@@ -46,8 +48,12 @@ position = Vector2(3840, 0)
 [node name="WorkingRoom" parent="GameView/Rooms" unique_id=264598961 instance=ExtResource("6_272bh")]
 position = Vector2(5760, 0)
 
+[node name="Floor" type="Node2D" parent="GameView/Rooms" unique_id=1562519219]
+unique_name_in_owner = true
+
 [node name="Foreground" type="Parallax2D" parent="GameView" unique_id=1502475589]
 unique_name_in_owner = true
+z_index = 50
 scroll_offset = Vector2(-1, 0)
 repeat_size = Vector2(8000, 0)
 repeat_times = 2

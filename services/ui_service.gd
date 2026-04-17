@@ -18,6 +18,7 @@ func add_ui_child(node: Node):
 
 var crafting_canvas:CanvasLayer = null
 func open_crafting():
+	App.navigation_enabled = false
 	crafting_canvas = CanvasLayer.new()
 	var crafting_popup = PanelContainer.new()
 	var crafting = preload("res://Inventory/crafting_table.tscn").instantiate()
@@ -34,16 +35,17 @@ func open_crafting():
 
 func close_crafting():
 	if crafting_canvas:
+		App.navigation_enabled = true
 		UIAnimation.animate_shrink(crafting_canvas.get_child(0))
 		crafting_canvas.queue_free()
 		crafting_canvas = null
 		
-func toggle_inventory():	
+func toggle_inventory():
 	if inventory_open: 
 		inventory_open = false
-		App.navigation_enabled = true
+		#App.navigation_enabled = true
 		UIAnimation.animate_slide_to_top(get_tree().root.get_node("UI/Inventory"))
 	else:
 		inventory_open = true
-		App.navigation_enabled = false
+		#App.navigation_enabled = false
 		UIAnimation.animate_slide_from_top(get_tree().root.get_node("UI/Inventory"))

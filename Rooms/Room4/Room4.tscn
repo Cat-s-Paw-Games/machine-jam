@@ -18,8 +18,8 @@ texture = ExtResource("1_afiut")
 [node name="Generator" parent="." unique_id=295888722 instance=ExtResource("2_afiut")]
 position = Vector2(835, 629)
 
-[node name="AetherChamber" parent="." unique_id=2025760680 instance=ExtResource("3_ido6i")]
-position = Vector2(296, 781)
-
 [node name="SyncModule" parent="." unique_id=1312642858 instance=ExtResource("4_3uahj")]
 position = Vector2(477, 811)
+
+[node name="AetherChamber" parent="." unique_id=2025760680 instance=ExtResource("3_ido6i")]
+position = Vector2(296, 781)
