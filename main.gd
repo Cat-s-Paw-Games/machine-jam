@@ -14,6 +14,7 @@ var is_touching : bool = false
 
 
 func _ready() -> void:
+	App.start_game()
 	var Blackout: PackedScene = preload("res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn")
 	var blackout_instance = Blackout.instantiate()
 	%GameView.add_child(blackout_instance)

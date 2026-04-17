@@ -10,3 +10,10 @@ var steam := 0.0
 
 func setup():
 	pass
+
+func reset():
+	lights_on = false
+	fire_lit = false
+	water_linked = false
+	generator_active = false
+	steam = 0.0

@@ -5,9 +5,11 @@ var inventory : Inventory:
 	get():
 		return  get_tree().root.get_node("UI/Inventory")
 
+var ui_instance
+
 func setup()->void:
 	var ui = preload("res://ui/ui.tscn")
-	var ui_instance = ui.instantiate()
+	ui_instance = ui.instantiate()
 	get_tree().root.add_child.call_deferred(ui_instance)
 	
 func add_ui_child(node: Node):
