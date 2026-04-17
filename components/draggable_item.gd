@@ -23,9 +23,20 @@ func _ready():
 	released.connect(_on_released)
 	hitbox = find_child("Area2D") 
 	if hitbox:
-		hitbox.mouse_entered.connect(func(): App.mouse.hover_on(self))
-		hitbox.mouse_exited.connect(func(): App.mouse.hover_out())
+		hitbox.set_collision_layer_value(1, true)
+		hitbox.set_collision_layer_value(2, false)
+		hitbox.mouse_entered.connect(_on_mouse_entered)
+		hitbox.mouse_exited.connect(_on_mouse_exited)
 	set_item()
+
+func _on_mouse_entered():
+	App.mouse.hover_on(self, 
+		MouseService.HOVER_TYPE.INVENTORY_DROP if App.mouse.hover_type == MouseService.HOVER_TYPE.INVENTORY_DROP
+		else MouseService.HOVER_TYPE.NORMAL
+	)
+
+func _on_mouse_exited():
+	App.mouse.hover_out()
 
 func use(item_id : String) -> bool:
 	if item_id == item.material:

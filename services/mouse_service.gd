@@ -3,7 +3,8 @@ class_name MouseService
 
 enum HOVER_TYPE {
 	NORMAL,
-	DROPPABLE
+	DROPPABLE,
+	INVENTORY_DROP
 }
 
 var current_item: Node = null
@@ -68,7 +69,8 @@ func _notification(what: int) -> void:
 		cursor_instance.visible = true
 	elif what == NOTIFICATION_WM_MOUSE_EXIT:
 		cursor_instance.visible = false
-		
+
+
 func set_preview(item: Node):
 	var d = item.duplicate()
 	d.modulate.a = 0.7

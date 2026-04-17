@@ -25,6 +25,7 @@ func update_visual():
 var drag_data = {}
 func _get_drag_data(_at_position):
 	App.mouse.set_preview(self)
+	App.mouse.hover_type = MouseService.HOVER_TYPE.INVENTORY_DROP
 	
 	drag_data = {
 		"item": item,
@@ -45,6 +46,7 @@ func _drop_data(_at_position, data):
 	swap_items(source_slot)
 
 func swap_items(source_slot):
+	App.mouse.hover_type = MouseService.HOVER_TYPE.NORMAL
 	var source_item = source_slot.item
 	var temp = item
 	
@@ -77,7 +79,7 @@ func _notification(what):
 	if what == NOTIFICATION_DRAG_END:
 		App.mouse.unset_preview()
 		if not is_drag_successful():
-			try_drop_into_world(drag_data)
+			await try_drop_into_world(drag_data)
 			drag_data = {}
 
 func try_drop_into_world(_drag_data):
@@ -90,3 +92,4 @@ func try_drop_into_world(_drag_data):
 			return
 		dropped_on.use(_drag_data["item"].id)
 		_drag_data["source"].empty_slot()
+	App.mouse.hover_type = MouseService.HOVER_TYPE.NORMAL

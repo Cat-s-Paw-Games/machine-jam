@@ -4,13 +4,15 @@ class_name DropArea
 @export_custom(PROPERTY_HINT_RESOURCE_TYPE, "Amenity") var amenity = Amenity.new()
 
 func _ready() -> void:
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(2, true)
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
 func _on_area_entered(area: Area2D):
-	print(area)
+	print(area.get_parent())
 	var parent = area.get_parent()
 	if parent is DraggableItem:
 		parent.dropped.connect(_on_item_dropped)
@@ -29,7 +31,11 @@ func _on_item_exited(_item: DraggableItem):
 
 
 func _on_mouse_entered() -> void:
-	App.mouse.hover_on(self, MouseService.HOVER_TYPE.DROPPABLE)
+	if App.mouse.hover_type != MouseService.HOVER_TYPE.INVENTORY_DROP:
+		App.mouse.hover_on(self, MouseService.HOVER_TYPE.DROPPABLE)
 
 func _on_mouse_exited() -> void:
-	App.mouse.hover_out()
+	print("App.mouse.hover_type")
+	print(App.mouse.hover_type as MouseService.HOVER_TYPE)
+	if App.mouse.hover_type != MouseService.HOVER_TYPE.INVENTORY_DROP:
+		App.mouse.hover_out()
