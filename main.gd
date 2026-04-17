@@ -24,7 +24,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if App.navigation_enabled:
+		#App.audio.play_loop("steps","res://assets/music/sfx/steps.mp3")
 		var axis = Input.get_axis("ui_left","ui_right")
+		#if axis == 0:
+			#App.audio.stop_loop("steps")
 		view_angle = wrapf(view_angle + axis * step, 0.0, 360.0)
 		update_layers(axis)
 

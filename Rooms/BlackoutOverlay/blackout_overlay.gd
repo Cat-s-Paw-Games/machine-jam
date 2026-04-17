@@ -10,6 +10,7 @@ func _ready() -> void:
 	App.events.switch_lights_on.connect(func(): light_up())
 
 func light_up():
+	App.audio.play("sfx","res://assets/music/sfx/close_door.mp3")
 	get_tree().paused = false
 	queue_free()
 

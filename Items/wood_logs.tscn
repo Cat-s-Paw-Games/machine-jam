@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dwxsxbpddly44" path="res://assets/images/wood_logs.png" id="1_u7sru"]
 [ext_resource type="Script" uid="uid://cq88i8qnevtlb" path="res://Items/wood_logs.gd" id="2_v7qkv"]
 [ext_resource type="Resource" uid="uid://daejchv1x4ca" path="res://globals/items/wood_logs.tres" id="3_cp6tp"]
+[ext_resource type="AudioStream" uid="uid://ds2y4q5drdwar" path="res://assets/music/sfx/fire_sound.mp3" id="4_si168"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7qkv"]
 radius = 196.41243
@@ -19,3 +20,7 @@ metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=739071820]
 position = Vector2(260.9709, 270.91263)
 shape = SubResource("CircleShape2D_v7qkv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=267516897]
+stream = ExtResource("4_si168")
+volume_db = 10.0
