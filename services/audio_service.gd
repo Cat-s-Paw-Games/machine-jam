@@ -37,16 +37,30 @@ func play_loop(key:String,audio_path:NodePath, config: Dictionary = {})->void:
 		AudioServer.set_bus_name(bus_index, key)
 		AudioServer.set_bus_send(bus_index, "Master")
 	
-	var player:=AudioStreamPlayer.new()
-	player.stream=load(audio_path)
-	player.bus = AudioServer.get_bus_name(bus_index)
-	add_child(player)
-	loop_players[key]=player
+	create_loop_player(key)
+	loop_players[key].stream=load(audio_path)
+	
 	if config.has("volume_db"):
-		player.volume_db = config["volume_db"]
+		loop_players[key].volume_db = config["volume_db"]
 	if config.has("pitch"):
 		set_loop_pitch(key,config["pitch"])
-	player.play()
+	loop_players[key].play()
+
+func get_loop_player(key:String):
+	if key in loop_players:
+		return loop_players[key]
+	return null
+
+func create_loop_player(key:String):
+	if !loop_players.has(key):
+		var player:=AudioStreamPlayer.new()
+		player.bus = AudioServer.get_bus_name(AudioServer.get_bus_index(key))
+		add_child(player)
+		loop_players[key]=player
+
+func delete_loop_player(key):
+	if key in loop_players:
+		loop_players[key].queue_free()
 
 func stop_loop(key:String)->void:
 	if key in loop_players:

@@ -43,6 +43,7 @@ func _ready()->void:
 
 func start_game():
 	ui.ui_instance.menu_btn.show()
+	App.audio.create_loop_player("walk")
 
 func show_popup(text: String, close_on_click = false):
 	var popup: PopupContainer = get_node("/root/UI").find_child("Popup")
