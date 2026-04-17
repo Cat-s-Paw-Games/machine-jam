@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://ntvmu6siv38r"]
 
-[ext_resource type="PackedScene" uid="uid://cefinofi8gij8" path="res://Items/bucket.tscn" id="1_enjl4"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_xcmg2"]
+[ext_resource type="PackedScene" uid="uid://sqwm8nnj4ixx" path="res://Items/oscillation_regulator.tscn" id="2_iu26f"]
 
 [node name="TestRoom" type="Node2D" unique_id=1691897204]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=265616664]
 visible = false
+modulate = Color(1, 1, 1, 0.47058824)
 offset_left = -3840.0
 offset_right = 3840.0
 offset_bottom = 1080.0
 texture = ExtResource("1_xcmg2")
 
-[node name="Bucket" parent="." unique_id=1957467327 instance=ExtResource("1_enjl4")]
-position = Vector2(1425, 631)
+[node name="OscillationRegulator" parent="." unique_id=2025760680 instance=ExtResource("2_iu26f")]
+position = Vector2(253.00003, 662)

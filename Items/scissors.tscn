@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://ct8ivf5wai3op"]
 
 [ext_resource type="Texture2D" uid="uid://gn2y2nui8euk" path="res://assets/images/scissors.png" id="1_ll4p6"]
-[ext_resource type="Script" uid="uid://dl5af75jb3kdm" path="res://Items/scissors.gd" id="2_ll4p6"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_ll4p6"]
 [ext_resource type="Resource" uid="uid://cr8qsqsshs82n" path="res://globals/items/scissors.tres" id="3_7c2e1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3qqdq"]
 radius = 121.2775
 height = 374.74686
 
-[node name="Scissors" type="TouchScreenButton" unique_id=706022346]
+[node name="Scissors" type="TouchScreenButton" unique_id=506044602]
 scale = Vector2(0.234375, 0.234375)
 texture_normal = ExtResource("1_ll4p6")
 script = ExtResource("2_ll4p6")
 item = ExtResource("3_7c2e1")
-metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
+metadata/_custom_type_script = "uid://cafqq0iart4ih"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=620253032]
 

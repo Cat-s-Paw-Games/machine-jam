@@ -3,6 +3,8 @@ class_name CraftingMachine
 
 func _ready() -> void:
 	super()
+	App.events.activate_generator.emit()
+	App.events.steam_increase.emit(100.0)
 
 
 func _unhandled_input(event: InputEvent) -> void:

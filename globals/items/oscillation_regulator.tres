@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ci2mk8xuiidl4"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_8spb4"]
+[ext_resource type="Texture2D" uid="uid://by2ret2ktj5ks" path="res://assets/images/oscillation_regulator.png" id="2_8spb4"]
+
+[resource]
+script = ExtResource("1_8spb4")
+id = "oscillation_regulator"
+name = "Oscillation Regulator"
+description = ""
+texture = ExtResource("2_8spb4")
+material = ""
+transforms_into = "bucket_water"
+station = "puddle_water"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

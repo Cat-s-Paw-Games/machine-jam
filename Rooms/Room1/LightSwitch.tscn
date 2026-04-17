@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7yocke8wb5sx" path="res://Rooms/Room1/light_switch.gd" id="1_j0tc0"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5n0b4"]
 [ext_resource type="Texture2D" uid="uid://32ir2hlybsgy" path="res://assets/images/switch_off.png" id="3_osyuf"]
+[ext_resource type="PackedScene" uid="uid://b8p516mmro6mv" path="res://Items/spring.tscn" id="4_b40qy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0tc0"]
 size = Vector2(128, 128)
@@ -12,6 +13,7 @@ script = ExtResource("1_j0tc0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=272207693]
 visible = false
+modulate = Color(1, 1, 1, 0.50980395)
 offset_right = 7680.0
 offset_bottom = 1080.0
 texture = ExtResource("2_5n0b4")
@@ -26,6 +28,9 @@ texture_normal = ExtResource("3_osyuf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Area2D" unique_id=193640056]
 position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_j0tc0")
+
+[node name="Spring" parent="." unique_id=2025760680 instance=ExtResource("4_b40qy")]
+position = Vector2(1176, 727)
 
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
 [connection signal="mouse_entered" from="Switch/Area2D" to="." method="_on_area_2d_mouse_entered"]

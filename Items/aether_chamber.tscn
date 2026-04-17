@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ilcmj1jvfacm"]
+
+[ext_resource type="Texture2D" uid="uid://5rnv3o4rq7so" path="res://assets/images/aether_chamber.png" id="1_yboig"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_2ydkm"]
+[ext_resource type="Resource" uid="uid://chgvdtto8x5dl" path="res://globals/items/aether_chamber.tres" id="3_2ydkm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7rmg"]
+size = Vector2(385.8566, 462.51114)
+
+[node name="AetherChamber" type="TouchScreenButton" unique_id=2025760680]
+scale = Vector2(0.1796875, 0.1796875)
+texture_normal = ExtResource("1_yboig")
+script = ExtResource("2_2ydkm")
+item = ExtResource("3_2ydkm")
+metadata/_custom_type_script = "uid://cafqq0iart4ih"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=314972037]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1368784478]
+position = Vector2(247.65218, 253.21742)
+rotation = -0.027761508
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_d7rmg")

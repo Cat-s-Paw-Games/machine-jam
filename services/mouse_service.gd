@@ -68,3 +68,9 @@ func _notification(what: int) -> void:
 		cursor_instance.visible = true
 	elif what == NOTIFICATION_WM_MOUSE_EXIT:
 		cursor_instance.visible = false
+		
+func set_preview(item: Node):
+	cursor_instance.preview_item = item
+func unset_preview():
+	cursor_instance.preview_item = null
+	

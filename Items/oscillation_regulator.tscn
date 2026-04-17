@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://sqwm8nnj4ixx"]
+
+[ext_resource type="Texture2D" uid="uid://by2ret2ktj5ks" path="res://assets/images/oscillation_regulator.png" id="1_3mdlm"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_f4det"]
+[ext_resource type="Resource" uid="uid://ci2mk8xuiidl4" path="res://globals/items/oscillation_regulator.tres" id="3_f4det"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7rmg"]
+size = Vector2(305.7976, 339.15784)
+
+[node name="OscillationRegulator" type="TouchScreenButton" unique_id=2025760680]
+scale = Vector2(0.1796875, 0.1796875)
+texture_normal = ExtResource("1_3mdlm")
+script = ExtResource("2_f4det")
+item = ExtResource("3_f4det")
+metadata/_custom_type_script = "uid://cafqq0iart4ih"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=314972037]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1368784478]
+position = Vector2(230.86418, 238.45695)
+rotation = -0.027761508
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_d7rmg")

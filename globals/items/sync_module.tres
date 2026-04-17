@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bexh2be2amuo5"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_slyc6"]
+[ext_resource type="Texture2D" uid="uid://dv33c8vk80u6s" path="res://assets/images/sync_module.png" id="2_slyc6"]
+
+[resource]
+script = ExtResource("1_slyc6")
+id = "sync_module"
+name = "Synchronization Module"
+description = ""
+texture = ExtResource("2_slyc6")
+material = ""
+transforms_into = "bucket_water"
+station = "puddle_water"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"
