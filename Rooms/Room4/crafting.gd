@@ -3,6 +3,7 @@ class_name CraftingMachine
 
 func _ready() -> void:
 	super()
+	App.events.activate_generator.emit()
 	
 
 

@@ -25,7 +25,6 @@ func update_visual():
 
 var drag_data = {}
 func _get_drag_data(_at_position):
-	App.mouse.set_preview(self)
 	
 	drag_data = {
 		"item": item,
@@ -39,7 +38,6 @@ func _can_drop_data(_at_position, data):
 
 func _drop_data(_at_position, data):
 	var source_slot = data["source"]
-	App.mouse.unset_preview()
 	
 	if source_slot == self:
 		return
@@ -76,7 +74,10 @@ func combine_items_inverse(source_slot):
 
 
 func _notification(what):
+	if what == NOTIFICATION_DRAG_BEGIN:
+		App.mouse.set_preview(self)
 	if what == NOTIFICATION_DRAG_END:
+		App.mouse.unset_preview()
 		if not is_drag_successful():
 			try_drop_into_world(drag_data)
 			drag_data = {}

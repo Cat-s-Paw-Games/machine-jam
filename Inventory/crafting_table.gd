@@ -122,6 +122,8 @@ func _on_inventory_slot_4_removed_item_from_slot() -> void:
 
 
 func _on_close_pressed() -> void:
+	for item in current_items.values():
+		if item: App.ui.inventory.add_item(item)
 	App.ui.close_crafting()
 
 func _on_steam_changed(steam):
