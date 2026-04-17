@@ -49,6 +49,11 @@ theme/custom_font="uid://ccq1wfh6q6y63"
 
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_physics/layer_1="items"
+2d_physics/layer_2="amenities"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
