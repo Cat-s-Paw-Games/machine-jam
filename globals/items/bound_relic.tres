@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bhfhl02u66046"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_5te8r"]
+[ext_resource type="Texture2D" uid="uid://b5sbwsubcxlp4" path="res://assets/images/bound_relic.png" id="2_5te8r"]
+
+[resource]
+script = ExtResource("1_5te8r")
+id = "bound_relic"
+name = "Bound Relic"
+description = ""
+texture = ExtResource("2_5te8r")
+material = ""
+transforms_into = "bucket_water"
+station = "puddle_water"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

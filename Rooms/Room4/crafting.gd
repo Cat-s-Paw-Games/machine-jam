@@ -3,6 +3,7 @@ class_name CraftingMachine
 
 func _ready() -> void:
 	super()
+	
 
 
 func _unhandled_input(event: InputEvent) -> void:

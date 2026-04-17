@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b8p516mmro6mv"]
+
+[ext_resource type="Texture2D" uid="uid://bala2hxnkaxxr" path="res://assets/images/spring.png" id="1_x5tto"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_w5t4j"]
+[ext_resource type="Resource" uid="uid://d36vymtel4bl5" path="res://globals/items/spring.tres" id="3_w5t4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7rmg"]
+size = Vector2(306.7396, 462.51114)
+
+[node name="Spring" type="TouchScreenButton" unique_id=2025760680]
+scale = Vector2(0.1796875, 0.1796875)
+texture_normal = ExtResource("1_x5tto")
+script = ExtResource("2_w5t4j")
+item = ExtResource("3_w5t4j")
+metadata/_custom_type_script = "uid://cafqq0iart4ih"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=314972037]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1368784478]
+position = Vector2(222.6087, 222.60872)
+rotation = 0.60377896
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_d7rmg")

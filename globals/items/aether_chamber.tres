@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://chgvdtto8x5dl"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_cshw6"]
+[ext_resource type="Texture2D" uid="uid://5rnv3o4rq7so" path="res://assets/images/aether_chamber.png" id="2_cshw6"]
+
+[resource]
+script = ExtResource("1_cshw6")
+id = "aether_chamber"
+name = "Aether Chamber"
+description = ""
+texture = ExtResource("2_cshw6")
+material = ""
+transforms_into = "bucket_water"
+station = "puddle_water"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

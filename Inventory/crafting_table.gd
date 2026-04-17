@@ -12,6 +12,9 @@ var RECIPES = {
 	"bucket_empty": {
 		"ingredients": ["bucket_water"],
 		"steam": 10
+	},
+	"bound_relic": {
+		"ingredients": ["sync_module","oscillation_regulator","aether_chamber","spring"]
 	}
 }
 

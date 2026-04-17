@@ -54,11 +54,11 @@ texture = ExtResource("7_kngxg")
 [node name="WoodLogs" parent="." unique_id=1557513422 instance=ExtResource("7_1wsio")]
 position = Vector2(657, 778)
 
-[node name="PointedStick" parent="." unique_id=129622970 instance=ExtResource("8_ebfen")]
-position = Vector2(1162.9999, 754.9999)
+[node name="Paper" parent="." unique_id=2146600251 instance=ExtResource("14_4460h")]
+position = Vector2(283, 895)
 
 [node name="Scissors" parent="." unique_id=706022346 instance=ExtResource("13_gkdhg")]
-position = Vector2(986, 680)
+position = Vector2(880, 748)
 
-[node name="Paper" parent="." unique_id=2146600251 instance=ExtResource("14_4460h")]
-position = Vector2(189, 912)
+[node name="PointedStick" parent="." unique_id=129622970 instance=ExtResource("8_ebfen")]
+position = Vector2(1087, 743)

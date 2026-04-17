@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://c3whelvwlsrti"]
 
 [ext_resource type="Texture2D" uid="uid://bxqvhecw872sm" path="res://assets/images/paper.png" id="1_4gwaa"]
-[ext_resource type="Script" uid="uid://dcory3du8srvs" path="res://Items/paper.gd" id="2_in2gu"]
-[ext_resource type="Resource" uid="uid://nw0n7ry20r4s" path="res://globals/items/paper.tres" id="3_x8f6s"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_4gwaa"]
+[ext_resource type="Resource" uid="uid://nw0n7ry20r4s" path="res://globals/items/paper.tres" id="3_4gwaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7rmg"]
 size = Vector2(200.66228, 339.15784)
 
-[node name="Paper" type="TouchScreenButton" unique_id=2146600251]
+[node name="Paper" type="TouchScreenButton" unique_id=1801381149]
 scale = Vector2(0.1796875, 0.1796875)
 texture_normal = ExtResource("1_4gwaa")
-script = ExtResource("2_in2gu")
-item = ExtResource("3_x8f6s")
-metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
+script = ExtResource("2_4gwaa")
+item = ExtResource("3_4gwaa")
+metadata/_custom_type_script = "uid://cafqq0iart4ih"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=314972037]
 

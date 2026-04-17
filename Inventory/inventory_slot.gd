@@ -14,6 +14,7 @@ func empty_slot():
 func fill_slot(item_id : String):
 	item = App.items[item_id]
 	added_item_to_slot.emit(item_id)
+	print("emitting", item_id)
 	update_visual()
 
 func update_visual():
@@ -24,9 +25,7 @@ func update_visual():
 
 var drag_data = {}
 func _get_drag_data(_at_position):
-	var preview = duplicate()
-	preview.modulate.a = 0.7
-	set_drag_preview(preview)
+	App.mouse.set_preview(self)
 	
 	drag_data = {
 		"item": item,
@@ -40,6 +39,7 @@ func _can_drop_data(_at_position, data):
 
 func _drop_data(_at_position, data):
 	var source_slot = data["source"]
+	App.mouse.unset_preview()
 	
 	if source_slot == self:
 		return

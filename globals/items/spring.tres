@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://d36vymtel4bl5"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_a1w2h"]
+[ext_resource type="Texture2D" uid="uid://bala2hxnkaxxr" path="res://assets/images/spring.png" id="2_a1w2h"]
+
+[resource]
+script = ExtResource("1_a1w2h")
+id = "spring"
+name = "Spring"
+description = ""
+texture = ExtResource("2_a1w2h")
+material = ""
+transforms_into = "bucket_water"
+station = "puddle_water"
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

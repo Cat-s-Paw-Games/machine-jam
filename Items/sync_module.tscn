@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://baq735qajcrma"]
+
+[ext_resource type="Texture2D" uid="uid://dv33c8vk80u6s" path="res://assets/images/sync_module.png" id="1_rs6n0"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_667w3"]
+[ext_resource type="Resource" uid="uid://bexh2be2amuo5" path="res://globals/items/sync_module.tres" id="3_667w3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7rmg"]
+size = Vector2(244.74136, 339.15784)
+
+[node name="SyncModule" type="TouchScreenButton" unique_id=2025760680]
+scale = Vector2(0.1796875, 0.1796875)
+texture_normal = ExtResource("1_rs6n0")
+script = ExtResource("2_667w3")
+item = ExtResource("3_667w3")
+metadata/_custom_type_script = "uid://cafqq0iart4ih"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=314972037]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1368784478]
+position = Vector2(200.34782, 239.30435)
+rotation = -0.027761504
+shape = SubResource("RectangleShape2D_d7rmg")
