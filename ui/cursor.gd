@@ -3,6 +3,9 @@ class_name GameCursor
 
 @onready var sprite: Sprite2D = $Sprite2D
 
+var tooltip: Label
+var preview: BoxContainer
+
 var text: String: 
 	get():
 		return tooltip.text
@@ -20,8 +23,6 @@ var preview_item: Node:
 		else:
 			preview.add_child(item)
 		
-var tooltip: Label
-var preview: BoxContainer
 
 func _ready() -> void:
 	tooltip = Label.new()
@@ -32,6 +33,7 @@ func _ready() -> void:
 	
 	preview = BoxContainer.new()
 	add_child(preview)
+	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	preview.position.x -= 10
 	preview.position.y -= 30
 

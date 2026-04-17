@@ -25,9 +25,7 @@ func update_visual():
 
 var drag_data = {}
 func _get_drag_data(_at_position):
-	var preview = duplicate()
-	preview.modulate.a = 0.7
-	App.mouse.set_preview(preview)
+	App.mouse.set_preview(self)
 	
 	drag_data = {
 		"item": item,
