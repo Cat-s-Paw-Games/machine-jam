@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bwj5jx5v4ljiw"]
+
+[ext_resource type="Script" uid="uid://d1pcltpc4amlh" path="res://MiniGames/Pipes/pipe.gd" id="2_8nqe7"]
+[ext_resource type="Texture2D" uid="uid://cabhaf83hdv68" path="res://assets/images/pipe_game/pipe_1.png" id="2_hw7y8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nqe7"]
+size = Vector2(126, 126)
+
+[node name="Pipe" type="Area2D" unique_id=826491697]
+script = ExtResource("2_8nqe7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=145467022]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hw7y8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1550476214]
+shape = SubResource("RectangleShape2D_8nqe7")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

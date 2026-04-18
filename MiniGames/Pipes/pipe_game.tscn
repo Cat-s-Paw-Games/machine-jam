@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dvk3lykklp7od"]
+
+[ext_resource type="Script" uid="uid://ce5c37m424yco" path="res://MiniGames/Pipes/pipe_game.gd" id="1_yd8ku"]
+
+[node name="PipeGame" type="Node2D" unique_id=677869341]
+script = ExtResource("1_yd8ku")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=568120456]
+anchor_mode = 0
+
+[node name="Canvas" type="Node2D" parent="." unique_id=242247681]
+unique_name_in_owner = true
+position = Vector2(64, 64)
