@@ -2,7 +2,8 @@ extends CenterContainer
 class_name PopupContainer
 
 signal clicked()
-@onready var Text: TypewriterLabel = $PanelContainer/MarginContainer/RichTextLabel 
+@onready var Text: TypewriterLabel = %RichTextLabel
+@onready var buttons: HBoxContainer = %Buttons
 @export var close_on_click = false
 
 func _ready() -> void:
@@ -28,14 +29,36 @@ var text: String:
 		Text.recalc_animation()
 
 
+var choises : Array[Dictionary] = []:
+	set(new_val):
+		choises = new_val
+		buttons.hide()
+		if is_node_ready():
+			if choises.size() > 0:
+				buttons.show()
+				set_buttons()
+
+func set_buttons():
+	for child in buttons.get_children():
+		child.queue_free()
+	
+	for choise in choises:
+		var btn = Button.new()
+		btn.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
+		btn.text = choise.text
+		btn.pressed.connect(func(): close(); choise.callable.call())
+		buttons.add_child(btn)
 
 
 func open():
 	App.navigation_enabled = false
 	UIAnimation.animate_pop(self)
 	await Text.animation_finished
+	if choises.size() > 0:
+		set_buttons()
 	if close_on_click: await clicked
 
 func close():
 	App.navigation_enabled = true
 	UIAnimation.animate_shrink(self)
+	await get_tree().create_timer(1.0).timeout

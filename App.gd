@@ -44,25 +44,33 @@ func _ready()->void:
 	items = item_service.items
 
 func start_game():
+	App.game_status.reset()
 	navigation_enabled = true
 	ui.ui_instance.menu_btn.show()
 	App.audio.create_loop_player("walk")
 
-func end_game():
-	ui.close_every_ui()
-	get_tree().paused = true
-	navigation_enabled = false
-	game_status.game_end = true
-	var end = preload("res://Experiments/GameEnd.tscn").instantiate()
-	App.ui.add_ui_child(end)
+#func end_game():
+	#ui.close_every_ui()
+	#get_tree().paused = true
+	#navigation_enabled = false
+	#game_status.game_end = true
+	#var end = preload("res://Experiments/GameEnd.tscn").instantiate()
+	#App.ui.add_ui_child(end)
 
 func show_popup(text: String, close_on_click = false):
 	var popup: PopupContainer = get_node("/root/UI").find_child("Popup")
+	popup.choises = []
 	popup.text = text
 	popup.close_on_click = close_on_click
 	await popup.open()
-	
-	
+
+func show_popup_choise(text: String, choises : Array[Dictionary] = []):
+	var popup: PopupContainer = get_node("/root/UI").find_child("Popup")
+	popup.close_on_click = false
+	popup.choises = choises
+	popup.text = text
+	await popup.open()
+
 func hide_popup():
 	var popup = get_node("/root/UI").find_child("Popup")
 	popup.close()

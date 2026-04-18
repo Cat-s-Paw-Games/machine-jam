@@ -33,4 +33,5 @@ func _on_close_pressed() -> void:
 
 func _on_confirm_btn_pressed() -> void:
 	if current_keys[4] == "bound_relic":
-		App.end_game()
+		#App.end_game()
+		App.events._on_end_game()

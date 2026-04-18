@@ -8,6 +8,7 @@ var generator_active = false
 var steam := 0.0
 
 var game_end = false
+var secret_ending_unlocked = false
 
 
 func setup():
@@ -21,3 +22,4 @@ func reset():
 	steam = 0.0
 	
 	game_end = false
+	secret_ending_unlocked = false
