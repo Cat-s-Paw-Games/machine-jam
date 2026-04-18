@@ -118,3 +118,7 @@ func _on_released():
 	
 	falling = true
 	fall_velocity = 0.0
+
+
+func hover_text():
+	return item.name

@@ -51,15 +51,15 @@ func is_hovered(node: Node) -> bool:
 func hover_on(item: Node, type: HOVER_TYPE = HOVER_TYPE.NORMAL) -> void:
 	current_item = item
 	hover_type = type
-	if current_item and current_item is DraggableItem:
-		var resource_item = current_item.item
-		cursor_instance.text = resource_item.name
+	if current_item and current_item.has_method("hover_text"):
+		cursor_instance.text = current_item.hover_text()
 	hover(true)
 
 func hover_out() -> void:
 	current_item = null
 	cursor_instance.text =""
 	hover(false)
+	
 
 func _notification(what: int) -> void:
 	if cursor_instance == null:

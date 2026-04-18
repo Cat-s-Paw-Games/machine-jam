@@ -35,7 +35,5 @@ func _on_mouse_entered() -> void:
 		App.mouse.hover_on(self, MouseService.HOVER_TYPE.DROPPABLE)
 
 func _on_mouse_exited() -> void:
-	print("App.mouse.hover_type")
-	print(App.mouse.hover_type as MouseService.HOVER_TYPE)
 	if App.mouse.hover_type != MouseService.HOVER_TYPE.INVENTORY_DROP:
 		App.mouse.hover_out()
