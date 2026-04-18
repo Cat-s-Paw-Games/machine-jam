@@ -2,7 +2,7 @@ extends Node
 
 var view_angle : float = 0.0
 
-@export var step : float = 1.0
+@export var step : float = .8
 @export var pano_width : float = 7680.0
 @export var fg_width : float = 8000.0
 @export var room_width : float = 1920.0

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bf52jlgl6br8d" path="res://assets/images/intro/door_left.jpg" id="6_1rpvy"]
 
 [node name="Intro" type="Node" unique_id=19835645]
+process_mode = 3
 script = ExtResource("1_46ak0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=54668223]
@@ -49,6 +50,7 @@ script = ExtResource("2_sb8jg")
 rotation_type = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer" unique_id=1480663111]
+process_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

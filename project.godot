@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://dni4msy7g2ek5"
 App="*uid://dydmjnvgendpj"
 SceneTransitionManager="*uid://7w81vk3scoi2"
 UIAnimation="*uid://cawfyydj325or"
+Dev="*uid://c2pkjo6v6gqqv"
 
 [display]
 
