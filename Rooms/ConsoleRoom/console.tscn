@@ -4,25 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="2_dbsf4"]
 [ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="3_dbsf4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_phwel"]
-size = Vector2(314, 422)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbsf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bo6m"]
 size = Vector2(20, 152)
 
 [node name="Node2D" type="Node2D" unique_id=1400590602]
 
-[node name="Console" type="Area2D" parent="." unique_id=726745843]
-script = ExtResource("1_h1as2")
-metadata/_custom_type_script = "uid://rlemyrl4ndtl"
-
-[node name="Sprite2D" type="Sprite2D" parent="Console" unique_id=1732983018]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=55024091]
+position = Vector2(40, 27.000002)
 rotation = 1.5707964
 texture = ExtResource("2_dbsf4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Console" unique_id=330888309]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1687545668]
+position = Vector2(-6, 12)
 rotation = 1.5707964
-shape = SubResource("RectangleShape2D_phwel")
+scale = Vector2(17.25, 20.999996)
+shape = SubResource("RectangleShape2D_dbsf4")
+script = ExtResource("1_h1as2")
 
 [node name="HoverHint" type="Area2D" parent="." unique_id=1243005703]
 script = ExtResource("3_dbsf4")
@@ -33,3 +32,5 @@ metadata/_custom_type_script = "uid://gikcr4yg3njr"
 position = Vector2(230, -23)
 shape = SubResource("RectangleShape2D_3bo6m")
 debug_color = Color(0, 0.63318145, 0.4468348, 0.41960785)
+
+[connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_pressed"]
