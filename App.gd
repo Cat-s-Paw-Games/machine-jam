@@ -46,7 +46,7 @@ func _ready()->void:
 func start_game():
 	App.game_status.reset()
 	navigation_enabled = true
-	ui.ui_instance.menu_btn.show()
+#	ui.ui_instance.menu_btn.show()
 	App.audio.create_loop_player("walk")
 
 #func end_game():

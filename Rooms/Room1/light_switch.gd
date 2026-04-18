@@ -1,7 +1,4 @@
 extends Node2D
-
-func _ready() -> void:
-	App.events.switch_lights_on.connect(func(): $Switch.texture_normal = preload("res://assets/images/switch_on.png"))
 	
 
 func _on_switch_pressed() -> void:

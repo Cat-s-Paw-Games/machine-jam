@@ -11,14 +11,15 @@ signal offset_changed(offset:int)
 
 var touch_start_pos : Vector2 = Vector2.ZERO
 var is_touching : bool = false
+var blackout: CanvasModulate = null
 
 
 func _ready() -> void:
 	App.start_game()
-	var Blackout: PackedScene = preload("res://Rooms/BlackoutOverlay/BlackoutOverlay.tscn")
-	var blackout_instance = Blackout.instantiate()
-	%GameView.add_child(blackout_instance)
-	offset_changed.connect(blackout_instance._on_main_offset_changed)
+	blackout = CanvasModulate.new()
+	blackout.color = Color.from_rgba8(30,30,30,255)
+	%GameView.add_child(blackout)
+	App.events.switch_lights_on.connect(func(): blackout.queue_free())
 	App.audio.stop_loop("main")
 	App.audio.play_loop("main","assets/music/dream_catcher.mp3",{"volume_db":-10.0})
 	update_layers(0)
