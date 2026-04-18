@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://doot2vhf2ymam"]
+
+[ext_resource type="Script" uid="uid://2rdkdenkblgr" path="res://components/counter.gd" id="1_0oiln"]
+
+[node name="First" type="VBoxContainer" unique_id=253189479]
+theme_override_constants/separation = 16
+script = ExtResource("1_0oiln")
+
+[node name="+" type="Button" parent="." unique_id=1792690092]
+layout_mode = 2
+text = "+"
+
+[node name="Number" type="Label" parent="." unique_id=503573600]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+
+[node name="-" type="Button" parent="." unique_id=1280083092]
+layout_mode = 2
+text = "-"
+
+[connection signal="pressed" from="+" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="-" to="." method="_on_minus_pressed"]

@@ -7,6 +7,7 @@ signal steam_increase(delta: float)
 signal steam_decrease(delta: float)
 signal steam_changed(value: float)
 signal activate_generator()
+signal cabinet_open()
 
 func setup():
 	switch_lights_on.connect(_on_switch_lights)

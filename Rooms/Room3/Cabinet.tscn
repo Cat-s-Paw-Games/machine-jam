@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bgi0stdbq0mq3"]
+
+[ext_resource type="Script" uid="uid://nh4sj74ipvt3" path="res://Rooms/Room3/cabinet.gd" id="1_fc2xf"]
+[ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="2_jor4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwfbp"]
+
+[node name="Cabinet" type="Node2D" unique_id=1402847951]
+script = ExtResource("1_fc2xf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=373485799]
+scale = Vector2(-0.45945945, 0.20481928)
+texture = ExtResource("2_jor4d")
+
+[node name="Button" type="TouchScreenButton" parent="." unique_id=333148785]
+scale = Vector2(18.446413, -7.6030307)
+shape = SubResource("RectangleShape2D_mwfbp")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

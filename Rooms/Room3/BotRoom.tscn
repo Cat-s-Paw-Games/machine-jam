@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://ntvmu6siv38r"]
 
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_xcmg2"]
-[ext_resource type="PackedScene" uid="uid://sqwm8nnj4ixx" path="res://Items/oscillation_regulator.tscn" id="2_iu26f"]
+[ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/Room3/Cabinet.tscn" id="3_yudld"]
 
 [node name="BotRoom" type="Node2D" unique_id=1691897204]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=265616664]
-visible = false
 modulate = Color(1, 1, 1, 0.47058824)
 offset_left = -3840.0
 offset_right = 3840.0
 offset_bottom = 1080.0
 texture = ExtResource("1_xcmg2")
 
-[node name="OscillationRegulator" parent="." unique_id=2025760680 instance=ExtResource("2_iu26f")]
-position = Vector2(253.00003, 662)
+[node name="Cabinet" parent="." unique_id=1402847951 instance=ExtResource("3_yudld")]
+position = Vector2(611, 640)
