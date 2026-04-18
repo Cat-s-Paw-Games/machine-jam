@@ -32,6 +32,7 @@ func _ready():
 
 func _on_mouse_entered():
 	if not App.game_status.lights_on: return
+	if App.in_focus: return
 	App.mouse.hover_on(self, 
 		MouseService.HOVER_TYPE.INVENTORY_DROP if App.mouse.hover_type == MouseService.HOVER_TYPE.INVENTORY_DROP
 		else MouseService.HOVER_TYPE.NORMAL
@@ -87,6 +88,7 @@ func drag_item():
 		global_position = get_global_mouse_position() + drag_offset
 
 func _on_pressed():
+	if App.in_focus: return
 	#App.navigation_enabled = false
 	z_index += 10
 	dragging = true
@@ -95,6 +97,7 @@ func _on_pressed():
 	fall_velocity = 0.0
 
 func _on_released():
+	if App.in_focus: return
 	#App.navigation_enabled = true
 	z_index -= 10
 	dragging = false

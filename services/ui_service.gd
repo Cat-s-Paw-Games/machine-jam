@@ -19,6 +19,7 @@ func add_ui_child(node: Node):
 var crafting_canvas:CanvasLayer = null
 func open_crafting():
 	App.navigation_enabled = false
+	App.in_focus = true
 	crafting_canvas = CanvasLayer.new()
 	var crafting_popup = PanelContainer.new()
 	var crafting = preload("res://Inventory/crafting_table.tscn").instantiate()
@@ -36,6 +37,7 @@ func open_crafting():
 func close_crafting():
 	if crafting_canvas:
 		App.navigation_enabled = true
+		App.in_focus = false
 		UIAnimation.animate_shrink(crafting_canvas.get_child(0))
 		crafting_canvas.queue_free()
 		crafting_canvas = null
@@ -85,10 +87,12 @@ func open_scene_in_focus(scene: Node):
 	var focus = get_tree().root.get_node("UI/Focus")
 	for c in focus.get_children():
 		c.queue_free()
+	App.in_focus = true
 	focus.add_child(scene)
 	
 	
 func close_scene_in_focus():
+	App.in_focus = false
 	var focus = get_tree().root.get_node("UI/Focus")
 	for c in focus.get_children():
 		c.queue_free()

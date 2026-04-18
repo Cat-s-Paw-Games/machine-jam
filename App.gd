@@ -11,6 +11,7 @@ var ui: UIService
 var items: Dictionary
 var viewport_size: Vector2
 var navigation_enabled:bool = true
+var in_focus: bool = false
 
 func _ready()->void:
 	viewport_size = get_viewport().size
