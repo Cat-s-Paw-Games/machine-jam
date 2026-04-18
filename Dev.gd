@@ -21,7 +21,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			App.game_status.fire_lit = true
 			App.game_status.water_linked = true
 			App.game_status.generator_active = true
-			App.game_status.lights_on = true
 			App.game_status.steam += 100
 		
 		if event is InputEventKey and event.keycode == KEY_M and event.pressed:
