@@ -53,13 +53,13 @@ func end_one():
 	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
 
 func end_two():
-	await App.show_popup("You leave without turning back... while you listen to the machine... crying")
+	await App.show_popup("You leave without turning back... while you listen to the machine... crying", true)
 	await get_tree().create_timer(1.0).timeout
 	App.hide_popup()
 	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
 
 func end_three():
-	await App.show_popup("You insert the device in the console... and the machine becomes your new pet! Yey!")
+	await App.show_popup("You insert the device in the console... and the machine becomes your new pet! Yey!", true)
 	await get_tree().create_timer(1.0).timeout
 	App.hide_popup()
 	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
