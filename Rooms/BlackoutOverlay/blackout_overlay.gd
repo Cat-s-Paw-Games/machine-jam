@@ -6,12 +6,9 @@ var pano_width = 7680
 @export var light_screen_y := 0.35
 
 func _ready() -> void:
-	get_tree().paused = true
 	App.events.switch_lights_on.connect(func(): light_up())
 
 func light_up():
-	App.audio.play("sfx","res://assets/music/sfx/close_door.mp3")
-	get_tree().paused = false
 	queue_free()
 
 

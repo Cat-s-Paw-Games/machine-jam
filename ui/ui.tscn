@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://btuuhvljqn1dx" path="res://assets/images/ui/inventory.png" id="2_tf0e0"]
 [ext_resource type="PackedScene" uid="uid://bl8nykn5a67ov" path="res://Inventory/inventory.tscn" id="3_obcwv"]
 [ext_resource type="PackedScene" uid="uid://bym2nd6ohk6nv" path="res://components/Popup.tscn" id="4_bo1jx"]
-[ext_resource type="PackedScene" uid="uid://dghipapkctph" path="res://ui/menu.tscn" id="5_tf0e0"]
+[ext_resource type="PackedScene" path="res://ui/menu.tscn" id="5_tf0e0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf0e0"]
 
 [node name="UI" type="CanvasLayer" unique_id=2086083387]
 layer = 1000
@@ -69,6 +71,17 @@ size_flags_horizontal = 3
 [node name="Menu" parent="." unique_id=1420165919 instance=ExtResource("5_tf0e0")]
 process_mode = 2
 visible = false
+
+[node name="Focus" type="Panel" parent="." unique_id=586448947]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tf0e0")
 
 [connection signal="pressed" from="BoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="MenuBtn" to="." method="_on_menu_btn_pressed"]

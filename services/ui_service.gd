@@ -79,3 +79,16 @@ func close_every_ui():
 		toggle_inventory()
 	close_crafting()
 	close_console()
+
+
+func open_scene_in_focus(scene: Node):
+	var focus = get_tree().root.get_node("UI/Focus")
+	for c in focus.get_children():
+		c.queue_free()
+	focus.add_child(scene)
+	
+	
+func close_scene_in_focus():
+	var focus = get_tree().root.get_node("UI/Focus")
+	for c in focus.get_children():
+		c.queue_free()
