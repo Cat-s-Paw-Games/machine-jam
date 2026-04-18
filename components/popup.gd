@@ -5,6 +5,7 @@ signal clicked()
 @onready var Text: TypewriterLabel = %RichTextLabel
 @onready var buttons: HBoxContainer = %Buttons
 @export var close_on_click = false
+@export var title = ""
 
 func _ready() -> void:
 	gui_input.connect(_on_gui_input)
@@ -51,6 +52,8 @@ func set_buttons():
 
 
 func open():
+	%Title.visible = title.strip_edges().length() > 0
+	%Title.text = title
 	App.navigation_enabled = false
 	UIAnimation.animate_pop(self)
 	await Text.animation_finished

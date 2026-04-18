@@ -12,7 +12,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if App.game_status.water_linked && App.game_status.fire_lit:
 		if not App.game_status.generator_active: App.events.activate_generator.emit()
-		App.events.steam_increase.emit(delta)
+		if App.game_status.steam < App.game_status.max_steam:
+			App.events.steam_increase.emit(delta)
 
 
 
@@ -26,7 +27,7 @@ func check_state():
 	if !App.game_status.fire_lit:
 		text += "\n- Fire Missing"
 	if text.strip_edges().length() > 0 :
-		App.show_popup(text,true)
+		App.show_popup(text, {"close_on_click": true})
 
 
 func _on_pressed() -> void:

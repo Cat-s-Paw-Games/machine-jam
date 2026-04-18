@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://ntvmu6siv38r"]
 
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_xcmg2"]
+[ext_resource type="Script" uid="uid://d2gwsqggo22kx" path="res://Rooms/Room3/bot_room.gd" id="1_yudld"]
 [ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/Room3/Cabinet.tscn" id="3_yudld"]
 
 [node name="BotRoom" type="Node2D" unique_id=1691897204]
+script = ExtResource("1_yudld")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=265616664]
 modulate = Color(1, 1, 1, 0.47058824)

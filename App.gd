@@ -2,6 +2,8 @@ extends Node
 
 signal game_end
 
+var MACHINE_NAME = "<machine>"
+
 var mouse:MouseService
 var audio:AudioService
 var events: EventService
@@ -58,16 +60,22 @@ func start_game():
 	#var end = preload("res://Experiments/GameEnd.tscn").instantiate()
 	#App.ui.add_ui_child(end)
 
-func show_popup(text: String, close_on_click = false):
+func show_popup(text: String, options: Dictionary = {}):
 	var popup: PopupContainer = get_node("/root/UI").find_child("Popup")
 	popup.choises = []
 	popup.text = text
+	var close_on_click = options.get("close_on_click", false)
+	var title = options.get("title", "")
 	popup.close_on_click = close_on_click
+	popup.title = title
 	await popup.open()
 
-func show_popup_choise(text: String, choises : Array[Dictionary] = []):
+func show_popup_choise(text: String, choises : Array[Dictionary] = [], options: Dictionary = {}):
 	var popup: PopupContainer = get_node("/root/UI").find_child("Popup")
-	popup.close_on_click = false
+	var close_on_click = options.get("close_on_click", false)
+	var title = options.get("title", "")
+	popup.close_on_click = close_on_click
+	popup.title = title
 	popup.choises = choises
 	popup.text = text
 	await popup.open()

@@ -6,6 +6,7 @@ var fire_lit = false
 var water_linked = false
 var generator_active = false
 var steam := 0.0
+var max_steam := 80.0
 
 var game_end = false
 var secret_ending_unlocked = false

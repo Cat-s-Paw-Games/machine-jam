@@ -7,7 +7,7 @@
 size = Vector2(1154, 1166)
 
 [sub_resource type="Gradient" id="Gradient_b40qy"]
-offsets = PackedFloat32Array(0, 0.8012048)
+offsets = PackedFloat32Array(0, 0.6686747)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_g4cop"]
