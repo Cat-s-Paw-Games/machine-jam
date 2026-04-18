@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8p516mmro6mv" path="res://Items/spring.tscn" id="4_b40qy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0tc0"]
-size = Vector2(128, 128)
+size = Vector2(1154, 1166)
 
 [node name="LightSwitchRoom" type="Node2D" unique_id=1691897204]
 script = ExtResource("1_j0tc0")
@@ -21,12 +21,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Switch" type="TouchScreenButton" parent="." unique_id=1350675866]
 position = Vector2(1306, 305)
+scale = Vector2(0.091342874, 0.091342874)
 texture_normal = ExtResource("3_osyuf")
 
 [node name="Area2D" type="Area2D" parent="Switch" unique_id=406022670]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Switch/Area2D" unique_id=193640056]
-position = Vector2(64, 64)
+position = Vector2(729, 936)
 shape = SubResource("RectangleShape2D_j0tc0")
 
 [node name="Spring" parent="." unique_id=2025760680 instance=ExtResource("4_b40qy")]
