@@ -34,3 +34,7 @@ func _on_button_pressed() -> void:
 			tween.tween_property(%Button, "position", start_pos + Vector2(-shake_amount, 0), 0.05)
 		tween.tween_property(%Button, "position", start_pos, 0.05)
 		await tween.finished
+
+
+func _on_close_pressed() -> void:
+	App.ui.close_scene_in_focus()
