@@ -6,6 +6,7 @@ func _ready() -> void:
 		add_child(oscillator)
 		$Button.shape = null
 		App.ui.close_scene_in_focus()
+		$Sprite2D.texture = preload("res://assets/images/cabinet_open.png")
 	)
 
 func _on_button_pressed() -> void:

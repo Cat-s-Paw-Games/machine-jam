@@ -15,7 +15,8 @@ offset_bottom = 1080.0
 texture = ExtResource("1_afiut")
 
 [node name="Crafting" parent="." unique_id=295888722 instance=ExtResource("2_afiut")]
-position = Vector2(835, 629)
+position = Vector2(865, 566)
+scale = Vector2(2, 2)
 
 [node name="AetherChamber" parent="." unique_id=2025760680 instance=ExtResource("3_ido6i")]
 position = Vector2(296, 781)
