@@ -55,6 +55,7 @@ func toggle_inventory():
 var console_canvas:CanvasLayer = null
 func open_console():
 	App.navigation_enabled = false
+	App.in_focus = true
 	console_canvas = CanvasLayer.new()
 	var console_popup = PanelContainer.new()
 	var console = preload("res://Inventory/console.tscn").instantiate()
@@ -71,6 +72,7 @@ func open_console():
 
 func close_console():
 	if console_canvas:
+		App.in_focus = false
 		App.navigation_enabled = true
 		UIAnimation.animate_shrink(console_canvas.get_child(0))
 		console_canvas.queue_free()
