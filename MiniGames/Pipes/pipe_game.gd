@@ -7,10 +7,14 @@ var cell_size : int = 128
 @export var grid_size : Vector2i = Vector2i(6, 6)
 
 @onready var canvas: Node2D = %Canvas
+@onready var start_dir: ColorRect = $StartDir
+@onready var end_dir: ColorRect = $EndDir
 
 var grid = []
 var start_cell = Vector2i(0,0)
 var end_cell = Vector2i(grid_size.y - 1, grid_size.x - 1)
+var start_input = [dir_to_index(Vector2i.UP), dir_to_index(Vector2i.LEFT)].pick_random()
+var end_output = [dir_to_index(Vector2i.DOWN), dir_to_index(Vector2i.RIGHT)].pick_random()
 var level = {}
 
 func _ready():
@@ -25,12 +29,29 @@ func generate_grid():
 		grid.append([])
 		for x in range(grid_size.x):
 			var pos = Vector2i(x, y)
+			if pos == Vector2i(0,0) || pos == Vector2i(grid_size.y - 1, grid_size.x - 1):
+				position_faucets(pos)
+			
 			var pipe = PIPE.instantiate()
 			pipe.position = Vector2(x, y) * cell_size
 			canvas.add_child(pipe)
 			pipe.set_connections(_grid[pos])
 			pipe.pipe_rotated.connect(check_win_condition)
 			grid[y].append(pipe)
+
+func position_faucets(pos):
+	# temporary to show input and output
+	if pos == Vector2i(0,0):
+		if start_input == 0: #up
+			start_dir.global_position = 32 * dir_to_vector(start_input) + Vector2i(42, 0)
+		else: #left
+			start_dir.global_position = 32 * dir_to_vector(start_input) + Vector2i(0, 42)
+	elif pos == Vector2i(grid_size.y - 1, grid_size.x - 1):
+		if end_output == 2: #down
+			end_dir.global_position = pos * cell_size + cell_size * Vector2i(1,1) - cell_size/2 * Vector2i(1,0) - Vector2i(20,10) 
+		else: #right
+			end_dir.global_position = pos * cell_size + cell_size * Vector2i(1,1) - cell_size/2 * Vector2i(0,1) - Vector2i(10,20) 
+	
 
 func generate_level():
 	var path = generate_path()
@@ -199,6 +220,11 @@ func reset_grid():
 func check_win_condition():
 	var visited = {}
 	var stack = [start_cell]
+	
+	var start_connections = grid[0][0].connections
+	var end_connections = grid[grid_size.y - 1][grid_size.x - 1].connections
+	if start_input not in start_connections || end_output not in end_connections:
+		return
 	
 	while stack.size() > 0:
 		var current_pos = stack.pop_back()

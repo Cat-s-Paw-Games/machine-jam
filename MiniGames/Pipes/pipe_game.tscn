@@ -11,3 +11,14 @@ anchor_mode = 0
 [node name="Canvas" type="Node2D" parent="." unique_id=242247681]
 unique_name_in_owner = true
 position = Vector2(64, 64)
+
+[node name="StartDir" type="ColorRect" parent="." unique_id=1501190182]
+custom_minimum_size = Vector2(42, 42)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 1, 1)
+
+[node name="EndDir" type="ColorRect" parent="." unique_id=1512526911]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 1, 1)
