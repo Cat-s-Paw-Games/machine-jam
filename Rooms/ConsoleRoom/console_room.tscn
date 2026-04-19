@@ -9,6 +9,7 @@
 [node name="ConsoleRoom" type="Node2D" unique_id=536472085]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1672595058]
+visible = false
 modulate = Color(1, 1, 1, 0.58431375)
 offset_left = -3199.0
 offset_right = 4481.0

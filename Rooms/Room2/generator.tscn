@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="2_fodvw"]
 [ext_resource type="Texture2D" uid="uid://dilsgb46i8sio" path="res://assets/images/smoke_sheet.png" id="3_nvrwd"]
 [ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="4_mdg0c"]
-[ext_resource type="Script" path="res://Rooms/Room2/coal_input.gd" id="4_nvrwd"]
+[ext_resource type="Script" uid="uid://drxkfgniviodf" path="res://Rooms/Room2/coal_input.gd" id="4_nvrwd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdg0c"]
 
@@ -27,6 +27,7 @@ size = Vector2(76, 84)
 [node name="Node2D" type="Node2D" unique_id=1391313845]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=733495611]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_fodvw")
 
 [node name="Generator" type="TouchScreenButton" parent="." unique_id=1683080550]
