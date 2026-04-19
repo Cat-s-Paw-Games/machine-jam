@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://llx5j6e52otr" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Room2/generator_room.tscn" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://bqkv3bn51sr6k" path="res://Experiments/parallax_back.jpg" id="2_lquwl"]
+[ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/Room1/LightSwitch.tscn" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/BotRoom.tscn" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_272bh"]
@@ -29,7 +29,7 @@ ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="GameView/Background" unique_id=1366526716]
 position = Vector2(2, 0)
-texture = ExtResource("2_lquwl")
+texture = ExtResource("2_5vw27")
 centered = false
 
 [node name="Rooms" type="Node2D" parent="GameView" unique_id=158874507]
@@ -62,5 +62,6 @@ follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="GameView/Foreground" unique_id=1811115625]
+visible = false
 texture = ExtResource("5_272bh")
 centered = false
