@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_afiut"]
 [ext_resource type="PackedScene" uid="uid://bogdv0aemnh5g" path="res://Rooms/Room4/crafting.tscn" id="2_afiut"]
 [ext_resource type="PackedScene" uid="uid://ilcmj1jvfacm" path="res://Items/aether_chamber.tscn" id="3_ido6i"]
-[ext_resource type="PackedScene" uid="uid://baq735qajcrma" path="res://Items/sync_module.tscn" id="4_3uahj"]
 
 [node name="Room4" type="Node2D" unique_id=1691897204]
 
@@ -17,9 +16,6 @@ texture = ExtResource("1_afiut")
 
 [node name="Crafting" parent="." unique_id=295888722 instance=ExtResource("2_afiut")]
 position = Vector2(835, 629)
-
-[node name="SyncModule" parent="." unique_id=1312642858 instance=ExtResource("4_3uahj")]
-position = Vector2(477, 811)
 
 [node name="AetherChamber" parent="." unique_id=2025760680 instance=ExtResource("3_ido6i")]
 position = Vector2(296, 781)
