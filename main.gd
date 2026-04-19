@@ -26,24 +26,12 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if App.navigation_enabled:
-		App.audio.play_loop("walk","res://assets/music/sfx/steps.mp3")
 		var axis = Input.get_axis("ui_left","ui_right")
-		walk_sfx(axis != 0)
 		view_angle = wrapf(view_angle + axis * step, 0.0, 360.0)
 		update_layers(axis)
 	else:
 		App.audio.stop_loop("walk")
 
-func walk_sfx(is_moving):
-	var player : AudioStreamPlayer = App.audio.get_loop_player("walk")
-	if !player:
-		return
-	player.volume_linear = 10.0
-	
-	if is_moving && !player.playing:
-		App.audio.play_loop("walk","res://assets/music/sfx/steps.mp3")
-	elif !is_moving && player.is_playing:
-		App.audio.stop_loop("walk")
 
 func update_layers(axis: int):
 	%Background.screen_offset.x = (view_angle / 360.0) * pano_width
