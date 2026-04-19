@@ -23,9 +23,8 @@ offset_right = 5760.0
 offset_bottom = 1080.0
 texture = ExtResource("1_1wsio")
 
-[node name="Generator" parent="." unique_id=295888722 node_paths=PackedStringArray("fireplace") instance=ExtResource("1_ni46i")]
+[node name="Generator" parent="." unique_id=295888722 instance=ExtResource("1_ni46i")]
 position = Vector2(354, 527)
-fireplace = NodePath("../Fireplace")
 
 [node name="Fireplace" parent="." unique_id=1972907018 instance=ExtResource("2_1wsio")]
 position = Vector2(340, 783)

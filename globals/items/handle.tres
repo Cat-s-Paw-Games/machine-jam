@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dw7nso8pchtuq"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_t15gc"]
+[ext_resource type="Texture2D" uid="uid://b2uo34t5oodlf" path="res://assets/images/handle.png" id="2_san07"]
+
+[resource]
+script = ExtResource("1_t15gc")
+id = "handle"
+name = "Handle"
+description = "A big stick, perfect for a handle"
+texture = ExtResource("2_san07")
+is_pickable = true
+material = ""
+transforms_into = ""
+station = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

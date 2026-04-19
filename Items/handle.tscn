@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dwfsdpr8616bi"]
+
+[ext_resource type="Texture2D" uid="uid://b2uo34t5oodlf" path="res://assets/images/handle.png" id="1_6j2ws"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_636xr"]
+[ext_resource type="Resource" uid="uid://dw7nso8pchtuq" path="res://globals/items/handle.tres" id="3_fn8qb"]
+
+[node name="Handle" type="TouchScreenButton" unique_id=1743136493]
+scale = Vector2(0.28515625, 0.28515625)
+texture_normal = ExtResource("1_6j2ws")
+script = ExtResource("2_636xr")
+item = ExtResource("3_fn8qb")
+metadata/_custom_type_script = "uid://cafqq0iart4ih"

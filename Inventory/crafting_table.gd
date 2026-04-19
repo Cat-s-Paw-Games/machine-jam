@@ -6,16 +6,13 @@ extends PanelContainer
 var current_recipe = null
 
 var RECIPES = {
-	"bucket_water": {
-		"ingredients": ["bucket_empty"]
-	},
-	"bucket_empty": {
-		"ingredients": ["bucket_water"],
-		"steam": 10
-	},
 	"bound_relic": {
 		"ingredients": ["sync_module","oscillation_regulator","aether_chamber","spring"],
 		"steam": 80
+	},
+	"pickaxe": {
+		"ingredients": ["handle","metal_scraps"],
+		"steam": 20
 	},
 }
 

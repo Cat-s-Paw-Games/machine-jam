@@ -3,11 +3,15 @@
 [ext_resource type="Script" uid="uid://cwv33g65ktx54" path="res://Rooms/Room2/generator.gd" id="1_wl2ms"]
 [ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="2_fodvw"]
 [ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="4_mdg0c"]
+[ext_resource type="Script" uid="uid://drxkfgniviodf" path="res://Rooms/Room2/coal_input.gd" id="4_nvrwd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdg0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvrwd"]
 size = Vector2(42, 45.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shm5r"]
+size = Vector2(76, 84)
 
 [node name="Node2D" type="Node2D" unique_id=1391313845]
 
@@ -19,13 +23,6 @@ scale = Vector2(-15.5, -16)
 shape = SubResource("RectangleShape2D_mdg0c")
 script = ExtResource("1_wl2ms")
 
-[node name="SteamBar" type="ProgressBar" parent="Generator" unique_id=310704217]
-offset_left = -112.0
-offset_top = -251.0
-offset_right = nan
-offset_bottom = nan
-mouse_filter = 2
-
 [node name="NumberHint" type="Area2D" parent="." unique_id=1801674393]
 position = Vector2(237, -57)
 script = ExtResource("4_mdg0c")
@@ -35,5 +32,14 @@ text = "The number 7 is etched on the generator."
 position = Vector2(-60, -95)
 shape = SubResource("RectangleShape2D_nvrwd")
 debug_color = Color(1.92523e-07, 0.64021313, 0.35793507, 0.41960785)
+
+[node name="CoalInput" type="Area2D" parent="." unique_id=1347128907]
+script = ExtResource("4_nvrwd")
+metadata/_custom_type_script = "uid://rlemyrl4ndtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoalInput" unique_id=1682688899]
+position = Vector2(109, -46)
+shape = SubResource("RectangleShape2D_shm5r")
+debug_color = Color(0, 0.07450981, 0.09411765, 0.7607843)
 
 [connection signal="pressed" from="Generator" to="Generator" method="_on_pressed"]

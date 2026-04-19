@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://de0t3th5ns81p"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_q8l6q"]
+[ext_resource type="Texture2D" uid="uid://d8jei3831daj" path="res://assets/images/pickaxe.png" id="2_02p85"]
+
+[resource]
+script = ExtResource("1_q8l6q")
+id = "pickaxe"
+name = "Pickaxe"
+description = "A simple yet efficient pickaxe"
+texture = ExtResource("2_02p85")
+is_pickable = true
+material = ""
+transforms_into = ""
+station = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

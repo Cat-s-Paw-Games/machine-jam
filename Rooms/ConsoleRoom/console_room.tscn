@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ct0l8dvsoo67t" path="res://Rooms/ConsoleRoom/console.tscn" id="1_75uxh"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_s3xri"]
+[ext_resource type="PackedScene" uid="uid://dwfsdpr8616bi" path="res://Items/handle.tscn" id="3_q285e"]
 
 [node name="ConsoleRoom" type="Node2D" unique_id=536472085]
 
@@ -15,3 +16,6 @@ texture = ExtResource("1_s3xri")
 
 [node name="Console" parent="." unique_id=726745843 instance=ExtResource("1_75uxh")]
 position = Vector2(323, 575)
+
+[node name="Handle" parent="." unique_id=1743136493 instance=ExtResource("3_q285e")]
+position = Vector2(439, 894)

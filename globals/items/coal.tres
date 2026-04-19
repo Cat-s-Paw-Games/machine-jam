@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://djpar1o0tjtk2"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_y6reb"]
+[ext_resource type="Texture2D" uid="uid://d2hqhqhi1whgs" path="res://assets/images/coal.png" id="2_n5mev"]
+
+[resource]
+script = ExtResource("1_y6reb")
+id = "coal"
+name = "Coal"
+description = "A bunch of coal"
+texture = ExtResource("2_n5mev")
+usable_once = true
+material = ""
+transforms_into = ""
+station = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

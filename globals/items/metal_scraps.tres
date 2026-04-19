@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dulwfdq2hkmwl"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_v7ebu"]
+[ext_resource type="Texture2D" uid="uid://b1ad2vm41xvir" path="res://assets/images/metal_scraps.png" id="2_kk1xc"]
+
+[resource]
+script = ExtResource("1_v7ebu")
+id = "metal_scraps"
+name = "Metal Scraps"
+description = "Some metal scraps, i wonder if i can craft something with those..."
+texture = ExtResource("2_kk1xc")
+is_pickable = true
+material = ""
+transforms_into = ""
+station = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

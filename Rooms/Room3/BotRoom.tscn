@@ -3,11 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_xcmg2"]
 [ext_resource type="Script" uid="uid://d2gwsqggo22kx" path="res://Rooms/Room3/bot_room.gd" id="1_yudld"]
 [ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/Room3/Cabinet.tscn" id="3_yudld"]
+[ext_resource type="PackedScene" uid="uid://xv6yvtng0ll1" path="res://Items/metal_scraps.tscn" id="4_pbdfu"]
+[ext_resource type="Script" uid="uid://cxr02nteoaxwy" path="res://Rooms/Room3/coal_vein.gd" id="5_bsdjx"]
+[ext_resource type="Texture2D" uid="uid://dm72fuhl7fdea" path="res://assets/images/fireplace.png" id="6_ldm10"]
+[ext_resource type="Texture2D" uid="uid://b78y0761fnhkf" path="res://assets/images/coal_vein.png" id="7_v424d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mcxe6"]
+radius = 87.0
+height = 236.0
 
 [node name="BotRoom" type="Node2D" unique_id=1691897204]
 script = ExtResource("1_yudld")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=265616664]
+visible = false
 modulate = Color(1, 1, 1, 0.47058824)
 offset_left = -3840.0
 offset_right = 3840.0
@@ -16,3 +25,23 @@ texture = ExtResource("1_xcmg2")
 
 [node name="Cabinet" parent="." unique_id=1402847951 instance=ExtResource("3_yudld")]
 position = Vector2(611, 640)
+
+[node name="MetalScraps" parent="." unique_id=1491702647 instance=ExtResource("4_pbdfu")]
+position = Vector2(1247, 833)
+
+[node name="CoalVein" type="Area2D" parent="." unique_id=1972907018]
+position = Vector2(1433, 686)
+script = ExtResource("5_bsdjx")
+metadata/_custom_type_script = "uid://rlemyrl4ndtl"
+
+[node name="Sprite2D2" type="Sprite2D" parent="CoalVein" unique_id=97986618]
+texture = ExtResource("6_ldm10")
+
+[node name="Sprite2D" type="Sprite2D" parent="CoalVein" unique_id=1252854070]
+position = Vector2(6, -129)
+texture = ExtResource("7_v424d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoalVein" unique_id=486455402]
+position = Vector2(8, -35)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_mcxe6")
