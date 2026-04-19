@@ -54,12 +54,8 @@ func position_faucets(pos):
 	
 
 func generate_level():
-	var path = generate_path()
-	print("PATHHHHHHHHHH")
-	print(path)
-	var solution = path_to_pipes(path)
-	print("SOLUTIONNNNNNNNNNNNNNNNNNNN")
-	print(solution)
+	var path = [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(3, 1), Vector2i(3, 2), Vector2i(2, 2), Vector2i(2, 1), Vector2i(1, 1), Vector2i(0, 1), Vector2i(0, 2), Vector2i(1, 2), Vector2i(1, 3), Vector2i(0, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(3, 4), Vector2i(2, 4), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(5, 4), Vector2i(4, 4), Vector2i(4, 5), Vector2i(5, 5)]
+	var solution = { Vector2i(0, 0): [1, 3], Vector2i(1, 0): [1, 3], Vector2i(2, 0): [1, 3], Vector2i(3, 0): [1, 2], Vector2i(3, 1): [0, 2], Vector2i(3, 2): [2, 3], Vector2i(2, 2): [0, 3], Vector2i(2, 1): [0, 3], Vector2i(1, 1): [1, 3], Vector2i(0, 1): [2, 3], Vector2i(0, 2): [1, 2], Vector2i(1, 2): [1, 2], Vector2i(1, 3): [2, 3], Vector2i(0, 3): [2, 3], Vector2i(0, 4): [1, 2], Vector2i(1, 4): [1, 2], Vector2i(1, 5): [1, 2], Vector2i(2, 5): [1, 3], Vector2i(3, 5): [0, 1], Vector2i(3, 4): [0, 3], Vector2i(2, 4): [0, 3], Vector2i(2, 3): [0, 1], Vector2i(3, 3): [1, 3], Vector2i(4, 3): [1, 3], Vector2i(5, 3): [1, 2], Vector2i(5, 4): [2, 3], Vector2i(4, 4): [2, 3], Vector2i(4, 5): [1, 2], Vector2i(5, 5): [1, 3] }
 	var full_grid = fill_grid(solution)
 	
 	return {
@@ -91,7 +87,7 @@ func generate_path() -> Array:
 		current = neighbors.pick_random()
 		path.append(current)
 		visited[current] = true
-	
+	#if path.size() < 30 : return generate_path()
 	return path
 
 func path_to_pipes(path: Array) -> Dictionary:
@@ -102,21 +98,21 @@ func path_to_pipes(path: Array) -> Dictionary:
 		if !pipes.has(pos):
 			pipes[pos] = []
 		
+		var from = path[i - 1]
+		var direction = dir_to_index(path[i] - from)
 		# incoming connection
 		if i > 0:
-			var from = path[i - 1]
-			var direction = dir_to_index(path[i] - from)
 			pipes[pos].append(direction)
 			
-			if !pipes.has(from):
-				pipes[from] = []
-			pipes[from].append(opposite(direction))
 		
 		# outgoing connection
 		if i < path.size() - 1:
 			var dir2 = dir_to_index(path[i + 1] - path[i])
 			pipes[pos].append(dir2)
+		
 	
+	print("pipes")
+	print(pipes)
 	# cleanup duplicates
 	for p in pipes.keys():
 		var cleaned = []
@@ -124,6 +120,10 @@ func path_to_pipes(path: Array) -> Dictionary:
 			if v not in cleaned:
 				cleaned.append(v)
 		pipes[p] = cleaned
+		if pipes[p] == [1] or pipes[p] == [3]:
+			pipes[p] = [1,3]
+		if pipes[p] == [0] or pipes[p] == [2]:
+			pipes[p] = [0,2]
 		pipes[p].sort()
 	
 	# set start and end pipes
@@ -143,14 +143,10 @@ func path_to_pipes(path: Array) -> Dictionary:
 	
 	var start = path[0]
 	var end = path[path.size() - 1]
-	
-	pipes[start] = pipeoptions.pick_random()
-	pipes[end] = pipeoptions.pick_random()
-	
 	return pipes
 
 func random_pipe():
-	var roll = randi() % 100
+	var roll = randi() % 70
 	var options = []
 	
 	# straight (common)
@@ -206,7 +202,7 @@ func fill_grid(solution: Dictionary) -> Dictionary:
 			if solution.has(pos):
 				full_grid[pos] = solution[pos]
 			else:
-				full_grid[pos] = random_pipe()
+				full_grid[pos] = []
 	
 	return full_grid
 

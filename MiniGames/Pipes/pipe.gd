@@ -1,7 +1,7 @@
 extends Area2D
 class_name Pipe
 
-const PIPE_SHADER = preload("uid://wnbvrdexyc60")
+const PIPE_SHADER = preload("res://MiniGames/Pipes/pipe.gdshader")
 
 signal pipe_rotated
 
@@ -29,10 +29,11 @@ func set_connections(conns: Array):
 
 func set_pipe():
 	sprite.rotation_degrees = 0
-	if connections.is_empty(): # to edit to implement empty pipe
-		return
-	
 	sprite.texture = preload("res://assets/images/pipe_game/pipe_1.png")
+	if connections.is_empty(): # to edit to implement empty pipe
+		sprite.texture = preload("res://build/empty.png")
+		sprite.rotation_degrees = 0
+	
 	
 	# STRAIGHT - base: UP + DOWN
 	if connections == [0, 2]:

@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5n0b4"]
 [ext_resource type="PackedScene" uid="uid://25wug5xv4w3n" path="res://Rooms/Room1/switch.tscn" id="3_b40qy"]
 [ext_resource type="PackedScene" uid="uid://b8p516mmro6mv" path="res://Items/spring.tscn" id="4_b40qy"]
+[ext_resource type="PackedScene" uid="uid://dvk3lykklp7od" path="res://MiniGames/Pipes/pipe_game.tscn" id="5_yg4ol"]
 
 [node name="LightSwitchRoom" type="Node2D" unique_id=1691897204]
 script = ExtResource("1_j0tc0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=272207693]
-visible = false
 modulate = Color(1, 1, 1, 0.50980395)
 offset_right = 7680.0
 offset_bottom = 1080.0
@@ -21,5 +21,7 @@ position = Vector2(1306, 305)
 
 [node name="Spring" parent="." unique_id=2025760680 instance=ExtResource("4_b40qy")]
 position = Vector2(1176, 727)
+
+[node name="PipeGame" parent="." unique_id=677869341 instance=ExtResource("5_yg4ol")]
 
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
