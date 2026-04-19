@@ -4,5 +4,5 @@
 
 [node name="InventorySlot" type="TextureRect" unique_id=1213106221]
 custom_minimum_size = Vector2(50, 50)
-expand_mode = 1
+expand_mode = 3
 script = ExtResource("1_68pn2")

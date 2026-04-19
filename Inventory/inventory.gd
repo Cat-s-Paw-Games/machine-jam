@@ -3,7 +3,7 @@ class_name Inventory
 
 const INVENTORY_SLOT = preload("uid://bm847rff3ls1r")
 
-@export var slots_number : int = 7
+@export var slots_number : int = 12
 
 func _ready() -> void:
 	for i in range(slots_number):
