@@ -11,13 +11,14 @@ var cell_size : int = 128
 var grid = []
 var start_cell = Vector2i(0,0)
 var end_cell = Vector2i(grid_size.y - 1, grid_size.x - 1)
+var level = {}
 
 func _ready():
+	level = generate_level()
 	generate_grid()
 
 func generate_grid():
 	reset_grid()
-	var level = generate_level()
 	var _grid = level["grid"]
 	
 	for y in range(grid_size.y):
@@ -33,12 +34,17 @@ func generate_grid():
 
 func generate_level():
 	var path = generate_path()
+	print("PATHHHHHHHHHH")
+	print(path)
 	var solution = path_to_pipes(path)
+	print("SOLUTIONNNNNNNNNNNNNNNNNNNN")
+	print(solution)
 	var full_grid = fill_grid(solution)
 	
 	return {
 		"grid": full_grid,
 		"solution": solution,
+		"path": path,
 		"start": start_cell,
 		"end": end_cell
 	}
@@ -135,8 +141,9 @@ func random_pipe():
 	# T pipes
 	elif roll < 90:
 		options = [[0,1,2],[1,2,3],[2,3,0],[3,0,1]]
+	# cross (rare)
 	else:
-		options = [0,1,2,3] # cross (rare)
+		options = [[0,1,2,3]]
 	
 	return options.pick_random()
 
@@ -216,3 +223,31 @@ func check_win_condition():
 	
 	if visited.has(end_cell):
 		pipes_connected.emit()
+		animate_water_flow(visited)
+
+func animate_water_flow(visited):
+	for pos in visited:
+		var pipe = grid[pos.y][pos.x]
+		
+		#pipe.modulate = Color.BLUE
+
+		var dir := Vector2i.ZERO
+
+		# check neighbors to find where flow goes
+		var directions = [
+			Vector2i.DOWN,
+			Vector2i.UP,
+			Vector2i.RIGHT,
+			Vector2i.LEFT
+		]
+
+		for d in directions:
+			var neighbor = pos + d
+			if visited.has(neighbor):
+				dir = d
+				break
+
+		pipe.set_flow(dir)
+		pipe.animate_fill()
+
+		await get_tree().create_timer(0.08).timeout

@@ -3,6 +3,50 @@
 [ext_resource type="Script" uid="uid://d1pcltpc4amlh" path="res://MiniGames/Pipes/pipe.gd" id="2_8nqe7"]
 [ext_resource type="Texture2D" uid="uid://cabhaf83hdv68" path="res://assets/images/pipe_game/pipe_1.png" id="2_hw7y8"]
 
+[sub_resource type="Shader" id="Shader_8nqe7"]
+code = "shader_type canvas_item;
+
+uniform sampler2D pipe_mask;
+uniform float progress : hint_range(0.0, 1.0);
+uniform vec2 direction = vec2(1.0, 0.0);
+
+void fragment() {
+    vec2 uv = UV;
+
+    vec4 mask_tex = texture(pipe_mask, uv);
+
+    // pipe shape mask (THIS is your key requirement)
+    float alpha_mask = mask_tex.a;
+
+    float flow = 0.0;
+
+    // directional fill
+    if (abs(direction.x) > 0.5) {
+        if (direction.x > 0.0) {
+            flow = step(uv.x, progress);
+        } else {
+            flow = step(1.0 - uv.x, progress);
+        }
+    } else {
+        if (direction.y > 0.0) {
+            flow = step(uv.y, progress);
+        } else {
+            flow = step(1.0 - uv.y, progress);
+        }
+    }
+
+    float final_mask = flow * alpha_mask;
+
+    vec3 water_color = vec3(0.2, 0.6, 1.0);
+
+    COLOR = vec4(water_color, final_mask);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmmru"]
+shader = SubResource("Shader_8nqe7")
+shader_parameter/progress = 0.0
+shader_parameter/direction = Vector2(1, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nqe7"]
 size = Vector2(126, 126)
 
@@ -10,6 +54,12 @@ size = Vector2(126, 126)
 script = ExtResource("2_8nqe7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=145467022]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hw7y8")
+
+[node name="Water" type="Sprite2D" parent="." unique_id=60787559]
+visible = false
+material = SubResource("ShaderMaterial_lmmru")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hw7y8")
 
