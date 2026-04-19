@@ -1,10 +1,12 @@
 extends DropArea
 
-func use_inventory_item(item_id : String):
+func use_inventory_item(item_id : String) -> bool:
 	if item_id == "pickaxe":
 		App.ui.inventory.add_item("coal")
 		App.mouse.hover_out()
 		disable_collisions()
+		return true
+	return false
 
 func disable_collisions():
 	monitorable = false
