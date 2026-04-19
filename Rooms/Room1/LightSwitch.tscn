@@ -23,5 +23,8 @@ position = Vector2(1306, 305)
 position = Vector2(1176, 727)
 
 [node name="PipeGame" parent="." unique_id=677869341 instance=ExtResource("5_yg4ol")]
+z_index = 20
+position = Vector2(125, 149)
 
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
+[connection signal="pipes_connected" from="PipeGame" to="." method="_on_pipe_game_pipes_connected"]

@@ -8,6 +8,7 @@ signal steam_decrease(delta: float)
 signal steam_changed(value: float)
 signal activate_generator()
 signal cabinet_open()
+signal pipes_connected(end_position)
 
 func setup():
 	switch_lights_on.connect(_on_switch_lights)
@@ -21,6 +22,7 @@ func setup():
 	)
 	activate_generator.connect(_on_activate_generator)
 	cabinet_open.connect(_on_cabinet_open)
+	
 
 func _on_switch_lights():
 	App.game_status.lights_on = true

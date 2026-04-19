@@ -128,10 +128,20 @@ func set_progress(value):
 	water.material.set_shader_parameter("progress", value)
 
 func set_flow(dir: Vector2i):
-	var rotated_dir = get_rotated_direction(dir)
+	# Converte la direzione indice in vettore
+	var direction_vector = Vector2(dir.x, dir.y).normalized()
+	
+	# Calcola la rotazione totale della sprite
+	var rotation_radians = deg_to_rad(sprite.rotation_degrees)
+	
+	# Ruota il vettore di direzione in base alla rotazione della sprite
+	var rotated_dir = direction_vector.rotated(rotation_radians)
+	
+	# Setta il parametro dello shader
 	water.material.set_shader_parameter("direction", rotated_dir)
 
 func get_rotated_direction(dir: Vector2i) -> Vector2:
+	var direction_vector = Vector2(dir.x, dir.y).normalized()
 	var angle = deg_to_rad(sprite.rotation_degrees)
-	var rotated = Vector2(dir.x, dir.y).rotated(angle)
+	var rotated = direction_vector.rotated(angle)
 	return rotated

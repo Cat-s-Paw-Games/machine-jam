@@ -3,7 +3,7 @@ extends Node2D
 signal pipes_connected
 
 const PIPE = preload("uid://bwj5jx5v4ljiw")
-var cell_size : int = 128
+var cell_size : int = 64
 @export var grid_size : Vector2i = Vector2i(6, 6)
 
 @onready var canvas: Node2D = %Canvas
@@ -13,9 +13,11 @@ var cell_size : int = 128
 var grid = []
 var start_cell = Vector2i(0,0)
 var end_cell = Vector2i(grid_size.y - 1, grid_size.x - 1)
-var start_input = [dir_to_index(Vector2i.UP), dir_to_index(Vector2i.LEFT)].pick_random()
-var end_output = [dir_to_index(Vector2i.DOWN), dir_to_index(Vector2i.RIGHT)].pick_random()
+var start_input =  dir_to_index(Vector2i.LEFT)
+var end_output = dir_to_index(Vector2i.DOWN)
 var level = {}
+var start_position = Vector2i(0,42)
+var end_position = Vector2i(cell_size * (grid_size.x) - 21,cell_size * (grid_size.y ) + 42 - 10) 
 
 func _ready():
 	level = generate_level()
@@ -42,16 +44,10 @@ func generate_grid():
 func position_faucets(pos):
 	# temporary to show input and output
 	if pos == Vector2i(0,0):
-		if start_input == 0: #up
-			start_dir.global_position = 32 * dir_to_vector(start_input) + Vector2i(42, 0)
-		else: #left
-			start_dir.global_position = 32 * dir_to_vector(start_input) + Vector2i(0, 42)
+		start_dir.position = start_position
 	elif pos == Vector2i(grid_size.y - 1, grid_size.x - 1):
-		if end_output == 2: #down
-			end_dir.global_position = pos * cell_size + cell_size * Vector2i(1,1) - cell_size/2 * Vector2i(1,0) - Vector2i(20,10) 
-		else: #right
-			end_dir.global_position = pos * cell_size + cell_size * Vector2i(1,1) - cell_size/2 * Vector2i(0,1) - Vector2i(10,20) 
-	
+		end_dir.position = end_position 
+
 
 func generate_level():
 	var path = [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(3, 1), Vector2i(3, 2), Vector2i(2, 2), Vector2i(2, 1), Vector2i(1, 1), Vector2i(0, 1), Vector2i(0, 2), Vector2i(1, 2), Vector2i(1, 3), Vector2i(0, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(3, 4), Vector2i(2, 4), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(5, 4), Vector2i(4, 4), Vector2i(4, 5), Vector2i(5, 5)]
@@ -111,8 +107,6 @@ func path_to_pipes(path: Array) -> Dictionary:
 			pipes[pos].append(dir2)
 		
 	
-	print("pipes")
-	print(pipes)
 	# cleanup duplicates
 	for p in pipes.keys():
 		var cleaned = []
@@ -126,23 +120,6 @@ func path_to_pipes(path: Array) -> Dictionary:
 			pipes[p] = [0,2]
 		pipes[p].sort()
 	
-	# set start and end pipes
-	var pipeoptions = [
-		[0,2], # straight vertical
-		[1,3], # straight horizontal
-		[0,1], # corner
-		[1,2],
-		[2,3],
-		[3,0],
-		[0,1,2], # T
-		[1,2,3],
-		[2,3,0],
-		[3,0,1],
-		[0,1,2,3] # cross
-	]
-	
-	var start = path[0]
-	var end = path[path.size() - 1]
 	return pipes
 
 func random_pipe():
@@ -217,6 +194,7 @@ func check_win_condition():
 	var visited = {}
 	var stack = [start_cell]
 	
+	
 	var start_connections = grid[0][0].connections
 	var end_connections = grid[grid_size.y - 1][grid_size.x - 1].connections
 	if start_input not in start_connections || end_output not in end_connections:
@@ -242,10 +220,10 @@ func check_win_condition():
 			
 			if opposite(dir) in neighbor_pipe.connections:
 				stack.append(neighbor_pos)
-	
+
 	if visited.has(end_cell):
-		pipes_connected.emit()
 		animate_water_flow(visited)
+		
 
 func animate_water_flow(visited):
 	for pos in visited:
@@ -273,3 +251,5 @@ func animate_water_flow(visited):
 		pipe.animate_fill()
 
 		await get_tree().create_timer(0.08).timeout
+	
+	pipes_connected.emit()
