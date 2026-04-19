@@ -50,7 +50,7 @@ position = Vector2(3840, 0)
 position = Vector2(5760, 0)
 
 [node name="ConsoleRoom" parent="GameView/Rooms" unique_id=536472085 instance=ExtResource("7_5vw27")]
-position = Vector2(3208, 6)
+position = Vector2(3202, 0)
 
 [node name="Foreground" type="Parallax2D" parent="GameView" unique_id=1502475589]
 unique_name_in_owner = true

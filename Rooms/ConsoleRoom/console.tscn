@@ -9,6 +9,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bo6m"]
 size = Vector2(20, 152)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dbsf4"]
+polygon = PackedVector2Array(-58, 550, -23, 399, 437, 441, 446, 561, 437, 733, -54, 739)
+
 [node name="Node2D" type="Node2D" unique_id=1400590602]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=55024091]
@@ -32,5 +35,10 @@ metadata/_custom_type_script = "uid://gikcr4yg3njr"
 position = Vector2(227, 71)
 shape = SubResource("RectangleShape2D_3bo6m")
 debug_color = Color(0, 0.63318145, 0.4468348, 0.41960785)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=605843215]
+position = Vector2(-191, -563)
+occluder = SubResource("OccluderPolygon2D_dbsf4")
+occluder_light_mask = 15
 
 [connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_pressed"]

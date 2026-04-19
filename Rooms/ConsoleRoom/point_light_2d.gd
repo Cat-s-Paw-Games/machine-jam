@@ -1,6 +1,7 @@
 extends PointLight2D
 
 func _ready() -> void:
+	App.events.switch_lights_on.connect(func(): enabled = true)
 	var tween = create_tween()
 	tween.set_loops() # loop infinito
 
