@@ -3,12 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://jsixj1c144ly" path="res://assets/images/ui/not_enough_steam.png" id="1_0p6g3"]
 [ext_resource type="Script" uid="uid://boh6i0wp7we52" path="res://Inventory/console.gd" id="1_m7hj2"]
 [ext_resource type="Script" uid="uid://c6edkyw1p5vw8" path="res://Inventory/inventory_slot.gd" id="1_q6d8s"]
+[ext_resource type="StyleBox" uid="uid://bfcghvmhffp0j" path="res://Rooms/Room4/crafting_box_stylebox.tres" id="3_45ofc"]
+[ext_resource type="Texture2D" uid="uid://dojbqffl3k4tf" path="res://assets/images/console_screen.png" id="5_8fn8a"]
+[ext_resource type="Script" uid="uid://dbu120kdm1fdl" path="res://Inventory/console_screen.gd" id="6_rye3n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dve5e"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p6g3"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0tts"]
+texture = ExtResource("5_8fn8a")
 
 [node name="Console" type="PanelContainer" unique_id=264029128]
 anchors_preset = 8
@@ -79,245 +82,65 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 50
 
-[node name="Keys" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=526780160]
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1064710442]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel" unique_id=1822850207]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_45ofc")
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel/Panel" unique_id=66181918]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="Panel2" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1069023735]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_w0tts")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2" unique_id=965838950]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 100
+
+[node name="Console" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer" unique_id=216746962]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
-columns = 3
-
-[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=1064710442]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel" unique_id=295698464]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Panel2" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=1519449218]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel2" unique_id=690067275]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Panel3" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=1845413967]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel3" unique_id=833765186]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Panel4" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=2146750591]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel4" unique_id=2146315340]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Panel5" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=261129734]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel5" unique_id=911941613]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Panel6" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=1080663758]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel6" unique_id=116223297]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Panel7" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=611638129]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel7" unique_id=45198389]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Panel8" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=188218010]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel8" unique_id=1023845917]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Panel9" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys" unique_id=370704601]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Keys/Panel9" unique_id=1504201009]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_q6d8s")
-metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
-
-[node name="Buttons" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1898641309]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
-columns = 3
-
-[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1639774405]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Button"
-
-[node name="Button2" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1552894783]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Button"
-
-[node name="Button3" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1686856198]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Button"
-
-[node name="Button4" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1585162838]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Button"
-
-[node name="Button5" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1826706937]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Button"
-
-[node name="Button6" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=950125746]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Button"
-
-[node name="Button7" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=450544310]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Button"
-
-[node name="Button8" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1177200267]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Button"
-
-[node name="ConfirmBtn" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons" unique_id=1795802557]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0p6g3")
-text = "Confirm"
+script = ExtResource("6_rye3n")
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Buttons/ConfirmBtn" to="." method="_on_confirm_btn_pressed"]
