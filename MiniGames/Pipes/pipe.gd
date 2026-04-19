@@ -10,6 +10,7 @@ enum TYPES { STRAIGHT, CORNER, T, CROSS }
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var water: Sprite2D = $Water
+var enabled = true
 
 var connections: Array = []
 
@@ -19,7 +20,7 @@ func _ready() -> void:
 	water.material = mat
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed:
+	if enabled and event is InputEventMouseButton and event.pressed:
 		rotate_pipe()
 
 func set_connections(conns: Array):
@@ -115,8 +116,8 @@ func rotate_animation():
 	await tween.finished
 
 func animate_fill():
-	water.show()
-	update_pipe_texture()
+	#water.show()
+	#update_pipe_texture()
 	var tween = create_tween()
 	tween.tween_method(set_progress, 0.0, 1.0, 0.2)
 

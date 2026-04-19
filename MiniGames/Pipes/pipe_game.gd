@@ -4,6 +4,7 @@ signal pipes_connected
 
 const PIPE = preload("uid://bwj5jx5v4ljiw")
 var cell_size : int = 64
+var finished = false
 @export var grid_size : Vector2i = Vector2i(6, 6)
 
 @onready var canvas: Node2D = %Canvas
@@ -222,6 +223,9 @@ func check_win_condition():
 				stack.append(neighbor_pos)
 
 	if visited.has(end_cell):
+		for y in range(grid_size.y):
+			for x in range(grid_size.x):
+				grid[x][y].enabled = false
 		animate_water_flow(visited)
 		
 
