@@ -4,9 +4,13 @@ extends TouchScreenButton
 
 var hover = false
 
+func _ready() -> void:
+	App.events.activate_generator.connect(func(): $SteamEmitter.emitting = true)
+
 func _process(delta: float) -> void:
 	if App.game_status.water_linked && App.game_status.fire_lit:
-		if not App.game_status.generator_active: App.events.activate_generator.emit()
+		if not App.game_status.generator_active: 
+			App.events.activate_generator.emit()
 		if App.game_status.steam < App.game_status.max_steam:
 			App.game_status.steam = App.game_status.steam+delta
 
