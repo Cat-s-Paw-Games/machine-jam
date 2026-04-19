@@ -3,23 +3,12 @@ class_name EventService
 
 signal switch_lights_on()
 signal item_added(id: String)
-signal steam_increase(delta: float)
-signal steam_decrease(delta: float)
-signal steam_changed(value: float)
 signal activate_generator()
 signal cabinet_open()
 signal pipes_connected(end_position)
 
 func setup():
 	switch_lights_on.connect(_on_switch_lights)
-	steam_increase.connect(func(delta): 
-		App.game_status.steam += delta
-		steam_changed.emit(App.game_status.steam)
-	)
-	steam_decrease.connect(func(delta): 
-		App.game_status.steam -= delta
-		steam_changed.emit(App.game_status.steam)
-	)
 	activate_generator.connect(_on_activate_generator)
 	cabinet_open.connect(_on_cabinet_open)
 	

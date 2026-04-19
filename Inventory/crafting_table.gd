@@ -35,8 +35,10 @@ func remove_steam_warning():
 	%OutputSlotX.visible = false
 
 func _ready():
-	App.events.steam_changed.connect(_on_steam_changed)
-	_on_steam_changed(App.game_status.steam)
+	_on_steam_changed()
+
+func _process(_delta: float) -> void:
+	_on_steam_changed()
 
 func clear_grid():
 	for child in crafting_grid.get_children():
@@ -125,6 +127,7 @@ func _on_close_pressed() -> void:
 		if item: App.ui.inventory.add_item(item)
 	App.ui.close_crafting()
 
-func _on_steam_changed(steam):
+func _on_steam_changed():
+	var steam = App.game_status.steam
 	%SteamLabel.text = str(steam).pad_decimals(2)
 	check_recipe()
