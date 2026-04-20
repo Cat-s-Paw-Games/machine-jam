@@ -20,17 +20,27 @@ func _on_item_add(item_id : String):
 		check_floppy_line()
 		%Console.correct_item = false
 
+var floppy_menu_line = "> Copy Floppy Log"
+
+func add_floppy_line():
+	if !%Console.screens["main_menu"]["lines"].has(floppy_menu_line):
+		%Console.screens["main_menu"]["lines"].append(floppy_menu_line)
+		%Console.render()
+		
+func remove_floppy_line():
+	if %Console.screens["main_menu"]["lines"].has(floppy_menu_line):
+		%Console.screens["main_menu"]["lines"].erase(floppy_menu_line)
+		%Console.render()
+	
+
 func check_floppy_line():
-	var floppy_menu_line = "> Copy Floppy Log"
 	if %Console.floppy_log:
-		if !%Console.screens["main_menu"]["lines"].has(floppy_menu_line):
-			%Console.screens["main_menu"]["lines"].append(floppy_menu_line)
+		add_floppy_line()
 	else:
-		if %Console.screens["main_menu"]["lines"].has(floppy_menu_line):
-			%Console.screens["main_menu"]["lines"].erase(floppy_menu_line)
-	%Console.render()
+		remove_floppy_line()
 
 func _on_item_remove():
+	remove_floppy_line()
 	current_item = null
 	%Console.correct_item = false
 	%Console.floppy_log = false

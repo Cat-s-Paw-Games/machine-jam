@@ -17,6 +17,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			SceneTransitionManager.change_scene_with_wipe("res://main.tscn")
 			get_tree().paused = false
 			
+		if event is InputEventKey and event.keycode == KEY_F2 and event.pressed:
+			App.ui.inventory.add_item("floppy_001")
+			
 		if event is InputEventKey and event.keycode == KEY_F1 and event.pressed:
 			App.game_status.lights_on = true
 			App.game_status.fire_lit = true

@@ -75,6 +75,7 @@ func set_preview(item: Node):
 	var d = item.duplicate()
 	d.modulate.a = 0.7
 	d.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	d.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 	cursor_instance.preview_item = d
 	
 func unset_preview():
