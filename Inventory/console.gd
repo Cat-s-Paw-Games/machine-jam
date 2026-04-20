@@ -38,3 +38,10 @@ func _on_item_remove(index : int):
 func _on_close_pressed() -> void:
 	if current_item: App.ui.inventory.add_item(current_item)
 	App.ui.close_console()
+
+
+func _on_console_floppy_saved() -> void:
+	if current_item:
+		%InventorySlot.empty_slot()
+		current_item = null
+	

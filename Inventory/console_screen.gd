@@ -1,5 +1,7 @@
 extends VBoxContainer
 
+signal floppy_saved
+
 var paused = false
 var correct_item = false
 var floppy_log = false
@@ -27,20 +29,8 @@ var screens = {
 	"logs": {
 		"lines": [
 			"> Back",
-			"> Log Entry 91721.00",
-			"> Log Entry 91721.15",
-			"> Log Entry 91721.92",
-			"> Log Entry 91722.38",
-			"> Log Entry 91722.94",
-			"> Log Entry 91724.70",
-		]
-	},
-	#"log_1": {"pretext": "[Log Entry 91721.00] – Report from %s handler.\nCoal extraction completed successfully. The frigate has been fully loaded with all materials recovered during the last mission. Home base has been notified of mission completion. Awaiting further instructions." % App.MACHINE_NAME},
-	#"log_2": {"pretext": "[Log Entry 91721.15] – Report from %s handler.\n%s is no longer responding within expected parameters. Multiple subsystems have failed in sequence. Initial diagnostics suggest structural damage beyond standard field repair."  % [App.MACHINE_NAME, App.MACHINE_NAME]},
-	#"log_3": {"pretext": "[Log Entry 91721.92] - Report from %s handler.\n%s continues to operate intermittently despite critical faults.\nShutdown protocols are ignored or reversed. It appears to resist deactivation, maintaining minimal activity without clear directive." % [App.MACHINE_NAME, App.MACHINE_NAME]},
-	#"log_4": {"pretext": "[Log Entry 91722.38] – Report from %s handler.\nEngineering proposed isolating the core intelligence for extraction and transport. The procedure is viable, but requires equipment and energy reserves currently unavailable in this sector." % App.MACHINE_NAME},
-	#"log_5": {"pretext": "[Log Entry 91722.94] – Report from %s handler.\nDecision made to abandon %s in place. Systems remain partially active at time of departure. No further recovery actions authorized due to cost constraints." % [App.MACHINE_NAME, App.MACHINE_NAME]},
-	#"log_6": {"pretext": "[Log Entry 91722.94]\nIs anyone here? Am I... alone?"},
+		],
+	}
 }
 var current_screen = "main_menu"
 
@@ -71,7 +61,6 @@ func get_next_screen():
 func save_floppy_data():
 	if floppy_log && current_floppy != null:
 		App.game_status.console_logs[current_floppy.id] = {}
-		screens[current_floppy.id] = {}
 		var pretext_start = current_floppy.description.find("[pretext]")
 		var pretext_end = current_floppy.description.find("[/pretext]")
 		var _pretext = current_floppy.description.substr(pretext_start, pretext_end + "[/pretext]".length())
@@ -81,15 +70,25 @@ func save_floppy_data():
 		var content_end = current_floppy.description.find("[/content]")
 		var _content = current_floppy.description.substr(content_start, content_end + "[/content]".length())
 		_content = _content.replace("[content]", "").replace("[/content]", "").replace("[MACHINE_NAME]", App.MACHINE_NAME)
-		App.game_status.console_logs[current_floppy.id] = {"pretext": _pretext + "\n" + _content}
-		screens[current_floppy.id] = {"pretext": _pretext + "\n" + _content}
+		App.game_status.console_logs[current_floppy.id] = {"line": current_floppy.name, "pretext": _pretext + "\n" + _content}
 	
 	floppy_log = false
 	current_floppy = null
+	load_data()
+	floppy_saved.emit()
 
 func _ready() -> void:
-	screens.merge(App.game_status.console_logs)
+	load_data()
 	render()
+
+func load_data():
+	#screens.merge(App.game_status.console_logs)
+	screens["logs"]["lines"].clear()
+	screens["logs"]["lines"].append("> Back")
+	for log_id in App.game_status.console_logs:
+		screens[log_id] = App.game_status.console_logs[log_id]
+		screens["logs"]["lines"].append(App.game_status.console_logs[log_id].line)
+	
 
 func create_rte() -> RichTextLabel:
 
