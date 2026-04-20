@@ -1,6 +1,7 @@
 extends Node
 class_name GameStatusService
 
+var combination = [7,3,9]
 var lights_on = false
 var pipe_touched = false
 var fire_lit = false

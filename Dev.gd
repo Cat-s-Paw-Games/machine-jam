@@ -28,7 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			App.game_status.steam += 100
 			
 			var main = get_tree().root.get_node_or_null("Main")
-			if main.blackout:
+			if main and main.blackout:
 				main.blackout.queue_free()
 		
 		if event is InputEventKey and event.keycode == KEY_M and event.pressed:

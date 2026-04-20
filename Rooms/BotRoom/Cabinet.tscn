@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://nh4sj74ipvt3" path="res://Rooms/BotRoom/cabinet.gd" id="1_fc2xf"]
 [ext_resource type="Texture2D" uid="uid://dnuddnsleowkj" path="res://assets/images/cabinet.png" id="2_fc2xf"]
+[ext_resource type="Script" uid="uid://gcnyv876q143" path="res://Rooms/BotRoom/cabinet_button.gd" id="3_gi2bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwfbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi2bh"]
 
 [node name="Cabinet" type="Node2D" unique_id=1402847951]
 script = ExtResource("1_fc2xf")
@@ -16,5 +19,12 @@ texture = ExtResource("2_fc2xf")
 [node name="Button" type="TouchScreenButton" parent="." unique_id=333148785]
 scale = Vector2(18.446413, -7.6030307)
 shape = SubResource("RectangleShape2D_mwfbp")
+script = ExtResource("3_gi2bh")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Area2D" type="Area2D" parent="Button" unique_id=485431149]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D" unique_id=1212847648]
+shape = SubResource("RectangleShape2D_gi2bh")
+debug_color = Color(2.5027991e-06, 0.62781876, 0.5013204, 0.41960785)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -5,7 +5,7 @@ var first:int;
 var second:int;
 var third: int;
 
-var correct_combination = [7,3,9]
+@onready var correct_combination = App.game_status.combination
 
 func _on_first_count_changed(new_value: int) -> void:
 	first = new_value
