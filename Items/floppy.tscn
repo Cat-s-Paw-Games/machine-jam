@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://2jwm115utw6p"]
+
+[ext_resource type="Texture2D" uid="uid://c5ubcb3jjjcbv" path="res://assets/images/floppy.png" id="1_awlsn"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_pa7xe"]
+[ext_resource type="Resource" uid="uid://kfcajohb3fha" path="res://globals/items/floppy_logs/floppy_001.tres" id="3_qfurb"]
+
+[node name="Floppy" type="TouchScreenButton" unique_id=904767244]
+scale = Vector2(0.17578125, 0.17578125)
+texture_normal = ExtResource("1_awlsn")
+script = ExtResource("2_pa7xe")
+item = ExtResource("3_qfurb")
+metadata/_custom_type_script = "uid://cafqq0iart4ih"

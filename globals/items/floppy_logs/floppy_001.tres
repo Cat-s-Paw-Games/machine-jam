@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://kfcajohb3fha"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_4yubv"]
+[ext_resource type="Texture2D" uid="uid://c5ubcb3jjjcbv" path="res://assets/images/floppy.png" id="2_hxae3"]
+
+[resource]
+script = ExtResource("1_4yubv")
+id = "floppy_001"
+name = "Floppy Log 001"
+description = "[pretext][Log 001] - One day of april[/pretext]
+[content]
+Once upon a time the [MACHINE_NAME] was so cool and so powerful... nowadays it stinks!!!
+[/content]"
+texture = ExtResource("2_hxae3")
+is_pickable = true
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"
