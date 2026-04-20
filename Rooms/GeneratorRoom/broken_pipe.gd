@@ -10,6 +10,7 @@ extends DropArea
 func hover_text():
 	if !App.game_status.water_linked:
 		return "Broken Pipe"
+	return ""
 
 func _on_item_dropped(item : DraggableItem):
 	if item is ValveHandle:

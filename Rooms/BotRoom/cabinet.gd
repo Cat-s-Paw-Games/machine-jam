@@ -11,4 +11,4 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	if App.in_focus: return
-	App.ui.open_scene_in_focus(preload("res://Rooms/Room3/CabinetCode.tscn").instantiate())
+	App.ui.open_scene_in_focus(preload("res://Rooms/BotRoom/CabinetCode.tscn").instantiate())

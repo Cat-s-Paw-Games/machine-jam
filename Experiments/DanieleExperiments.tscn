@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://l2lpktjeyin2" path="res://Experiments/daniele_experiments.gd" id="1_hhukw"]
 [ext_resource type="Texture2D" uid="uid://bqkv3bn51sr6k" path="res://Experiments/parallax_back.jpg" id="2_lpo3f"]
-[ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Room2/generator_room.tscn" id="3_8icyd"]
-[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/BotRoom.tscn" id="4_2jv4b"]
+[ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/GeneratorRoom/generator_room.tscn" id="3_8icyd"]
+[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/BotRoom/BotRoom.tscn" id="4_2jv4b"]
 [ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_8icyd"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lpo3f"]

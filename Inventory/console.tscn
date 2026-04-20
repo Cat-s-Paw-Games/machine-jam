@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://jsixj1c144ly" path="res://assets/images/ui/not_enough_steam.png" id="1_0p6g3"]
 [ext_resource type="Script" uid="uid://boh6i0wp7we52" path="res://Inventory/console.gd" id="1_m7hj2"]
 [ext_resource type="Script" uid="uid://c6edkyw1p5vw8" path="res://Inventory/inventory_slot.gd" id="1_q6d8s"]
-[ext_resource type="StyleBox" uid="uid://bfcghvmhffp0j" path="res://Rooms/Room4/crafting_box_stylebox.tres" id="3_45ofc"]
+[ext_resource type="StyleBox" uid="uid://bfcghvmhffp0j" path="res://Rooms/CraftingRoom/crafting_box_stylebox.tres" id="3_45ofc"]
 [ext_resource type="Texture2D" uid="uid://dojbqffl3k4tf" path="res://assets/images/console_screen.png" id="5_8fn8a"]
 [ext_resource type="Script" uid="uid://dbu120kdm1fdl" path="res://Inventory/console_screen.gd" id="6_rye3n"]
 

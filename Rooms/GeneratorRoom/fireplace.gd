@@ -5,6 +5,7 @@ var logs : WoodLogs = null
 func hover_text():
 	if logs == null:
 		return "Fire place"
+	return ""
 
 func _on_item_dropped(item : DraggableItem):
 	if item is WoodLogs:

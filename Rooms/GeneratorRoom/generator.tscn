@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://byo14qgmc44ta"]
 
-[ext_resource type="Script" uid="uid://cwv33g65ktx54" path="res://Rooms/Room2/generator.gd" id="1_wl2ms"]
+[ext_resource type="Script" uid="uid://cwv33g65ktx54" path="res://Rooms/GeneratorRoom/generator.gd" id="1_wl2ms"]
 [ext_resource type="Texture2D" uid="uid://dt6xaisug7gpe" path="res://assets/images/generator.png" id="2_fodvw"]
 [ext_resource type="Texture2D" uid="uid://dilsgb46i8sio" path="res://assets/images/smoke_sheet.png" id="3_nvrwd"]
 [ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="4_mdg0c"]
-[ext_resource type="Script" uid="uid://drxkfgniviodf" path="res://Rooms/Room2/coal_input.gd" id="4_nvrwd"]
+[ext_resource type="Script" uid="uid://drxkfgniviodf" path="res://Rooms/GeneratorRoom/coal_input.gd" id="4_nvrwd"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_shm5r"]
 particles_animation = true

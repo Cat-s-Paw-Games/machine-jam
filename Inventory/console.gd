@@ -30,7 +30,7 @@ func check_floppy_line():
 			%Console.screens["main_menu"]["lines"].erase(floppy_menu_line)
 	%Console.render()
 
-func _on_item_remove(index : int):
+func _on_item_remove():
 	current_item = null
 	%Console.correct_item = false
 	%Console.floppy_log = false

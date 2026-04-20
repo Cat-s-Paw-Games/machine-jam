@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ilxjwy6xbayb"]
 
-[ext_resource type="Script" uid="uid://dntgb1dugs8tr" path="res://Rooms/Room3/cabinet_code.gd" id="1_xrglh"]
+[ext_resource type="Script" uid="uid://dntgb1dugs8tr" path="res://Rooms/BotRoom/cabinet_code.gd" id="1_xrglh"]
 [ext_resource type="Texture2D" uid="uid://br15o4ow701wq" path="res://assets/images/fire_icon.png" id="2_2bpi1"]
-[ext_resource type="StyleBox" uid="uid://bfcghvmhffp0j" path="res://Rooms/Room4/crafting_box_stylebox.tres" id="2_k6cft"]
+[ext_resource type="StyleBox" uid="uid://bfcghvmhffp0j" path="res://Rooms/CraftingRoom/crafting_box_stylebox.tres" id="2_k6cft"]
 [ext_resource type="PackedScene" uid="uid://doot2vhf2ymam" path="res://components/counter.tscn" id="2_xrglh"]
 [ext_resource type="Texture2D" uid="uid://bvkmcr4xuf6gr" path="res://assets/images/console_icon.png" id="4_k6cft"]
 [ext_resource type="Texture2D" uid="uid://bcsxex0vrv8oq" path="res://assets/images/wrench_icon.png" id="5_tjsnm"]

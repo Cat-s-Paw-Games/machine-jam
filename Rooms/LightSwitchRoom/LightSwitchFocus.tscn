@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b58vqodvrdb2l"]
 
 [ext_resource type="Texture2D" uid="uid://32ir2hlybsgy" path="res://assets/images/switch_off.png" id="1_omkbd"]
-[ext_resource type="Script" uid="uid://bfsdhxhvp7ye3" path="res://Rooms/Room1/light_switch_focus.gd" id="2_1o0wv"]
+[ext_resource type="Script" uid="uid://bfsdhxhvp7ye3" path="res://Rooms/LightSwitchRoom/light_switch_focus.gd" id="2_1o0wv"]
 
 [node name="LightSwitchFocus" type="TouchScreenButton" unique_id=1472828034]
 position = Vector2(-176, -214)

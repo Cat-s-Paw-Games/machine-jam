@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3ur5g1hqc6qe"]
 
-[ext_resource type="Script" uid="uid://bcmuimsp7n64t" path="res://Rooms/Room2/fireplace.gd" id="1_cpoo3"]
+[ext_resource type="Script" uid="uid://bcmuimsp7n64t" path="res://Rooms/GeneratorRoom/fireplace.gd" id="1_cpoo3"]
 [ext_resource type="Texture2D" uid="uid://dm72fuhl7fdea" path="res://assets/images/fireplace.png" id="2_eq5d5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mcxe6"]

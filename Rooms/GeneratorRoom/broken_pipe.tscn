@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3ucvulh3u7ub"]
 
-[ext_resource type="Script" uid="uid://b7q1gg6h3ayiq" path="res://Rooms/Room2/broken_pipe.gd" id="1_vtc3a"]
+[ext_resource type="Script" uid="uid://b7q1gg6h3ayiq" path="res://Rooms/GeneratorRoom/broken_pipe.gd" id="1_vtc3a"]
 [ext_resource type="Texture2D" uid="uid://dilsgb46i8sio" path="res://assets/images/smoke_sheet.png" id="3_mck4e"]
 [ext_resource type="AudioStream" uid="uid://kmtwyhff13f1" path="res://assets/music/sfx/water_fall.mp3" id="4_mck4e"]
 [ext_resource type="Texture2D" uid="uid://cgoda6roetl58" path="res://assets/images/valve.png" id="4_p64og"]

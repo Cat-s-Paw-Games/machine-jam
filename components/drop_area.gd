@@ -1,8 +1,6 @@
 extends Area2D
 class_name DropArea
 
-@export_custom(PROPERTY_HINT_RESOURCE_TYPE, "Amenity") var amenity = Amenity.new()
-
 func _ready() -> void:
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(2, true)

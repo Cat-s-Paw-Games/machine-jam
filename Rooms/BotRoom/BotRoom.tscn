@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ntvmu6siv38r"]
 
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_xcmg2"]
-[ext_resource type="Script" uid="uid://d2gwsqggo22kx" path="res://Rooms/Room3/bot_room.gd" id="1_yudld"]
-[ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/Room3/Cabinet.tscn" id="3_yudld"]
+[ext_resource type="Script" uid="uid://d2gwsqggo22kx" path="res://Rooms/BotRoom/bot_room.gd" id="1_yudld"]
+[ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/BotRoom/Cabinet.tscn" id="3_yudld"]
 [ext_resource type="PackedScene" uid="uid://xv6yvtng0ll1" path="res://Items/metal_scraps.tscn" id="4_pbdfu"]
-[ext_resource type="Script" uid="uid://cxr02nteoaxwy" path="res://Rooms/Room3/coal_vein.gd" id="5_bsdjx"]
+[ext_resource type="Script" uid="uid://cxr02nteoaxwy" path="res://Rooms/BotRoom/coal_vein.gd" id="5_bsdjx"]
 [ext_resource type="Texture2D" uid="uid://dm72fuhl7fdea" path="res://assets/images/fireplace.png" id="6_ldm10"]
 [ext_resource type="Texture2D" uid="uid://b78y0761fnhkf" path="res://assets/images/coal_vein.png" id="7_v424d"]
 

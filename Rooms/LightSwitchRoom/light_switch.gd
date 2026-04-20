@@ -7,7 +7,7 @@ func _ready():
 
 func _on_switch_pressed() -> void:
 	if not App.game_status.lights_on: 
-		App.ui.open_scene_in_focus(preload("res://Rooms/Room1/LightSwitchFocus.tscn").instantiate())
+		App.ui.open_scene_in_focus(preload("res://Rooms/LightSwitchRoom/LightSwitchFocus.tscn").instantiate())
 
 func _on_pipe_game_pipes_connected() -> void:
 	if not dropped:

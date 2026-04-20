@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cjq8iyoqepe60"]
 
 [ext_resource type="Script" uid="uid://llx5j6e52otr" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/Room2/generator_room.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/GeneratorRoom/generator_room.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5vw27"]
-[ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/Room1/LightSwitch.tscn" id="3_272bh"]
-[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/Room3/BotRoom.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/LightSwitchRoom/LightSwitch.tscn" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/BotRoom/BotRoom.tscn" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_272bh"]
-[ext_resource type="PackedScene" uid="uid://dxgqumcfi5gys" path="res://Rooms/Room4/Room4.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://dxgqumcfi5gys" path="res://Rooms/CraftingRoom/Room4.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://bvvxweo4ma2s7" path="res://Rooms/ConsoleRoom/console_room.tscn" id="7_5vw27"]
 
 [node name="Main" type="Node" unique_id=738830431]

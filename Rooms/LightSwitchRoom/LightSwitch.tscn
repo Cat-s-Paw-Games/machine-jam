@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://boownc1hoelvo"]
 
-[ext_resource type="Script" uid="uid://b7yocke8wb5sx" path="res://Rooms/Room1/light_switch.gd" id="1_j0tc0"]
+[ext_resource type="Script" uid="uid://b7yocke8wb5sx" path="res://Rooms/LightSwitchRoom/light_switch.gd" id="1_j0tc0"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5n0b4"]
-[ext_resource type="PackedScene" uid="uid://25wug5xv4w3n" path="res://Rooms/Room1/switch.tscn" id="3_b40qy"]
+[ext_resource type="PackedScene" uid="uid://25wug5xv4w3n" path="res://Rooms/LightSwitchRoom/switch.tscn" id="3_b40qy"]
 [ext_resource type="PackedScene" uid="uid://b8p516mmro6mv" path="res://Items/spring.tscn" id="4_b40qy"]
 [ext_resource type="PackedScene" uid="uid://dvk3lykklp7od" path="res://MiniGames/Pipes/pipe_game.tscn" id="5_yg4ol"]
 
