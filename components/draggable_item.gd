@@ -89,7 +89,6 @@ func drag_item():
 
 func _on_pressed():
 	if App.in_focus: return
-	#App.navigation_enabled = false
 	z_index += 10
 	dragging = true
 	drag_offset = global_position - get_global_mouse_position()
@@ -98,7 +97,6 @@ func _on_pressed():
 
 func _on_released():
 	if App.in_focus: return
-	#App.navigation_enabled = true
 	z_index -= 10
 	dragging = false
 	drag_offset = Vector2()

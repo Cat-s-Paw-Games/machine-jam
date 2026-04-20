@@ -1,82 +1,61 @@
 extends Node
 class_name UIService
 
-var inventory_open = false
-var inventory : Inventory:
-	get():
-		return  get_tree().root.get_node("UI/Inventory/MarginContainer/ItemSlotContainer")
-
 var ui_instance
+
+var inventory_visible = false
+var inventory_open = false
+var inventory : Inventory
+
+var console : PanelContainer = null
+var crafting : PanelContainer = null
 
 func setup()->void:
 	var ui = preload("res://ui/ui.tscn")
 	ui_instance = ui.instantiate()
 	get_tree().root.add_child.call_deferred(ui_instance)
+	inventory = ui_instance.get_node("Inventory/MarginContainer/ItemSlotContainer")
 	
 func add_ui_child(node: Node):
-	get_tree().root.get_node("UI").add_child(node)
+	ui_instance.add_child(node)
 
-var crafting_canvas:CanvasLayer = null
 func open_crafting():
 	App.navigation_enabled = false
 	App.in_focus = true
-	crafting_canvas = CanvasLayer.new()
-	var crafting_popup = PanelContainer.new()
-	var crafting = preload("res://Inventory/crafting_table.tscn").instantiate()
-	crafting_popup.set_anchors_preset(Control.PRESET_FULL_RECT)
-	crafting_popup.anchor_top = 0.05
-	crafting_popup.anchor_bottom = 0.95
-	crafting_popup.anchor_left = 0.05
-	crafting_popup.anchor_right = 0.95
-	crafting_popup.scale = Vector2(0,0)
-	crafting_popup.add_child(crafting)
-	crafting_canvas.add_child(crafting_popup)
-	get_tree().root.add_child(crafting_canvas)
-	UIAnimation.animate_pop(crafting_popup)
+	crafting = preload("res://Inventory/crafting_table.tscn").instantiate()
+	ui_instance.add_child(crafting)
+	UIAnimation.animate_pop(crafting)
 
 func close_crafting():
-	if crafting_canvas:
+	if crafting:
 		App.navigation_enabled = true
 		App.in_focus = false
-		UIAnimation.animate_shrink(crafting_canvas.get_child(0))
-		crafting_canvas.queue_free()
-		crafting_canvas = null
+		await UIAnimation.animate_shrink(crafting)
+		crafting.queue_free()
+		crafting = null
 		
 func toggle_inventory():
 	if inventory_open:
 		inventory_open = false
-		#App.navigation_enabled = true
 		UIAnimation.animate_slide_to_top(get_tree().root.get_node("UI/Inventory"))
 	else:
 		inventory_open = true
-		#App.navigation_enabled = false
-		UIAnimation.animate_slide_from_top(get_tree().root.get_node("UI/Inventory"))
+		UIAnimation.animate_slide_from_top(get_tree().root.get_node("UI/Inventory"), -20.0)
 
-var console_canvas:CanvasLayer = null
 func open_console():
 	App.navigation_enabled = false
 	App.in_focus = true
-	console_canvas = CanvasLayer.new()
-	var console_popup = PanelContainer.new()
-	var console = preload("res://Inventory/console.tscn").instantiate()
-	console_popup.set_anchors_preset(Control.PRESET_FULL_RECT)
-	console_popup.anchor_top = 0.05
-	console_popup.anchor_bottom = 0.95
-	console_popup.anchor_left = 0.05
-	console_popup.anchor_right = 0.95
-	console_popup.scale = Vector2(0,0)
-	console_popup.add_child(console)
-	console_canvas.add_child(console_popup)
-	get_tree().root.add_child(console_canvas)
-	UIAnimation.animate_pop(console_popup)
+	console = preload("res://Inventory/console.tscn").instantiate()
+	ui_instance.add_child(console)
+	UIAnimation.animate_pop(console)
 
 func close_console():
-	if console_canvas:
+	if console:
 		App.in_focus = false
 		App.navigation_enabled = true
-		UIAnimation.animate_shrink(console_canvas.get_child(0))
-		console_canvas.queue_free()
-		console_canvas = null
+		await UIAnimation.animate_shrink(console)
+		console.queue_free()
+		console = null
 
 func close_every_ui():
 	if inventory_open:
@@ -84,17 +63,19 @@ func close_every_ui():
 	close_crafting()
 	close_console()
 
-
 func open_scene_in_focus(scene: Node):
 	var focus = get_tree().root.get_node("UI/Focus")
 	for c in focus.get_children():
 		c.queue_free()
 	App.in_focus = true
 	focus.add_child(scene)
-	
-	
+
 func close_scene_in_focus():
 	App.in_focus = false
 	var focus = get_tree().root.get_node("UI/Focus")
 	for c in focus.get_children():
 		c.queue_free()
+
+func _input(_event: InputEvent) -> void:
+	if inventory_visible && Input.is_action_pressed("inventory_toggle"):
+		toggle_inventory()

@@ -33,6 +33,7 @@ func remove_steam_warning():
 
 func _ready():
 	_on_steam_changed()
+	
 
 func _process(_delta: float) -> void:
 	_on_steam_changed()
@@ -72,12 +73,13 @@ func check_recipe():
 			found = true
 			if current_recipe.has("steam") and current_recipe["steam"] > App.game_status.steam:
 				add_steam_warning()
+			else:
+				remove_steam_warning()
 			
 	if not found:
 		current_recipe = null
 		output_slot.empty_slot()
 		remove_steam_warning()
-			
 
 func _on_inventory_slot_1_added_item_to_slot(item_id: String) -> void:
 	current_items[0] = item_id
