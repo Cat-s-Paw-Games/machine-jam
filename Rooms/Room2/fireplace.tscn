@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bcmuimsp7n64t" path="res://Rooms/Room2/fireplace.gd" id="1_cpoo3"]
 [ext_resource type="Texture2D" uid="uid://dm72fuhl7fdea" path="res://assets/images/fireplace.png" id="2_eq5d5"]
-[ext_resource type="Resource" uid="uid://bmu334vyy3dah" path="res://globals/amenities/fireplace.tres" id="2_mcxe6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mcxe6"]
 radius = 47.0
@@ -10,7 +9,6 @@ height = 222.0
 
 [node name="Fireplace" type="Area2D" unique_id=1972907018]
 script = ExtResource("1_cpoo3")
-amenity = ExtResource("2_mcxe6")
 metadata/_custom_type_script = "uid://rlemyrl4ndtl"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1252854070]

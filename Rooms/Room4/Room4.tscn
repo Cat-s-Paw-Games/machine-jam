@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dxgqumcfi5gys"]
 
+[ext_resource type="Script" uid="uid://quohho68qxyr" path="res://Rooms/Room4/working_room.gd" id="1_3uahj"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_afiut"]
 [ext_resource type="PackedScene" uid="uid://bogdv0aemnh5g" path="res://Rooms/Room4/crafting.tscn" id="2_afiut"]
 [ext_resource type="PackedScene" uid="uid://ilcmj1jvfacm" path="res://Items/aether_chamber.tscn" id="3_ido6i"]
 
-[node name="Room4" type="Node2D" unique_id=1691897204]
+[node name="WorkingRoom" type="Node2D" unique_id=1691897204]
+script = ExtResource("1_3uahj")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=984636283]
-visible = false
 modulate = Color(1, 1, 1, 0.58431375)
 offset_left = -5760.0
 offset_right = 1920.0

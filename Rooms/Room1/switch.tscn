@@ -28,7 +28,7 @@ shape = SubResource("RectangleShape2D_j0tc0")
 
 [node name="SwitchLight" type="PointLight2D" parent="." unique_id=349137317]
 unique_name_in_owner = true
-position = Vector2(853.92535, 251.7984)
+position = Vector2(875, 250)
 scale = Vector2(80.92596, 78.98374)
 color = Color(1, 0, 0, 1)
 range_layer_max = 3

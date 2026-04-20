@@ -7,13 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cd2glmdjs38xi" path="res://assets/images/intro/door_right.jpg" id="5_iysgs"]
 [ext_resource type="Texture2D" uid="uid://bf52jlgl6br8d" path="res://assets/images/intro/door_left.jpg" id="6_1rpvy"]
 
-[node name="Intro" type="Node" unique_id=19835645]
+[node name="Intro" type="CanvasLayer" unique_id=54668223]
 process_mode = 3
 script = ExtResource("1_46ak0")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=54668223]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=871591624]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=871591624]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,20 +19,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_iysgs")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer" unique_id=1235581176]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1235581176]
 position = Vector2(1008, 68)
 scale = Vector2(6.0071397, 6.0071397)
 texture = ExtResource("1_gjrx4")
 script = ExtResource("2_sb8jg")
 
-[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer" unique_id=1259449374]
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1259449374]
 position = Vector2(1760.9999, 527.9999)
 scale = Vector2(6.646508, 6.646508)
 texture = ExtResource("1_gjrx4")
 script = ExtResource("2_sb8jg")
 rotation_type = 1
 
-[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer" unique_id=1016455691]
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1016455691]
 position = Vector2(242, 895)
 scale = Vector2(5.344495, 5.344495)
 texture = ExtResource("1_gjrx4")
@@ -42,45 +40,37 @@ script = ExtResource("2_sb8jg")
 speed = 0.6
 rotation_type = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=275200511]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275200511]
 position = Vector2(12, 27)
 scale = Vector2(3.2114093, 3.2114093)
 texture = ExtResource("1_gjrx4")
 script = ExtResource("2_sb8jg")
 rotation_type = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer" unique_id=1480663111]
-process_mode = 1
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1480663111]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer2" unique_id=1047495403]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2" unique_id=1047495403]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="NewGame" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=871883158]
+[node name="NewGame" type="Button" parent="CenterContainer2/VBoxContainer" unique_id=871883158]
+process_mode = 1
 layout_mode = 2
 text = "New Game"
 
-[node name="DanieleExperiments" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=1263530270]
-layout_mode = 2
-text = "  Daniele Experiments  "
-
-[node name="CucuccExperiments" type="Button" parent="CanvasLayer/CenterContainer2/VBoxContainer" unique_id=2071440888]
-layout_mode = 2
-text = "  Cucucc Experiments  "
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1895894889]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1895894889]
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 141.0
 offset_bottom = 265.0
 grow_horizontal = 2
 
-[node name="Title" type="RichTextLabel" parent="CanvasLayer/CenterContainer" unique_id=995697763]
+[node name="Title" type="RichTextLabel" parent="CenterContainer" unique_id=995697763]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -50
@@ -93,16 +83,16 @@ is ALIVE[/color][wave]"
 fit_content = true
 autowrap_mode = 0
 
-[node name="DoorRight" type="Sprite2D" parent="CanvasLayer" unique_id=186839944]
+[node name="DoorRight" type="Sprite2D" parent="." unique_id=186839944]
 unique_name_in_owner = true
+visible = false
 position = Vector2(1439, 538)
 texture = ExtResource("5_iysgs")
 
-[node name="DoorLeft" type="Sprite2D" parent="CanvasLayer" unique_id=696180818]
+[node name="DoorLeft" type="Sprite2D" parent="." unique_id=696180818]
 unique_name_in_owner = true
+visible = false
 position = Vector2(480, 538)
 texture = ExtResource("6_1rpvy")
 
-[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/DanieleExperiments" to="." method="_on_parallax_prototype_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer2/VBoxContainer/CucuccExperiments" to="." method="_on_cucucc_experiments_pressed"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

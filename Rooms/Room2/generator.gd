@@ -1,4 +1,4 @@
-extends TouchScreenButton
+extends Node2D
 
 @export var fireplace : Node
 
@@ -29,5 +29,5 @@ func check_state():
 		App.show_popup(text, {"close_on_click": true})
 
 
-func _on_pressed() -> void:
+func _on_touch_screen_button_pressed() -> void:
 	check_state()

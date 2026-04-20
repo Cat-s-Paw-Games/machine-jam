@@ -12,6 +12,7 @@ shader_parameter/invert = true
 
 [node name="SceneTransitionManager" type="CanvasLayer" unique_id=51955704]
 process_mode = 3
+layer = 10000
 script = ExtResource("1_bnyb6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=630273399]

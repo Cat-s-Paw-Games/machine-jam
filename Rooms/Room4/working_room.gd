@@ -1,5 +1,4 @@
 extends Node2D
 
-
-func _ready() -> void:
+func _ready():
 	$TextureRect.queue_free()

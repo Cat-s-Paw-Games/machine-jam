@@ -1,18 +1,21 @@
 extends DropArea
 
-#
-#func _ready() -> void:
-	#super()
-	#$AudioStreamPlayer2D.play()
+@onready var water_flow_particles: CPUParticles2D = $WaterFlowParticles
+@onready var water_impact_particles: CPUParticles2D = $WaterImpactParticles
+@onready var timer: Timer = $AudioStreamPlayer2D/Timer
+@onready var audio_stream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-func _on_gui_input():
-	pass
+@onready var valve_repaired: Node2D = $ValveRepaired
+
+func hover_text():
+	if !App.game_status.water_linked:
+		return "Broken Pipe"
 
 func _on_item_dropped(item : DraggableItem):
 	if item is ValveHandle:
 		item.queue_free()
 		App.mouse.hover_out()
-		$ValveRepaired.visible = true
+		valve_repaired.visible = true
 		$Interact.visible = false
 
 
@@ -23,12 +26,13 @@ func _on_interact_pressed() -> void:
 func _on_valve_repaired_pressed() -> void:
 	if !App.game_status.water_linked:
 		App.audio.play("sfx","res://assets/music/sfx/valve_close.mp3")
-		$AudioStreamPlayer2D/Timer.timeout.connect(func(): $AudioStreamPlayer2D.queue_free())
-		$AudioStreamPlayer2D/Timer.start()
+		timer.timeout.connect(func(): audio_stream.queue_free())
+		timer.start()
 		
 		var tween = create_tween()
-		tween.tween_property($ValveRepaired, 'rotation', 0.9, 3)
+		tween.tween_property(valve_repaired, 'rotation', 0.9, 3)
 		tween.play()
 		await tween.finished
-		$CPUParticles2D.emitting = false
+		water_flow_particles.emitting = false
+		water_impact_particles.emitting = false
 		App.game_status.water_linked = true

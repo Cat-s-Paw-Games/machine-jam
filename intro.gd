@@ -38,12 +38,3 @@ func shake():
 
 func _on_new_game_pressed() -> void:
 	SceneTransitionManager.change_scene_with_wipe("res://Prologue.tscn")
-
-
-
-func _on_parallax_prototype_pressed() -> void:
-	get_tree().change_scene_to_file("res://Experiments/DanieleExperiments.tscn")
-
-
-func _on_cucucc_experiments_pressed() -> void:
-	SceneTransitionManager.change_scene_with_wipe("res://Experiments/CucuccExperiments.tscn")

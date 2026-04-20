@@ -6,8 +6,6 @@
 [ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="4_mdg0c"]
 [ext_resource type="Script" uid="uid://drxkfgniviodf" path="res://Rooms/Room2/coal_input.gd" id="4_nvrwd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdg0c"]
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_shm5r"]
 particles_animation = true
 particles_anim_h_frames = 5
@@ -18,28 +16,25 @@ particles_anim_loop = false
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.042553194, 0.19101131), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdg0c"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvrwd"]
 size = Vector2(42, 45.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shm5r"]
 size = Vector2(76, 84)
 
-[node name="Node2D" type="Node2D" unique_id=1391313845]
+[node name="Generator" type="Node2D" unique_id=1391313845]
+script = ExtResource("1_wl2ms")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=733495611]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_fodvw")
 
-[node name="Generator" type="TouchScreenButton" parent="." unique_id=1683080550]
-scale = Vector2(-15.5, -16)
-shape = SubResource("RectangleShape2D_mdg0c")
-script = ExtResource("1_wl2ms")
-
-[node name="SteamEmitter" type="CPUParticles2D" parent="Generator" unique_id=647154784]
+[node name="SteamEmitter" type="CPUParticles2D" parent="." unique_id=647154784]
+z_index = -1
 material = SubResource("CanvasItemMaterial_shm5r")
-position = Vector2(-11.870968, 10.3125)
-rotation = 3.1415927
-scale = Vector2(0.06451613, 0.0625)
+position = Vector2(184, -165)
 emitting = false
 amount = 32
 texture = ExtResource("3_nvrwd")
@@ -49,6 +44,11 @@ emission_sphere_radius = 20.0
 gravity = Vector2(0, -300)
 scale_amount_max = 2.55
 scale_amount_curve = SubResource("Curve_iegu6")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1683080550]
+rotation = -3.1415927
+scale = Vector2(15.5, 16)
+shape = SubResource("RectangleShape2D_mdg0c")
 
 [node name="NumberHint" type="Area2D" parent="." unique_id=1801674393]
 position = Vector2(237, -57)
@@ -69,4 +69,4 @@ position = Vector2(109, -46)
 shape = SubResource("RectangleShape2D_shm5r")
 debug_color = Color(0, 0.07450981, 0.09411765, 0.7607843)
 
-[connection signal="pressed" from="Generator" to="Generator" method="_on_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

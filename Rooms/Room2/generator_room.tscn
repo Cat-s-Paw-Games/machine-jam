@@ -2,21 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="1_1wsio"]
 [ext_resource type="PackedScene" uid="uid://byo14qgmc44ta" path="res://Rooms/Room2/generator.tscn" id="1_ni46i"]
+[ext_resource type="Script" uid="uid://bxfq4bdi0m1d0" path="res://Rooms/Room2/generator_room.gd" id="1_vmy0s"]
 [ext_resource type="PackedScene" uid="uid://b3ur5g1hqc6qe" path="res://Rooms/Room2/fireplace.tscn" id="2_1wsio"]
 [ext_resource type="PackedScene" uid="uid://c3ucvulh3u7ub" path="res://Rooms/Room2/broken_pipe.tscn" id="4_2n3vv"]
-[ext_resource type="PackedScene" uid="uid://bgocahdh3kcbj" path="res://Rooms/Room2/water_puddle.tscn" id="5_52sut"]
-[ext_resource type="Resource" uid="uid://c3nym2fy1x1ln" path="res://globals/amenities/pipe_missing_handle.tres" id="5_vmy0s"]
 [ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="6_vw538"]
 [ext_resource type="PackedScene" uid="uid://dgmobo54np2b6" path="res://Items/wood_logs.tscn" id="7_1wsio"]
+[ext_resource type="Texture2D" uid="uid://dajdxux0v116u" path="res://assets/images/water_puddle.png" id="7_vmy0s"]
 [ext_resource type="PackedScene" uid="uid://cs6dgawmlxa6s" path="res://Items/pointed_stick.tscn" id="8_ebfen"]
 [ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="8_gkdhg"]
 [ext_resource type="PackedScene" uid="uid://ct8ivf5wai3op" path="res://Items/scissors.tscn" id="13_gkdhg"]
 [ext_resource type="PackedScene" uid="uid://c3whelvwlsrti" path="res://Items/paper.tscn" id="14_4460h"]
 
 [node name="GeneratorRoom" type="Node2D" unique_id=1999341089]
+script = ExtResource("1_vmy0s")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=109985545]
-visible = false
 modulate = Color(1, 1, 1, 0.25882354)
 offset_left = -1920.0
 offset_right = 5760.0
@@ -27,21 +27,22 @@ texture = ExtResource("1_1wsio")
 position = Vector2(354, 527)
 
 [node name="Fireplace" parent="." unique_id=1972907018 instance=ExtResource("2_1wsio")]
-position = Vector2(340, 783)
+position = Vector2(354, 836)
 
 [node name="BrokenPipe" parent="." unique_id=409804896 instance=ExtResource("4_2n3vv")]
 position = Vector2(915, 374)
-amenity = ExtResource("5_vmy0s")
 
-[node name="WaterPuddle" parent="." unique_id=2144052388 instance=ExtResource("5_52sut")]
-position = Vector2(989, 888)
+[node name="WaterPuddle" type="Sprite2D" parent="." unique_id=612721587]
+position = Vector2(989, 831.99994)
+scale = Vector2(0.91015625, 0.57421875)
+texture = ExtResource("7_vmy0s")
 
 [node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("6_vw538")]
 position = Vector2(592.99994, 587.99994)
 script = ExtResource("8_gkdhg")
 
 [node name="WoodLogs" parent="." unique_id=1557513422 instance=ExtResource("7_1wsio")]
-position = Vector2(1348, 791)
+position = Vector2(1079, 579)
 
 [node name="Paper" parent="." unique_id=2146600251 instance=ExtResource("14_4460h")]
 position = Vector2(283, 895)
@@ -50,4 +51,4 @@ position = Vector2(283, 895)
 position = Vector2(880, 748)
 
 [node name="PointedStick" parent="." unique_id=129622970 instance=ExtResource("8_ebfen")]
-position = Vector2(1290, 878)
+position = Vector2(-480, 814)
