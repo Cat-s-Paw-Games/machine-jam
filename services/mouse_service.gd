@@ -17,6 +17,12 @@ var cursor_center: Vector2 = Vector2(0, 0)
 var cursor_instance: GameCursor = null
 var cursor_layer: CanvasLayer = null
 
+var dragged_item_id:
+	get():
+		if cursor_instance.preview_item == null or cursor_instance.preview_item.item == null: 
+			return null
+		return cursor_instance.preview_item.item.id
+
 func setup() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 

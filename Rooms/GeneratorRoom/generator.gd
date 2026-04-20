@@ -17,17 +17,13 @@ func _process(delta: float) -> void:
 
 
 func check_state():
-	var text = ""
-	var checks = [App.game_status.fire_lit, App.game_status.water_linked]
-	if false in checks:
-		text += "Checks failed:"
-	if !App.game_status.water_linked:
-		text += "\n- Water Missing"
-	if !App.game_status.fire_lit:
-		text += "\n- Fire Missing"
-	if text.strip_edges().length() > 0 :
+	var checks_failed = []
+	if not App.game_status.fire_lit: checks_failed.append("to be hotter")
+	if not App.game_status.water_linked: checks_failed.append("to get a water supply")
+	if checks_failed.size() > 0:
+		var text = "This generator needs %s" % " and ".join(PackedStringArray(checks_failed))
 		App.show_popup(text, {"close_on_click": true})
-
+	
 
 func _on_touch_screen_button_pressed() -> void:
 	check_state()

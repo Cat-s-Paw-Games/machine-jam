@@ -52,9 +52,10 @@ func set_buttons():
 
 
 func open():
+	App.navigation_enabled = false
+	App.in_focus = true
 	%Title.visible = title.strip_edges().length() > 0
 	%Title.text = title
-	App.navigation_enabled = false
 	UIAnimation.animate_pop(self)
 	await Text.animation_finished
 	if choises.size() > 0:
@@ -62,6 +63,6 @@ func open():
 	if close_on_click: await clicked
 
 func close():
+	await UIAnimation.animate_shrink(self)
 	App.navigation_enabled = true
-	UIAnimation.animate_shrink(self)
-	await get_tree().create_timer(1.0).timeout
+	App.in_focus = false

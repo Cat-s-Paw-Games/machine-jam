@@ -14,12 +14,17 @@ func setup():
 	
 
 func _on_switch_lights():
+	App.in_focus = true
 	App.game_status.lights_on = true
 	await get_tree().create_timer(1).timeout
 	await App.show_popup("[color=#f00][b]DANGER! [pause]DANGER! [pause]DANGER![pause][/b][/color]",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("[color=#f00]UNIDENTIFIED ORGANIC STRUCTURE[/color]",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("Human™[pause] your presence here is.[pause=0.5].[pause=0.5].[pause=0.5]\nUnexpected. [pause] Please stand by as our systems find a resolution.",{"close_on_click": true, "title": App.MACHINE_NAME})
-
+	App.in_focus = true
+	await get_tree().create_timer(1).timeout
+	App.in_focus = false
+	
+	
 func _on_activate_generator():
 	App.game_status.generator_active = true
 	await App.show_popup("Mmmmmh.[pause=0.5] This is... [pause=0.5] tingly!",{"close_on_click": true, "title": App.MACHINE_NAME})

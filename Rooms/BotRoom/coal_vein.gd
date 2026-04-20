@@ -16,7 +16,7 @@ func disable_collisions():
 	mouse_exited.disconnect(_on_mouse_exited)
 
 func hover_text():
-	return "Coal Vein"
+	return "A coal vein"
 
 func _on_mouse_entered() -> void:
 	App.mouse.hover_on(self)

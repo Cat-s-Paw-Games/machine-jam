@@ -16,3 +16,12 @@ func check_fire():
 
 func use_after():
 	check_fire()
+
+func hover_text():
+	if item.id == "wood_logs_fire": return ""
+	if item.id == "wood_logs_hot":
+		if App.mouse.dragged_item_id == "paper":
+			return "A full sheet won't really take"
+		return "I need some tinder"
+	if placed: return "I need something to start the fire"
+	return super()

@@ -2,6 +2,7 @@ extends Node
 class_name GameStatusService
 
 var lights_on = false
+var pipe_touched = false
 var fire_lit = false
 var water_linked = false
 var generator_active = false

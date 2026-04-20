@@ -100,6 +100,12 @@ func set_pipe():
 	water.rotation_degrees = sprite.rotation_degrees
 
 func rotate_pipe():
+	if App.in_focus: return
+	if not App.game_status.pipe_touched: 
+		App.show_popup("There's something rattling inside these pipes", {
+			"close_on_click": true
+		})
+		App.game_status.pipe_touched = true
 	for i in range(connections.size()):
 		connections[i] = (connections[i] + 1) % 4
 	await rotate_animation()

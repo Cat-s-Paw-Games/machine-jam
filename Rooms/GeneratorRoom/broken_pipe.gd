@@ -21,7 +21,7 @@ func _on_item_dropped(item : DraggableItem):
 
 
 func _on_interact_pressed() -> void:
-	App.show_popup("The water is flowing, but there's nothing to stop the flow.", {"close_on_click": true})
+	App.show_popup("The water is leaking, I need to find something to stop the flow to the leak", {"close_on_click": true})
 
 
 func _on_valve_repaired_pressed() -> void:
