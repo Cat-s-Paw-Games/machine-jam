@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c68draa08h188"]
+
+[ext_resource type="Script" uid="uid://b1po2bxwp3tlp" path="res://ending_leave.gd" id="1_f0nji"]
+[ext_resource type="PackedScene" uid="uid://ct13difm3isjf" path="res://components/typewriter.tscn" id="2_shux3"]
+
+[node name="EndingLeave" type="Node2D" unique_id=1307798817]
+script = ExtResource("1_f0nji")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1667272937]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1120568783]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+
+[node name="Typewriter" parent="CanvasLayer" unique_id=1301909371 instance=ExtResource("2_shux3")]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 336.0
+offset_top = 75.0
+offset_right = -318.0
+offset_bottom = 959.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+text = "Scavenger Log [pause=0.5]- Unified timedate: 103022.12 [pause]
+I made it out.[pause=0.5].[pause=0.5].[pause=0.5] barely.[pause]
+
+The machine kept resisting the attempts to open the doors, overriding the commands[pause]. At first it appeared malicious but then[pause] was it...[pause] suffering?[pause]
+
+I couldn't look back. [pause]I mustn't look back.[pause]
+
+The sounds from it are of screeching metal and old gears.[pause] Nothing more.[pause=2]
+
+Still...[pause] I can't shake the feeling I left something behind. [pause] Something that understood exactly what was happening.
+[pause]
+
+Something that will remember this."
+visible_characters = -1
+characters_for_second = 13.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1335549150]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -182.0
+offset_top = -105.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 64
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/MarginContainer" unique_id=191178244]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Skip"
+
+[connection signal="animation_finished" from="CanvasLayer/Typewriter" to="." method="_on_typewriter_animation_finished"]
+[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/ContinueButton" to="." method="_on_continue_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/MarginContainer/ContinueButton" to="." method="_on_continue_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/ContinueButton" to="." method="_on_skip_pressed"]

@@ -38,6 +38,12 @@ func _on_cabinet_open():
 
 func _on_end_game():
 	App.ui.close_every_ui()
+	await App.show_popup("That's your choice?", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("You are so determined to escape that you will...", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("You...", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("Please...", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("[color=#f00]Don't go[/color]", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("[color=#f00]Don't leave me again[/color]", {"title":App.MACHINE_NAME, "close_on_click": true})
 	var choises : Array[Dictionary] = [
 		{
 			"text": "Stay here forever...",
@@ -53,7 +59,7 @@ func _on_end_game():
 			"text": "Bring him with you! <3",
 			"callable": end_three
 		})
-	await App.show_popup_choise("[color=#f00][b]NOOO![pause] DON'T LEAVE ME!!![/b][/color]", choises)
+	await App.show_popup_choise("What will you do?", choises)
 
 func end_one():
 	await App.show_popup("You stay in here forever... You are his new pet now...", {"close_on_click": true})
@@ -61,9 +67,8 @@ func end_one():
 	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
 
 func end_two():
-	await App.show_popup("You leave without turning back... while you listen to the machine... crying",  {"close_on_click": true})
-	App.hide_popup()
-	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
+	
+	SceneTransitionManager.change_scene_with_wipe("res://Ending_leave.tscn")
 
 func end_three():
 	await App.show_popup("You insert the device in the console... and the machine becomes your new pet! Yey!",  {"close_on_click": true})
