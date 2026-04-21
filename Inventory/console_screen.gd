@@ -1,6 +1,9 @@
 extends VBoxContainer
 
+const CARD_GAME = preload("uid://t0d0bqk51lr")
+
 signal floppy_saved
+signal play_card_game
 
 var paused = false
 var correct_item = false
@@ -47,7 +50,11 @@ func get_next_screen():
 			if current_line == 0 and not correct_item: return "open_fail"
 			if current_line == 0 and correct_item: return "open_success"
 			elif current_line == 1: return "logs"
-			elif floppy_log && current_line == 2:
+			elif current_line == 2 and !App.game_status.card_game_uploaded and !floppy_log:
+				install_card_minigame()
+			elif current_line == 2 and App.game_status.card_game_uploaded:
+				play_card_game.emit()
+			elif (current_line == 2 and !App.game_status.card_game_uploaded or current_line == 3) and floppy_log:
 				save_floppy_data()
 				var keys = App.game_status.console_logs.keys()
 				return keys[keys.size() - 1]
@@ -57,6 +64,12 @@ func get_next_screen():
 			if current_line == 0: return "main_menu"
 			else:
 				return App.game_status.console_logs.keys()[current_line - 1]
+
+func install_card_minigame():
+	App.game_status.card_game_uploaded = true
+	current_floppy = null
+	floppy_saved.emit()
+	load_data()
 
 func save_floppy_data():
 	if floppy_log && current_floppy != null:
@@ -82,13 +95,16 @@ func _ready() -> void:
 	render()
 
 func load_data():
-	#screens.merge(App.game_status.console_logs)
+	var supercharge_line = "> Supercharge"
+	if App.game_status.card_game_uploaded && !screens["main_menu"]["lines"].has(supercharge_line):
+		screens["main_menu"]["lines"].append(supercharge_line)
+	
+	var back_line = "> Back"
 	screens["logs"]["lines"].clear()
-	screens["logs"]["lines"].append("> Back")
+	screens["logs"]["lines"].append(back_line)
 	for log_id in App.game_status.console_logs:
 		screens[log_id] = App.game_status.console_logs[log_id]
 		screens["logs"]["lines"].append(App.game_status.console_logs[log_id].line)
-	
 
 func create_rte() -> RichTextLabel:
 
@@ -136,5 +152,3 @@ func _input(event: InputEvent) -> void:
 					current_screen = "main_menu"
 				current_line = 0
 				render()
-					
-				

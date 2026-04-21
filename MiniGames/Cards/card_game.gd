@@ -1,10 +1,12 @@
 extends Node2D
 
+signal won
+
 const CARD = preload("uid://cbu7w8oycwwvu")
 @onready var pivot: Node2D = %Pivot
 
-var grid_size = Vector2(6,6)
-var cell_size = 128
+@export var grid_size = Vector2(6,6)
+var cell_size = 64 #128
 
 var cards = []
 var current_card = null
@@ -24,6 +26,7 @@ func create_card_pairs():
 		counter += 1
 
 func populate_grid():
+	cards.shuffle()
 	var counter = 0
 	for y in grid_size.y:
 		for x in grid_size.x:
@@ -35,8 +38,7 @@ func populate_grid():
 
 func check_win_condition():
 	if matches_found.size() >= (grid_size.x * grid_size.y) / 2:
-		print("win")
-		print(matches_found)
+		won.emit()
 
 func _on_card_selected(card : Card):
 	if current_card == null:

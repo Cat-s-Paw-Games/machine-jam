@@ -77,5 +77,5 @@ func close_scene_in_focus():
 		c.queue_free()
 
 func _input(_event: InputEvent) -> void:
-	if inventory_visible && Input.is_action_pressed("inventory_toggle"):
+	if inventory_visible && Input.is_action_just_pressed("inventory_toggle"):
 		toggle_inventory()

@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://t0d0bqk51lr"]
 
-[ext_resource type="PackedScene" uid="uid://cbu7w8oycwwvu" path="res://MiniGames/Cards/card.tscn" id="1_6wcgo"]
 [ext_resource type="Script" uid="uid://cx0g5a616kn4l" path="res://MiniGames/Cards/card_game.gd" id="1_e3kkr"]
 
 [node name="CardGame" type="Node2D" unique_id=1840478667]
 script = ExtResource("1_e3kkr")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=483857918]
+anchor_mode = 0
+
 [node name="Pivot" type="Node2D" parent="." unique_id=86497785]
 unique_name_in_owner = true
 position = Vector2(64, 64)
-
-[node name="Card" parent="Pivot" unique_id=361524650 instance=ExtResource("1_6wcgo")]
-visible = false

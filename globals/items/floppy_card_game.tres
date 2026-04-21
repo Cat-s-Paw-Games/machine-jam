@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://wvcwnpv4nusc"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_br6au"]
+[ext_resource type="Texture2D" uid="uid://c5ubcb3jjjcbv" path="res://assets/images/floppy.png" id="2_3j3ax"]
+
+[resource]
+script = ExtResource("1_br6au")
+id = "floppy_card_game"
+name = "Floppy Program"
+description = "[CARD_MINIGAME]"
+texture = ExtResource("2_3j3ax")
+is_pickable = true
+material = ""
+transforms_into = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

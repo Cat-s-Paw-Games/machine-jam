@@ -5,6 +5,15 @@ signal added_item_to_slot(item_id:String)
 signal removed_item_from_slot()
 @export var item : Item = null
 
+func _ready():
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+
+func _on_mouse_entered():
+	App.mouse.hover_on(self)
+	
+func _on_mouse_exited():
+	App.mouse.hover_out()
 
 func empty_slot():
 	removed_item_from_slot.emit()
@@ -96,3 +105,8 @@ func try_drop_into_world(_drag_data):
 		if dropped_on.use_inventory_item(_drag_data["item"].id):
 			_drag_data["source"].empty_slot()
 	App.mouse.hover_type = MouseService.HOVER_TYPE.NORMAL
+
+func hover_text():
+	if item:
+		return item.name
+	return ""

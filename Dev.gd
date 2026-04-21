@@ -19,6 +19,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 		if event is InputEventKey and event.keycode == KEY_F2 and event.pressed:
 			App.ui.inventory.add_item("floppy_001")
+			App.ui.inventory.add_item("bound_relic")
+			App.ui.inventory.add_item("floppy_card_game")
 			
 		if event is InputEventKey and event.keycode == KEY_F1 and event.pressed:
 			App.game_status.lights_on = true

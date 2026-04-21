@@ -23,25 +23,22 @@ func _on_pressed():
 	selected.emit(self)
 
 func flip():
+	var original_scale = scale
 	is_animating = true
-
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-	tween.finished.connect(func():
-		is_animating = false
-	)
+	tween.finished.connect(func(): is_animating = false)
 	
 	# shrink (simulate turning)
 	tween.tween_property(self, "scale:x", 0.0, 0.15)
-
+	
 	# switch texture at midpoint
 	tween.tween_callback(func():
 		is_front = !is_front
 		update_visual()
 	)
-
+	
 	# expand back
-	tween.tween_property(self, "scale:x", 1.0, 0.15)
+	tween.tween_property(self, "scale:x", original_scale.x, 0.15)
 	
 	await tween.finished
 

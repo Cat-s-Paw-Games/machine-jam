@@ -9,7 +9,7 @@ var items : Dictionary = {}
 
 func setup() -> void:
 	for item_res in ResourceLoader.list_directory(ITEMS_DIR):
-		if item_res.contains("floppy"):
+		if item_res.contains("floppy_logs"):
 			continue
 		var item = ResourceLoader.load(ITEMS_DIR + item_res)
 		items[item.id] = item
