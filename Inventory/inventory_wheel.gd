@@ -1,12 +1,42 @@
 extends Panel
 
 var active_slot = 1
-var item_count = 12
+var item_count = 20
 var step = TAU / item_count  # TAU = 2π
+const INVENTORY_SLOT = preload("uid://bm847rff3ls1r")
 
-@onready var item_slots = get_children()
+var current_item_count:
+	get():
+		var count = 0
+		for child in get_children():
+			if child.item != null:
+				count += 1
+		return count
+
+var item_slots:
+	get():
+		return get_children()
 
 func _ready():
+	var radius = (size.x - 152) / 2   # distanza dal centro
+	var center = size / 2  # centro della wheel
+	var slot_size = 100
+	
+	for i in range(item_count):
+		var slot: InventorySlot = INVENTORY_SLOT.instantiate()
+		slot.custom_minimum_size = Vector2(slot_size, slot_size)
+		slot.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		slot.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+		add_child(slot)
+		
+		# Posiziona lo slot in cerchio attorno al centro, in senso orario
+		# Inizia da alto a sinistra (-135°) e prosegue in senso orario
+		var start_angle = deg_to_rad(-135)
+		var angle = start_angle - (step * i)
+		var x = cos(angle) * radius - slot_size/2
+		var y = sin(angle) * radius - slot_size/2
+		slot.position = center + Vector2(x, y)
+	
 	add_item("aether_chamber")
 	add_item("bound_relic")
 	add_item("floppy_card_game")
@@ -26,6 +56,7 @@ func get_next_free_slot_id() -> int:
 			return child.get_index()
 	return -1
 
+
 func add_item(item_id : String):
 	var slot_id = get_next_free_slot_id()
 	if slot_id > -1:
@@ -37,7 +68,8 @@ func add_item(item_id : String):
 func rotate_wheel(direction: int):
 	var tween = create_tween().set_parallel()
 	rotation = round(rotation / step) * step  # snap first
-	var final_rotation = rotation + direction * step
+	var next_slot = (active_slot + direction + current_item_count) % current_item_count
+	var final_rotation = next_slot * step 
 	var rotation_time = 0.7
 	tween.tween_property(self,"rotation", final_rotation,rotation_time)
 	
@@ -45,16 +77,13 @@ func rotate_wheel(direction: int):
 		slot.pivot_offset = slot.size / 2
 		tween.tween_property(slot,"rotation",-final_rotation,rotation_time)
 		tween.tween_property(slot,"scale",Vector2(1,1),rotation_time)
+		slot.z_index = 0
 	
-	active_slot += direction
-	if active_slot < 0:
-		active_slot = get_child_count() - 1
-	elif active_slot >= get_child_count():
-		active_slot = 0
+	active_slot = next_slot
 	
 	var slot = get_child(active_slot)
-	
-	tween.tween_property(slot,"scale",Vector2(1.5,1.5),rotation_time)
+	slot.z_index = 1
+	tween.tween_property(slot,"scale",Vector2(2,2),rotation_time)
 	
 
 func _input(event: InputEvent) -> void:
