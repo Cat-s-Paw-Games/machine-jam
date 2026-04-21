@@ -5,7 +5,7 @@ var ui_instance
 
 var inventory_visible = false
 var inventory_open = false
-var inventory : Inventory
+var inventory : InventoryWheel
 
 var console : PanelContainer = null
 var crafting : PanelContainer = null
@@ -14,7 +14,7 @@ func setup()->void:
 	var ui = preload("res://ui/ui.tscn")
 	ui_instance = ui.instantiate()
 	get_tree().root.add_child.call_deferred(ui_instance)
-	inventory = ui_instance.get_node("Inventory/MarginContainer/ItemSlotContainer")
+	inventory = ui_instance.get_node("InventoryWheel/InventoryWheel")
 	
 func add_ui_child(node: Node):
 	ui_instance.add_child(node)
@@ -36,11 +36,10 @@ func close_crafting():
 		
 func toggle_inventory():
 	if inventory_open:
-		inventory_open = false
-		UIAnimation.animate_slide_to_top(get_tree().root.get_node("UI/Inventory"))
+		await inventory.close()
 	else:
-		inventory_open = true
-		UIAnimation.animate_slide_from_top(get_tree().root.get_node("UI/Inventory"), -20.0)
+		await inventory.open()
+	inventory_open = !inventory_open
 
 func open_console():
 	App.navigation_enabled = false
