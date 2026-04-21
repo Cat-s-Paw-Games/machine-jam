@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2v5ct12npmip" path="res://ui.gd" id="1_vkava"]
 [ext_resource type="Texture2D" uid="uid://btuuhvljqn1dx" path="res://assets/images/ui/inventory.png" id="2_tf0e0"]
-[ext_resource type="PackedScene" uid="uid://bl8nykn5a67ov" path="res://Inventory/inventory.tscn" id="3_obcwv"]
+[ext_resource type="PackedScene" uid="uid://c47lb588siff8" path="res://Inventory/inventory_wheel.tscn" id="3_bo1jx"]
 [ext_resource type="PackedScene" uid="uid://bym2nd6ohk6nv" path="res://components/Popup.tscn" id="4_bo1jx"]
 [ext_resource type="PackedScene" uid="uid://dghipapkctph" path="res://ui/menu.tscn" id="5_tf0e0"]
 
@@ -30,15 +30,7 @@ position = Vector2(-89, -90)
 scale = Vector2(0.2519531, 0.2519531)
 texture_normal = ExtResource("2_tf0e0")
 
-[node name="Inventory" parent="." unique_id=353491205 instance=ExtResource("3_obcwv")]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 420.0
-offset_bottom = 460.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="InventoryWheel" parent="." unique_id=2108712994 instance=ExtResource("3_bo1jx")]
 
 [node name="Popup" parent="." unique_id=1932771744 instance=ExtResource("4_bo1jx")]
 
