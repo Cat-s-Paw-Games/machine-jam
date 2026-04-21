@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://c3whelvwlsrti"]
 
-[ext_resource type="Texture2D" uid="uid://bxqvhecw872sm" path="res://assets/images/paper.png" id="1_4gwaa"]
 [ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_4gwaa"]
 [ext_resource type="Resource" uid="uid://nw0n7ry20r4s" path="res://globals/items/paper.tres" id="3_4gwaa"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sa1m7"]
+load_path = "res://.godot/imported/paper.png-d5e3c44fe6300f240b15a0168fdef626.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gwaa"]
 radius = 103.62901
 height = 655.2566
 
 [node name="Paper" type="TouchScreenButton" unique_id=1801381149]
+texture_filter = 3
 scale = Vector2(0.1796875, 0.1796875)
-texture_normal = ExtResource("1_4gwaa")
+texture_normal = SubResource("CompressedTexture2D_sa1m7")
 script = ExtResource("2_4gwaa")
 item = ExtResource("3_4gwaa")
 metadata/_custom_type_script = "uid://cafqq0iart4ih"

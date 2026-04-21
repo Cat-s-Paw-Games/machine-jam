@@ -8,6 +8,7 @@
 radius = 417.3914
 
 [node name="BoundRelic" type="TouchScreenButton" unique_id=2025760680]
+texture_filter = 3
 scale = Vector2(0.1796875, 0.1796875)
 texture_normal = ExtResource("1_3iyb2")
 script = ExtResource("2_3iyb2")

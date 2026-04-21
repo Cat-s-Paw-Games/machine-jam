@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dm72fuhl7fdea" path="res://assets/images/fireplace.png" id="6_ldm10"]
 [ext_resource type="Texture2D" uid="uid://b78y0761fnhkf" path="res://assets/images/coal_vein.png" id="7_v424d"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ugtkt"]
+load_path = "res://.godot/imported/metal_scraps.png-fa4ac2da5be171f6608cfea2db2ee9b4.ctex"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mcxe6"]
 radius = 87.0
 height = 236.0
@@ -27,6 +30,7 @@ position = Vector2(611, 640)
 
 [node name="MetalScraps" parent="." unique_id=1491702647 instance=ExtResource("4_pbdfu")]
 position = Vector2(1247, 833)
+texture_normal = SubResource("CompressedTexture2D_ugtkt")
 
 [node name="CoalVein" type="Area2D" parent="." unique_id=1972907018]
 position = Vector2(1433, 686)
