@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bfpavn5n12qwe" path="res://icon.svg" id="1_cq2kt"]
 [ext_resource type="Script" uid="uid://bcmahgsegfmkg" path="res://MiniGames/Cards/card.gd" id="2_shyr6"]
+[ext_resource type="Texture2D" uid="uid://cpwn5si4kwfrb" path="res://assets/images/card_game/card_back.png" id="3_mbwca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shyr6"]
 size = Vector2(125, 125)
@@ -12,9 +13,8 @@ shape = SubResource("RectangleShape2D_shyr6")
 script = ExtResource("2_shyr6")
 
 [node name="Front" type="Sprite2D" parent="." unique_id=1916180662]
-visible = false
-modulate = Color(0.94908994, 0.2638118, 3.85046e-07, 1)
 texture = ExtResource("1_cq2kt")
 
 [node name="Back" type="Sprite2D" parent="." unique_id=1666213751]
-texture = ExtResource("1_cq2kt")
+visible = false
+texture = ExtResource("3_mbwca")

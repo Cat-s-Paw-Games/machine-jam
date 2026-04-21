@@ -9,7 +9,14 @@ var is_animating := false
 @onready var front = $Front
 @onready var back = $Back
 
-var match_id = -1
+var _match_id = -1
+
+var match_id:
+	get():
+		return _match_id
+	set(val):
+		$Front.texture = ResourceLoader.load("res://assets/images/card_game/card_%s.png" % [(val +8 % 8) + 1])
+		_match_id = val
 
 func _ready():
 	show_back()

@@ -5,8 +5,8 @@ signal won
 const CARD = preload("uid://cbu7w8oycwwvu")
 @onready var pivot: Node2D = %Pivot
 
-@export var grid_size = Vector2(6,6)
-var cell_size = 64 #128
+@export var grid_size = Vector2(4,4)
+var cell_size = 110 #128
 
 var cards = []
 var current_card = null
@@ -31,7 +31,7 @@ func populate_grid():
 	for y in grid_size.y:
 		for x in grid_size.x:
 			var card = cards[counter]
-			card.position = cell_size * Vector2(x,y)
+			card.position = Vector2(x *  (128 / 2 + 10),y * (200 / 2 + 10)  )
 			card.selected.connect(_on_card_selected)
 			pivot.add_child(card)
 			counter += 1
