@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://buucimbjpkiud" path="res://globals/items/pointed_stick.tres" id="3_kh4gl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_reumw"]
-radius = 94.12866
-height = 415.2942
+radius = 45.54602
+height = 627.03723
 
 [node name="PointedStick" type="TouchScreenButton" unique_id=1206465442]
 scale = Vector2(0.18750048, 0.18750048)
@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://cafqq0iart4ih"
 [node name="Area2D" type="Area2D" parent="." unique_id=1478403163]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1077398161]
-position = Vector2(255.99937, 229.33273)
-rotation = 0.48206192
+position = Vector2(367.99902, 143.99963)
+rotation = 1.1810428
 scale = Vector2(1, 1.206588)
 shape = SubResource("CapsuleShape2D_reumw")

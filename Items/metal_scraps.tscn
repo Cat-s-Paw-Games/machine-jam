@@ -4,9 +4,21 @@
 [ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_tpcdq"]
 [ext_resource type="Resource" uid="uid://dulwfdq2hkmwl" path="res://globals/items/metal_scraps.tres" id="3_80xlu"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqrnn"]
+radius = 142.22223
+height = 804.57153
+
 [node name="MetalScraps" type="TouchScreenButton" unique_id=1491702647]
 scale = Vector2(0.24609374, 0.24609374)
 texture_normal = ExtResource("1_kqrnn")
 script = ExtResource("2_tpcdq")
 item = ExtResource("3_80xlu")
 metadata/_custom_type_script = "uid://cafqq0iart4ih"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=889315506]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=786909353]
+position = Vector2(483.55557, 207.23811)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_kqrnn")

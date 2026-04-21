@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cuapuycc78vd4"]
 
-[ext_resource type="Texture2D" uid="uid://b5sbwsubcxlp4" path="res://assets/images/bound_relic.png" id="1_3iyb2"]
+[ext_resource type="Texture2D" uid="uid://dpirxrt87e2sc" path="res://assets/images/bound_relic.png" id="1_3iyb2"]
 [ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_3iyb2"]
 [ext_resource type="Resource" uid="uid://bhfhl02u66046" path="res://globals/items/bound_relic.tres" id="3_w14re"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v3s6t"]
-radius = 208.38
+radius = 417.3914
 
 [node name="BoundRelic" type="TouchScreenButton" unique_id=2025760680]
 scale = Vector2(0.1796875, 0.1796875)
@@ -17,6 +17,6 @@ metadata/_custom_type_script = "uid://cafqq0iart4ih"
 [node name="Area2D" type="Area2D" parent="." unique_id=314972037]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1368784478]
-position = Vector2(233.73914, 233.73918)
+position = Vector2(389.5652, 456.34778)
 rotation = 0.6617701
 shape = SubResource("CircleShape2D_v3s6t")

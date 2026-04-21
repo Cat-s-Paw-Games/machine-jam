@@ -4,9 +4,19 @@
 [ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_pa7xe"]
 [ext_resource type="Resource" uid="uid://kfcajohb3fha" path="res://globals/items/floppy_logs/floppy_001.tres" id="3_qfurb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awlsn"]
+size = Vector2(433.53088, 441.25043)
+
 [node name="Floppy" type="TouchScreenButton" unique_id=904767244]
 scale = Vector2(0.17578125, 0.17578125)
 texture_normal = ExtResource("1_awlsn")
 script = ExtResource("2_pa7xe")
 item = ExtResource("3_qfurb")
 metadata/_custom_type_script = "uid://cafqq0iart4ih"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1316324631]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1685700534]
+position = Vector2(280.56366, 274.8878)
+rotation = -0.2617993
+shape = SubResource("RectangleShape2D_awlsn")

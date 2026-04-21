@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://d36vymtel4bl5" path="res://globals/items/spring.tres" id="3_w5t4j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7rmg"]
-size = Vector2(306.7396, 462.51114)
+size = Vector2(194.78262, 417.39136)
 
 [node name="Spring" type="TouchScreenButton" unique_id=2025760680]
 scale = Vector2(0.1796875, 0.1796875)
@@ -17,7 +17,6 @@ metadata/_custom_type_script = "uid://cafqq0iart4ih"
 [node name="Area2D" type="Area2D" parent="." unique_id=314972037]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1368784478]
-position = Vector2(222.6087, 222.60872)
-rotation = 0.60377896
+position = Vector2(102.95652, 219.8261)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_d7rmg")

@@ -4,9 +4,20 @@
 [ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="2_636xr"]
 [ext_resource type="Resource" uid="uid://dw7nso8pchtuq" path="res://globals/items/handle.tres" id="3_fn8qb"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6j2ws"]
+radius = 70.44714
+height = 1024.1482
+
 [node name="Handle" type="TouchScreenButton" unique_id=1743136493]
 scale = Vector2(0.28515625, 0.28515625)
 texture_normal = ExtResource("1_6j2ws")
 script = ExtResource("2_636xr")
 item = ExtResource("3_fn8qb")
 metadata/_custom_type_script = "uid://cafqq0iart4ih"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1155476149]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1534280593]
+position = Vector2(441.86304, 301.58908)
+rotation = 0.9967032
+shape = SubResource("CapsuleShape2D_6j2ws")

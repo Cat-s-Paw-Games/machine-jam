@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://cr8qsqsshs82n" path="res://globals/items/scissors.tres" id="3_7c2e1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3qqdq"]
-radius = 121.2775
-height = 374.74686
+radius = 66.23398
+height = 663.83
 
 [node name="Scissors" type="TouchScreenButton" unique_id=506044602]
 scale = Vector2(0.234375, 0.234375)
@@ -18,6 +18,6 @@ metadata/_custom_type_script = "uid://cafqq0iart4ih"
 [node name="Area2D" type="Area2D" parent="." unique_id=620253032]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=166431289]
-position = Vector2(264.5333, 234.66663)
-rotation = 0.69388926
+position = Vector2(388.26663, 136.53334)
+rotation = 1.2465686
 shape = SubResource("CapsuleShape2D_3qqdq")
