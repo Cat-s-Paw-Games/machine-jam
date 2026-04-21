@@ -95,10 +95,6 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_1="items"
 2d_physics/layer_2="amenities"
 
-[physics]
-
-3d/physics_engine="Jolt Physics"
-
 [rendering]
 
 rendering_device/driver.windows="d3d12"
