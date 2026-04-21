@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c47lb588siff8"]
+
+[ext_resource type="Texture2D" uid="uid://ix6fl3p11uj1" path="res://assets/images/ui/inventory_bg.png" id="1_r12xu"]
+[ext_resource type="Script" uid="uid://2n64276dyjov" path="res://Inventory/inventory_wheel.gd" id="2_ha1dt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqcw8"]
+texture = ExtResource("1_r12xu")
+
+[node name="InventoryWheel" type="Control" unique_id=2108712994]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InventoryWheel" type="Panel" parent="." unique_id=1283874646]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -357.0
+offset_top = -357.0
+offset_right = 357.0
+offset_bottom = 357.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(357, 357)
+theme_override_styles/panel = SubResource("StyleBoxTexture_tqcw8")
+script = ExtResource("2_ha1dt")
