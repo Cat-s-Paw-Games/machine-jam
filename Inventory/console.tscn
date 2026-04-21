@@ -157,7 +157,7 @@ size = Vector2i(912, 448)
 render_target_update_mode = 0
 
 [node name="CardGame" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer/CardGame/SubViewport" unique_id=1840478667 instance=ExtResource("7_8fn8a")]
-grid_size = Vector2(5, 5)
+grid_size = Vector2(3, 3)
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="floppy_saved" from="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer/Console" to="." method="_on_console_floppy_saved"]
