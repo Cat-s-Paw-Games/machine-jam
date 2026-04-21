@@ -66,7 +66,7 @@ func _on_console_floppy_saved() -> void:
 
 
 func _on_console_play_card_game() -> void:
-	if %InventorySlot.item.id == "bound_relic":
+	if %InventorySlot.item && %InventorySlot.item.id == "bound_relic":
 		%Console.hide()
 		%CardGame.show()
 
