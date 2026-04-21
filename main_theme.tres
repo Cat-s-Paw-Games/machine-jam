@@ -1,34 +1,4 @@
 [gd_resource type="Theme" format=3 uid="uid://cdsksct6tt8bo"]
 
-[ext_resource type="Texture2D" uid="uid://7iqyg7rm8mg3" path="res://assets/images/ui/button.png" id="1_a2l2q"]
-[ext_resource type="Texture2D" uid="uid://dop0wkgmlnfmk" path="res://assets/images/ui/button_pressed.png" id="2_0omi4"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58jnp"]
-texture = ExtResource("1_a2l2q")
-expand_margin_left = 40.0
-expand_margin_top = 15.0
-expand_margin_right = 40.0
-expand_margin_bottom = 15.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_466ly"]
-texture = ExtResource("1_a2l2q")
-expand_margin_left = 40.0
-expand_margin_top = 15.0
-expand_margin_right = 40.0
-expand_margin_bottom = 15.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52mx2"]
-texture = ExtResource("2_0omi4")
-expand_margin_left = 40.0
-expand_margin_top = 15.0
-expand_margin_right = 40.0
-expand_margin_bottom = 15.0
-
 [resource]
-Button/colors/font_color = Color(0.31443426, 0.2271004, 0.16994911, 1)
-Button/colors/font_hover_color = Color(0.45580065, 0.3380431, 0.26115352, 1)
-Button/colors/font_pressed_color = Color(0.31443426, 0.2271004, 0.16994911, 1)
 Button/font_sizes/font_size = 40
-Button/styles/hover = SubResource("StyleBoxTexture_58jnp")
-Button/styles/normal = SubResource("StyleBoxTexture_466ly")
-Button/styles/pressed = SubResource("StyleBoxTexture_52mx2")

@@ -10,7 +10,7 @@ func _ready():
 	add_item("aether_chamber")
 	add_item("bound_relic")
 	add_item("floppy_card_game")
-	add_item("aether_chamber")
+	add_item("scissors")
 	add_item("bound_relic")
 	add_item("floppy_card_game")
 	add_item("aether_chamber")
@@ -35,13 +35,16 @@ func add_item(item_id : String):
 	return false
 
 func rotate_wheel(direction: int):
+	var tween = create_tween().set_parallel()
 	rotation = round(rotation / step) * step  # snap first
-	rotation += direction * step              # move exactly 1 slot
+	var final_rotation = rotation + direction * step
+	var rotation_time = 0.7
+	tween.tween_property(self,"rotation", final_rotation,rotation_time)
 	
 	for slot in item_slots:
 		slot.pivot_offset = slot.size / 2
-		slot.rotation = -rotation
-		slot.scale = Vector2(1,1)
+		tween.tween_property(slot,"rotation",-final_rotation,rotation_time)
+		tween.tween_property(slot,"scale",Vector2(1,1),rotation_time)
 	
 	active_slot += direction
 	if active_slot < 0:
@@ -50,11 +53,12 @@ func rotate_wheel(direction: int):
 		active_slot = 0
 	
 	var slot = get_child(active_slot)
-	slot.scale = Vector2(1.5,1.5)
+	
+	tween.tween_property(slot,"scale",Vector2(1.5,1.5),rotation_time)
 	
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("ui_down"):
 		rotate_wheel(-1)
-	if Input.is_action_just_pressed("ui_right"):
+	if Input.is_action_just_pressed("ui_up"):
 		rotate_wheel(1)
