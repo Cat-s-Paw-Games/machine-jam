@@ -5,15 +5,63 @@ signal added_item_to_slot(item_id:String)
 signal removed_item_from_slot()
 @export var item : Item = null
 
+var hover_timer: float = 0.0
+var is_dragging_over: bool = false
+var hover_timeout: float = 1.0
+
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
+func _process(delta):
+	# Controlla se stiamo draggando e il mouse è su questo slot
+	if get_tree().root.gui_is_dragging():
+		if get_global_rect().has_point(get_global_mouse_position()):
+			# Il mouse è sopra questo slot - aggiorna l'hover
+			App.mouse.current_item = self
+			
+			hover_timer += delta
+			if hover_timer >= hover_timeout:
+				_trigger_wheel_rotate()
+				hover_timer = 0.0
+		else:
+			# Il mouse non è più su questo slot
+			hover_timer = 0.0
+	else:
+		# Non stiamo più draggando
+		hover_timer = 0.0
+		is_dragging_over = false
+
 func _on_mouse_entered():
 	App.mouse.hover_on(self)
+	if get_tree().root.gui_is_dragging():
+		is_dragging_over = true
+		hover_timer = 0.0
 	
 func _on_mouse_exited():
 	App.mouse.hover_out()
+	is_dragging_over = false
+	hover_timer = 0.0
+
+func _trigger_wheel_rotate():
+	# Trova la wheel parent
+	var wheel = get_parent()
+	if not wheel or not wheel.has_method("rotate_wheel"):
+		return
+	
+	# Ottieni l'indice dello slot corrente e quello attivo della wheel
+	var current_slot_index = get_index()
+	var active_slot_index = wheel.active_slot
+	
+	# Determina la direzione: +1 se successivo, -1 se precedente
+	var direction = 0
+	if current_slot_index > active_slot_index:
+		direction = 1
+	elif current_slot_index < active_slot_index:
+		direction = -1
+	
+	if direction != 0:
+		wheel.rotate_wheel(direction)
 
 func empty_slot():
 	removed_item_from_slot.emit()

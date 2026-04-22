@@ -24,6 +24,7 @@ func _ready():
 	var center = size / 2  # centro della wheel
 	var slot_size = 100
 	
+	
 	for i in range(item_count):
 		var slot: InventorySlot = INVENTORY_SLOT.instantiate()
 		slot.custom_minimum_size = Vector2(slot_size, slot_size)
@@ -41,6 +42,13 @@ func _ready():
 		var y = sin(angle) * radius - slot_size/2
 		slot.position = center + Vector2(x, y)
 	
+	await get_tree().process_frame
+	App.ui.inventory.add_item("scissors")
+	App.ui.inventory.add_item("floppy_001")
+	App.ui.inventory.add_item("floppy_001")
+	App.ui.inventory.add_item("paper")
+	App.ui.inventory.add_item("floppy_001")
+	App.ui.inventory.add_item("floppy_001")
 	highlight_first_slot()
 
 func get_next_free_slot_id() -> int:
