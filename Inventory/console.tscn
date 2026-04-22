@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dbu120kdm1fdl" path="res://Inventory/console_screen.gd" id="6_rye3n"]
 [ext_resource type="PackedScene" uid="uid://t0d0bqk51lr" path="res://MiniGames/Cards/card_game.tscn" id="7_8fn8a"]
 [ext_resource type="Texture2D" uid="uid://b5awq7u1l8qdg" path="res://assets/images/ui/console.png" id="8_rye3n"]
+[ext_resource type="Shader" uid="uid://dy61gw5r5nwxo" path="res://assets/shaders/tv_screen.gdshader" id="9_8ntfj"]
 [ext_resource type="Script" uid="uid://bnuu8qr0jhyoj" path="res://Inventory/console_menu.gd" id="9_w0tts"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rye3n"]
@@ -17,6 +18,63 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rye3n"]
 texture = ExtResource("8_rye3n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w0tts"]
+shader = ExtResource("9_8ntfj")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0
+shader_parameter/corner_soften = 0.17600000836
+shader_parameter/vignette = 0.8400000399
+shader_parameter/scanline_strength = 0.30000001425
+shader_parameter/scanline_density = 1.700000057
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 0.6000000285
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.5550000263625
+shader_parameter/tape_lines = 0.800000038
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 1.570000074575
+shader_parameter/glow_threshold = 0.6400000304
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ntfj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ntfj"]
+shader = ExtResource("9_8ntfj")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.38
+shader_parameter/scanline_strength = 0.1200000057
+shader_parameter/scanline_density = 1.6550000548625
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 0.5350000254125
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.1350000064125
+shader_parameter/roll_speed = 0.9850000467875
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
 
 [node name="Console" type="PanelContainer" unique_id=264029128]
 anchors_preset = 8
@@ -152,6 +210,11 @@ unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("6_rye3n")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain/Console" unique_id=1262542921]
+layout_mode = 2
+text = "sdasd"
+fit_content = true
+
 [node name="CardGame" type="SubViewportContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain" unique_id=1348291378]
 unique_name_in_owner = true
 visible = false
@@ -190,6 +253,24 @@ unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("9_w0tts")
 main_screen = NodePath("../../MarginContainerMain/Console")
+
+[node name="MainCRTeffect" type="Panel" parent="Panel" unique_id=42696675]
+material = SubResource("ShaderMaterial_w0tts")
+layout_mode = 0
+offset_left = 447.0
+offset_top = 256.0
+offset_right = 1454.0
+offset_bottom = 769.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ntfj")
+
+[node name="MainCRTeffect2" type="Panel" parent="Panel" unique_id=1993486833]
+material = SubResource("ShaderMaterial_8ntfj")
+layout_mode = 0
+offset_left = 134.0
+offset_top = 253.0
+offset_right = 426.0
+offset_bottom = 629.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ntfj")
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="won" from="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain/CardGame/SubViewport/CardGame" to="." method="_on_card_game_won"]
