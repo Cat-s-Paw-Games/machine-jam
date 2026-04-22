@@ -42,13 +42,6 @@ func _ready():
 		var y = sin(angle) * radius - slot_size/2
 		slot.position = center + Vector2(x, y)
 	
-	await get_tree().process_frame
-	App.ui.inventory.add_item("scissors")
-	App.ui.inventory.add_item("floppy_001")
-	App.ui.inventory.add_item("floppy_001")
-	App.ui.inventory.add_item("paper")
-	App.ui.inventory.add_item("floppy_001")
-	App.ui.inventory.add_item("floppy_001")
 	highlight_first_slot()
 
 func get_next_free_slot_id() -> int:
