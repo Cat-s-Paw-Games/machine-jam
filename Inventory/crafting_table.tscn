@@ -3,72 +3,159 @@
 [ext_resource type="Script" uid="uid://bfk333yixaddu" path="res://Inventory/crafting_table.gd" id="1_ds5yy"]
 [ext_resource type="Script" uid="uid://c6edkyw1p5vw8" path="res://Inventory/inventory_slot.gd" id="1_kttas"]
 [ext_resource type="StyleBox" uid="uid://bfcghvmhffp0j" path="res://Rooms/CraftingRoom/crafting_box_stylebox.tres" id="2_l336g"]
+[ext_resource type="Texture2D" uid="uid://qn4lrlu76bg0" path="res://assets/images/ui/close_btn.png" id="2_rf7hk"]
 [ext_resource type="Texture2D" uid="uid://bsfi77b4euum1" path="res://assets/images/ui/arrow_right.png" id="2_uho73"]
 [ext_resource type="Texture2D" uid="uid://jsixj1c144ly" path="res://assets/images/ui/not_enough_steam.png" id="4_tvks7"]
+[ext_resource type="Texture2D" uid="uid://dmin5drkkh0ua" path="res://assets/images/ui/screen.png" id="7_7ndpy"]
+[ext_resource type="Texture2D" uid="uid://sodcfux4llcb" path="res://assets/images/ui/pipe.png" id="7_c2fwm"]
+[ext_resource type="Texture2D" uid="uid://ois40v5mgdt5" path="res://assets/images/ui/smoke_stylized_sheet.PNG" id="8_f0nkr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l336g"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ndpy"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
-[node name="CraftingTable" type="PanelContainer" unique_id=397168365]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -800.0
-offset_top = -450.0
-offset_right = 800.0
-offset_bottom = 450.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_l336g")
-script = ExtResource("1_ds5yy")
+[sub_resource type="Curve" id="Curve_4l84k"]
+_data = [Vector2(0.0053191558, 0.033707857), 0.0, 0.0, 0, 0, Vector2(0.49468088, 0.47191018), 2.3235948, 2.3235948, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[node name="Panel" type="Panel" parent="." unique_id=328028982]
-layout_mode = 2
+[sub_resource type="Gradient" id="Gradient_oijex"]
+offsets = PackedFloat32Array(0.5925926, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1468594242]
-layout_mode = 1
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0nkr"]
+bg_color = Color(0.3019608, 0.29411766, 0.23529412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.15294118, 0.14509805, 0.10980392, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+shadow_offset = Vector2(3, 2)
+
+[node name="CraftingTable" type="Control" unique_id=2064626867]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
-theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
+mouse_filter = 2
+script = ExtResource("1_ds5yy")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=454257658]
+[node name="Screen" type="TextureRect" parent="." unique_id=1448160827]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 138.0
+offset_right = 1398.0
+offset_bottom = 324.0
+texture = ExtResource("7_7ndpy")
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen" unique_id=1160470539]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 876.0
+offset_bottom = 137.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Screen/MarginContainer" unique_id=1855915223]
 layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="Close" type="TouchScreenButton" parent="Panel/MarginContainer/VBoxContainer" unique_id=1937515687]
-unique_name_in_owner = true
-position = Vector2(1421.8202, -41.999996)
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("4_tvks7")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=945540588]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=828089578]
-layout_mode = 2
+size_flags_vertical = 1
 theme_override_font_sizes/font_size = 40
-text = "Steam: "
+text = "Crafting Table status: OK"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="SteamLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1502618207]
+[node name="Pipe" type="TextureRect" parent="." unique_id=1102843649]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 147.0
+offset_right = 544.0
+offset_bottom = 910.0
+texture = ExtResource("7_c2fwm")
+
+[node name="SteamProgressBar" type="ProgressBar" parent="Pipe" unique_id=2033198657]
 unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "0.0"
+layout_mode = 0
+offset_left = 86.1422
+offset_top = 414.0083
+offset_right = 398.52112
+offset_bottom = 456.72394
+rotation = -1.5707964
+max_value = 80.0
+show_percentage = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=160551335]
+[node name="SmokeParticles" type="CPUParticles2D" parent="Pipe" unique_id=881709899]
+unique_name_in_owner = true
+z_index = -1
+material = SubResource("CanvasItemMaterial_7ndpy")
+position = Vector2(103, -2)
+emitting = false
+amount = 3
+texture = ExtResource("8_f0nkr")
+lifetime = 0.5
+randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector2(0, -980)
+linear_accel_max = 0.2
+scale_amount_curve = SubResource("Curve_4l84k")
+color_ramp = SubResource("Gradient_oijex")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1501088005]
+custom_minimum_size = Vector2(900, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -250.0
+offset_right = 450.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f0nkr")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=504133036]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Close" type="TextureButton" parent="PanelContainer/MarginContainer" unique_id=2136547356]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("2_rf7hk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer" unique_id=970741083]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/MarginContainer" unique_id=918937367]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/separation = 20
 
-[node name="CraftingGrid" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1923158286]
+[node name="CraftingGrid" type="GridContainer" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=391992675]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
@@ -77,67 +164,75 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 2
 
-[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid" unique_id=1714012770]
-custom_minimum_size = Vector2(320, 320)
+[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid" unique_id=1084501452]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel" unique_id=1245701690]
+[node name="InventorySlot" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel" unique_id=1928435196]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="Panel2" type="Panel" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid" unique_id=777953575]
-custom_minimum_size = Vector2(320, 320)
+[node name="Panel2" type="Panel" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid" unique_id=922305628]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="InventorySlot2" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel2" unique_id=1646772815]
+[node name="InventorySlot2" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel2" unique_id=1460816752]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="Panel3" type="Panel" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid" unique_id=1572938446]
-custom_minimum_size = Vector2(320, 320)
+[node name="Panel3" type="Panel" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid" unique_id=931324908]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="InventorySlot3" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel3" unique_id=1458820508]
+[node name="InventorySlot3" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel3" unique_id=344087265]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="Panel4" type="Panel" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid" unique_id=338018328]
-custom_minimum_size = Vector2(320, 320)
+[node name="Panel4" type="Panel" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid" unique_id=381611658]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="InventorySlot4" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel4" unique_id=1452872181]
+[node name="InventorySlot4" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel4" unique_id=1600897375]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2053982084]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=520441785]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -145,13 +240,14 @@ texture = ExtResource("2_uho73")
 expand_mode = 4
 stretch_mode = 3
 
-[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=929094399]
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=761238906]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Control" unique_id=1703103157]
-custom_minimum_size = Vector2(460, 460)
+[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/Control" unique_id=2034537006]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -166,7 +262,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="OutputSlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Control/Panel" unique_id=1758846289]
+[node name="OutputSlot" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/Control/Panel" unique_id=1970831693]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -176,10 +272,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_kttas")
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
-[node name="OutputSlotX" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Control/Panel" unique_id=185568307]
+[node name="OutputSlotX" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/Control/Panel" unique_id=795446910]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -190,13 +288,5 @@ grow_vertical = 2
 texture = ExtResource("4_tvks7")
 expand_mode = 3
 
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Close" to="." method="_on_close_pressed"]
-[connection signal="added_item_to_slot" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel/InventorySlot" to="." method="_on_inventory_slot_1_added_item_to_slot"]
-[connection signal="removed_item_from_slot" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel/InventorySlot" to="." method="_on_inventory_slot_1_removed_item_from_slot"]
-[connection signal="added_item_to_slot" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel2/InventorySlot2" to="." method="_on_inventory_slot_2_added_item_to_slot"]
-[connection signal="removed_item_from_slot" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel2/InventorySlot2" to="." method="_on_inventory_slot_2_removed_item_from_slot"]
-[connection signal="added_item_to_slot" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel3/InventorySlot3" to="." method="_on_inventory_slot_3_added_item_to_slot"]
-[connection signal="removed_item_from_slot" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel3/InventorySlot3" to="." method="_on_inventory_slot_3_removed_item_from_slot"]
-[connection signal="added_item_to_slot" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel4/InventorySlot4" to="." method="_on_inventory_slot_4_added_item_to_slot"]
-[connection signal="removed_item_from_slot" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/CraftingGrid/Panel4/InventorySlot4" to="." method="_on_inventory_slot_4_removed_item_from_slot"]
-[connection signal="gui_input" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Control/Panel/OutputSlot" to="." method="_on_output_slot_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/Control/Panel/OutputSlot" to="." method="_on_output_slot_gui_input"]

@@ -8,7 +8,7 @@ var inventory_open = false
 var inventory : InventoryWheel
 
 var console : PanelContainer = null
-var crafting : PanelContainer = null
+var crafting : Control = null
 
 func setup()->void:
 	var ui = preload("res://ui/ui.tscn")
@@ -25,6 +25,7 @@ func open_crafting():
 	crafting = preload("res://Inventory/crafting_table.tscn").instantiate()
 	ui_instance.add_child(crafting)
 	UIAnimation.animate_pop(crafting)
+	crafting.smoke_particles.emitting = true
 
 func close_crafting():
 	if crafting:
