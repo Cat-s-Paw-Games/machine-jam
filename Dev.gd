@@ -20,6 +20,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		if event is InputEventKey and event.keycode == KEY_F3 and event.pressed:
 			App.events._on_end_game()
+			
+			
+		if event is InputEventKey and event.keycode == KEY_F4 and event.pressed:
+			App.events.move_to_face.emit()
 		
 		if event is InputEventKey and event.keycode == KEY_F2 and event.pressed:
 			App.ui.inventory.add_item("floppy_001")

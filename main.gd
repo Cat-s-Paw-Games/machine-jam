@@ -19,7 +19,9 @@ func _ready() -> void:
 	blackout = CanvasModulate.new()
 	blackout.color = Color.from_rgba8(30,30,30,255)
 	%GameView.add_child(blackout)
-	App.events.switch_lights_on.connect(func(): blackout.queue_free())
+	App.events.switch_lights_on.connect(func(): blackout.visible = false)
+	App.events.switch_lights_off.connect(func(): blackout.visible = true)
+	App.events.move_to_face.connect(func() : move_to_angle(135.0, 1.5))
 	App.audio.stop_loop("main")
 	App.audio.play_loop("main","assets/music/dream_catcher.mp3",{"volume_db":-10.0})
 	update_layers(0)
@@ -36,3 +38,6 @@ func update_layers(axis: int):
 	for chunk in %Rooms.get_children():
 		chunk.position.x = fmod((chunk.position.x - axis * step / 360.0 * pano_width) - axis * room_width, pano_width) + axis * room_width
 	offset_changed.emit(%Background.screen_offset.x)
+
+func move_to_angle(target_angle: float = 135.0, duration: float = 1.5):
+	$GameView/Camera2D.offset.x = -100

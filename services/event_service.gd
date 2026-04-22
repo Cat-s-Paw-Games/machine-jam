@@ -2,6 +2,8 @@ extends Node
 class_name EventService
 
 signal switch_lights_on()
+signal switch_lights_off()
+signal move_to_face()
 signal item_added(id: String)
 signal activate_generator()
 signal cabinet_open()
@@ -62,10 +64,17 @@ func _on_end_game():
 	await App.show_popup_choise("What will you do?", choises)
 
 func end_one():
-	await App.show_popup("You stay in here forever... You are his new pet now...", {"close_on_click": true})
-	App.hide_popup()
-	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
-
+	await App.show_popup("Really?", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("You will stay with me?", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await get_tree().create_timer(1).timeout
+	await App.show_popup("Am i not alone anymore?", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("[wave]I'm so, so, so happy!![/wave]", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("Wait, I need to find a place for you.", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("And this... you don't need this anymore.", {"title":App.MACHINE_NAME, "close_on_click": true})
+	App.events.switch_lights_off.emit()
+	await App.show_popup("I'm so happy. You'll stay here...", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("[color=#f00]FOREVER[/color]", {"title":App.MACHINE_NAME, "close_on_click": true})
+	
 func end_two():
 	SceneTransitionManager.change_scene_with_wipe("res://Ending_leave.tscn")
 
