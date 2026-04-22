@@ -89,6 +89,8 @@ func fill_slot(item_id : String):
 func update_visual():
 	if item:
 		texture = item.texture
+		if item.shiny:
+			material = preload("res://assets/shaders/shiny_shader.tres")
 	else:
 		texture = null
 

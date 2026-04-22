@@ -12,6 +12,7 @@ class_name Item
 @export var transforms_into : String = "item_id"
 @export var station : String = "amenity_id"
 @export var station_timer : float = 5.0
+@export var shiny := false
 
 func can_be_compound(item_id : String):
 	return item_id == material
