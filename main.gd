@@ -40,4 +40,17 @@ func update_layers(axis: int):
 	offset_changed.emit(%Background.screen_offset.x)
 
 func move_to_angle(target_angle: float = 135.0, duration: float = 1.5):
-	$GameView/Camera2D.offset.x = -100
+	var delta = view_angle - target_angle
+
+	if delta > 0:
+		while view_angle - target_angle  > 0:
+			var axis = -1
+			view_angle = wrapf(view_angle + axis * step, 0.0, 360.0)
+			update_layers(axis)
+			await(get_tree().create_timer(step * duration / 360.0).timeout)
+	elif delta < 0:
+		while view_angle - target_angle  < 0:
+			var axis = 1
+			view_angle = wrapf(view_angle + axis * step, 0.0, 360.0)
+			update_layers(axis)
+			await(get_tree().create_timer(step * duration / 360.0).timeout)
