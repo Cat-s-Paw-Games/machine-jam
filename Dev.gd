@@ -16,7 +16,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventKey and event.keycode == KEY_F5 and event.pressed:
 			SceneTransitionManager.change_scene_with_wipe("res://main.tscn")
 			get_tree().paused = false
-			
+		
+		
+		if event is InputEventKey and event.keycode == KEY_F3 and event.pressed:
+			App.events._on_end_game()
+		
 		if event is InputEventKey and event.keycode == KEY_F2 and event.pressed:
 			App.ui.inventory.add_item("floppy_001")
 			App.ui.inventory.add_item("bound_relic")
@@ -28,7 +32,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			App.game_status.water_linked = true
 			App.game_status.generator_active = true
 			App.game_status.steam += 100
-			
+			App.ui.inventory_visible = true
+			App.ui.inventory.show()
 			var main = get_tree().root.get_node_or_null("Main")
 			if main and main.blackout:
 				main.blackout.queue_free()
