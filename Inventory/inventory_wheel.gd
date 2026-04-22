@@ -44,6 +44,21 @@ func _ready():
 	
 	highlight_first_slot()
 
+func recalculate_slot_positions():
+	var radius = (size.x - 152) / 2
+	var center = size / 2
+	var slot_size = 100
+	var start_angle = deg_to_rad(-135)
+	
+	for i in range(item_slots.size()):
+		var slot = item_slots[i]
+		var angle = start_angle - (step * i)
+		@warning_ignore("integer_division")
+		var x = cos(angle) * radius - slot_size/2
+		@warning_ignore("integer_division")
+		var y = sin(angle) * radius - slot_size/2
+		slot.position = center + Vector2(x, y)
+
 func get_next_free_slot_id() -> int:
 	for child in get_children():
 		if child.item == null:

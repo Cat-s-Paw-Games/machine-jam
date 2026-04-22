@@ -64,6 +64,22 @@ func empty_slot():
 	removed_item_from_slot.emit()
 	item = null
 	texture = null
+	
+	# Riordina la wheel: sposta questo slot in fondo
+	var wheel = get_parent()
+	if wheel and wheel.has_method("rotate_wheel"):
+		var current_index = get_index()
+		
+		# Se lo slot corrente è quello selezionato, seleziona il prossimo
+		if current_index == wheel.active_slot:
+			wheel.rotate_wheel(1)
+		
+		# Sposta lo slot vuoto in fondo (come ultimo child)
+		wheel.move_child(self, -1)
+		
+		# Ricalcola le posizioni di tutti gli slot sulla wheel
+		if wheel.has_method("recalculate_slot_positions"):
+			wheel.recalculate_slot_positions()
 
 func fill_slot(item_id : String):
 	item = App.items[item_id]

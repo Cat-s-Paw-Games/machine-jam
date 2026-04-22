@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://btuuhvljqn1dx" path="res://assets/images/ui/inventory.png" id="2_tf0e0"]
 [ext_resource type="PackedScene" uid="uid://c47lb588siff8" path="res://Inventory/inventory_wheel.tscn" id="3_bo1jx"]
 [ext_resource type="PackedScene" uid="uid://bym2nd6ohk6nv" path="res://components/Popup.tscn" id="4_bo1jx"]
-[ext_resource type="PackedScene" uid="uid://dghipapkctph" path="res://ui/menu.tscn" id="5_tf0e0"]
+[ext_resource type="PackedScene" path="res://ui/menu.tscn" id="5_tf0e0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf0e0"]
 
 [node name="UI" type="CanvasLayer" unique_id=2086083387]
-layer = 1000
+layer = 1100
 script = ExtResource("1_vkava")
 
 [node name="BoxContainer" type="BoxContainer" parent="." unique_id=1660653105]
