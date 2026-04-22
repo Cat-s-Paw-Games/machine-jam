@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8mscq3ia2e88" path="res://assets/images/intro/cog.png" id="1_gjrx4"]
 [ext_resource type="Texture2D" uid="uid://cpuxrhtbpcg6x" path="res://assets/images/intro/background_intro.jpg" id="2_iysgs"]
 [ext_resource type="Script" uid="uid://c0x4fcj2tc8dr" path="res://components/rotating_cog.gd" id="2_sb8jg"]
+[ext_resource type="Texture2D" uid="uid://qn4lrlu76bg0" path="res://assets/images/ui/close_btn.png" id="5_1rpvy"]
 [ext_resource type="Texture2D" uid="uid://cd2glmdjs38xi" path="res://assets/images/intro/door_right.jpg" id="5_iysgs"]
 [ext_resource type="Texture2D" uid="uid://bf52jlgl6br8d" path="res://assets/images/intro/door_left.jpg" id="6_1rpvy"]
 
@@ -63,6 +64,12 @@ process_mode = 1
 layout_mode = 2
 text = "New Game"
 
+[node name="Credits" type="Button" parent="CenterContainer2/VBoxContainer" unique_id=764520367]
+process_mode = 1
+layout_mode = 2
+text = "Credits
+"
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1895894889]
 anchors_preset = 10
 anchor_right = 1.0
@@ -78,19 +85,123 @@ theme_override_constants/shadow_offset_x = 6
 theme_override_constants/shadow_offset_y = 6
 theme_override_font_sizes/normal_font_size = 120
 bbcode_enabled = true
-text = "[center][wave amp=20 freq=2][color=#FFFFA3]The Machine 
-is ALIVE[/color][wave]"
+text = "[center][wave amp=20 freq=2][color=#FFFFA3]Just a Little Longer[/color][wave]"
 fit_content = true
 autowrap_mode = 0
 
+[node name="CreditsContainer" type="PanelContainer" parent="." unique_id=1781162534]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -413.0
+offset_right = 600.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsContainer" unique_id=1124965379]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Close" type="TextureButton" parent="CreditsContainer/MarginContainer" unique_id=1773526128]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("5_1rpvy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/MarginContainer" unique_id=1005598852]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=851691762]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="Title" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer/CenterContainer" unique_id=1584027422]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -50
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_font_sizes/normal_font_size = 120
+bbcode_enabled = true
+text = "[center][wave amp=20 freq=2][color=#FFFFA3]Just a Little Longer[/color][wave]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=1798410240]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=144329627]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "Credits
+
+Developers:
+- Kotrodenx
+- Cucucc
+
+Art:
+- Sunni
+
+Project Manager:
+- Cucucc
+
+UI:
+- Kotrodenx
+
+Music:
+- Menu: \"Beauty Flow\"
+by Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+- Game loop: \"Dream Catcher\"
+by Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+SFX:
+- Pixabay"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="DoorRight" type="Sprite2D" parent="." unique_id=186839944]
 unique_name_in_owner = true
+visible = false
 position = Vector2(1439, 538)
 texture = ExtResource("5_iysgs")
 
 [node name="DoorLeft" type="Sprite2D" parent="." unique_id=696180818]
 unique_name_in_owner = true
+visible = false
 position = Vector2(480, 538)
 texture = ExtResource("6_1rpvy")
 
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CreditsContainer/MarginContainer/Close" to="." method="_on_close_credits_pressed"]

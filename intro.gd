@@ -38,3 +38,11 @@ func shake():
 
 func _on_new_game_pressed() -> void:
 	SceneTransitionManager.change_scene_with_wipe("res://Prologue.tscn")
+
+
+func _on_credits_pressed() -> void:
+	%CreditsContainer.show()
+
+
+func _on_close_credits_pressed() -> void:
+	%CreditsContainer.hide()
