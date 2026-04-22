@@ -2,12 +2,41 @@
 
 [ext_resource type="Script" uid="uid://2rdkdenkblgr" path="res://components/counter.gd" id="1_0oiln"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0oiln"]
+bg_color = Color(0.3019608, 0.29411766, 0.23529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6aee"]
+bg_color = Color(0.24298012, 0.23632985, 0.18653202, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [node name="First" type="VBoxContainer" unique_id=253189479]
 theme_override_constants/separation = 16
 script = ExtResource("1_0oiln")
 
 [node name="+" type="Button" parent="." unique_id=1792690092]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0oiln")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y6aee")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0oiln")
 text = "+"
 
 [node name="Number" type="Label" parent="." unique_id=503573600]
@@ -18,6 +47,9 @@ horizontal_alignment = 1
 
 [node name="-" type="Button" parent="." unique_id=1280083092]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0oiln")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y6aee")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0oiln")
 text = "-"
 
 [connection signal="pressed" from="+" to="." method="_on_plus_pressed"]

@@ -6,26 +6,24 @@
 [ext_resource type="PackedScene" uid="uid://doot2vhf2ymam" path="res://components/counter.tscn" id="2_xrglh"]
 [ext_resource type="Texture2D" uid="uid://bvkmcr4xuf6gr" path="res://assets/images/console_icon.png" id="4_k6cft"]
 [ext_resource type="Texture2D" uid="uid://bcsxex0vrv8oq" path="res://assets/images/wrench_icon.png" id="5_tjsnm"]
-[ext_resource type="Texture2D" uid="uid://jsixj1c144ly" path="res://assets/images/ui/not_enough_steam.png" id="7_tjsnm"]
+[ext_resource type="Texture2D" uid="uid://qn4lrlu76bg0" path="res://assets/images/ui/close_btn.png" id="7_24m80"]
 
 [node name="CabinetCode" type="Node2D" unique_id=741897978]
 script = ExtResource("1_xrglh")
 
-[node name="Panel" type="Panel" parent="." unique_id=1121922381]
+[node name="Panel" type="PanelContainer" parent="." unique_id=323887170]
 offset_left = -188.0
 offset_top = -141.0
 offset_right = 247.0
-offset_bottom = 274.0
+offset_bottom = 289.0
 theme_override_styles/panel = ExtResource("2_k6cft")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=640896860]
-layout_mode = 0
-offset_right = 375.0
-offset_bottom = 372.0
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 80
-theme_override_constants/margin_bottom = 80
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=213985409]
 layout_mode = 2
@@ -33,50 +31,67 @@ theme_override_constants/separation = 32
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=178390827]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1756314223]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1338961882]
-position = Vector2(14.5, -35.56714)
-scale = Vector2(0.35156253, 0.32136142)
+[node name="Sprite2D" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1941845068]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
 texture = ExtResource("2_2bpi1")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="First" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=253189479 instance=ExtResource("2_xrglh")]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1960548994]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Sprite2D" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1217734581]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("4_k6cft")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Second" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1852646268 instance=ExtResource("2_xrglh")]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1694931484]
-position = Vector2(11.745055, -33.99442)
-scale = Vector2(0.34773356, 0.27803585)
-texture = ExtResource("4_k6cft")
-
 [node name="VBoxContainer3" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1223226462]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Sprite2D" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1573384646]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_tjsnm")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Third" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=108539587 instance=ExtResource("2_xrglh")]
 layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1120398075]
-position = Vector2(11.999998, -30.999998)
-scale = Vector2(0.41421694, 0.33119372)
-texture = ExtResource("5_tjsnm")
 
 [node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1608451464]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Open"
 
-[node name="Close" type="TouchScreenButton" parent="Panel" unique_id=593779180]
-position = Vector2(381, 5)
-scale = Vector2(0.1015625, 0.1015625)
-texture_normal = ExtResource("7_tjsnm")
+[node name="Close" type="TextureButton" parent="Panel" unique_id=1083553964]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("7_24m80")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="count_changed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/First" to="." method="_on_first_count_changed"]
 [connection signal="count_changed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Second" to="." method="_on_second_count_changed"]
