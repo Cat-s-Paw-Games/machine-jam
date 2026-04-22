@@ -75,7 +75,7 @@ func end_one():
 	await App.show_popup("I'm so happy. You'll stay here...", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("[color=#f00]FOREVER[/color]", {"title":App.MACHINE_NAME, "close_on_click": true})
 	App.events.move_to_face.emit()
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(15).timeout
 	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
 
 	
