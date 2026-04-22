@@ -45,7 +45,6 @@ func set_buttons():
 	
 	for choise in choises:
 		var btn = Button.new()
-		btn.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
 		btn.text = choise.text
 		btn.pressed.connect(func(): close(); choise.callable.call())
 		buttons.add_child(btn)
