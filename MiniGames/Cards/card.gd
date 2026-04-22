@@ -5,6 +5,7 @@ signal selected(card : Card)
 
 var is_front := false
 var is_animating := false
+var disabled := false
 
 @onready var front = $Front
 @onready var back = $Back
@@ -15,7 +16,7 @@ var match_id:
 	get():
 		return _match_id
 	set(val):
-		$Front.texture = ResourceLoader.load("res://assets/images/card_game/card_%s.png" % [(val +8 % 8) + 1])
+		$Front.texture = ResourceLoader.load("res://assets/images/card_game/card_%s.png" % [(val + 9 % 9) + 1])
 		_match_id = val
 
 func _ready():
@@ -23,13 +24,13 @@ func _ready():
 	pressed.connect(_on_pressed)
 
 func _on_pressed():
-	if is_animating:
+	if is_animating || App.game_status.flipping_cards:
 		return
 
 	await flip()
 	selected.emit(self)
 
-func flip():
+func flip(wait = 0):
 	var original_scale = scale
 	is_animating = true
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

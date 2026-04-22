@@ -5,7 +5,7 @@ signal won
 const CARD = preload("uid://cbu7w8oycwwvu")
 @onready var pivot: Node2D = %Pivot
 
-@export var grid_size = Vector2(4,4)
+@export var grid_size = Vector2(3,6)
 var cell_size = 110 #128
 
 var cards = []
@@ -44,7 +44,7 @@ func _on_card_selected(card : Card):
 	if current_card == null:
 		current_card = card
 	elif current_card == card:
-		current_card = null
+		pass
 	elif current_card.match_id == card.match_id:
 		current_card.match_found()
 		card.match_found()
@@ -52,6 +52,10 @@ func _on_card_selected(card : Card):
 		matches_found.append(card.match_id)
 		check_win_condition()
 	else:
+		App.game_status.flipping_cards = true
+		await get_tree().create_timer(1).timeout
+		App.game_status.flipping_cards = false
 		current_card.flip()
 		card.flip()
 		current_card = null
+		

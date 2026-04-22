@@ -223,7 +223,7 @@ size = Vector2i(2, 2)
 render_target_update_mode = 0
 
 [node name="CardGame" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain/CardGame/SubViewport" unique_id=553411246 instance=ExtResource("7_8fn8a")]
-grid_size = Vector2(3, 3)
+grid_size = Vector2(6, 3)
 
 [node name="MarginContainerSide" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor" unique_id=984962951]
 layout_mode = 1
@@ -256,6 +256,7 @@ offset_left = 447.0
 offset_top = 256.0
 offset_right = 1454.0
 offset_bottom = 769.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ntfj")
 
 [node name="MainCRTeffect2" type="Panel" parent="Panel" unique_id=1993486833]
@@ -265,6 +266,7 @@ offset_left = 134.0
 offset_top = 253.0
 offset_right = 426.0
 offset_bottom = 629.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ntfj")
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
