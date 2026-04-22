@@ -44,7 +44,7 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("2_2bpi1")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 6
 
 [node name="First" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=253189479 instance=ExtResource("2_xrglh")]
 layout_mode = 2
@@ -59,7 +59,7 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("4_k6cft")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 6
 
 [node name="Second" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1852646268 instance=ExtResource("2_xrglh")]
 layout_mode = 2
@@ -74,7 +74,7 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("5_tjsnm")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 6
 
 [node name="Third" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=108539587 instance=ExtResource("2_xrglh")]
 layout_mode = 2
