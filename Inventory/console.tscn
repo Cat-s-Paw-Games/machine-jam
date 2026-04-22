@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dojbqffl3k4tf" path="res://assets/images/console_screen.png" id="5_8fn8a"]
 [ext_resource type="Script" uid="uid://dbu120kdm1fdl" path="res://Inventory/console_screen.gd" id="6_rye3n"]
 [ext_resource type="PackedScene" uid="uid://t0d0bqk51lr" path="res://MiniGames/Cards/card_game.tscn" id="7_8fn8a"]
+[ext_resource type="Texture2D" uid="uid://6vou2shoxmf" path="res://assets/images/ui/console.png" id="8_rye3n"]
+[ext_resource type="Script" uid="uid://bnuu8qr0jhyoj" path="res://Inventory/console_menu.gd" id="9_w0tts"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rye3n"]
+bg_color = Color(0.3019608, 0.29411766, 0.23529412, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8fn8a"]
 
@@ -15,6 +20,9 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0tts"]
 texture = ExtResource("5_8fn8a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rye3n"]
+texture = ExtResource("8_rye3n")
 
 [node name="Console" type="PanelContainer" unique_id=264029128]
 anchors_preset = 8
@@ -28,7 +36,7 @@ offset_right = 800.0
 offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_8fn8a")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rye3n")
 script = ExtResource("1_m7hj2")
 
 [node name="Panel" type="Panel" parent="." unique_id=1997554102]
@@ -84,6 +92,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_top = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=1412667832]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 50
@@ -111,7 +120,6 @@ size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("3_45ofc")
 
 [node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel/Panel" unique_id=66181918]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 1
 anchors_preset = 8
@@ -145,12 +153,10 @@ theme_override_constants/margin_right = 180
 theme_override_constants/margin_bottom = 100
 
 [node name="Console" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer" unique_id=216746962]
-unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("6_rye3n")
 
 [node name="CardGame" type="SubViewportContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer" unique_id=368130427]
-unique_name_in_owner = true
 visible = false
 layout_mode = 2
 stretch = true
@@ -164,7 +170,114 @@ render_target_update_mode = 0
 [node name="CardGame" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer/CardGame/SubViewport" unique_id=1840478667 instance=ExtResource("7_8fn8a")]
 grid_size = Vector2(3, 3)
 
+[node name="Monitor" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=94675408]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rye3n")
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor" unique_id=1278409628]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -594.0
+offset_top = 127.0
+offset_right = -444.0
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_45ofc")
+
+[node name="InventorySlot" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/Panel" unique_id=164946835]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -68.0
+offset_right = 68.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("1_q6d8s")
+metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
+
+[node name="MarginContainerMain" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor" unique_id=588420346]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -244.0
+offset_right = 643.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Console" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain" unique_id=589893190]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("6_rye3n")
+
+[node name="CardGame" type="SubViewportContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain" unique_id=1348291378]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain/CardGame" unique_id=915980056]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="CardGame" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain/CardGame/SubViewport" unique_id=553411246 instance=ExtResource("7_8fn8a")]
+grid_size = Vector2(3, 3)
+
+[node name="MarginContainerSide" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor" unique_id=984962951]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -659.0
+offset_top = -249.0
+offset_right = -382.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ConsoleMenu" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerSide" unique_id=1708567412 node_paths=PackedStringArray("main_screen")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("9_w0tts")
+main_screen = NodePath("../../MarginContainerMain/Console")
+
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
-[connection signal="floppy_saved" from="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer/Console" to="." method="_on_console_floppy_saved"]
-[connection signal="play_card_game" from="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer/Console" to="." method="_on_console_play_card_game"]
 [connection signal="won" from="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Panel2/MarginContainer/CardGame/SubViewport/CardGame" to="." method="_on_card_game_won"]
+[connection signal="won" from="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain/CardGame/SubViewport/CardGame" to="." method="_on_card_game_won"]
+[connection signal="floppy_saved" from="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerSide/ConsoleMenu" to="." method="_on_console_menu_floppy_saved"]
+[connection signal="play_card_game" from="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerSide/ConsoleMenu" to="." method="_on_console_menu_play_card_game"]
