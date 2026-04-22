@@ -71,7 +71,7 @@ shader_parameter/jitter_px = 0.5350000254125
 shader_parameter/wobble_px = 1.5
 shader_parameter/tape_noise = 0.22
 shader_parameter/tape_lines = 0.1350000064125
-shader_parameter/roll_speed = 0.9850000467875
+shader_parameter/roll_speed = 0.1
 shader_parameter/roll_strength = 0.15
 shader_parameter/glow_strength = 0.25
 shader_parameter/glow_threshold = 0.65
@@ -209,11 +209,6 @@ theme_override_constants/margin_bottom = 50
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("6_rye3n")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain/Console" unique_id=1262542921]
-layout_mode = 2
-text = "sdasd"
-fit_content = true
 
 [node name="CardGame" type="SubViewportContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor/MarginContainerMain" unique_id=1348291378]
 unique_name_in_owner = true
