@@ -17,9 +17,6 @@ func _process(delta):
 	# Controlla se stiamo draggando e il mouse è su questo slot
 	if get_tree().root.gui_is_dragging():
 		if get_global_rect().has_point(get_global_mouse_position()):
-			# Il mouse è sopra questo slot - aggiorna l'hover
-			App.mouse.current_item = self
-			
 			hover_timer += delta
 			if hover_timer >= hover_timeout:
 				_trigger_wheel_rotate()
