@@ -51,6 +51,23 @@ expand_margin_right = 8.0
 shadow_size = 2
 shadow_offset = Vector2(3, 2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0omi4"]
+bg_color = Color(0.3019608, 0.29411766, 0.23529412, 1)
+skew = Vector2(0.2, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.15294118, 0.14509805, 0.10980392, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+shadow_size = 2
+shadow_offset = Vector2(3, 2)
+
 [resource]
 Button/colors/font_hover_color = Color(1, 1, 0.6392157, 1)
 Button/colors/font_pressed_color = Color(1, 1, 0.6392157, 1)
@@ -58,3 +75,4 @@ Button/font_sizes/font_size = 40
 Button/styles/hover = SubResource("StyleBoxFlat_470mv")
 Button/styles/normal = SubResource("StyleBoxFlat_gsqoc")
 Button/styles/pressed = SubResource("StyleBoxFlat_a2l2q")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_0omi4")

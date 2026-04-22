@@ -67,7 +67,6 @@ func end_one():
 	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
 
 func end_two():
-	
 	SceneTransitionManager.change_scene_with_wipe("res://Ending_leave.tscn")
 
 func end_three():

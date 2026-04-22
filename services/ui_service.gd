@@ -57,6 +57,8 @@ func close_console():
 		console = null
 
 func close_every_ui():
+	inventory_visible = false
+	%InventoryButton.visible = true
 	if inventory_open:
 		toggle_inventory()
 	close_crafting()
