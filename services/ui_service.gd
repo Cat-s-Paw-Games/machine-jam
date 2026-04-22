@@ -24,6 +24,7 @@ func open_crafting():
 	App.in_focus = true
 	crafting = preload("res://Inventory/crafting_table.tscn").instantiate()
 	ui_instance.add_child(crafting)
+	ui_instance.move_child(crafting,0)
 	UIAnimation.animate_pop(crafting)
 	crafting.smoke_particles.emitting = true
 
@@ -47,6 +48,7 @@ func open_console():
 	App.in_focus = true
 	console = preload("res://Inventory/console.tscn").instantiate()
 	ui_instance.add_child(console)
+	ui_instance.move_child(console,0)
 	UIAnimation.animate_pop(console)
 
 func close_console():

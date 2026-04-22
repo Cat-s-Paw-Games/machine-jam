@@ -9,7 +9,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf0e0"]
 
 [node name="UI" type="CanvasLayer" unique_id=2086083387]
-layer = 1100
+layer = 1000
 script = ExtResource("1_vkava")
 
 [node name="BoxContainer" type="BoxContainer" parent="." unique_id=1660653105]
@@ -46,8 +46,6 @@ text = "Menu"
 process_mode = 2
 visible = false
 
-[node name="InventoryWheel" parent="." unique_id=2108712994 instance=ExtResource("3_bo1jx")]
-
 [node name="Focus" type="Panel" parent="." unique_id=586448947]
 unique_name_in_owner = true
 anchors_preset = 8
@@ -58,6 +56,8 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_tf0e0")
+
+[node name="InventoryWheel" parent="." unique_id=2108712994 instance=ExtResource("3_bo1jx")]
 
 [connection signal="pressed" from="BoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="MenuBtn" to="." method="_on_menu_btn_pressed"]
