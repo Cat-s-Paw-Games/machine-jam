@@ -91,6 +91,7 @@ autowrap_mode = 0
 
 [node name="CreditsContainer" type="PanelContainer" parent="." unique_id=1781162534]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(1200, 800)
 anchors_preset = 8
 anchor_left = 0.5
@@ -192,13 +193,11 @@ vertical_alignment = 1
 
 [node name="DoorRight" type="Sprite2D" parent="." unique_id=186839944]
 unique_name_in_owner = true
-visible = false
 position = Vector2(1439, 538)
 texture = ExtResource("5_iysgs")
 
 [node name="DoorLeft" type="Sprite2D" parent="." unique_id=696180818]
 unique_name_in_owner = true
-visible = false
 position = Vector2(480, 538)
 texture = ExtResource("6_1rpvy")
 
