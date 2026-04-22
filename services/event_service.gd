@@ -74,6 +74,10 @@ func end_one():
 	App.events.switch_lights_off.emit()
 	await App.show_popup("I'm so happy. You'll stay here...", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("[color=#f00]FOREVER[/color]", {"title":App.MACHINE_NAME, "close_on_click": true})
+	App.events.move_to_face.emit()
+	await get_tree().create_timer(5).timeout
+	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
+
 	
 func end_two():
 	SceneTransitionManager.change_scene_with_wipe("res://Ending_leave.tscn")
