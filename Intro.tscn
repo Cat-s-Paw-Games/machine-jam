@@ -151,7 +151,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=144329627]
+[node name="Credits" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=144329627]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 36
@@ -167,13 +167,24 @@ Developers:
 - Cucucc
 
 Art:
-- Sunni
+- Miuted
 
 Project Manager:
 - Cucucc
 
+Game Design:
+- Kotrodenx
+- Cucucc
+
 UI:
 - Kotrodenx
+
+Story Building:
+- Miuted
+- Cucucc
+
+Narration:
+- Cucucc
 
 Music:
 - Menu: \"Beauty Flow\"
@@ -187,7 +198,10 @@ Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
 
 SFX:
-- Pixabay"
+- Pixabay
+
+Thanks to us, to the external providers, and to you the player!
+We hope you enjoyed!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
