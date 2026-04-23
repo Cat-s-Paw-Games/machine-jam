@@ -159,3 +159,4 @@ func _input(event: InputEvent) -> void:
 func secret_ending():
 	App.game_status.secret_ending_unlocked = true
 	print("SECRET ENDING")
+	App.events.secret_ending.emit()

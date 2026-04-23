@@ -3,11 +3,23 @@
 [ext_resource type="Script" uid="uid://llx5j6e52otr" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/GeneratorRoom/generator_room.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5vw27"]
+[ext_resource type="Script" uid="uid://dpl3r676hwg58" path="res://flashlight.gd" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/LightSwitchRoom/LightSwitch.tscn" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/BotRoom/BotRoom.tscn" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://dxgqumcfi5gys" path="res://Rooms/CraftingRoom/Room4.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://bvvxweo4ma2s7" path="res://Rooms/ConsoleRoom/console_room.tscn" id="7_5vw27"]
+
+[sub_resource type="Gradient" id="Gradient_5vw27"]
+offsets = PackedFloat32Array(0, 0.10869565, 0.65217394, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.95108694, 0.95108694, 0.95108694, 1, 0.046394527, 0.046394527, 0.046394527, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kek77"]
+gradient = SubResource("Gradient_5vw27")
+width = 900
+height = 900
+fill = 1
+fill_from = Vector2(0.51282054, 0.4871795)
 
 [node name="Main" type="Node" unique_id=738830431]
 process_mode = 3
@@ -20,6 +32,13 @@ unique_name_in_owner = true
 position = Vector2(820, 0)
 offset = Vector2(290, 0)
 anchor_mode = 0
+
+[node name="Flashlight" type="PointLight2D" parent="GameView" unique_id=252623545]
+visible = false
+position = Vector2(930, 510)
+range_layer_max = 1
+texture = SubResource("GradientTexture2D_kek77")
+script = ExtResource("2_kek77")
 
 [node name="Background" type="Parallax2D" parent="GameView" unique_id=2122227839]
 unique_name_in_owner = true
