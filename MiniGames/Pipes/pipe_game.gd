@@ -233,7 +233,7 @@ func animate_water_flow(visited):
 	for pos in visited:
 		var pipe = grid[pos.y][pos.x]
 		
-		#pipe.modulate = Color.BLUE
+		await pipe.shake()
 
 		var dir := Vector2i.ZERO
 

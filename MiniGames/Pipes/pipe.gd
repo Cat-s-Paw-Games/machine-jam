@@ -19,6 +19,19 @@ func _ready() -> void:
 	mat.shader = PIPE_SHADER
 	water.material = mat
 
+
+func shake():
+
+	var tween = create_tween()
+	var start_pos = position
+	var shake_amount = 3
+
+	for i in range(4):
+		tween.tween_property(self, "position", start_pos + Vector2(shake_amount, 0), 0.02)
+		tween.tween_property(self, "position", start_pos + Vector2(-shake_amount, 0), 0.02)
+	tween.tween_property(self, "position", start_pos, 0.02)
+	await tween.finished
+	
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if enabled and event is InputEventMouseButton and event.pressed:
 		rotate_pipe()
