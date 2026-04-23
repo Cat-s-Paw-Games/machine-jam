@@ -11,7 +11,9 @@ func _ready():
 
 func _on_item_add(item_id : String):
 	current_item = item_id
-	if item_id == "bound_relic":
+	if item_id == "supercharged_relic":
+		add_download_line()
+	elif item_id == "bound_relic":
 		console.correct_item = true
 	elif item_id == "floppy_card_game":
 		console.current_floppy = App.items[item_id]
@@ -28,6 +30,12 @@ func _on_item_add(item_id : String):
 
 var floppy_menu_line = "Copy Floppy Log"
 var supercharge_line = "Install Supercharge protocol"
+var download_line = "Download <machine> on relic"
+
+func add_download_line():
+	if !console.screens["main_menu"]["lines"].has(download_line):
+		console.screens["main_menu"]["lines"].append(download_line)
+	console.render()
 
 func add_floppy_line():
 	if console.current_floppy.id == "floppy_card_game":

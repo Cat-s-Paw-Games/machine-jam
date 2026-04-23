@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck58s2bxrpiq8"
-path="res://.godot/imported/bound_relic_charged.png-4445bee07197dca192fdbe8b544d466c.ctex"
+uid="uid://d2pj2mq1kvf3w"
+path="res://.godot/imported/parallax_final.png-6135d3aa1f253a884fd485336e53e05b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/bound_relic_charged.png"
-dest_files=["res://.godot/imported/bound_relic_charged.png-4445bee07197dca192fdbe8b544d466c.ctex"]
+source_file="res://assets/images/parallax_final.png"
+dest_files=["res://.godot/imported/parallax_final.png-6135d3aa1f253a884fd485336e53e05b.ctex"]
 
 [params]
 

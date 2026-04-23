@@ -72,10 +72,12 @@ func open_scene_in_focus(scene: Node):
 	for c in focus.get_children():
 		c.queue_free()
 	App.in_focus = true
+	App.navigation_enabled = false
 	focus.add_child(scene)
 
 func close_scene_in_focus():
 	App.in_focus = false
+	App.navigation_enabled = true
 	var focus = get_tree().root.get_node("UI/Focus")
 	for c in focus.get_children():
 		c.queue_free()

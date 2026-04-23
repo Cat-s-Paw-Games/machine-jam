@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://26qb4gqmgsyb"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_bes5o"]
+[ext_resource type="Texture2D" uid="uid://behu42xhra7wf" path="res://assets/images/diamond.png" id="2_kd2l6"]
+
+[resource]
+script = ExtResource("1_bes5o")
+id = "diamond"
+name = "Diamond"
+description = "A shiny diamond, a girl's best friend!"
+texture = ExtResource("2_kd2l6")
+is_pickable = true
+material = ""
+transforms_into = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

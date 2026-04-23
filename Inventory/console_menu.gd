@@ -55,6 +55,8 @@ func get_next_screen():
 				save_floppy_data()
 				var keys = App.game_status.console_logs.keys()
 				return keys[keys.size() - 1]
+			elif current_line == 3 and !floppy_log and App.game_status.tesseract_found:
+				secret_ending()
 		"open_fail":
 			if current_line == 0: return "main_menu"
 		"logs":
@@ -153,3 +155,7 @@ func _input(event: InputEvent) -> void:
 				if main_screen:
 					main_screen.current_screen = current_screen
 					main_screen.render()
+
+func secret_ending():
+	App.game_status.secret_ending_unlocked = true
+	print("SECRET ENDING")

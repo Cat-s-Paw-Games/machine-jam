@@ -21,7 +21,7 @@ var RECIPES = {
 		"steam": 40
 	},
 	"supercharged_relic": {
-		"ingredients": ["sync_module","diamond","aether_chamber_charged","secret_cabinet_item???"],
+		"ingredients": ["sync_module","diamond","aether_chamber_charged","tesseract"],
 		"steam": 80
 	}
 }

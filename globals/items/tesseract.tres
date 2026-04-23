@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c7skwhik04urk"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_rs3ox"]
+[ext_resource type="Texture2D" uid="uid://w8r6jl5je6bu" path="res://assets/images/tesseract.png" id="2_80758"]
+
+[resource]
+script = ExtResource("1_rs3ox")
+id = "tesseract"
+name = "Tesseract"
+description = "A source of infinite energy... capable of opening doors to other worlds."
+texture = ExtResource("2_80758")
+is_pickable = true
+material = ""
+transforms_into = ""
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"

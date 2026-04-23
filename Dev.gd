@@ -30,6 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			App.ui.inventory.add_item("bound_relic")
 			App.ui.inventory.add_item("aether_chamber_charged")
 			App.ui.inventory.add_item("floppy_card_game")
+			App.ui.inventory.add_item("supercharged_relic")
 			
 		if event is InputEventKey and event.keycode == KEY_F1 and event.pressed:
 			App.game_status.lights_on = true

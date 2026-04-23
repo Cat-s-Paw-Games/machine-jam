@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c3l0vlooy0s4y"]
+
+[ext_resource type="Texture2D" uid="uid://w8r6jl5je6bu" path="res://assets/images/tesseract.png" id="1_jg8o4"]
+[ext_resource type="Script" uid="uid://cafqq0iart4ih" path="res://components/pickable_item.gd" id="1_pp8x2"]
+[ext_resource type="Resource" uid="uid://c7skwhik04urk" path="res://globals/items/tesseract.tres" id="3_bexk3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jg8o4"]
+radius = 249.4624
+
+[node name="Tesseract" type="TouchScreenButton" unique_id=72453950]
+scale = Vector2(0.20043102, 0.20043105)
+texture_normal = ExtResource("1_jg8o4")
+script = ExtResource("1_pp8x2")
+item = ExtResource("3_bexk3")
+metadata/_custom_type_script = "uid://cafqq0iart4ih"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1107612724]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=539050881]
+position = Vector2(244.47314, 234.4946)
+shape = SubResource("CircleShape2D_jg8o4")

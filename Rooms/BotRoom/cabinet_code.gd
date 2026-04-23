@@ -23,6 +23,8 @@ func _on_third_count_changed(new_value: int) -> void:
 func _on_button_pressed() -> void:
 	if [first,second,third] == correct_combination:
 		App.audio.play("sfx","res://assets/music/sfx/close_door.mp3")
+		if App.game_status.cabinet_open:
+			App.game_status.tesseract_found = true
 		App.events.cabinet_open.emit()
 	else:
 		var tween = create_tween()

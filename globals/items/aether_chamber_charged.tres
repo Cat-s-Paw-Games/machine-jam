@@ -12,4 +12,5 @@ texture = ExtResource("2_52y5o")
 is_pickable = true
 material = ""
 transforms_into = ""
+shiny = true
 metadata/_custom_type_script = "uid://cs02wdcdcca6e"

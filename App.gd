@@ -34,7 +34,6 @@ func _ready()->void:
 	
 	game_status=preload("res://services/game_status_service.gd").new()
 	add_child(game_status)
-	game_status.setup()
 	
 	item_service=preload("res://services/item_service.gd").new()
 	add_child(item_service)

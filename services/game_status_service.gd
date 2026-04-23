@@ -13,8 +13,8 @@ var max_steam := 20.0
 var game_end = false
 var secret_ending_unlocked = false
 
-var oscillator_password = ""
-var oscillator_password_inserted = false
+var cabinet_open = false
+var tesseract_found = false
 
 var card_game_uploaded = false
 var flipping_cards = false
@@ -28,24 +28,6 @@ var console_logs = {
 	"log_7": {"line": "Log Entry 91724.70", "pretext": "[Log Entry 91722.94]\nIs anyone here? Am I... alone?"}
 }
 
-func setup():
-	pass
-
-func generate_password(key : String, length : int = 3):
-	var chars = "1234567890"
-	var rnd_pass = ""
-
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-
-	for i in length:
-		var index = rng.randi_range(0, chars.length() - 1)
-		rnd_pass += chars[index]
-	
-	match(key):
-		"oscillator":
-			oscillator_password = rnd_pass
-
 func reset():
 	lights_on = false
 	fire_lit = false
@@ -56,5 +38,5 @@ func reset():
 	game_end = false
 	secret_ending_unlocked = false
 	
-	oscillator_password = ""
-	oscillator_password_inserted = false
+	cabinet_open = false
+	tesseract_found = false
