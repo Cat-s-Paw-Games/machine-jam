@@ -1,10 +1,14 @@
 extends DropArea
 
+var amount = 2
+
 func use_inventory_item(item_id : String) -> bool:
-	if item_id == "pickaxe":
+	if item_id == "pickaxe" && amount > 0:
 		App.ui.inventory.add_item("coal")
+		amount -= 1
 		App.mouse.hover_out()
-		disable_collisions()
+		if amount <= 0:
+			disable_collisions()
 		return true
 	return false
 

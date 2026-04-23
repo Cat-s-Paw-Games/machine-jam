@@ -163,10 +163,12 @@ func try_drop_into_world(_drag_data):
 		if dropped_on.item.material != _drag_data["item"].id:
 			return
 		dropped_on.use(_drag_data["item"].id)
-		_drag_data["source"].empty_slot()
+		if _drag_data["item"].usable_once:
+			_drag_data["source"].empty_slot()
 	elif dropped_on && dropped_on.has_method("use_inventory_item"):
 		if dropped_on.use_inventory_item(_drag_data["item"].id):
-			_drag_data["source"].empty_slot()
+			if _drag_data["item"].usable_once:
+				_drag_data["source"].empty_slot()
 	App.mouse.hover_type = MouseService.HOVER_TYPE.NORMAL
 
 func hover_text():

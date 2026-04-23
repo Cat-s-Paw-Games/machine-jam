@@ -9,6 +9,7 @@ id = "scissors"
 name = "Scissors"
 description = "A pair of scissors"
 texture = ExtResource("2_6kjqn")
+usable_once = true
 is_pickable = true
 material = ""
 transforms_into = ""

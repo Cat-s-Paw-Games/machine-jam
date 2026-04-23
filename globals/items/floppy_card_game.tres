@@ -9,6 +9,7 @@ id = "floppy_card_game"
 name = "Floppy Program"
 description = "[CARD_MINIGAME]"
 texture = ExtResource("2_3j3ax")
+usable_once = true
 is_pickable = true
 material = ""
 transforms_into = ""

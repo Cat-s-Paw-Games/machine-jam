@@ -9,6 +9,7 @@ id = "spring"
 name = "Spring"
 description = ""
 texture = ExtResource("2_a1w2h")
+is_pickable = true
 material = ""
 transforms_into = "bucket_water"
 station = "puddle_water"

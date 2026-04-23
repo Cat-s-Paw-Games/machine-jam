@@ -9,6 +9,7 @@ id = "sync_module"
 name = "Synchronization Module"
 description = ""
 texture = ExtResource("2_slyc6")
+is_pickable = true
 material = ""
 transforms_into = "bucket_water"
 station = "puddle_water"

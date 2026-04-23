@@ -41,7 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			App.ui.inventory.show()
 			var main = get_tree().root.get_node_or_null("Main")
 			if main and main.blackout:
-				main.blackout.queue_free()
+				main.blackout.visible = false
 		
 		if event is InputEventKey and event.keycode == KEY_M and event.pressed:
 			var master = AudioServer.get_bus_index("Master")
