@@ -7,24 +7,35 @@ extends Control
 
 var current_recipe = null
 
-var RECIPES = {
-	"pickaxe": {
+var RECIPES = [
+	{
+		"output": "pickaxe",
 		"ingredients": ["handle","metal_scraps"],
 		"steam": 20
 	},
-	"diamond": {
+	{
+		"output": "diamond",
 		"ingredients": ["coal"],
 		"steam": 20
 	},
-	"bound_relic": {
+	{
+		"output": "bound_relic",
 		"ingredients": ["sync_module","oscillation_regulator","aether_chamber","spring"],
 		"steam": 40
 	},
-	"supercharged_relic": {
+	{
+		"output": "bound_relic",
+		"ingredients": ["sync_module","oscillation_regulator","aether_chamber_charged","spring"],
+		"steam": 40
+	},
+	{
+		"output": "supercharged_relic",
 		"ingredients": ["sync_module","diamond","aether_chamber_charged","tesseract"],
 		"steam": 80
 	}
-}
+	
+]
+
 
 var current_items = {
 	0: null,
@@ -77,12 +88,12 @@ func check_recipe():
 	)
 	items.sort()
 	var found = false
-	for output in RECIPES:
-		var ingredients = RECIPES[output]["ingredients"]
+	for recipe in RECIPES:
+		var output = recipe["output"]
+		var ingredients = recipe["ingredients"]
 		ingredients.sort()
 		if ingredients == items:
-			current_recipe = RECIPES[output]
-			current_recipe["output"] = output
+			current_recipe = recipe
 			output_slot.fill_slot(output)
 			found = true
 			if current_recipe.has("steam") and current_recipe["steam"] > App.game_status.steam:

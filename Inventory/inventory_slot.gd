@@ -9,6 +9,10 @@ var hover_timer: float = 0.0
 var is_dragging_over: bool = false
 var hover_timeout: float = 1.0
 
+var is_empty:
+	get():
+		return item == null
+
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)

@@ -44,6 +44,25 @@ func _ready():
 	
 	highlight_first_slot()
 
+
+func correct_slots_positions():
+	var first_empty_slot = -1
+	var last_filled_slot = -1
+	var item_numbers = 0
+	var i = 0
+	var slots = item_slots
+	for slot in slots:
+		if slot.is_empty:
+			if first_empty_slot == -1:
+				first_empty_slot = i
+		else:
+			last_filled_slot = i
+			item_numbers += 1
+		i += 1
+	if first_empty_slot != item_numbers:
+		slots[first_empty_slot].swap_items(slots[last_filled_slot])
+		
+
 func recalculate_slot_positions():
 	var radius = (size.x - 152) / 2
 	var center = size / 2
@@ -76,6 +95,7 @@ func add_item(item_id : String):
 
 func rotate_wheel(direction: int):
 	if current_item_count <= 0: return
+	correct_slots_positions()
 	var tween = create_tween().set_parallel()
 	rotation = round(rotation / step) * step  # snap first
 	var next_slot = (active_slot + direction + current_item_count) % current_item_count
