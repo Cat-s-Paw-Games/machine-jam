@@ -8,14 +8,22 @@ extends Control
 var current_recipe = null
 
 var RECIPES = {
-	"bound_relic": {
-		"ingredients": ["sync_module","oscillation_regulator","aether_chamber","spring"],
-		"steam": 80
-	},
 	"pickaxe": {
 		"ingredients": ["handle","metal_scraps"],
 		"steam": 20
 	},
+	"diamond": {
+		"ingredients": ["coal"],
+		"steam": 20
+	},
+	"bound_relic": {
+		"ingredients": ["sync_module","oscillation_regulator","aether_chamber","spring"],
+		"steam": 40
+	},
+	"supercharged_relic": {
+		"ingredients": ["sync_module","diamond","aether_chamber_charged","secret_cabinet_item???"],
+		"steam": 80
+	}
 }
 
 var current_items = {

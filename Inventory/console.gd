@@ -11,7 +11,7 @@ func _ready():
 
 func _on_item_add(item_id : String):
 	current_item = item_id
-	if item_id == "bound_relic_charged":
+	if item_id == "bound_relic":
 		console.correct_item = true
 	elif item_id == "floppy_card_game":
 		console.current_floppy = App.items[item_id]
@@ -62,7 +62,7 @@ func _on_close_pressed() -> void:
 
 func _on_card_game_won() -> void:
 	await get_tree().create_timer(1.0).timeout
-	if inventory_slot.item.id == "bound_relic":
+	if inventory_slot.item.id == "aether_chamber":
 		inventory_slot.item = inventory_slot.item.transform()
 		inventory_slot.update_visual()
 		console.correct_item = true
@@ -77,6 +77,6 @@ func _on_console_menu_floppy_saved() -> void:
 
 
 func _on_console_menu_play_card_game() -> void:
-	if inventory_slot.item && inventory_slot.item.id == "bound_relic":
+	if inventory_slot.item && inventory_slot.item.id == "aether_chamber":
 		console.hide()
 		%CardGame.show()
