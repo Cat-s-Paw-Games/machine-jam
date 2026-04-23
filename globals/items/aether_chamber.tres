@@ -11,5 +11,5 @@ description = ""
 texture = ExtResource("2_cshw6")
 is_pickable = true
 material = ""
-transforms_into = ""
+transforms_into = "aether_chamber_charged"
 metadata/_custom_type_script = "uid://cs02wdcdcca6e"
