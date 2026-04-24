@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b0gtw6yxhbb4f"]
 
 [ext_resource type="Script" uid="uid://1hw55caspmba" path="res://Rooms/MainRoom/main_room.gd" id="1_4h2l6"]
-[ext_resource type="Texture2D" uid="uid://cpdwlb4iis1a3" path="res://assets/images/parallax.png" id="1_6gs03"]
 [ext_resource type="PackedScene" uid="uid://byo14qgmc44ta" path="res://Rooms/MainRoom/generator.tscn" id="2_6fmkg"]
+[ext_resource type="Texture2D" uid="uid://c1n12w3pa7mud" path="res://assets/images/parallax.jpg" id="2_fc7t8"]
 [ext_resource type="PackedScene" uid="uid://25wug5xv4w3n" path="res://Rooms/MainRoom/switch.tscn" id="3_4h2l6"]
 [ext_resource type="PackedScene" uid="uid://b3ur5g1hqc6qe" path="res://Rooms/MainRoom/fireplace.tscn" id="3_oqot5"]
 [ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/MainRoom/Cabinet.tscn" id="5_fnlfu"]
@@ -22,7 +22,7 @@ offset_left = -1920.0
 offset_right = 10880.0
 offset_bottom = 1800.0
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_6gs03")
+texture = ExtResource("2_fc7t8")
 
 [node name="Fireplace" parent="." unique_id=1972907018 instance=ExtResource("3_oqot5")]
 position = Vector2(596, 862)
@@ -44,6 +44,7 @@ position = Vector2(1155, 693)
 script = ExtResource("10_pg8cq")
 
 [node name="Face" type="PointLight2D" parent="." unique_id=198897195]
+unique_name_in_owner = true
 position = Vector2(1922, 541)
 color = Color(0.72919023, 0.4725454, 0, 1)
 energy = 9.35
@@ -58,6 +59,7 @@ energy_on_max = 4
 loop_duration = 3
 
 [node name="Console" type="PointLight2D" parent="." unique_id=270325277]
+unique_name_in_owner = true
 position = Vector2(1923, 541)
 color = Color(0.29771417, 0.6264562, 0, 1)
 energy = 9.35

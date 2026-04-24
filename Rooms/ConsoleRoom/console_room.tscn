@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://bvvxweo4ma2s7"]
 
-[ext_resource type="Texture2D" uid="uid://kb03vj5h7xo0" path="res://assets/images/face_light.jpg" id="1_lstvj"]
 [ext_resource type="Script" uid="uid://chtqemqmqcop4" path="res://Rooms/ConsoleRoom/console_room.gd" id="1_mkgc1"]
-[ext_resource type="Texture2D" uid="uid://cpdwlb4iis1a3" path="res://assets/images/parallax.png" id="2_rsiv6"]
+[ext_resource type="Texture2D" uid="uid://c1n12w3pa7mud" path="res://assets/images/parallax.jpg" id="2_rsiv6"]
 [ext_resource type="PackedScene" uid="uid://dwfsdpr8616bi" path="res://Items/handle.tscn" id="3_q285e"]
-[ext_resource type="Script" uid="uid://bepuxq3s3bpy1" path="res://Rooms/ConsoleRoom/point_light_2d.gd" id="4_djkan"]
 [ext_resource type="PackedScene" uid="uid://2jwm115utw6p" path="res://Items/floppy.tscn" id="6_8q3ty"]
 [ext_resource type="Resource" uid="uid://wvcwnpv4nusc" path="res://globals/items/floppy_card_game.tres" id="8_mg555"]
 [ext_resource type="Script" uid="uid://cisn1yggibylp" path="res://Rooms/ConsoleRoom/console.gd" id="9_rsiv6"]
@@ -33,16 +31,6 @@ texture = ExtResource("2_rsiv6")
 [node name="Handle" parent="." unique_id=1743136493 instance=ExtResource("3_q285e")]
 position = Vector2(561, 743)
 rotation = -0.7853982
-
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=778215837]
-visible = false
-position = Vector2(600, 537)
-color = Color(0.70980394, 0.70980394, 0.49803922, 1)
-energy = 0.4
-range_layer_max = 1
-shadow_enabled = true
-texture = ExtResource("1_lstvj")
-script = ExtResource("4_djkan")
 
 [node name="Floppy" parent="." unique_id=904767244 instance=ExtResource("6_8q3ty")]
 position = Vector2(1249, 926.00006)

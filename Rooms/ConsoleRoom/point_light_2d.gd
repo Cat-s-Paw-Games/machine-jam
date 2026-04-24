@@ -12,15 +12,19 @@ var light_loop
 
 
 func _ready() -> void:
-	App.events.switch_lights_on.connect(func(): 
-		stop_loop()
-		start_loop(energy_on_min,energy_off_max)
-	)
 	start_loop(energy_off_min,energy_off_max)
 
+func start_on_loop():
+	stop_loop()
+	start_loop(energy_on_min,energy_on_max)
+	
+func start_off_loop():
+	stop_loop()
+	start_loop(energy_off_min,energy_off_max)
 
 func stop_loop():
-	light_loop.stop()
+	if light_loop != null:
+		light_loop.stop()
 	light_loop = null
 
 func start_loop(base_energy_min,base_energy_max):

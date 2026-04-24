@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgyxag4ggif0u"]
 
-[ext_resource type="Texture2D" uid="uid://cpdwlb4iis1a3" path="res://assets/images/parallax.png" id="1_cgd5x"]
 [ext_resource type="Script" uid="uid://cmp5lph6dhb3w" path="res://Rooms/AssemblyRoom/assembly_room.gd" id="1_fdyc5"]
+[ext_resource type="Texture2D" uid="uid://c1n12w3pa7mud" path="res://assets/images/parallax.jpg" id="2_1hgf2"]
 [ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="3_3dn3h"]
 [ext_resource type="Script" uid="uid://c2yufe5vadiky" path="res://Rooms/AssemblyRoom/crafting.gd" id="3_oxpps"]
 [ext_resource type="PackedScene" uid="uid://xv6yvtng0ll1" path="res://Items/metal_scraps.tscn" id="5_22gm7"]
@@ -36,7 +36,7 @@ offset_left = -5760.0
 offset_right = 7040.0
 offset_bottom = 1800.0
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_cgd5x")
+texture = ExtResource("2_1hgf2")
 
 [node name="AssemblyLine" type="TouchScreenButton" parent="." unique_id=1347204356]
 position = Vector2(0, 839)
