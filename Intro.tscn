@@ -212,7 +212,7 @@ vertical_alignment = 1
 
 [node name="InstructionsContainer" type="PanelContainer" parent="." unique_id=398487047]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(1000, 400)
+custom_minimum_size = Vector2(1000, 450)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -270,7 +270,9 @@ text = "Instructions
 A-D or Left-Right arrows: move
 W-S or Up-Down arrows: cycle Inventory/navigate Console
 I to open Inventory
-Esc: close current UI"
+Esc: close current UI
+
+The rest is Mouse interaction"
 horizontal_alignment = 1
 vertical_alignment = 1
 
