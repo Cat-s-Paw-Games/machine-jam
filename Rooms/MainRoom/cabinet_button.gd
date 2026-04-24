@@ -12,7 +12,6 @@ func _ready() -> void:
 	App.events.cabinet_open.connect(func():
 		if App.game_status.tesseract_found:
 			queue_free()
-		scale = Vector2(2,3)
 		position.y -= 20
 		App.game_status.combination = [5,2,6]
 		open = true
