@@ -232,28 +232,7 @@ func check_win_condition():
 func animate_water_flow(visited):
 	for pos in visited:
 		var pipe = grid[pos.y][pos.x]
-		
 		await pipe.shake()
-
-		var dir := Vector2i.ZERO
-
-		# check neighbors to find where flow goes
-		var directions = [
-			Vector2i.DOWN,
-			Vector2i.UP,
-			Vector2i.RIGHT,
-			Vector2i.LEFT
-		]
-
-		for d in directions:
-			var neighbor = pos + d
-			if visited.has(neighbor):
-				dir = d
-				break
-
-		pipe.set_flow(dir)
-		pipe.animate_fill()
-
 		await get_tree().create_timer(0.08).timeout
 	
 	pipes_connected.emit()

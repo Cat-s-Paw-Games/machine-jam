@@ -30,7 +30,6 @@ unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="GameView" unique_id=881170521]
 position = Vector2(820, 0)
-offset = Vector2(290, 0)
 anchor_mode = 0
 
 [node name="Flashlight" type="PointLight2D" parent="GameView" unique_id=252623545]

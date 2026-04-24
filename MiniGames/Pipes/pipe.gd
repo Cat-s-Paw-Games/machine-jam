@@ -14,12 +14,6 @@ var enabled = true
 
 var connections: Array = []
 
-func _ready() -> void:
-	var mat = ShaderMaterial.new()
-	mat.shader = PIPE_SHADER
-	water.material = mat
-
-
 func shake():
 
 	var tween = create_tween()
@@ -33,8 +27,11 @@ func shake():
 	await tween.finished
 	
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if enabled and event is InputEventMouseButton and event.pressed:
-		rotate_pipe()
+	if enabled and event and event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			rotate_pipe(1)
+		elif event.button_index == MOUSE_BUTTON_RIGHT:
+			rotate_pipe(-1)
 
 func set_connections(conns: Array):
 	connections = conns.duplicate()
@@ -107,12 +104,8 @@ func set_pipe():
 	if connections.size() == 4:
 		sprite.texture = preload("res://assets/images/pipe_game/pipe_4.png")
 		sprite.rotation_degrees = 0
-		
-	
-	water.texture = sprite.texture
-	water.rotation_degrees = sprite.rotation_degrees
 
-func rotate_pipe():
+func rotate_pipe(direction : int = 1):
 	if App.in_focus: return
 	if not App.game_status.pipe_touched: 
 		App.show_popup("There's something rattling inside these pipes", {
@@ -120,48 +113,15 @@ func rotate_pipe():
 		})
 		App.game_status.pipe_touched = true
 	for i in range(connections.size()):
-		connections[i] = (connections[i] + 1) % 4
-	await rotate_animation()
-	water.rotation_degrees = sprite.rotation_degrees
+		connections[i] = (connections[i] + direction + 4) % 4
+	await rotate_animation(direction)
 	pipe_rotated.emit()
 
-func rotate_animation():
+func rotate_animation(direction : int):
 	var current = round(sprite.rotation_degrees / 90.0) * 90.0
-	var target_rotation = current + 90.0
+	var target_rotation = current + 90.0 * direction
 	var tween = create_tween()
 	tween.tween_property(sprite, "rotation_degrees", target_rotation, .5)\
 		.set_trans(Tween.TRANS_BACK)\
 		.set_ease(Tween.EASE_OUT)
 	await tween.finished
-
-func animate_fill():
-	#water.show()
-	#update_pipe_texture()
-	var tween = create_tween()
-	tween.tween_method(set_progress, 0.0, 1.0, 0.2)
-
-func update_pipe_texture():
-	var tex = sprite.texture
-	water.material.set_shader_parameter("pipe_mask", tex)
-
-func set_progress(value):
-	water.material.set_shader_parameter("progress", value)
-
-func set_flow(dir: Vector2i):
-	# Converte la direzione indice in vettore
-	var direction_vector = Vector2(dir.x, dir.y).normalized()
-	
-	# Calcola la rotazione totale della sprite
-	var rotation_radians = deg_to_rad(sprite.rotation_degrees)
-	
-	# Ruota il vettore di direzione in base alla rotazione della sprite
-	var rotated_dir = direction_vector.rotated(rotation_radians)
-	
-	# Setta il parametro dello shader
-	water.material.set_shader_parameter("direction", rotated_dir)
-
-func get_rotated_direction(dir: Vector2i) -> Vector2:
-	var direction_vector = Vector2(dir.x, dir.y).normalized()
-	var angle = deg_to_rad(sprite.rotation_degrees)
-	var rotated = direction_vector.rotated(angle)
-	return rotated
