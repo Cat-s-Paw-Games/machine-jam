@@ -212,7 +212,6 @@ vertical_alignment = 1
 
 [node name="InstructionsContainer" type="PanelContainer" parent="." unique_id=398487047]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(1000, 400)
 anchors_preset = 8
 anchor_left = 0.5
@@ -250,6 +249,7 @@ mouse_filter = 2
 [node name="MarginContainer" type="MarginContainer" parent="InstructionsContainer/MarginContainer/VBoxContainer" unique_id=1433200720]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -258,6 +258,7 @@ theme_override_constants/margin_bottom = 20
 [node name="Credits" type="RichTextLabel" parent="InstructionsContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1923446226]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 36
 theme_override_font_sizes/bold_font_size = 36
 theme_override_font_sizes/bold_italics_font_size = 36
