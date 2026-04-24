@@ -111,10 +111,15 @@ func load_data():
 		screens["logs"]["lines"].append(App.game_status.console_logs[log_id].line)
 
 func create_label(text : String) -> Label:
-	var label : Label = Label.new()
-	label.add_theme_font_size_override("font_size", 18)
-	label.set_meta("text", text)
+	var label : Label = ConsoleEntry.new()
 	label.text = text
+	label.hovered.connect(
+		func(index):
+			for child in get_children():
+				if child.get_index() != index:
+					child.hover = false
+	)
+	label.selected.connect(func(index): current_line = index; go_next_screen())
 	return label
 	
 func render():
@@ -124,9 +129,11 @@ func render():
 	var i = 0
 	for l in lines:
 		var label = create_label(l)
-		label.text = "> %s" % l if i == current_line else l
-		i += 1
+		label.text = l
 		add_child(label)
+		if i == current_line:
+			label.hover = true
+		i += 1
 	if current_screen == "open_success":
 		paused = true
 		await get_tree().create_timer(3).timeout
@@ -145,18 +152,20 @@ func _input(event: InputEvent) -> void:
 					current_line = (current_line - 1 + lines.size()) % lines.size()
 					render()
 			KEY_ENTER:
-				var next_screen = get_next_screen()
-				if next_screen:
-					current_screen = next_screen
-				else:
-					current_screen = "main_menu"
-				current_line = 0
-				render()
-				if main_screen:
-					main_screen.current_screen = current_screen
-					main_screen.render()
+				go_next_screen()
+
+func go_next_screen():
+	var next_screen = get_next_screen()
+	if next_screen:
+		current_screen = next_screen
+	else:
+		current_screen = "main_menu"
+	current_line = 0
+	render()
+	if main_screen:
+		main_screen.current_screen = current_screen
+		main_screen.render()
 
 func secret_ending():
 	App.game_status.secret_ending_unlocked = true
-	print("SECRET ENDING")
 	App.events.secret_ending.emit()

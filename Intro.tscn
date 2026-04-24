@@ -256,7 +256,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Credits" type="RichTextLabel" parent="InstructionsContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1923446226]
+[node name="Instructions" type="RichTextLabel" parent="InstructionsContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1923446226]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
@@ -270,6 +270,7 @@ text = "Instructions
 
 A-D or Left-Right arrows: move
 W-S: navigate Console
+Enter: choose Console entry
 I: open Inventory
 Mouse Wheel or Up-Down arrows: cycle Inventory
 Esc: close current UI
