@@ -11,6 +11,7 @@ signal activate_generator()
 signal cabinet_open()
 signal pipes_connected(end_position)
 signal secret_ending()
+signal hatch_open
 
 func setup():
 	switch_lights_on.connect(_on_switch_lights)
@@ -64,6 +65,8 @@ func _on_end_game():
 	await App.show_popup_choise("What will you do?", choises)
 
 func end_one():
+	App.game_status.end_reached = true
+	App.game_status.ending_chosen = 0
 	App.ui.close_every_ui()
 	await App.show_popup("Really?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("You will stay with me?", {"title":App.MACHINE_NAME, "close_on_click": true})
@@ -77,14 +80,18 @@ func end_one():
 	await App.show_popup("[color=#f00]FOREVER[/color]", {"title":App.MACHINE_NAME, "close_on_click": true})
 	App.events.move_to_face.emit()
 	await get_tree().create_timer(15).timeout
-	SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
-
 	
+	handle_ending()
+
 func end_two():
+	App.game_status.end_reached = true
+	App.game_status.ending_chosen = 1
 	App.ui.close_every_ui()
-	SceneTransitionManager.change_scene_with_wipe("res://Ending_leave.tscn")
+	hatch_open.emit()
 
 func _on_secret_ending():
+	App.game_status.end_reached = true
+	App.game_status.ending_chosen = 2
 	App.ui.close_every_ui()
 	await App.show_popup("What?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("What's this?", {"title":App.MACHINE_NAME, "close_on_click": true})
@@ -104,8 +111,16 @@ func _on_secret_ending():
 	await App.show_popup("I'm still connected?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("Yes, yes I am.", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("Let me open the hatch.", {"title":App.MACHINE_NAME, "close_on_click": true})
+	hatch_open.emit()
 	await get_tree().create_timer(1).timeout
 	await App.show_popup("I can't wait to see how the outside looks like...", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("...friend.", {"title":App.MACHINE_NAME, "close_on_click": true})
 
-	
+func handle_ending():
+	match (App.game_status.ending_chosen):
+		0:
+			SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
+		1:
+			SceneTransitionManager.change_scene_with_wipe("res://Ending_leave.tscn")
+		2:
+			SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")

@@ -8,12 +8,7 @@
 [ext_resource type="Script" uid="uid://bepuxq3s3bpy1" path="res://Rooms/ConsoleRoom/point_light_2d.gd" id="4_djkan"]
 [ext_resource type="PackedScene" uid="uid://2jwm115utw6p" path="res://Items/floppy.tscn" id="6_8q3ty"]
 [ext_resource type="Resource" uid="uid://wvcwnpv4nusc" path="res://globals/items/floppy_card_game.tres" id="8_mg555"]
-[ext_resource type="Texture2D" uid="uid://bibs8v8c2dof2" path="res://assets/images/hatch_panel.png" id="9_adh7r"]
-[ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="10_j313q"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vv1s"]
-radius = 118.21997
-height = 2230.7598
+[ext_resource type="PackedScene" uid="uid://dwssw5st7sisv" path="res://Rooms/ConsoleRoom/hatch.tscn" id="9_rsiv6"]
 
 [node name="ConsoleRoom" type="Node2D" unique_id=536472085]
 script = ExtResource("1_mkgc1")
@@ -47,17 +42,5 @@ position = Vector2(1112, 776)
 position = Vector2(840, 785)
 item = ExtResource("8_mg555")
 
-[node name="Hatch" type="TouchScreenButton" parent="." unique_id=1446573285]
-position = Vector2(1250, 740)
-scale = Vector2(0.19455253, 0.19455253)
-texture_normal = ExtResource("9_adh7r")
-
-[node name="HoverHint" type="Area2D" parent="Hatch" unique_id=195114660]
-script = ExtResource("10_j313q")
-text = "This is the emergency hatch... I need to open it."
-metadata/_custom_type_script = "uid://gikcr4yg3njr"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hatch/HoverHint" unique_id=222208159]
-position = Vector2(1372.3801, 133.64001)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_1vv1s")
+[node name="Hatch" parent="." unique_id=1065990738 instance=ExtResource("9_rsiv6")]
+position = Vector2(1579, 914)

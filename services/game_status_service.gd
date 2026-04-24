@@ -18,6 +18,10 @@ var tesseract_found = false
 
 var card_game_uploaded = false
 var flipping_cards = false
+
+var end_reached = false
+var ending_chosen : int = -1
+
 var console_logs = {
 	"log_1": {"line": "Log Entry 91721.00", "pretext": "[Log Entry 91721.00] – Report from %s handler.\nCoal extraction completed successfully. The frigate has been fully loaded with all materials recovered during the last mission. Home base has been notified of mission completion. Awaiting further instructions." % App.MACHINE_NAME},
 	"log_2": {"line": "Log Entry 91721.15", "pretext": "[Log Entry 91721.15] – Report from %s handler.\n%s is no longer responding within expected parameters. Multiple subsystems have failed in sequence. Initial diagnostics suggest structural damage beyond standard field repair."  % [App.MACHINE_NAME, App.MACHINE_NAME]},
@@ -34,9 +38,11 @@ func reset():
 	water_linked = false
 	generator_active = false
 	steam = 0.0
-	
 	game_end = false
 	secret_ending_unlocked = false
-	
 	cabinet_open = false
 	tesseract_found = false
+	card_game_uploaded = false
+	flipping_cards = false
+	end_reached = false
+	ending_chosen = -1
