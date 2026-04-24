@@ -38,9 +38,11 @@ func _on_activate_generator():
 	await App.show_popup("I hope you are[pause=1] since you'll stay here [color=#f00][b]FOREVER![/b][/color]",{"close_on_click": true, "title": App.MACHINE_NAME})
 
 func _on_cabinet_open():
-	await App.show_popup("[color=#f00][b]WHAT ARE [color=#ff0][wave]~bzz~[/wave][/color][pause=0.5][color=#f00] WHAT ARE YOU DOING?!?[/color][/b]",{"close_on_click": true, "title": App.MACHINE_NAME})
-	await App.show_popup("[b][color=#f00]THESE [pause]ARE [pause]MINE![/color][/b]",{"close_on_click": true, "title": App.MACHINE_NAME})
-
+	if !App.game_status.tesseract_found:
+		await App.show_popup("[color=#f00][b]WHAT ARE [color=#ff0][wave]~bzz~[/wave][/color][pause=0.5][color=#f00] WHAT ARE YOU DOING?!?[/color][/b]",{"close_on_click": true, "title": App.MACHINE_NAME})
+		await App.show_popup("[b][color=#f00]THESE [pause]ARE [pause]MINE![/color][/b]",{"close_on_click": true, "title": App.MACHINE_NAME})
+	else:
+		await App.show_popup("[b]What is this?[pause] What are you trying to do?",{"close_on_click": true, "title": App.MACHINE_NAME})
 
 func _on_end_game():
 	await App.show_popup("That's your choice?", {"title":App.MACHINE_NAME, "close_on_click": true})
