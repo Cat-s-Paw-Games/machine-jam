@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b0gtw6yxhbb4f"]
+
+[ext_resource type="Script" uid="uid://1hw55caspmba" path="res://Rooms/MainRoom/main_room.gd" id="1_4h2l6"]
+[ext_resource type="Texture2D" uid="uid://cpdwlb4iis1a3" path="res://assets/images/parallax.png" id="1_6gs03"]
+[ext_resource type="PackedScene" uid="uid://byo14qgmc44ta" path="res://Rooms/MainRoom/generator.tscn" id="2_6fmkg"]
+[ext_resource type="PackedScene" uid="uid://25wug5xv4w3n" path="res://Rooms/MainRoom/switch.tscn" id="3_4h2l6"]
+[ext_resource type="PackedScene" uid="uid://b3ur5g1hqc6qe" path="res://Rooms/MainRoom/fireplace.tscn" id="3_oqot5"]
+[ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/MainRoom/Cabinet.tscn" id="5_fnlfu"]
+[ext_resource type="PackedScene" uid="uid://c3ucvulh3u7ub" path="res://Rooms/MainRoom/broken_pipe.tscn" id="7_12j44"]
+[ext_resource type="Texture2D" uid="uid://dajdxux0v116u" path="res://assets/images/water_puddle.png" id="8_o11nh"]
+[ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="9_mpady"]
+[ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="10_pg8cq"]
+
+[node name="MainRoom" type="Node2D" unique_id=463226148]
+script = ExtResource("1_4h2l6")
+
+[node name="BG" type="TextureRect" parent="." unique_id=487239700]
+modulate = Color(1, 1, 1, 0.25882354)
+offset_left = -1920.0
+offset_right = 10880.0
+offset_bottom = 1800.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_6gs03")
+
+[node name="Fireplace" parent="." unique_id=1972907018 instance=ExtResource("3_oqot5")]
+position = Vector2(596, 862)
+
+[node name="Generator" parent="." unique_id=1391313845 instance=ExtResource("2_6fmkg")]
+position = Vector2(600, 475)
+
+[node name="Switch" parent="." unique_id=525486535 instance=ExtResource("3_4h2l6")]
+position = Vector2(1086, 351)
+
+[node name="Cabinet" parent="." unique_id=1402847951 instance=ExtResource("5_fnlfu")]
+position = Vector2(1743, 870)
+
+[node name="BrokenPipe" parent="." unique_id=409804896 instance=ExtResource("7_12j44")]
+position = Vector2(70, 536)
+
+[node name="WaterPuddle" type="Sprite2D" parent="." unique_id=1901948877]
+position = Vector2(147, 997)
+scale = Vector2(0.91015625, 0.57421875)
+texture = ExtResource("8_o11nh")
+
+[node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("9_mpady")]
+position = Vector2(1155, 693)
+script = ExtResource("10_pg8cq")
+
+[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]

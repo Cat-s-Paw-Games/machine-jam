@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://25wug5xv4w3n"]
+
+[ext_resource type="Texture2D" uid="uid://32ir2hlybsgy" path="res://assets/images/switch_off.png" id="1_qqwy8"]
+[ext_resource type="Script" uid="uid://bo2is4u8gmx1a" path="res://Rooms/MainRoom/switch.gd" id="2_o1ie8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0tc0"]
+size = Vector2(1154, 1166)
+
+[sub_resource type="Gradient" id="Gradient_b40qy"]
+offsets = PackedFloat32Array(0, 0.6686747)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g4cop"]
+gradient = SubResource("Gradient_b40qy")
+fill = 1
+fill_from = Vector2(0.50869566, 0.5304348)
+
+[node name="Switch" type="TouchScreenButton" unique_id=525486535]
+scale = Vector2(0.125, 0.125)
+texture_normal = ExtResource("1_qqwy8")
+script = ExtResource("2_o1ie8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2029464595]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1423559692]
+position = Vector2(729, 936)
+shape = SubResource("RectangleShape2D_j0tc0")
+
+[node name="SwitchLight" type="PointLight2D" parent="." unique_id=349137317]
+unique_name_in_owner = true
+position = Vector2(875, 250)
+scale = Vector2(80.92596, 78.98374)
+color = Color(1, 0, 0, 1)
+range_layer_max = 3
+texture = SubResource("GradientTexture2D_g4cop")

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c7irnhj2ven6l"]
+
+[ext_resource type="Script" uid="uid://cpwymdrbgj3md" path="res://Rooms/WorkstationRoom/workstation_room.gd" id="1_rqgq5"]
+[ext_resource type="Texture2D" uid="uid://cpdwlb4iis1a3" path="res://assets/images/parallax.png" id="2_4hd7n"]
+[ext_resource type="PackedScene" uid="uid://dwssw5st7sisv" path="res://Rooms/WorkstationRoom/hatch.tscn" id="3_jduod"]
+[ext_resource type="Texture2D" uid="uid://dgup0rt14w2q" path="res://assets/images/pipe_panel.png" id="4_v7sgr"]
+[ext_resource type="PackedScene" uid="uid://dvk3lykklp7od" path="res://MiniGames/Pipes/pipe_game.tscn" id="5_4hd7n"]
+[ext_resource type="PackedScene" uid="uid://cs6dgawmlxa6s" path="res://Items/pointed_stick.tscn" id="6_jduod"]
+[ext_resource type="PackedScene" uid="uid://ct8ivf5wai3op" path="res://Items/scissors.tscn" id="7_v7sgr"]
+[ext_resource type="PackedScene" uid="uid://b8p516mmro6mv" path="res://Items/spring.tscn" id="8_qr6dw"]
+
+[node name="WorkstationRoom" type="Node2D" unique_id=1672423352]
+script = ExtResource("1_rqgq5")
+
+[node name="BG" type="TextureRect" parent="." unique_id=184789276]
+modulate = Color(1, 1, 1, 0.25882354)
+offset_right = 12800.0
+offset_bottom = 1800.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_4hd7n")
+
+[node name="Hatch" parent="." unique_id=262638993 instance=ExtResource("3_jduod")]
+position = Vector2(1709.0001, 898.00006)
+
+[node name="PipePanel" type="Sprite2D" parent="." unique_id=856589282]
+position = Vector2(1565.0001, 467)
+scale = Vector2(0.24448884, 0.24448884)
+texture = ExtResource("4_v7sgr")
+
+[node name="PipeGame" parent="." unique_id=677869341 instance=ExtResource("5_4hd7n")]
+z_index = 20
+position = Vector2(1388, 282)
+
+[node name="PointedStick" parent="." unique_id=1206465442 instance=ExtResource("6_jduod")]
+position = Vector2(1209, 798)
+
+[node name="Scissors" parent="." unique_id=506044602 instance=ExtResource("7_v7sgr")]
+position = Vector2(891.00006, 657.00006)
+rotation = 0.2617994
+
+[node name="Spring" parent="." unique_id=2025760680 instance=ExtResource("8_qr6dw")]
+position = Vector2(1107, 629)
+
+[connection signal="pipes_connected" from="PipeGame" to="." method="_on_pipe_game_pipes_connected"]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bgi0stdbq0mq3"]
+
+[ext_resource type="Script" uid="uid://nh4sj74ipvt3" path="res://Rooms/MainRoom/cabinet.gd" id="1_fc2xf"]
+[ext_resource type="Texture2D" uid="uid://dnuddnsleowkj" path="res://assets/images/cabinet.png" id="2_fc2xf"]
+[ext_resource type="Script" uid="uid://gcnyv876q143" path="res://Rooms/MainRoom/cabinet_button.gd" id="3_gi2bh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xife8"]
+radius = 29.274467
+height = 149.62149
+
+[node name="Cabinet" type="Node2D" unique_id=1402847951]
+script = ExtResource("1_fc2xf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=373485799]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_fc2xf")
+
+[node name="Button" type="TouchScreenButton" parent="." unique_id=333148785]
+position = Vector2(0, 2.0000002)
+rotation = 1.7104226
+shape = SubResource("CapsuleShape2D_xife8")
+script = ExtResource("3_gi2bh")
+
+[node name="Area2D" type="Area2D" parent="Button" unique_id=485431149]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D" unique_id=1212847648]
+scale = Vector2(1, 0.99999994)
+shape = SubResource("CapsuleShape2D_xife8")
+debug_color = Color(2.5027991e-06, 0.62781876, 0.5013204, 0.41960785)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

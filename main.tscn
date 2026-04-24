@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://cjq8iyoqepe60"]
 
 [ext_resource type="Script" uid="uid://llx5j6e52otr" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bp17syrj82idi" path="res://Rooms/GeneratorRoom/generator_room.tscn" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://oerwyxrdo6xr" path="res://assets/images/parallax.jpg" id="2_5vw27"]
 [ext_resource type="Script" uid="uid://dpl3r676hwg58" path="res://flashlight.gd" id="2_kek77"]
-[ext_resource type="PackedScene" uid="uid://boownc1hoelvo" path="res://Rooms/LightSwitchRoom/LightSwitch.tscn" id="3_272bh"]
-[ext_resource type="PackedScene" uid="uid://ntvmu6siv38r" path="res://Rooms/BotRoom/BotRoom.tscn" id="4_7mycd"]
-[ext_resource type="Texture2D" uid="uid://sd21e2k4u3c0" path="res://Experiments/parallax_front.png" id="5_272bh"]
-[ext_resource type="PackedScene" uid="uid://dxgqumcfi5gys" path="res://Rooms/CraftingRoom/Room4.tscn" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://cpdwlb4iis1a3" path="res://assets/images/parallax.png" id="3_kek77"]
+[ext_resource type="PackedScene" uid="uid://c7irnhj2ven6l" path="res://Rooms/WorkstationRoom/workstation_room.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b0gtw6yxhbb4f" path="res://Rooms/MainRoom/main_room.tscn" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bvvxweo4ma2s7" path="res://Rooms/ConsoleRoom/console_room.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cgyxag4ggif0u" path="res://Rooms/AssemblyRoom/assembly_room.tscn" id="7_272bh"]
 
 [sub_resource type="Gradient" id="Gradient_5vw27"]
 offsets = PackedFloat32Array(0, 0.10869565, 0.65217394, 1)
@@ -49,7 +47,8 @@ ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="GameView/Background" unique_id=1366526716]
 position = Vector2(2, 0)
-texture = ExtResource("2_5vw27")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_kek77")
 centered = false
 
 [node name="Rooms" type="Node2D" parent="GameView" unique_id=158874507]
@@ -57,20 +56,16 @@ unique_name_in_owner = true
 process_mode = 1
 z_index = 10
 
-[node name="LightSwitchRoom" parent="GameView/Rooms" unique_id=1691897204 instance=ExtResource("3_272bh")]
-process_mode = 3
+[node name="WorkstationRoom" parent="GameView/Rooms" unique_id=1672423352 instance=ExtResource("4_7mycd")]
 
-[node name="GeneratorRoom" parent="GameView/Rooms" unique_id=1999341089 instance=ExtResource("2_0xm2m")]
+[node name="MainRoom" parent="GameView/Rooms" unique_id=463226148 instance=ExtResource("5_5vw27")]
 position = Vector2(1920, 0)
 
-[node name="BotRoom" parent="GameView/Rooms" unique_id=368738704 instance=ExtResource("4_7mycd")]
+[node name="ConsoleRoom" parent="GameView/Rooms" unique_id=536472085 instance=ExtResource("7_5vw27")]
 position = Vector2(3840, 0)
 
-[node name="WorkingRoom" parent="GameView/Rooms" unique_id=264598961 instance=ExtResource("6_272bh")]
+[node name="AssemblyRoom" parent="GameView/Rooms" unique_id=1986954127 instance=ExtResource("7_272bh")]
 position = Vector2(5760, 0)
-
-[node name="ConsoleRoom" parent="GameView/Rooms" unique_id=536472085 instance=ExtResource("7_5vw27")]
-position = Vector2(3202, 0)
 
 [node name="Foreground" type="Parallax2D" parent="GameView" unique_id=1502475589]
 unique_name_in_owner = true
@@ -83,5 +78,4 @@ ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="GameView/Foreground" unique_id=1811115625]
 visible = false
-texture = ExtResource("5_272bh")
 centered = false

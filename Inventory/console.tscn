@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://boh6i0wp7we52" path="res://Inventory/console.gd" id="1_m7hj2"]
 [ext_resource type="Script" uid="uid://c6edkyw1p5vw8" path="res://Inventory/inventory_slot.gd" id="1_q6d8s"]
 [ext_resource type="Texture2D" uid="uid://qn4lrlu76bg0" path="res://assets/images/ui/close_btn.png" id="2_8fn8a"]
-[ext_resource type="StyleBox" uid="uid://bfcghvmhffp0j" path="res://Rooms/CraftingRoom/crafting_box_stylebox.tres" id="3_45ofc"]
+[ext_resource type="StyleBox" uid="uid://bfcghvmhffp0j" path="res://Rooms/AssemblyRoom/crafting_box_stylebox.tres" id="3_45ofc"]
 [ext_resource type="Script" uid="uid://dbu120kdm1fdl" path="res://Inventory/console_screen.gd" id="6_rye3n"]
 [ext_resource type="PackedScene" uid="uid://t0d0bqk51lr" path="res://MiniGames/Cards/card_game.tscn" id="7_8fn8a"]
 [ext_resource type="Texture2D" uid="uid://b5awq7u1l8qdg" path="res://assets/images/ui/console.png" id="8_rye3n"]
