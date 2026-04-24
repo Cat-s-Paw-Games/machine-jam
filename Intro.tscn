@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://yisek8q1fdbx"]
 
 [ext_resource type="Script" uid="uid://1347hkb7hyap" path="res://intro.gd" id="1_46ak0"]
-[ext_resource type="Texture2D" uid="uid://8mscq3ia2e88" path="res://assets/images/intro/cog.png" id="1_gjrx4"]
 [ext_resource type="Texture2D" uid="uid://cpuxrhtbpcg6x" path="res://assets/images/intro/background_intro.jpg" id="2_iysgs"]
 [ext_resource type="Script" uid="uid://c0x4fcj2tc8dr" path="res://components/rotating_cog.gd" id="2_sb8jg"]
+[ext_resource type="Texture2D" uid="uid://cy68v76vm52q5" path="res://assets/images/intro/cog.png" id="3_1rpvy"]
 [ext_resource type="Texture2D" uid="uid://qn4lrlu76bg0" path="res://assets/images/ui/close_btn.png" id="5_1rpvy"]
 [ext_resource type="Texture2D" uid="uid://cd2glmdjs38xi" path="res://assets/images/intro/door_right.jpg" id="5_iysgs"]
 [ext_resource type="Texture2D" uid="uid://bf52jlgl6br8d" path="res://assets/images/intro/door_left.jpg" id="6_1rpvy"]
@@ -21,30 +21,28 @@ grow_vertical = 2
 texture = ExtResource("2_iysgs")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1235581176]
-position = Vector2(1008, 68)
-scale = Vector2(6.0071397, 6.0071397)
-texture = ExtResource("1_gjrx4")
+position = Vector2(1026, -112)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_1rpvy")
 script = ExtResource("2_sb8jg")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1259449374]
-position = Vector2(1760.9999, 527.9999)
-scale = Vector2(6.646508, 6.646508)
-texture = ExtResource("1_gjrx4")
+position = Vector2(1650.2567, 417.99994)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_1rpvy")
 script = ExtResource("2_sb8jg")
 rotation_type = 1
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1016455691]
-position = Vector2(242, 895)
-scale = Vector2(5.344495, 5.344495)
-texture = ExtResource("1_gjrx4")
+position = Vector2(1, 1077)
+texture = ExtResource("3_1rpvy")
 script = ExtResource("2_sb8jg")
 speed = 0.6
 rotation_type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=275200511]
 position = Vector2(12, 27)
-scale = Vector2(3.2114093, 3.2114093)
-texture = ExtResource("1_gjrx4")
+texture = ExtResource("3_1rpvy")
 script = ExtResource("2_sb8jg")
 rotation_type = 1
 
