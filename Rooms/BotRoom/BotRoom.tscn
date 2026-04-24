@@ -52,10 +52,10 @@ position = Vector2(8, -35)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_mcxe6")
 
-[node name="Floppy" parent="." unique_id=904767244 instance=ExtResource("8_gojr4")]
-position = Vector2(208, 859)
+[node name="FloppyRecipe" parent="." unique_id=904767244 instance=ExtResource("8_gojr4")]
+position = Vector2(967, -69.99994)
 item = ExtResource("9_tm4dm")
 
-[node name="Floppy2" parent="." unique_id=1656355874 instance=ExtResource("8_gojr4")]
-position = Vector2(702, 928)
+[node name="FloppyCode" parent="." unique_id=1656355874 instance=ExtResource("8_gojr4")]
+position = Vector2(550, 862)
 item = ExtResource("10_tm4dm")
