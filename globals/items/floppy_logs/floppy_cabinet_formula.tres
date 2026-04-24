@@ -7,14 +7,14 @@
 script = ExtResource("1_45d30")
 id = "floppy_005"
 name = "Floppy Log 005"
-description = "[pretext][Log 005] - Start of summer vacations[/pretext]
+description = "[pretext][Log Entry 91722.38] - Raoul[/pretext]
 [content]
-We are leaving for vacations. I left the precious gift of Azul Corporation in the cabinet. I don't remember the precise combination right now. But it's for sure like this:
-1. XX
-2. XX
-3. XX
-
-Should anyone need insert this code and you can use it.
+Those idiots want to leave [MACHINE NAME] here. 
+But it talked to me! I can't do anything without their resources, I need to hide what I got until i find something.
+Maybe I can sell the secrets of Azul Company to get enough money for a diamond
+2x + y − z = 🔥 − 💻 + 2
+x + 3y + z = 🔧 + 💻 + 5
+x − y + 2z = 🔥 + 🔧 − 1​
 [/content]"
 texture = ExtResource("2_bagmr")
 usable_once = true
