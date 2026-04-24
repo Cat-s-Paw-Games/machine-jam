@@ -141,8 +141,8 @@ func swap_items(source_slot):
 		source_slot.fill_slot(temp.id)
 
 func combine_items(source_slot):
-	source_slot.empty_slot()
 	item = item.transform()
+	source_slot.empty_slot()
 	update_visual()
 	
 func combine_items_inverse(source_slot):
