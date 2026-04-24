@@ -1,6 +1,7 @@
 extends Panel
 class_name InventoryWheel
 
+var is_rotating = false
 var active_slot = 0
 var item_count = 12
 var step = TAU / item_count  # TAU = 2π
@@ -95,6 +96,7 @@ func add_item(item_id : String):
 
 func rotate_wheel(direction: int):
 	if current_item_count <= 0: return
+	is_rotating = true
 	correct_slots_positions()
 	var tween = create_tween().set_parallel()
 	rotation = round(rotation / step) * step  # snap first
@@ -119,6 +121,8 @@ func rotate_wheel(direction: int):
 	var slot = get_child(active_slot)
 	slot.z_index = 1
 	tween.tween_property(slot, "scale", Vector2(2,2), rotation_time)
+	await tween.finished
+	is_rotating = false
 
 func highlight_first_slot():
 	var slot = get_child(active_slot)
@@ -126,12 +130,19 @@ func highlight_first_slot():
 	slot.z_index = 1
 	slot.scale = Vector2(2,2)
 
-
 func _input(_event: InputEvent) -> void:
+	if is_rotating:
+		return
+	
 	if App.ui.inventory_open:
 		if Input.is_action_just_pressed("ui_up"):
 			rotate_wheel(-1)
 		if Input.is_action_just_pressed("ui_down"):
+			rotate_wheel(1)
+		
+		if Input.is_action_just_pressed("wheel_up"):
+			rotate_wheel(-1)
+		if Input.is_action_just_pressed("wheel_down"):
 			rotate_wheel(1)
 
 func open():
