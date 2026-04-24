@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/dream_catcher.mp3-a83efa2998dda07343a6bf5de69
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -1,41 +1,31 @@
 extends Node
+@onready var light = %EyesLight
 
+var noise := FastNoiseLite.new()
+var time := 0.0
+
+func _process(delta):
+	time += delta
+	var n = noise.get_noise_1d(time)
+	light.energy = 0.8 + n * 0.3
+	if randf() < 0.05:
+		light.visible = !light.visible
 
 func _ready() -> void:
-	%DoorLeft.show()
-	%DoorRight.show()
 	get_tree().paused = true
 	App.audio.play_loop("main","assets/music/beauty_flow.mp3")
-	await open_door()
+	await get_tree().create_timer(2).timeout
+	%EyesLight.enabled = true
+	noise.frequency = 5.0
+	await get_tree().create_timer(2).timeout
+	%MainLight1.enabled = true
+	%MainLight2.enabled = true
+	var tween = create_tween().set_parallel()
+	tween.tween_property(%MainLight1,"scale", Vector2(50,50),3)
+	tween.tween_property(%MainLight2,"scale", Vector2(50,50),3)
+	await  tween.finished
 	get_tree().paused = false
 
-func open_door():
-	await get_tree().create_timer(0.5).timeout
-	await shake()
-	var open_1 = create_tween().set_parallel(true)
-	var left_open_position = - 1920.0 / 2
-	var right_open_position = 1920.0 + 1920.0/2
-	open_1.tween_property(%DoorLeft, "position:x", left_open_position, 2)
-	open_1.tween_property(%DoorRight, "position:x", right_open_position, 2)
-	await open_1.finished
-
-func shake():
-	var tween = create_tween()
-	var door_left = %DoorLeft
-	var door_right = %DoorRight
-	var start_pos_left = door_left.position
-	var start_pos_right = door_right.position
-	var shake_amount = 2
-
-	for i in range(4):
-		tween.tween_property(door_left, "position", start_pos_left + Vector2(shake_amount, 0), 0.05)
-		tween.tween_property(door_left, "position", start_pos_left + Vector2(-shake_amount, 0), 0.05)
-		
-		tween.tween_property(door_right, "position", start_pos_right + Vector2(shake_amount, 0), 0.05)
-		tween.tween_property(door_right, "position", start_pos_right + Vector2(-shake_amount, 0), 0.05)
-	tween.tween_property(door_left, "position", start_pos_left, 0.05)
-	tween.tween_property(door_right, "position", start_pos_right, 0.05)
-	await tween.finished
 
 
 func _on_new_game_pressed() -> void:
