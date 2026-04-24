@@ -85,3 +85,11 @@ func close_scene_in_focus():
 func _input(_event: InputEvent) -> void:
 	if inventory_visible && Input.is_action_just_pressed("inventory_toggle"):
 		toggle_inventory()
+	
+	if Input.is_action_just_pressed("close_ui"):
+		if App.in_focus:
+			close_scene_in_focus()
+		if crafting != null:
+			close_crafting()
+		if console != null:
+			close_console()
