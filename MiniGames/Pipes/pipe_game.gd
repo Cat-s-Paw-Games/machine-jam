@@ -8,8 +8,6 @@ var finished = false
 @export var grid_size : Vector2i = Vector2i(5, 5)
 
 @onready var canvas: Node2D = %Canvas
-@onready var start_dir: ColorRect = $StartDir
-@onready var end_dir: ColorRect = $EndDir
 
 var grid = []
 var start_cell = Vector2i(0,0)
@@ -32,8 +30,6 @@ func generate_grid():
 		grid.append([])
 		for x in range(grid_size.x):
 			var pos = Vector2i(x, y)
-			if pos == Vector2i(0,0) || pos == Vector2i(grid_size.y - 1, grid_size.x - 1):
-				position_faucets(pos)
 			
 			var pipe = PIPE.instantiate()
 			pipe.position = Vector2(x, y) * cell_size
@@ -42,12 +38,6 @@ func generate_grid():
 			pipe.pipe_rotated.connect(check_win_condition)
 			grid[y].append(pipe)
 
-func position_faucets(pos):
-	# temporary to show input and output
-	if pos == Vector2i(0,0):
-		start_dir.position = start_position
-	elif pos == Vector2i(grid_size.y - 1, grid_size.x - 1):
-		end_dir.position = end_position 
 
 
 func generate_level():
@@ -228,7 +218,6 @@ func check_win_condition():
 			for x in range(grid_size.x):
 				grid[x][y].enabled = false
 		animate_water_flow(visited)
-		
 
 func animate_water_flow(visited):
 	for pos in visited:

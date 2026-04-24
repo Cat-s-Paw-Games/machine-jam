@@ -5,11 +5,10 @@
 [ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="3_3dn3h"]
 [ext_resource type="Script" uid="uid://c2yufe5vadiky" path="res://Rooms/AssemblyRoom/crafting.gd" id="3_oxpps"]
 [ext_resource type="PackedScene" uid="uid://xv6yvtng0ll1" path="res://Items/metal_scraps.tscn" id="5_22gm7"]
-[ext_resource type="Script" uid="uid://cxr02nteoaxwy" path="res://Rooms/AssemblyRoom/coal_vein.gd" id="6_1hgf2"]
-[ext_resource type="Texture2D" uid="uid://dm72fuhl7fdea" path="res://assets/images/fireplace.png" id="7_p4oka"]
-[ext_resource type="Texture2D" uid="uid://b78y0761fnhkf" path="res://assets/images/coal_vein.png" id="8_vltk5"]
 [ext_resource type="PackedScene" uid="uid://2jwm115utw6p" path="res://Items/floppy.tscn" id="9_f2mhh"]
+[ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="10_22gm7"]
 [ext_resource type="Resource" uid="uid://r8vrnukjaoso" path="res://globals/items/floppy_logs/floppy_secret_recipe.tres" id="10_muvwl"]
+[ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="11_1hgf2"]
 [ext_resource type="Resource" uid="uid://cgn4ioh3d7st1" path="res://globals/items/floppy_logs/floppy_cabinet_formula.tres" id="11_8c0ed"]
 [ext_resource type="PackedScene" uid="uid://dgmobo54np2b6" path="res://Items/wood_logs.tscn" id="12_1hgf2"]
 
@@ -22,10 +21,6 @@ size = Vector2(43, 54)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fy26f"]
 load_path = "res://.godot/imported/metal_scraps.png-fa4ac2da5be171f6608cfea2db2ee9b4.ctex"
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5nj1"]
-radius = 87.0
-height = 236.0
 
 [node name="AssemblyRoom" type="Node2D" unique_id=1986954127]
 script = ExtResource("1_fdyc5")
@@ -58,23 +53,6 @@ debug_color = Color(2.3584068e-06, 0.6317069, 0.46269518, 0.41960785)
 position = Vector2(972, 884)
 texture_normal = SubResource("CompressedTexture2D_fy26f")
 
-[node name="CoalVein" type="Area2D" parent="." unique_id=1043056734]
-position = Vector2(1384, 800)
-script = ExtResource("6_1hgf2")
-metadata/_custom_type_script = "uid://rlemyrl4ndtl"
-
-[node name="Sprite2D2" type="Sprite2D" parent="CoalVein" unique_id=150160171]
-texture = ExtResource("7_p4oka")
-
-[node name="Sprite2D" type="Sprite2D" parent="CoalVein" unique_id=2069559009]
-position = Vector2(6, -129)
-texture = ExtResource("8_vltk5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CoalVein" unique_id=305774714]
-position = Vector2(8, -35)
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_s5nj1")
-
 [node name="FloppyRecipe" parent="." unique_id=904767244 instance=ExtResource("9_f2mhh")]
 position = Vector2(1666, -76)
 item = ExtResource("10_muvwl")
@@ -84,6 +62,11 @@ position = Vector2(503, 917)
 item = ExtResource("11_8c0ed")
 
 [node name="WoodLogs" parent="." unique_id=1478224087 instance=ExtResource("12_1hgf2")]
-position = Vector2(1003, 686)
+position = Vector2(989, 727)
+scale = Vector2(0.67, 0.67)
+
+[node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("10_22gm7")]
+position = Vector2(1321.9999, 693)
+script = ExtResource("11_1hgf2")
 
 [connection signal="pressed" from="AssemblyLine" to="AssemblyLine" method="_on_pressed"]

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dilsgb46i8sio" path="res://assets/images/smoke_sheet.png" id="3_nvrwd"]
 [ext_resource type="Script" uid="uid://gikcr4yg3njr" path="res://components/hover_hint.gd" id="4_mdg0c"]
 [ext_resource type="Script" uid="uid://drxkfgniviodf" path="res://Rooms/MainRoom/coal_input.gd" id="4_nvrwd"]
+[ext_resource type="PackedScene" uid="uid://b3ur5g1hqc6qe" path="res://Rooms/MainRoom/fireplace.tscn" id="6_jy8gx"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_shm5r"]
 particles_animation = true
@@ -67,5 +68,8 @@ metadata/_custom_type_script = "uid://rlemyrl4ndtl"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoalInput" unique_id=1682688899]
 shape = SubResource("RectangleShape2D_shm5r")
 debug_color = Color(0, 0.07450981, 0.09411765, 0.7607843)
+
+[node name="Fireplace" parent="." unique_id=1972907018 instance=ExtResource("6_jy8gx")]
+position = Vector2(0, 356)
 
 [connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

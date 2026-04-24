@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dgotiiloqs1ff"]
+
+[ext_resource type="Script" uid="uid://cxr02nteoaxwy" path="res://Rooms/AssemblyRoom/coal_vein.gd" id="1_j62ha"]
+[ext_resource type="Texture2D" uid="uid://b78y0761fnhkf" path="res://assets/images/coal_vein.png" id="2_0vek1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5nj1"]
+radius = 87.0
+height = 504.0
+
+[node name="CoalVein" type="Area2D" unique_id=2057931167]
+script = ExtResource("1_j62ha")
+metadata/_custom_type_script = "uid://rlemyrl4ndtl"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1684548940]
+position = Vector2(6, -129)
+texture = ExtResource("2_0vek1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1503555369]
+position = Vector2(44, -81)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_s5nj1")

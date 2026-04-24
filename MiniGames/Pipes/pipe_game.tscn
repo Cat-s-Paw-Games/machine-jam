@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://dvk3lykklp7od"]
 
 [ext_resource type="Script" uid="uid://ce5c37m424yco" path="res://MiniGames/Pipes/pipe_game.gd" id="1_yd8ku"]
+[ext_resource type="Texture2D" uid="uid://b7pc5yqsagdcm" path="res://assets/images/pipe_game/spoutend.png" id="2_7s1b3"]
+[ext_resource type="Texture2D" uid="uid://mtb28m83symh" path="res://assets/images/pipe_game/spout_start.png" id="3_qd173"]
 
 [node name="PipeGame" type="Node2D" unique_id=677869341]
 script = ExtResource("1_yd8ku")
 
 [node name="Canvas" type="Node2D" parent="." unique_id=242247681]
 unique_name_in_owner = true
-position = Vector2(64, 64)
+position = Vector2(45, 32)
 
-[node name="StartDir" type="ColorRect" parent="." unique_id=1501190182]
-custom_minimum_size = Vector2(42, 42)
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 1, 1)
+[node name="Spoutend" type="Sprite2D" parent="." unique_id=255933599]
+position = Vector2(301, 327)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_7s1b3")
 
-[node name="EndDir" type="ColorRect" parent="." unique_id=1512526911]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 1, 1)
+[node name="SpoutStart" type="Sprite2D" parent="." unique_id=1879685038]
+position = Vector2(7, 32)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_qd173")

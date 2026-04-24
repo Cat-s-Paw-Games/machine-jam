@@ -4,11 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://byo14qgmc44ta" path="res://Rooms/MainRoom/generator.tscn" id="2_6fmkg"]
 [ext_resource type="Texture2D" uid="uid://c1n12w3pa7mud" path="res://assets/images/parallax.jpg" id="2_fc7t8"]
 [ext_resource type="PackedScene" uid="uid://25wug5xv4w3n" path="res://Rooms/MainRoom/switch.tscn" id="3_4h2l6"]
-[ext_resource type="PackedScene" uid="uid://b3ur5g1hqc6qe" path="res://Rooms/MainRoom/fireplace.tscn" id="3_oqot5"]
 [ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/MainRoom/Cabinet.tscn" id="5_fnlfu"]
 [ext_resource type="PackedScene" uid="uid://c3ucvulh3u7ub" path="res://Rooms/MainRoom/broken_pipe.tscn" id="7_12j44"]
-[ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="9_mpady"]
-[ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="10_pg8cq"]
+[ext_resource type="PackedScene" uid="uid://dgotiiloqs1ff" path="res://Rooms/AssemblyRoom/coal_vein.tscn" id="10_7c7yb"]
 [ext_resource type="Texture2D" uid="uid://d27tjk1nskwwd" path="res://assets/images/face_light (2).jpg" id="10_q7bhg"]
 [ext_resource type="Script" uid="uid://bepuxq3s3bpy1" path="res://Rooms/ConsoleRoom/point_light_2d.gd" id="11_7c2ww"]
 [ext_resource type="Texture2D" uid="uid://brhsw3fx7tjli" path="res://assets/images/console_light (2).jpg" id="11_fc7t8"]
@@ -24,9 +22,6 @@ offset_bottom = 1800.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_fc7t8")
 
-[node name="Fireplace" parent="." unique_id=1972907018 instance=ExtResource("3_oqot5")]
-position = Vector2(596, 862)
-
 [node name="Generator" parent="." unique_id=1391313845 instance=ExtResource("2_6fmkg")]
 position = Vector2(600, 475)
 
@@ -37,11 +32,7 @@ position = Vector2(1086, 351)
 position = Vector2(1743, 870)
 
 [node name="BrokenPipe" parent="." unique_id=409804896 instance=ExtResource("7_12j44")]
-position = Vector2(70, 536)
-
-[node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("9_mpady")]
-position = Vector2(1155, 693)
-script = ExtResource("10_pg8cq")
+position = Vector2(76, 538)
 
 [node name="Face" type="PointLight2D" parent="." unique_id=198897195]
 unique_name_in_owner = true
@@ -69,5 +60,9 @@ texture_scale = 0.6
 script = ExtResource("11_7c2ww")
 energy_on_min = 2
 energy_on_max = 3
+
+[node name="CoalVein" parent="." unique_id=2057931167 instance=ExtResource("10_7c7yb")]
+position = Vector2(1224, 865)
+scale = Vector2(0.6, 0.6)
 
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]

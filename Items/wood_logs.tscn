@@ -5,11 +5,11 @@
 [ext_resource type="Resource" uid="uid://daejchv1x4ca" path="res://globals/items/wood_logs.tres" id="3_cp6tp"]
 [ext_resource type="AudioStream" uid="uid://ds2y4q5drdwar" path="res://assets/music/sfx/fire_sound.mp3" id="4_si168"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v7qkv"]
-radius = 196.41243
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_si168"]
+radius = 44.737854
+height = 352.93204
 
 [node name="WoodLogs" type="TouchScreenButton" unique_id=1478224087]
-scale = Vector2(0.40234375, 0.40234375)
 texture_normal = ExtResource("1_u7sru")
 script = ExtResource("2_v7qkv")
 item = ExtResource("3_cp6tp")
@@ -18,8 +18,9 @@ metadata/_custom_type_script = "uid://cj3dlf2y28fbr"
 [node name="Area2D" type="Area2D" parent="." unique_id=817457271]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=739071820]
-position = Vector2(260.9709, 270.91263)
-shape = SubResource("CircleShape2D_v7qkv")
+position = Vector2(213, 171)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_si168")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=267516897]
 stream = ExtResource("4_si168")

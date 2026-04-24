@@ -12,7 +12,7 @@ func _on_item_dropped(item : DraggableItem):
 		disable_collisions()
 		logs = item
 		logs.placed = true
-		logs.global_position = global_position - (item.texture_normal.get_size() * item.scale) / 2 + Vector2(0, -8)
+		logs.global_position = global_position - (item.texture_normal.get_size() * item.scale) / 2 + Vector2(-8, -15)
 		logs.fire_lit.connect(_on_fire_lit)
 		logs.check_fire()
 
