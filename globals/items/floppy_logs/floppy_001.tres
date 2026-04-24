@@ -7,9 +7,9 @@
 script = ExtResource("1_4yubv")
 id = "floppy_001"
 name = "Floppy Log 001"
-description = "[pretext][Log 001] - One day of april[/pretext]
+description = "[pretext][Log Entry 91721.03] - Lukas[/pretext]
 [content]
-Once upon a time the [MACHINE_NAME] was so cool and so powerful... nowadays it stinks!!!
+Why are we stuck with a [MACHINE_NAME]? I hear the other team got a new model and they do half of our work!
 [/content]"
 texture = ExtResource("2_hxae3")
 usable_once = true
