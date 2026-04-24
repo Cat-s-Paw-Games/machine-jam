@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cs6dgawmlxa6s" path="res://Items/pointed_stick.tscn" id="6_jduod"]
 [ext_resource type="PackedScene" uid="uid://ct8ivf5wai3op" path="res://Items/scissors.tscn" id="7_v7sgr"]
 [ext_resource type="PackedScene" uid="uid://b8p516mmro6mv" path="res://Items/spring.tscn" id="8_qr6dw"]
-[ext_resource type="Script" path="res://Rooms/WorkstationRoom/pipe_panel.gd" id="9_ws22d"]
+[ext_resource type="Script" uid="uid://bfhmbu4qtx6kd" path="res://Rooms/WorkstationRoom/pipe_panel.gd" id="9_ws22d"]
 
 [node name="WorkstationRoom" type="Node2D" unique_id=1672423352]
 script = ExtResource("1_rqgq5")
@@ -38,10 +38,14 @@ rotation = 0.2617994
 position = Vector2(1107, 629)
 
 [node name="PipePanel" type="TouchScreenButton" parent="." unique_id=393437977]
+visible = false
 position = Vector2(1385, 253)
 scale = Vector2(0.244, 0.244)
 texture_normal = ExtResource("4_v7sgr")
 script = ExtResource("9_ws22d")
+
+[node name="PipeOutput" type="Marker2D" parent="." unique_id=519776170]
+position = Vector2(1663, 602)
 
 [connection signal="pipes_connected" from="PipeGame" to="." method="_on_pipe_game_pipes_connected"]
 [connection signal="pressed" from="PipePanel" to="PipePanel" method="_on_pressed"]

@@ -9,9 +9,9 @@ func _on_pipe_game_pipes_connected() -> void:
 	if not dropped:
 		dropped = true
 		var item = preload("res://Items/sync_module.tscn").instantiate()
-		var start_x := 464
-		var start_y := 520
-		item.position = Vector2(start_x,start_y)
+		var start_x : float = $PipeOutput.position.x
+		var start_y : float = $PipeOutput.position.y
+		item.position = $PipeOutput.position
 		add_child(item)
 		var start := Vector2(start_x,start_y)
 		var end_y := 775.0
