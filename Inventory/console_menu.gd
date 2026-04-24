@@ -136,11 +136,11 @@ func _input(event: InputEvent) -> void:
 	if paused: return
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
-			KEY_DOWN:
+			KEY_S:
 				if lines.size() > 0:
 					current_line = (current_line + 1) % lines.size()
 					render()
-			KEY_UP:
+			KEY_W:
 				if lines.size() > 0:
 					current_line = (current_line - 1 + lines.size()) % lines.size()
 					render()
