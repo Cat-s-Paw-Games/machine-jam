@@ -2,6 +2,8 @@ extends Node
 
 
 func _ready() -> void:
+	%DoorLeft.show()
+	%DoorRight.show()
 	get_tree().paused = true
 	App.audio.play_loop("main","assets/music/beauty_flow.mp3")
 	await open_door()
@@ -46,3 +48,11 @@ func _on_credits_pressed() -> void:
 
 func _on_close_credits_pressed() -> void:
 	%CreditsContainer.hide()
+
+
+func _on_instructions_pressed() -> void:
+	%InstructionsContainer.show()
+
+
+func _on_close_instructions_pressed() -> void:
+	%InstructionsContainer.hide()
