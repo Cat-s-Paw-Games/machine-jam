@@ -12,6 +12,7 @@ func _process(delta):
 		light.visible = !light.visible
 
 func _ready() -> void:
+	%Credits.meta_clicked.connect(_on_link_clicked)
 	get_tree().paused = true
 	App.audio.play_loop("main","assets/music/beauty_flow.mp3")
 	await get_tree().create_timer(2).timeout
@@ -26,7 +27,11 @@ func _ready() -> void:
 	await  tween.finished
 	get_tree().paused = false
 
-
+func _on_link_clicked(meta):
+	if OS.has_feature("web"):
+		JavaScriptBridge.eval("window.open('%s', '_blank')" % meta)
+	else:
+		OS.shell_open(meta)
 
 func _on_new_game_pressed() -> void:
 	SceneTransitionManager.change_scene_with_wipe("res://Prologue.tscn")
