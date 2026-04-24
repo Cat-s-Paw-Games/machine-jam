@@ -117,6 +117,7 @@ func _on_secret_ending():
 	await App.show_popup("...friend.", {"title":App.MACHINE_NAME, "close_on_click": true})
 
 func handle_ending():
+	App.mouse.hover_out()
 	match (App.game_status.ending_chosen):
 		0:
 			SceneTransitionManager.change_scene_with_wipe("res://Intro.tscn")
