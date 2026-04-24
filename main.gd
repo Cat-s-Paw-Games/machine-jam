@@ -25,6 +25,7 @@ func _ready() -> void:
 	App.audio.stop_loop("main")
 	App.audio.play_loop("main","assets/music/dream_catcher.mp3",{"volume_db":-10.0})
 	update_layers(0)
+	move_to_angle(100)
 
 func _process(_delta: float) -> void:
 	if App.navigation_enabled:

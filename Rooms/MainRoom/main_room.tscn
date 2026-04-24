@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b3ur5g1hqc6qe" path="res://Rooms/MainRoom/fireplace.tscn" id="3_oqot5"]
 [ext_resource type="PackedScene" uid="uid://bgi0stdbq0mq3" path="res://Rooms/MainRoom/Cabinet.tscn" id="5_fnlfu"]
 [ext_resource type="PackedScene" uid="uid://c3ucvulh3u7ub" path="res://Rooms/MainRoom/broken_pipe.tscn" id="7_12j44"]
-[ext_resource type="Texture2D" uid="uid://dajdxux0v116u" path="res://assets/images/water_puddle.png" id="8_o11nh"]
 [ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="9_mpady"]
 [ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="10_pg8cq"]
 
@@ -36,11 +35,6 @@ position = Vector2(1743, 870)
 
 [node name="BrokenPipe" parent="." unique_id=409804896 instance=ExtResource("7_12j44")]
 position = Vector2(70, 536)
-
-[node name="WaterPuddle" type="Sprite2D" parent="." unique_id=1901948877]
-position = Vector2(147, 997)
-scale = Vector2(0.91015625, 0.57421875)
-texture = ExtResource("8_o11nh")
 
 [node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("9_mpady")]
 position = Vector2(1155, 693)

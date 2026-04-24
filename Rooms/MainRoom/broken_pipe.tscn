@@ -18,8 +18,8 @@ particles_anim_v_frames = 5
 particles_anim_loop = false
 
 [sub_resource type="Curve" id="Curve_r6pky"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.042553194, 0.19101131), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mck4e"]
 radius = 682.24
@@ -37,12 +37,13 @@ shape = SubResource("CircleShape2D_p64og")
 
 [node name="WaterFlowParticles" type="CPUParticles2D" parent="." unique_id=1090247032]
 material = SubResource("CanvasItemMaterial_1k7v0")
-position = Vector2(168, 0)
-amount = 30
+position = Vector2(12, 46)
+amount = 50
 texture = ExtResource("3_mck4e")
+lifetime = 0.8
 local_coords = true
 emission_shape = 1
-emission_sphere_radius = 30.0
+emission_sphere_radius = 10.0
 initial_velocity_min = 20.0
 initial_velocity_max = 20.0
 damping_min = 0.1
@@ -55,7 +56,7 @@ hue_variation_max = 0.02
 
 [node name="WaterImpactParticles" type="CPUParticles2D" parent="." unique_id=1028556536]
 material = SubResource("CanvasItemMaterial_1k7v0")
-position = Vector2(176, 512)
+position = Vector2(3, 362)
 texture = ExtResource("3_mck4e")
 lifetime = 0.2
 explosiveness = 0.3
