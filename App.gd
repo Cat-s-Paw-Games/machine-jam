@@ -49,15 +49,6 @@ func start_game():
 	App.game_status.reset()
 	navigation_enabled = true
 	ui.inventory.show()
-#	ui.ui_instance.menu_btn.show()
-
-#func end_game():
-	#ui.close_every_ui()
-	#get_tree().paused = true
-	#navigation_enabled = false
-	#game_status.game_end = true
-	#var end = preload("res://Experiments/GameEnd.tscn").instantiate()
-	#App.ui.add_ui_child(end)
 
 func show_popup(text: String, options: Dictionary = {}):
 	var popup: PopupContainer = get_node("/root/UI").find_child("Popup")

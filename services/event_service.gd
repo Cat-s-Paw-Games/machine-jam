@@ -43,7 +43,6 @@ func _on_cabinet_open():
 
 
 func _on_end_game():
-	App.ui.close_every_ui()
 	await App.show_popup("That's your choice?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("You are so determined to escape that you will...", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("You...", {"title":App.MACHINE_NAME, "close_on_click": true})
@@ -63,6 +62,7 @@ func _on_end_game():
 	await App.show_popup_choise("What will you do?", choises)
 
 func end_one():
+	App.ui.close_every_ui()
 	await App.show_popup("Really?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("You will stay with me?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await get_tree().create_timer(1).timeout
@@ -79,9 +79,11 @@ func end_one():
 
 	
 func end_two():
+	App.ui.close_every_ui()
 	SceneTransitionManager.change_scene_with_wipe("res://Ending_leave.tscn")
 
 func _on_secret_ending():
+	App.ui.close_every_ui()
 	await App.show_popup("What?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("What's this?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("I'm feeling...", {"title":App.MACHINE_NAME, "close_on_click": true})
