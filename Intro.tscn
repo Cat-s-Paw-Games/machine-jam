@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://qn4lrlu76bg0" path="res://assets/images/ui/close_btn.png" id="5_1rpvy"]
 [ext_resource type="Texture2D" uid="uid://cd2glmdjs38xi" path="res://assets/images/intro/door_right.jpg" id="5_iysgs"]
 [ext_resource type="Texture2D" uid="uid://bf52jlgl6br8d" path="res://assets/images/intro/door_left.jpg" id="6_1rpvy"]
+[ext_resource type="Texture2D" uid="uid://bvundkjwgi7" path="res://assets/images/intro/title.png" id="8_6omm5"]
 
 [node name="Intro" type="CanvasLayer" unique_id=54668223]
 process_mode = 3
@@ -72,25 +73,6 @@ process_mode = 1
 layout_mode = 2
 text = "Credits
 "
-
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1895894889]
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 141.0
-offset_bottom = 265.0
-grow_horizontal = 2
-
-[node name="Title" type="RichTextLabel" parent="CenterContainer" unique_id=995697763]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/line_separation = -50
-theme_override_constants/shadow_offset_x = 6
-theme_override_constants/shadow_offset_y = 6
-theme_override_font_sizes/normal_font_size = 120
-bbcode_enabled = true
-text = "[center][wave amp=20 freq=2][color=#FFFFA3]Just a Little Longer[/color][wave]"
-fit_content = true
-autowrap_mode = 0
 
 [node name="CreditsContainer" type="PanelContainer" parent="." unique_id=1781162534]
 unique_name_in_owner = true
@@ -276,6 +258,12 @@ Esc: close current UI
 The game can be completed with just Mouse interaction"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Title" type="Sprite2D" parent="." unique_id=114692243]
+modulate = Color(0.8986666, 1, 0.81, 1)
+position = Vector2(983.00006, 276)
+scale = Vector2(0.49966022, 0.4996602)
+texture = ExtResource("8_6omm5")
 
 [node name="DoorRight" type="Sprite2D" parent="." unique_id=186839944]
 unique_name_in_owner = true
