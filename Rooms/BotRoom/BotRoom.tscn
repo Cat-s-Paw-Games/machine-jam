@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://cxr02nteoaxwy" path="res://Rooms/BotRoom/coal_vein.gd" id="5_bsdjx"]
 [ext_resource type="Texture2D" uid="uid://dm72fuhl7fdea" path="res://assets/images/fireplace.png" id="6_ldm10"]
 [ext_resource type="Texture2D" uid="uid://b78y0761fnhkf" path="res://assets/images/coal_vein.png" id="7_v424d"]
+[ext_resource type="PackedScene" uid="uid://2jwm115utw6p" path="res://Items/floppy.tscn" id="8_gojr4"]
+[ext_resource type="Resource" uid="uid://r8vrnukjaoso" path="res://globals/items/floppy_logs/floppy_secret_recipe.tres" id="9_tm4dm"]
+[ext_resource type="Resource" uid="uid://cgn4ioh3d7st1" path="res://globals/items/floppy_logs/floppy_cabinet_formula.tres" id="10_tm4dm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ugtkt"]
 load_path = "res://.godot/imported/metal_scraps.png-fa4ac2da5be171f6608cfea2db2ee9b4.ctex"
@@ -48,3 +51,11 @@ texture = ExtResource("7_v424d")
 position = Vector2(8, -35)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_mcxe6")
+
+[node name="Floppy" parent="." unique_id=904767244 instance=ExtResource("8_gojr4")]
+position = Vector2(208, 859)
+item = ExtResource("9_tm4dm")
+
+[node name="Floppy2" parent="." unique_id=1656355874 instance=ExtResource("8_gojr4")]
+position = Vector2(702, 928)
+item = ExtResource("10_tm4dm")

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cgn4ioh3d7st1"]
+
+[ext_resource type="Script" uid="uid://cs02wdcdcca6e" path="res://globals/Item.gd" id="1_45d30"]
+[ext_resource type="Texture2D" uid="uid://c5ubcb3jjjcbv" path="res://assets/images/floppy.png" id="2_bagmr"]
+
+[resource]
+script = ExtResource("1_45d30")
+id = "floppy_005"
+name = "Floppy Log 005"
+description = "[pretext][Log 005] - Start of summer vacations[/pretext]
+[content]
+We are leaving for vacations. I left the precious gift of Azul Corporation in the cabinet. I don't remember the precise combination right now. But it's for sure like this:
+1. XX
+2. XX
+3. XX
+
+Should anyone need insert this code and you can use it.
+[/content]"
+texture = ExtResource("2_bagmr")
+usable_once = true
+is_pickable = true
+metadata/_custom_type_script = "uid://cs02wdcdcca6e"
