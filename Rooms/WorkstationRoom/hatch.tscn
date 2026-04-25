@@ -11,13 +11,6 @@ height = 2652.2402
 [node name="Hatch" type="Node2D" unique_id=262638993]
 script = ExtResource("2_cs65i")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1081345692]
-offset_left = -193.0
-offset_top = -18.0
-offset_right = 193.0
-offset_bottom = 22.0
-color = Color(0, 0, 0, 1)
-
 [node name="HatchSprite" type="Sprite2D" parent="." unique_id=794658903]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_1du4k")
