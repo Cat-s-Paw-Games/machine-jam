@@ -1,8 +1,10 @@
 extends Node2D
 
 var dropped = false
+var pipe_panel_open = false
 
 func _ready():
+	return
 	$BG.queue_free()
 
 func _on_pipe_game_pipes_connected() -> void:

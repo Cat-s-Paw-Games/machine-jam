@@ -33,6 +33,7 @@ func generate_grid():
 			
 			var pipe = PIPE.instantiate()
 			pipe.position = Vector2(x, y) * cell_size
+			pipe.enabled = false
 			canvas.add_child(pipe)
 			pipe.set_connections(_grid[pos])
 			pipe.pipe_rotated.connect(check_win_condition)
@@ -226,3 +227,10 @@ func animate_water_flow(visited):
 		await get_tree().create_timer(0.08).timeout
 	
 	pipes_connected.emit()
+
+
+func _on_pipe_panel_open_panel() -> void:
+	await get_tree().create_timer(1).timeout
+	for gridx in grid:
+		for gridxy in gridx:
+			gridxy.enabled = true

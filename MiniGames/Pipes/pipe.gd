@@ -107,11 +107,13 @@ func set_pipe():
 
 func rotate_pipe(direction : int = 1):
 	if App.in_focus: return
+	if not enabled: return
 	if not App.game_status.pipe_touched: 
 		App.show_popup("There's something rattling inside these pipes", {
 			"close_on_click": true
 		})
 		App.game_status.pipe_touched = true
+		return
 	for i in range(connections.size()):
 		connections[i] = (connections[i] + direction + 4) % 4
 	await rotate_animation(direction)

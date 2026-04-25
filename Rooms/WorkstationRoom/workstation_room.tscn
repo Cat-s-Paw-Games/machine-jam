@@ -27,8 +27,7 @@ texture = ExtResource("2_ws22d")
 position = Vector2(1709.0001, 898.00006)
 
 [node name="PipeGame" parent="." unique_id=677869341 instance=ExtResource("5_4hd7n")]
-z_index = 20
-position = Vector2(1406, 310)
+position = Vector2(1394, 310)
 
 [node name="PointedStick" parent="." unique_id=1206465442 instance=ExtResource("6_jduod")]
 position = Vector2(1089, 864)
@@ -38,7 +37,7 @@ position = Vector2(891.00006, 657.00006)
 rotation = 0.2617994
 
 [node name="Spring" parent="." unique_id=2025760680 instance=ExtResource("8_qr6dw")]
-position = Vector2(1107, 629)
+position = Vector2(758, 646)
 
 [node name="PipePanel" type="TouchScreenButton" parent="." unique_id=393437977]
 position = Vector2(1385, 253)
@@ -50,8 +49,9 @@ script = ExtResource("9_ws22d")
 position = Vector2(1707, 634)
 
 [node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("10_itvai")]
-position = Vector2(1223, 656)
+position = Vector2(567, 684)
 script = ExtResource("11_n88i0")
 
 [connection signal="pipes_connected" from="PipeGame" to="." method="_on_pipe_game_pipes_connected"]
+[connection signal="open_panel" from="PipePanel" to="PipeGame" method="_on_pipe_panel_open_panel"]
 [connection signal="pressed" from="PipePanel" to="PipePanel" method="_on_pressed"]
