@@ -15,7 +15,7 @@ script = ExtResource("1_fc2xf")
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_fc2xf")
 
-[node name="Button" type="TouchScreenButton" parent="." unique_id=333148785]
+[node name="Button" type="TouchScreenButton" parent="." unique_id=333148785 groups=["touch_buttons"]]
 position = Vector2(0, 2.0000002)
 rotation = 1.7104226
 shape = SubResource("CapsuleShape2D_xife8")

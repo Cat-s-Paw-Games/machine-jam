@@ -47,7 +47,7 @@ gravity = Vector2(0, -300)
 scale_amount_max = 2.55
 scale_amount_curve = SubResource("Curve_iegu6")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1683080550]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1683080550 groups=["touch_buttons"]]
 rotation = -3.1415927
 shape = SubResource("RectangleShape2D_mdg0c")
 

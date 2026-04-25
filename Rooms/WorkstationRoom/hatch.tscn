@@ -15,7 +15,7 @@ script = ExtResource("2_cs65i")
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_1du4k")
 
-[node name="Button" type="TouchScreenButton" parent="." unique_id=1065990738]
+[node name="Button" type="TouchScreenButton" parent="." unique_id=1065990738 groups=["touch_buttons"]]
 rotation = 1.5707964
 scale = Vector2(0.19455253, 0.19455253)
 shape = SubResource("CapsuleShape2D_1vv1s")

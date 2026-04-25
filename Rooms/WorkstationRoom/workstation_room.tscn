@@ -39,7 +39,7 @@ rotation = 0.2617994
 [node name="Spring" parent="." unique_id=2025760680 instance=ExtResource("8_qr6dw")]
 position = Vector2(758, 646)
 
-[node name="PipePanel" type="TouchScreenButton" parent="." unique_id=393437977]
+[node name="PipePanel" type="TouchScreenButton" parent="." unique_id=393437977 groups=["touch_buttons"]]
 position = Vector2(1385, 253)
 scale = Vector2(0.244, 0.244)
 texture_normal = ExtResource("4_v7sgr")
@@ -48,7 +48,7 @@ script = ExtResource("9_ws22d")
 [node name="PipeOutput" type="Marker2D" parent="." unique_id=519776170]
 position = Vector2(1707, 634)
 
-[node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("10_itvai")]
+[node name="ValveHandle" parent="." unique_id=1315559793 groups=["touch_buttons"] instance=ExtResource("10_itvai")]
 position = Vector2(567, 684)
 script = ExtResource("11_n88i0")
 

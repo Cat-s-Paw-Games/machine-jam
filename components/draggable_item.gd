@@ -19,6 +19,7 @@ var target_floor_y = 0.0  # Posizione Y target nel pavimento
 @export var item : Item = Item.new()
 
 func _ready():
+	add_to_group("touch_buttons")
 	z_index = 25
 	pressed.connect(_on_pressed)
 	released.connect(_on_released)

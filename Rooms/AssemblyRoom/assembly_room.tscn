@@ -33,7 +33,7 @@ offset_bottom = 1800.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_1hgf2")
 
-[node name="AssemblyLine" type="TouchScreenButton" parent="." unique_id=1347204356]
+[node name="AssemblyLine" type="TouchScreenButton" parent="." unique_id=1347204356 groups=["touch_buttons"]]
 position = Vector2(0, 839)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oxpps")
