@@ -13,6 +13,10 @@
 radius = 50.0
 height = 1700.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uc4b3"]
+radius = 51.0
+height = 1682.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0h6d"]
 size = Vector2(160.67004, 61.483322)
 
@@ -38,6 +42,12 @@ position = Vector2(0, 839)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oxpps")
 script = ExtResource("3_oxpps")
+
+[node name="Area2D" type="Area2D" parent="AssemblyLine" unique_id=910691549]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AssemblyLine/Area2D" unique_id=149433926]
+position = Vector2(2.9999945, -2)
+shape = SubResource("CapsuleShape2D_uc4b3")
 
 [node name="HoverHint" type="Area2D" parent="." unique_id=2048933733]
 position = Vector2(884, 841)

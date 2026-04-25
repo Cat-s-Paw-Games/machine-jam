@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	if App.mouse.hover_type != MouseService.HOVER_TYPE.INVENTORY_DROP:
-		App.mouse.hover_on(self, MouseService.HOVER_TYPE.DROPPABLE)
+		App.mouse.hover_on(self, MouseService.HOVER_TYPE.INSPECTABLE)
 
 func _on_mouse_exited() -> void:
 	if App.mouse.hover_type != MouseService.HOVER_TYPE.INVENTORY_DROP:

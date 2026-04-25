@@ -38,3 +38,18 @@ func shake_and_rotate(panel: Node2D):
 		135.0,
 		0.55
 	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+
+func _ready():
+	var hitbox = find_child("Area2D") 
+	
+	if hitbox:
+		hitbox.mouse_entered.connect(_on_mouse_entered)
+		hitbox.mouse_exited.connect(_on_mouse_exited)
+
+func _on_mouse_entered():
+	if not App.game_status.lights_on: return
+	App.mouse.hover_on(self, App.mouse.HOVER_TYPE.INSPECTABLE)
+	
+func _on_mouse_exited():
+	App.mouse.hover_out()	

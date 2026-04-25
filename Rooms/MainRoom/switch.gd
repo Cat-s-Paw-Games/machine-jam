@@ -5,9 +5,21 @@ extends TouchScreenButton
 var tween
 var start_scale
 func _ready():
+	var hitbox = find_child("Area2D") 
+	
+	if hitbox:
+		hitbox.mouse_entered.connect(_on_mouse_entered)
+		hitbox.mouse_exited.connect(_on_mouse_exited)
 	start_scale = switch_light.scale
 	start_pulse()
 	App.events.switch_lights_on.connect(_on_switch_lights_on)
+
+func _on_mouse_entered():
+	if App.game_status.lights_on: return
+	App.mouse.hover_on(self)
+	
+func _on_mouse_exited():
+	App.mouse.hover_out()	
 
 func start_pulse():
 	tween = create_tween()

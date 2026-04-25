@@ -12,7 +12,7 @@ func hover_text():
 	return "Coal Input"
 
 func _on_mouse_entered() -> void:
-	App.mouse.hover_on(self)
+	App.mouse.hover_on(self,App.mouse.HOVER_TYPE.INSPECTABLE)
 
 func _on_mouse_exited() -> void:
 	App.mouse.hover_out()

@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="10_itvai"]
 [ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="11_n88i0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itvai"]
+size = Vector2(1485.4097, 1665.7375)
+
 [node name="WorkstationRoom" type="Node2D" unique_id=1672423352]
 script = ExtResource("1_rqgq5")
 
@@ -44,6 +47,12 @@ position = Vector2(1385, 253)
 scale = Vector2(0.244, 0.244)
 texture_normal = ExtResource("4_v7sgr")
 script = ExtResource("9_ws22d")
+
+[node name="Area2D" type="Area2D" parent="PipePanel" unique_id=655179933]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipePanel/Area2D" unique_id=1498481018]
+position = Vector2(758.1968, 855.6555)
+shape = SubResource("RectangleShape2D_itvai")
 
 [node name="PipeOutput" type="Marker2D" parent="." unique_id=519776170]
 position = Vector2(1707, 634)

@@ -5,7 +5,8 @@ enum HOVER_TYPE {
 	NORMAL,
 	DROPPABLE,
 	INVENTORY_DROP,
-	DRAGGABLE
+	DRAGGABLE,
+	INSPECTABLE
 }
 
 var current_item: Node = null
@@ -14,6 +15,7 @@ var hover_type = HOVER_TYPE.NORMAL
 var basic_cursor: Texture2D = preload("res://assets/cursors/curs_default.png")
 var hover_cursor: Texture2D = preload("res://assets/cursors/curs_pick.png")
 var drag_cursor: Texture2D = preload("res://assets/cursors/curs_drag.png")
+var eye_cursor: Texture2D = preload("res://assets/cursors/curs_eye.png")
 var cursor_center: Vector2 = Vector2(0, 0)
 
 var cursor_instance: GameCursor = null
@@ -53,6 +55,8 @@ func hover(value: bool) -> void:
 		cursor_instance.set_texture(hover_cursor if value else basic_cursor)
 	elif hover_type == HOVER_TYPE.DRAGGABLE:
 		cursor_instance.set_texture(drag_cursor if value else basic_cursor)
+	elif hover_type == HOVER_TYPE.INSPECTABLE:
+		cursor_instance.set_texture(eye_cursor if value else basic_cursor)
 	
 	
 
