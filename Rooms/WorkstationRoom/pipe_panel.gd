@@ -10,6 +10,11 @@ func _on_pressed() -> void:
 	shake_and_rotate(self)
 	
 func shake_and_rotate(panel: Node2D):
+	var hitbox = find_child("Area2D") 
+	
+	if hitbox:
+		App.mouse.hover_out()
+		hitbox.queue_free()
 	var tween := create_tween()
 
 	var original_pos := panel.position
@@ -53,3 +58,7 @@ func _on_mouse_entered():
 	
 func _on_mouse_exited():
 	App.mouse.hover_out()	
+
+
+func hover_text():
+	return "The panel feels loose."
