@@ -193,3 +193,9 @@ func hover_text():
 	if item:
 		return item.name
 	return ""
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event && event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
+		if App.ui.insert_item(item.id):
+			empty_slot()

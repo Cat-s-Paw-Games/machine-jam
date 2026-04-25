@@ -33,7 +33,6 @@ func close_crafting():
 		App.navigation_enabled = true
 		App.in_focus = false
 		await UIAnimation.animate_shrink(crafting)
-		crafting.return_items()
 		crafting.queue_free()
 		crafting = null
 		
@@ -57,7 +56,6 @@ func close_console():
 		App.in_focus = false
 		App.navigation_enabled = true
 		await UIAnimation.animate_shrink(console)
-		console.return_items()
 		console.queue_free()
 		console = null
 
@@ -91,7 +89,22 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("close_ui"):
 		if App.in_focus:
 			close_scene_in_focus()
-		if crafting != null:
-			close_crafting()
-		if console != null:
-			close_console()
+		if crafting:
+			crafting._on_close_pressed()
+		if console:
+			console._on_close_pressed()
+
+func insert_item(item_id : String) -> bool:
+	if console:
+		if console.inventory_slot.is_empty:
+			console.inventory_slot.fill_slot(item_id)
+			return true
+	
+	if crafting:
+		for panel in crafting.crafting_grid.get_children():
+			var slot = panel.get_child(0)
+			if slot.is_empty:
+				slot.fill_slot(item_id)
+				return true
+	
+	return false

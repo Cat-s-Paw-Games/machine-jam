@@ -7,3 +7,5 @@ texture_filter = 3
 custom_minimum_size = Vector2(50, 50)
 expand_mode = 3
 script = ExtResource("1_68pn2")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
