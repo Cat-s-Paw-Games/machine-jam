@@ -12,9 +12,9 @@ description = "[pretext][Log Entry 91722.38] - Raoul[/pretext]
 Those idiots want to leave [MACHINE NAME] here. 
 But it talked to me! I can't do anything without their resources, I need to hide what I got until i find something.
 Maybe I can sell the secrets of Azul Company to get enough money for a diamond
-2x + y − z = 🔥 − 💻 + 2
-x + 3y + z = 🔧 + 💻 + 5
-x − y + 2z = 🔥 + 🔧 − 1​
+2x + y − z = [img=60]res://assets/images/fire_icon.png[/img] − [img=60]res://assets/images/console_icon.png[/img] + 2
+x + 3y + z = [img=60]res://assets/images/wrench_icon.png[/img] + [img=60]res://assets/images/console_icon.png[/img] + 5
+x − y + 2z = [img=60]res://assets/images/fire_icon.png[/img] + [img=60]res://assets/images/wrench_icon.png[/img] − 1​
 [/content]"
 texture = ExtResource("2_bagmr")
 usable_once = true
