@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b0gtw6yxhbb4f" path="res://Rooms/MainRoom/main_room.tscn" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bvvxweo4ma2s7" path="res://Rooms/ConsoleRoom/console_room.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cgyxag4ggif0u" path="res://Rooms/AssemblyRoom/assembly_room.tscn" id="7_272bh"]
+[ext_resource type="Shader" uid="uid://cu4pjs3btusgk" path="res://assets/shaders/vignette.gdshader" id="8_5vw27"]
 
 [sub_resource type="Gradient" id="Gradient_5vw27"]
 offsets = PackedFloat32Array(0, 0.10869565, 0.65217394, 1)
@@ -18,6 +19,13 @@ width = 900
 height = 900
 fill = 1
 fill_from = Vector2(0.51282054, 0.4871795)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kek77"]
+shader = ExtResource("8_5vw27")
+shader_parameter/radius = 0.75
+shader_parameter/softness = 0.430000020425
+shader_parameter/strength = 0.8
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node" unique_id=738830431]
 process_mode = 3
@@ -79,3 +87,14 @@ ignore_camera_scroll = true
 [node name="Sprite2D" type="Sprite2D" parent="GameView/Foreground" unique_id=1811115625]
 visible = false
 centered = false
+
+[node name="Vignette" type="ColorRect" parent="GameView" unique_id=238932519]
+z_index = 1000
+material = SubResource("ShaderMaterial_kek77")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
