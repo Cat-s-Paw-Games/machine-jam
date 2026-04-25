@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d27tjk1nskwwd" path="res://assets/images/face_light (2).jpg" id="10_q7bhg"]
 [ext_resource type="Script" uid="uid://bepuxq3s3bpy1" path="res://Rooms/ConsoleRoom/point_light_2d.gd" id="11_7c2ww"]
 [ext_resource type="Texture2D" uid="uid://brhsw3fx7tjli" path="res://assets/images/console_light (2).jpg" id="11_fc7t8"]
+[ext_resource type="PackedScene" uid="uid://dgmobo54np2b6" path="res://Items/wood_logs.tscn" id="11_q7bhg"]
 
 [node name="MainRoom" type="Node2D" unique_id=463226148]
 script = ExtResource("1_4h2l6")
@@ -64,5 +65,9 @@ energy_on_max = 3
 [node name="CoalVein" parent="." unique_id=2057931167 instance=ExtResource("10_7c7yb")]
 position = Vector2(1224, 865)
 scale = Vector2(0.6, 0.6)
+
+[node name="WoodLogs" parent="." unique_id=1478224087 instance=ExtResource("11_q7bhg")]
+position = Vector2(1298, 835)
+scale = Vector2(0.67, 0.67)
 
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]

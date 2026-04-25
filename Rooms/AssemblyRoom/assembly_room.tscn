@@ -6,11 +6,8 @@
 [ext_resource type="Script" uid="uid://c2yufe5vadiky" path="res://Rooms/AssemblyRoom/crafting.gd" id="3_oxpps"]
 [ext_resource type="PackedScene" uid="uid://xv6yvtng0ll1" path="res://Items/metal_scraps.tscn" id="5_22gm7"]
 [ext_resource type="PackedScene" uid="uid://2jwm115utw6p" path="res://Items/floppy.tscn" id="9_f2mhh"]
-[ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="10_22gm7"]
 [ext_resource type="Resource" uid="uid://r8vrnukjaoso" path="res://globals/items/floppy_logs/floppy_secret_recipe.tres" id="10_muvwl"]
-[ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="11_1hgf2"]
 [ext_resource type="Resource" uid="uid://cgn4ioh3d7st1" path="res://globals/items/floppy_logs/floppy_cabinet_formula.tres" id="11_8c0ed"]
-[ext_resource type="PackedScene" uid="uid://dgmobo54np2b6" path="res://Items/wood_logs.tscn" id="12_1hgf2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxpps"]
 radius = 50.0
@@ -60,13 +57,5 @@ item = ExtResource("10_muvwl")
 [node name="FloppyCode" parent="." unique_id=548943279 instance=ExtResource("9_f2mhh")]
 position = Vector2(503, 917)
 item = ExtResource("11_8c0ed")
-
-[node name="WoodLogs" parent="." unique_id=1478224087 instance=ExtResource("12_1hgf2")]
-position = Vector2(989, 727)
-scale = Vector2(0.67, 0.67)
-
-[node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("10_22gm7")]
-position = Vector2(1321.9999, 693)
-script = ExtResource("11_1hgf2")
 
 [connection signal="pressed" from="AssemblyLine" to="AssemblyLine" method="_on_pressed"]

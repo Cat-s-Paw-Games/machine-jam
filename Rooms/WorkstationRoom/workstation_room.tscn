@@ -9,13 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://ct8ivf5wai3op" path="res://Items/scissors.tscn" id="7_v7sgr"]
 [ext_resource type="PackedScene" uid="uid://b8p516mmro6mv" path="res://Items/spring.tscn" id="8_qr6dw"]
 [ext_resource type="Script" uid="uid://bfhmbu4qtx6kd" path="res://Rooms/WorkstationRoom/pipe_panel.gd" id="9_ws22d"]
+[ext_resource type="PackedScene" uid="uid://bbjv367setexj" path="res://Items/valve_handle.tscn" id="10_itvai"]
+[ext_resource type="Script" uid="uid://dadlxy1eqfk5a" path="res://Items/valve_handle.gd" id="11_n88i0"]
 
 [node name="WorkstationRoom" type="Node2D" unique_id=1672423352]
 script = ExtResource("1_rqgq5")
 
 [node name="BG" type="TextureRect" parent="." unique_id=184789276]
 modulate = Color(1, 1, 1, 0.25882354)
-offset_right = 12800.0
+offset_left = -1.0
+offset_right = 12799.0
 offset_bottom = 1800.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_ws22d")
@@ -28,7 +31,7 @@ z_index = 20
 position = Vector2(1406, 310)
 
 [node name="PointedStick" parent="." unique_id=1206465442 instance=ExtResource("6_jduod")]
-position = Vector2(1209, 798)
+position = Vector2(1089, 864)
 
 [node name="Scissors" parent="." unique_id=506044602 instance=ExtResource("7_v7sgr")]
 position = Vector2(891.00006, 657.00006)
@@ -45,6 +48,10 @@ script = ExtResource("9_ws22d")
 
 [node name="PipeOutput" type="Marker2D" parent="." unique_id=519776170]
 position = Vector2(1707, 634)
+
+[node name="ValveHandle" parent="." unique_id=1315559793 instance=ExtResource("10_itvai")]
+position = Vector2(1223, 656)
+script = ExtResource("11_n88i0")
 
 [connection signal="pipes_connected" from="PipeGame" to="." method="_on_pipe_game_pipes_connected"]
 [connection signal="pressed" from="PipePanel" to="PipePanel" method="_on_pressed"]
