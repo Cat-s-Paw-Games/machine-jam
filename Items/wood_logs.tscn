@@ -25,4 +25,4 @@ shape = SubResource("CapsuleShape2D_si168")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=267516897]
 position = Vector2(1920, 0)
 stream = ExtResource("4_si168")
-volume_db = 10.0
+volume_db = 3.0
