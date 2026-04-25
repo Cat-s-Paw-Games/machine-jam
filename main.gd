@@ -7,6 +7,8 @@ var view_angle : float = 0.0
 @export var fg_width : float = 8000.0
 @export var room_width : float = 1920.0
 @export var touch_sensitivity : float = 0.5  # Sensibilità dello swipe
+@export var mouse_edge_size := 80.0
+
 signal offset_changed(offset:int)
 
 var touch_start_pos : Vector2 = Vector2.ZERO
@@ -29,7 +31,16 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if App.navigation_enabled:
-		var axis = Input.get_axis("ui_left","ui_right")
+		
+		var axis := Input.get_axis("ui_left","ui_right")
+		var mouse_x := get_viewport().get_mouse_position().x
+		var viewport_width := get_viewport().get_visible_rect().size.x
+
+		if mouse_x <= mouse_edge_size:
+			axis = -1.0
+		elif mouse_x >= viewport_width - mouse_edge_size:
+			axis = 1.0
+
 		view_angle = wrapf(view_angle + axis * step, 0.0, 360.0)
 		update_layers(axis)
 
