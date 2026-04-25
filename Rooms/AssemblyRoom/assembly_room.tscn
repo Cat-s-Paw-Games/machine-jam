@@ -14,10 +14,13 @@ radius = 50.0
 height = 1700.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0h6d"]
-size = Vector2(43, 54)
+size = Vector2(160.67004, 61.483322)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fy26f"]
 load_path = "res://.godot/imported/metal_scraps.png-fa4ac2da5be171f6608cfea2db2ee9b4.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc4b3"]
+size = Vector2(125.34503, 130.00238)
 
 [node name="AssemblyRoom" type="Node2D" unique_id=1986954127]
 script = ExtResource("1_fdyc5")
@@ -43,6 +46,8 @@ text = "Assembly line - Model 9"
 metadata/_custom_type_script = "uid://gikcr4yg3njr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HoverHint" unique_id=721605329]
+position = Vector2(-322.79327, -407.21332)
+rotation = 0.36999068
 shape = SubResource("RectangleShape2D_w0h6d")
 debug_color = Color(2.3584068e-06, 0.6317069, 0.46269518, 0.41960785)
 
@@ -57,5 +62,17 @@ item = ExtResource("10_muvwl")
 [node name="FloppyCode" parent="." unique_id=548943279 instance=ExtResource("9_f2mhh")]
 position = Vector2(503, 917)
 item = ExtResource("11_8c0ed")
+
+[node name="HoverHint2" type="Area2D" parent="." unique_id=1440250332]
+position = Vector2(884, 841)
+script = ExtResource("3_3dn3h")
+text = "Assembly line - Model 9"
+metadata/_custom_type_script = "uid://gikcr4yg3njr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverHint2" unique_id=1744201552]
+position = Vector2(-1394.0087, -403.7733)
+rotation = -0.38009125
+shape = SubResource("RectangleShape2D_uc4b3")
+debug_color = Color(2.3584068e-06, 0.6317069, 0.46269518, 0.41960785)
 
 [connection signal="pressed" from="AssemblyLine" to="AssemblyLine" method="_on_pressed"]
