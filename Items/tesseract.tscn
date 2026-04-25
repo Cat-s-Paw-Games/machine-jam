@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://c7skwhik04urk" path="res://globals/items/tesseract.tres" id="3_bexk3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jg8o4"]
-radius = 249.4624
+radius = 284.43088
 
 [node name="Tesseract" type="TouchScreenButton" unique_id=72453950]
 scale = Vector2(0.20043102, 0.20043105)
@@ -17,5 +17,5 @@ metadata/_custom_type_script = "uid://cafqq0iart4ih"
 [node name="Area2D" type="Area2D" parent="." unique_id=1107612724]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=539050881]
-position = Vector2(244.47314, 234.4946)
+position = Vector2(359.22586, 289.37634)
 shape = SubResource("CircleShape2D_jg8o4")
