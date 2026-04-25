@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c0x4fcj2tc8dr" path="res://components/rotating_cog.gd" id="2_sb8jg"]
 [ext_resource type="Texture2D" uid="uid://cy68v76vm52q5" path="res://assets/images/intro/cog.png" id="3_1rpvy"]
 [ext_resource type="Texture2D" uid="uid://qn4lrlu76bg0" path="res://assets/images/ui/close_btn.png" id="5_1rpvy"]
-[ext_resource type="Texture2D" uid="uid://kb03vj5h7xo0" path="res://assets/images/face_light.jpg" id="8_4ad6s"]
+[ext_resource type="Texture2D" uid="uid://dqphxiugy4ssx" path="res://assets/images/intro/face_light (3).jpg" id="6_iysgs"]
 [ext_resource type="Texture2D" uid="uid://bvundkjwgi7" path="res://assets/images/intro/title.png" id="8_6omm5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7136s"]
@@ -66,8 +66,8 @@ grow_vertical = 2
 
 [node name="Title" type="Sprite2D" parent="CenterContainer2" unique_id=114692243]
 modulate = Color(0.8986666, 1, 0.81, 1)
-position = Vector2(983.00006, 276)
-scale = Vector2(0.49966022, 0.4996602)
+position = Vector2(982, 309)
+scale = Vector2(0.9959442, 0.99594414)
 texture = ExtResource("8_6omm5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2" unique_id=1047495403]
@@ -278,12 +278,11 @@ vertical_alignment = 1
 
 [node name="EyesLight" type="PointLight2D" parent="." unique_id=38218199]
 unique_name_in_owner = true
-position = Vector2(972, 628)
-enabled = false
+position = Vector2(967, 548)
 color = Color(0.6896342, 0.49705046, 0, 1)
 energy = 5.0
 range_layer_max = 1
-texture = ExtResource("8_4ad6s")
+texture = ExtResource("6_iysgs")
 
 [node name="MainLight1" type="PointLight2D" parent="." unique_id=114589511]
 unique_name_in_owner = true
