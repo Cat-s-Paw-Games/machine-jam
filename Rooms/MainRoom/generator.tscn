@@ -24,7 +24,7 @@ size = Vector2(400, 480)
 size = Vector2(42, 45.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shm5r"]
-size = Vector2(76, 84)
+size = Vector2(118, 84)
 
 [node name="Generator" type="Node2D" unique_id=1391313845]
 script = ExtResource("1_wl2ms")
@@ -66,6 +66,7 @@ script = ExtResource("4_nvrwd")
 metadata/_custom_type_script = "uid://rlemyrl4ndtl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoalInput" unique_id=1682688899]
+position = Vector2(-259, 130)
 shape = SubResource("RectangleShape2D_shm5r")
 debug_color = Color(0, 0.07450981, 0.09411765, 0.7607843)
 
