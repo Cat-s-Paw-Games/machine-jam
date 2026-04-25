@@ -32,7 +32,7 @@ position = Vector2(1086, 351)
 position = Vector2(1743, 870)
 
 [node name="BrokenPipe" parent="." unique_id=409804896 instance=ExtResource("7_12j44")]
-position = Vector2(76, 538)
+position = Vector2(76, 539)
 
 [node name="Face" type="PointLight2D" parent="." unique_id=198897195]
 unique_name_in_owner = true
