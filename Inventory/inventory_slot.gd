@@ -4,6 +4,7 @@ class_name InventorySlot
 signal added_item_to_slot(item_id:String)
 signal removed_item_from_slot()
 @export var item : Item = null
+@export var take_on_click = false
 
 var hover_timer: float = 0.0
 var is_dragging_over: bool = false
@@ -16,6 +17,19 @@ var is_empty:
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	if take_on_click:
+		var button = TouchScreenButton.new()
+		var rect_shape := RectangleShape2D.new()
+		rect_shape.size = size
+		button.shape = rect_shape
+		button.position = size / 2
+		button.pressed.connect(func():
+			if item != null:
+				App.ui.inventory.add_item(item.id)
+				empty_slot()
+		)
+		add_child(button)
+
 
 func _process(delta):
 	# Controlla se stiamo draggando e il mouse è su questo slot

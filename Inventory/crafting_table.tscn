@@ -169,7 +169,7 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="InventorySlot" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel" unique_id=1928435196]
+[node name="InventorySlot" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel" unique_id=1760093137]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -179,6 +179,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_kttas")
+take_on_click = true
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
 [node name="Panel2" type="Panel" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid" unique_id=922305628]
@@ -186,7 +187,7 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="InventorySlot2" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel2" unique_id=1460816752]
+[node name="InventorySlot2" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel2" unique_id=1954836705]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -196,6 +197,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_kttas")
+take_on_click = true
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
 [node name="Panel3" type="Panel" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid" unique_id=931324908]
@@ -203,7 +205,7 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="InventorySlot3" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel3" unique_id=344087265]
+[node name="InventorySlot3" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel3" unique_id=51027309]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -213,6 +215,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_kttas")
+take_on_click = true
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
 [node name="Panel4" type="Panel" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid" unique_id=381611658]
@@ -220,7 +223,7 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_l336g")
 
-[node name="InventorySlot4" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel4" unique_id=1600897375]
+[node name="InventorySlot4" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/CraftingGrid/Panel4" unique_id=1588501191]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -230,6 +233,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_kttas")
+take_on_click = true
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer" unique_id=520441785]
@@ -275,6 +279,7 @@ size_flags_vertical = 4
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_kttas")
+take_on_click = true
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
 [node name="OutputSlotX" type="TextureRect" parent="PanelContainer/MarginContainer/MarginContainer/HBoxContainer/Control/Panel" unique_id=795446910]

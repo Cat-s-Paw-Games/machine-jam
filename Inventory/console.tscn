@@ -185,6 +185,7 @@ size_flags_vertical = 3
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_q6d8s")
+take_on_click = true
 metadata/_custom_type_script = "uid://c6edkyw1p5vw8"
 
 [node name="MarginContainerMain" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Monitor" unique_id=588420346]
