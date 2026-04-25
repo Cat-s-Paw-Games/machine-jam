@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 		if not App.game_status.generator_active: 
 			App.events.activate_generator.emit()
 		if App.game_status.steam < App.game_status.max_steam:
-			App.game_status.steam = App.game_status.steam+delta
+			App.game_status.steam = App.game_status.steam+delta*10
 
 
 
