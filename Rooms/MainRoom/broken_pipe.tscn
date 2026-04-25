@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3ucvulh3u7ub"]
 
 [ext_resource type="Script" uid="uid://b7q1gg6h3ayiq" path="res://Rooms/MainRoom/broken_pipe.gd" id="1_vtc3a"]
+[ext_resource type="Texture2D" uid="uid://d4mpclgqdr0ab" path="res://assets/images/knob.png" id="2_31m0n"]
 [ext_resource type="Texture2D" uid="uid://dilsgb46i8sio" path="res://assets/images/smoke_sheet.png" id="3_mck4e"]
 [ext_resource type="AudioStream" uid="uid://kmtwyhff13f1" path="res://assets/music/sfx/water_fall.mp3" id="4_mck4e"]
 [ext_resource type="Texture2D" uid="uid://cgoda6roetl58" path="res://assets/images/valve.png" id="4_p64og"]
@@ -27,6 +28,11 @@ radius = 682.24
 [node name="BrokenPipe" type="Area2D" unique_id=409804896]
 script = ExtResource("1_vtc3a")
 metadata/_custom_type_script = "uid://rlemyrl4ndtl"
+
+[node name="Knob" type="Sprite2D" parent="." unique_id=905647893]
+position = Vector2(0, 1)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_31m0n")
 
 [node name="Interact" type="TouchScreenButton" parent="." unique_id=1264205970]
 shape = SubResource("CircleShape2D_vtc3a")
