@@ -55,7 +55,6 @@ follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="GameView/Background" unique_id=1366526716]
-position = Vector2(2, 0)
 texture = ExtResource("3_272bh")
 centered = false
 
