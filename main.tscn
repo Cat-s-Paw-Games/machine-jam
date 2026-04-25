@@ -30,6 +30,7 @@ shader_parameter/vignette_color = Color(0, 0, 0, 1)
 [node name="Main" type="Node" unique_id=738830431]
 process_mode = 3
 script = ExtResource("1_h2yge")
+mouse_edge_size = 20.0
 
 [node name="GameView" type="CanvasLayer" parent="." unique_id=1662143667]
 unique_name_in_owner = true
