@@ -115,11 +115,13 @@ func _on_inventory_slot_removed_item_from_slot(index: int) -> void:
 	current_items[index] = null
 	check_recipe()
 
+func return_items():
+	for item in current_items.values():
+		if item: App.ui.inventory.add_item(item)
 
 func _on_close_pressed() -> void:
 	smoke_particles.emitting = false
-	for item in current_items.values():
-		if item: App.ui.inventory.add_item(item)
+	return_items()
 	App.ui.close_crafting()
 
 func _on_steam_changed():

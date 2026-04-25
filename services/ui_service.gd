@@ -33,6 +33,7 @@ func close_crafting():
 		App.navigation_enabled = true
 		App.in_focus = false
 		await UIAnimation.animate_shrink(crafting)
+		crafting.return_items()
 		crafting.queue_free()
 		crafting = null
 		
@@ -56,6 +57,7 @@ func close_console():
 		App.in_focus = false
 		App.navigation_enabled = true
 		await UIAnimation.animate_shrink(console)
+		console.return_items()
 		console.queue_free()
 		console = null
 

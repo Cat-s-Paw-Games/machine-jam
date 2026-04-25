@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d04oov7bi0duj"]
 
-[ext_resource type="Script" uid="uid://c2v5ct12npmip" path="res://ui.gd" id="1_vkava"]
+[ext_resource type="Script" uid="uid://c2v5ct12npmip" path="res://ui/ui.gd" id="1_vkava"]
 [ext_resource type="Texture2D" uid="uid://btuuhvljqn1dx" path="res://assets/images/ui/inventory.png" id="2_tf0e0"]
 [ext_resource type="PackedScene" uid="uid://c47lb588siff8" path="res://Inventory/inventory_wheel.tscn" id="3_bo1jx"]
 [ext_resource type="PackedScene" uid="uid://bym2nd6ohk6nv" path="res://components/Popup.tscn" id="4_bo1jx"]
-[ext_resource type="PackedScene" path="res://ui/menu.tscn" id="5_tf0e0"]
+[ext_resource type="PackedScene" uid="uid://dghipapkctph" path="res://ui/menu.tscn" id="5_tf0e0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf0e0"]
 

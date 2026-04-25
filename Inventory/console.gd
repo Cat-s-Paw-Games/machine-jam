@@ -63,8 +63,11 @@ func _on_item_remove():
 	console.floppy_log = false
 	remove_floppy_line()
 
-func _on_close_pressed() -> void:
+func return_items():
 	if current_item: App.ui.inventory.add_item(current_item)
+
+func _on_close_pressed() -> void:
+	return_items()
 	App.ui.close_console()
 
 
