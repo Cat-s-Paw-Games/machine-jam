@@ -30,18 +30,16 @@ theme_override_font_sizes/italics_font_size = 40
 text = "Scavenger Log [pause=0.5]- Unified timedate: 103022.12 [pause]
 I made it out.[pause=0.5].[pause=0.5].[pause=0.5] barely.[pause]
 
-The machine kept resisting the attempts to open the doors, overriding the commands[pause]. At first it appeared malicious but then[pause] was it...[pause] suffering?[pause]
+The machine kept resisting the attempts to open the doors, overriding the commands[pause]. At first I just thought it was old, dysfunctional security systems…[pause] But then it started to seem…[pause] Intentional??[pause]
 
-I couldn't look back. [pause]I mustn't look back.[pause]
+Whatever it was.. I couldn't look back. [pause]I wasn’t about to stay trapped in that tin-can…[pause]
 
-The sounds from it are of screeching metal and old gears.[pause] Nothing more.[pause=2]
+A machine is just a machine… No real thoughts, no real feelings... Just metal...[pause] Nothing more.[pause=2]
 
-Still...[pause] I can't shake the feeling I left something behind. [pause] Something that understood exactly what was happening.
-[pause]
-
-Something that will remember this."
+And yet...[pause] I can't shake the feeling there was more to this frigate…. [pause] Why do I feel guilty for just leaving….?
+[pause]"
 visible_characters = -1
-characters_for_second = 13.0
+characters_for_second = 25.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1335549150]
 anchors_preset = 3
