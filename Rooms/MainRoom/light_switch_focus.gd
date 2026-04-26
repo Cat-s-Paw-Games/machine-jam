@@ -1,13 +1,16 @@
 extends TouchScreenButton
 
+var enabled = false
 
 func _on_pressed() -> void:
-	await shake()
-	App.audio.play("sfx","res://assets/music/sfx/close_door.mp3")
-	texture_normal = preload("res://assets/images/switch_on.png")
-	await get_tree().create_timer(1).timeout
-	App.ui.close_scene_in_focus()
-	App.events.switch_lights_on.emit()
+	if !enabled:
+		enabled = true
+		await shake()
+		App.audio.play("sfx","res://assets/music/sfx/close_door.mp3")
+		texture_normal = preload("res://assets/images/switch_on.png")
+		await get_tree().create_timer(1).timeout
+		App.ui.close_scene_in_focus()
+		App.events.switch_lights_on.emit()
 	
 
 func shake():

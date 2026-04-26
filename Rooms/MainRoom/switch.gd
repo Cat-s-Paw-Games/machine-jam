@@ -19,7 +19,7 @@ func _on_mouse_entered():
 	App.mouse.hover_on(self)
 	
 func _on_mouse_exited():
-	App.mouse.hover_out()	
+	App.mouse.hover_out()
 
 func start_pulse():
 	tween = create_tween()
@@ -32,6 +32,7 @@ func start_pulse():
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 func _on_switch_lights_on():
+	App.audio.play("sfx","res://assets/music/sfx/lights_off.mp3")
 	texture_normal = preload("res://assets/images/switch_on.png")
 	switch_light.color = Color.GREEN
 	switch_light.position = Vector2(580,250)
