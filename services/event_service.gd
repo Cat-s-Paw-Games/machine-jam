@@ -101,6 +101,7 @@ func end_one():
 	await App.show_popup("Besides[pause=0.3].[pause=0.3].[pause=0.3]. You have [color=#f00]me[/color] now.[pause] You won’t need your eyes.", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("[color=#f00][b][wave]I will take care of you...[pause] For the rest of your life.[/wave][/b][/color]", {"title":App.MACHINE_NAME, "close_on_click": true})
 	App.events.move_to_face.emit()
+	App.audio.play("sfx","res://assets/music/sfx/scary_moment.mp3",{"volume_db":5.0})
 	await get_tree().create_timer(15).timeout
 	
 	handle_ending()
