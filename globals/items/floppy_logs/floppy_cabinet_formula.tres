@@ -9,7 +9,7 @@ id = "floppy_005"
 name = "Floppy Log 005"
 description = "[pretext][Log Entry 91722.38] - Raoul[/pretext]
 [content]
-Those idiots want to leave [MACHINE NAME] here. 
+Those idiots want to leave [MACHINE_NAME] here. 
 But it talked to me! I can't do anything without their resources, I need to hide what I got until i find something.
 Maybe I can sell the secrets of Azul Company to get enough money for a diamond
 2x + y − z = [img=60]res://assets/images/fire_icon.png[/img] − [img=60]res://assets/images/console_icon.png[/img] + 2

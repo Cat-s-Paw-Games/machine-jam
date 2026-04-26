@@ -82,22 +82,33 @@ func empty_slot():
 	removed_item_from_slot.emit()
 	item = null
 	texture = null
-	
-	# Riordina la wheel: sposta questo slot in fondo
+
 	var wheel = get_parent()
-	if wheel and wheel.has_method("rotate_wheel"):
-		var current_index = get_index()
-		
-		# Se lo slot corrente è quello selezionato, seleziona il prossimo
-		if current_index == wheel.active_slot:
-			wheel.rotate_wheel(1)
-		
-		# Sposta lo slot vuoto in fondo (come ultimo child)
-		wheel.move_child(self, -1)
-		
-		# Ricalcola le posizioni di tutti gli slot sulla wheel
-		if wheel.has_method("recalculate_slot_positions"):
-			wheel.recalculate_slot_positions()
+	if not wheel || !wheel.has_method("rotate_wheel"):
+		return
+	
+	var old_index = get_index()
+
+	# Move empty slot to the end FIRST
+	wheel.move_child(self, -1)
+
+	# Adjust active slot index BEFORE recalculating
+	if old_index < wheel.active_slot:
+		wheel.active_slot -= 1
+	elif old_index == wheel.active_slot:
+		# stay on same visual position (next item slides in)
+		wheel.active_slot = clamp(wheel.active_slot, 0, wheel.get_child_count() - 2)
+
+	# Recalculate layout
+	if wheel.has_method("recalculate_slot_positions"):
+		wheel.recalculate_slot_positions()
+
+	# Force rotation to match new index (IMPORTANT)
+	if wheel.has_method("update_rotation_from_index"):
+		wheel.update_rotation_from_index()
+	
+	if wheel.has_method("shift_active_from_edges"):
+		wheel.shift_active_from_edges()
 
 func fill_slot(item_id : String):
 	item = App.items[item_id]
