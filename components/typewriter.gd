@@ -65,7 +65,7 @@ func _process(_delta: float) -> void:
 	
 	if visible_characters > last_visible_characters:
 		var pitch = 6
-		if text[visible_characters - 1] in ["a","e","i","o","u","y"]:
+		if text.length() > visible_characters - 1 and text[visible_characters - 1] in ["a","e","i","o","u","y"]:
 			pitch = 8.0
 		if beep_talk: App.audio.play("sfx", "res://assets/music/sfx/text_beep.wav",{"pitch": pitch, "volume_db":-10.0})
 		last_visible_characters = visible_characters
