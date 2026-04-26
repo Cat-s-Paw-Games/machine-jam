@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://bepuxq3s3bpy1" path="res://Rooms/ConsoleRoom/point_light_2d.gd" id="11_7c2ww"]
 [ext_resource type="Texture2D" uid="uid://brhsw3fx7tjli" path="res://assets/images/console_light (2).jpg" id="11_fc7t8"]
 [ext_resource type="PackedScene" uid="uid://dgmobo54np2b6" path="res://Items/wood_logs.tscn" id="11_q7bhg"]
-[ext_resource type="AudioStream" uid="uid://b7yqxjbfddxpp" path="res://assets/music/sfx/lights_off.mp3" id="12_fc7t8"]
 
 [node name="MainRoom" type="Node2D" unique_id=463226148]
 script = ExtResource("1_4h2l6")
@@ -70,11 +69,5 @@ scale = Vector2(0.6, 0.6)
 [node name="WoodLogs" parent="." unique_id=1478224087 instance=ExtResource("11_q7bhg")]
 position = Vector2(1298, 835)
 scale = Vector2(0.67, 0.67)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1297399359]
-stream = ExtResource("12_fc7t8")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1540028464]
-stream = ExtResource("12_fc7t8")
 
 [connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]
