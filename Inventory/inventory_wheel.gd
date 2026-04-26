@@ -91,6 +91,8 @@ func add_item(item_id : String):
 	if slot_id > -1:
 		App.events.item_added.emit(item_id)
 		get_child(slot_id).fill_slot(item_id)
+		if current_item_count < 2:
+			rotate_wheel(1)
 		return true
 	return false
 

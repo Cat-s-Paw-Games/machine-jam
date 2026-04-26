@@ -82,7 +82,7 @@ func empty_slot():
 	removed_item_from_slot.emit()
 	item = null
 	texture = null
-
+#
 	var wheel = get_parent()
 	if not wheel || !wheel.has_method("rotate_wheel"):
 		return
@@ -120,6 +120,8 @@ func update_visual():
 		texture = item.texture
 		if item.shiny:
 			material = preload("res://assets/shaders/shiny_shader.tres")
+		else:
+			material = null
 	else:
 		texture = null
 
@@ -208,6 +210,6 @@ func hover_text():
 
 func _on_gui_input(event: InputEvent) -> void:
 	if item:
-		if event && event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
+		if event && event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && !event.pressed:
 			if App.ui.insert_item(item.id):
 				empty_slot()

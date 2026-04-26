@@ -54,7 +54,7 @@ func toggle_inventory():
 	inventory_open = !inventory_open
 
 func open_console():
-	enable_touch_btns()
+	disable_touch_btns()
 	App.navigation_enabled = false
 	App.in_focus = true
 	console = preload("res://Inventory/console.tscn").instantiate()
@@ -64,7 +64,7 @@ func open_console():
 
 func close_console():
 	if console:
-		disable_touch_btns()
+		enable_touch_btns()
 		App.in_focus = false
 		App.navigation_enabled = true
 		await UIAnimation.animate_shrink(console)
