@@ -136,7 +136,7 @@ func render():
 		i += 1
 	if current_screen == "open_success":
 		paused = true
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(1).timeout
 		App.ui.close_console()
 		App.events._on_end_game()
 
