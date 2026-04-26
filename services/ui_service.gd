@@ -20,9 +20,7 @@ func add_ui_child(node: Node):
 	ui_instance.add_child(node)
 
 func open_crafting():
-	for btn in get_tree().get_nodes_in_group("touch_buttons"):
-		btn.process_mode = Node.PROCESS_MODE_DISABLED
-	
+	disable_touch_btns()
 	App.navigation_enabled = false
 	App.in_focus = true
 	crafting = preload("res://Inventory/crafting_table.tscn").instantiate()
@@ -31,11 +29,17 @@ func open_crafting():
 	UIAnimation.animate_pop(crafting)
 	crafting.smoke_particles.emitting = true
 
+func enable_touch_btns():
+	for btn in get_tree().get_nodes_in_group("touch_buttons"):
+		btn.process_mode = Node.PROCESS_MODE_ALWAYS
+		
+func disable_touch_btns():
+	for btn in get_tree().get_nodes_in_group("touch_buttons"):
+		btn.process_mode = Node.PROCESS_MODE_DISABLED
+
 func close_crafting():
 	if crafting:
-		for btn in get_tree().get_nodes_in_group("touch_buttons"):
-			btn.process_mode = Node.PROCESS_MODE_ALWAYS
-		
+		enable_touch_btns()
 		App.navigation_enabled = true
 		App.in_focus = false
 		await UIAnimation.animate_shrink(crafting)
@@ -50,9 +54,7 @@ func toggle_inventory():
 	inventory_open = !inventory_open
 
 func open_console():
-	for btn in get_tree().get_nodes_in_group("touch_buttons"):
-		btn.process_mode = Node.PROCESS_MODE_DISABLED
-	
+	enable_touch_btns()
 	App.navigation_enabled = false
 	App.in_focus = true
 	console = preload("res://Inventory/console.tscn").instantiate()
@@ -62,9 +64,7 @@ func open_console():
 
 func close_console():
 	if console:
-		for btn in get_tree().get_nodes_in_group("touch_buttons"):
-			btn.process_mode = Node.PROCESS_MODE_ALWAYS
-		
+		disable_touch_btns()
 		App.in_focus = false
 		App.navigation_enabled = true
 		await UIAnimation.animate_shrink(console)

@@ -71,6 +71,12 @@ func show_popup_choise(text: String, choises : Array[Dictionary] = [], options: 
 	popup.text = text
 	await popup.open()
 
+func start_dialogue():
+	ui.disable_touch_btns()
+
+func end_dialogue():
+	ui.enable_touch_btns()
+
 func hide_popup():
 	var popup = get_node("/root/UI").find_child("Popup")
 	popup.close()

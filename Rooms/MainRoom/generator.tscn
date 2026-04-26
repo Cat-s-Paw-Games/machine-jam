@@ -45,7 +45,7 @@ local_coords = true
 emission_shape = 1
 emission_sphere_radius = 20.0
 gravity = Vector2(0, -300)
-scale_amount_max = 2.55
+scale_amount_max = 4.25
 scale_amount_curve = SubResource("Curve_iegu6")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1683080550 groups=["touch_buttons"]]
@@ -61,9 +61,10 @@ text = "The number 7 is etched on the generator."
 shape = SubResource("RectangleShape2D_nvrwd")
 debug_color = Color(1.92523e-07, 0.64021313, 0.35793507, 0.41960785)
 
-[node name="CoalInput" type="Area2D" parent="." unique_id=1347128907]
+[node name="CoalInput" type="Area2D" parent="." unique_id=1347128907 node_paths=PackedStringArray("emitter")]
 position = Vector2(159, -46)
 script = ExtResource("4_nvrwd")
+emitter = NodePath("../SteamEmitter")
 metadata/_custom_type_script = "uid://rlemyrl4ndtl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoalInput" unique_id=1682688899]
