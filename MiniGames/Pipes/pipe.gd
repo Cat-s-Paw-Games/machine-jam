@@ -114,6 +114,9 @@ func rotate_pipe(direction : int = 1):
 		})
 		App.game_status.pipe_touched = true
 		return
+	var tracks = ["res://assets/music/sfx/metal_squeak_1.mp3", "res://assets/music/sfx/metal_squeak_2.mp3", "res://assets/music/sfx/metal_squeak_3.mp3"]
+	var track_idx = randi_range(0,2)
+	App.audio.play("sfx",tracks[track_idx],{"volume_db": 3})
 	for i in range(connections.size()):
 		connections[i] = (connections[i] + direction + 4) % 4
 	await rotate_animation(direction)

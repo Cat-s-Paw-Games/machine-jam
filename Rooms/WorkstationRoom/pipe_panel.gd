@@ -5,6 +5,7 @@ var fallen = false
 
 func _on_pressed() -> void:
 	if fallen: return
+	App.audio.play("sfx","res://assets/music/sfx/pipe_panel.mp3")
 	fallen = true
 	open_panel.emit()
 	shake_and_rotate(self)
