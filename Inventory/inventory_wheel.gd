@@ -154,3 +154,16 @@ func open():
 
 func close():
 	await UIAnimation.animate_shrink(self)
+
+func _has_point(point: Vector2) -> bool:
+	# Example: circular mask
+	var center = size / 2
+	return point.distance_to(center) <= size.x / 2
+
+
+func _on_mouse_entered() -> void:
+	App.ui.disable_touch_btns()
+
+
+func _on_mouse_exited() -> void:
+	App.ui.enable_touch_btns()
