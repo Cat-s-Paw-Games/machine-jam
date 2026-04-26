@@ -13,21 +13,19 @@ signal offset_changed(offset:int)
 
 var touch_start_pos : Vector2 = Vector2.ZERO
 var is_touching : bool = false
-var blackout: CanvasModulate = null
+var blackout: Blackout = null
 
 
 func _ready() -> void:
 	App.start_game()
-	blackout = CanvasModulate.new()
-	blackout.color = Color.from_rgba8(30,30,30,255)
+	blackout = Blackout.new()
 	%GameView.add_child(blackout)
-	App.events.switch_lights_on.connect(func(): blackout.visible = false)
-	App.events.switch_lights_off.connect(func(): blackout.visible = true)
 	App.events.move_to_face.connect(func() : move_to_angle(135.0, 1.5))
 	App.audio.stop_loop("main")
 	App.audio.play_loop("main","assets/music/dream_catcher.mp3",{"volume_db":-10.0})
 	update_layers(0)
 	move_to_angle(100)
+
 
 func _process(_delta: float) -> void:
 	if App.navigation_enabled:
