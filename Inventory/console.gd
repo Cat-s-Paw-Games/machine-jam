@@ -10,6 +10,11 @@ func _ready():
 	inventory_slot.removed_item_from_slot.connect(_on_item_remove)
 
 func _on_item_add(item_id : String):
+	console.floppy_log = false
+	console.current_floppy = null
+	remove_floppy_line()
+	console.correct_item = false
+	
 	current_item = item_id
 	if item_id == "supercharged_relic":
 		add_download_line()
@@ -22,11 +27,6 @@ func _on_item_add(item_id : String):
 		console.floppy_log = true
 		console.current_floppy = App.items[item_id]
 		add_floppy_line()
-	else:
-		console.floppy_log = false
-		console.current_floppy = null
-		remove_floppy_line()
-		console.correct_item = false
 
 var floppy_menu_line = "Copy Floppy Log"
 var supercharge_line = "Install Supercharge protocol"
