@@ -130,6 +130,10 @@ func highlight_first_slot():
 	slot.z_index = 1
 	slot.scale = Vector2(2,2)
 
+func clear():
+	for slot in get_children():
+		slot.empty_slot()
+
 func _input(_event: InputEvent) -> void:
 	if is_rotating:
 		return

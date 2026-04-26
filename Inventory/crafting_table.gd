@@ -74,6 +74,7 @@ func craft_item():
 		App.ui.inventory.add_item(current_recipe["output"])
 		if current_recipe.has("steam"):
 			App.game_status.steam -= current_recipe["steam"]
+		App.audio.play("sfx","res://assets/music/sfx/crafting_done.mp3")
 		clear_grid()
 		output_slot.empty_slot()
 

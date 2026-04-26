@@ -57,8 +57,12 @@ func recalc_animation():
 		animation_finished.emit()
 	)
 	
-
+var player_narrated = false
 func _process(_delta: float) -> void:
+	if !beep_talk && !player_narrated:
+		App.audio.play("sfx", "res://assets/music/sfx/player_narration.mp3",{"volume_db":10.0})
+		player_narrated = true
+	
 	if visible_characters > last_visible_characters:
 		var pitch = 6
 		if text[visible_characters - 1] in ["a","e","i","o","u","y"]:

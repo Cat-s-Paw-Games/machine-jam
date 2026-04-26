@@ -1,8 +1,8 @@
 extends Node2D
 
 func _ready() -> void:
-	
 	App.events.cabinet_open.connect(func():
+		App.audio.play("sfx","res://assets/music/sfx/unlock.mp3",{"volume_db":5.0})
 		if App.game_status.cabinet_open:
 			var tesseract = preload("res://Items/tesseract.tscn").instantiate()
 			add_child(tesseract)

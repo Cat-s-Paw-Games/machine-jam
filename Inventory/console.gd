@@ -72,7 +72,8 @@ func _on_close_pressed() -> void:
 
 
 func _on_card_game_won() -> void:
-	await get_tree().create_timer(1.0).timeout
+	App.audio.play("sfx","res://assets/music/sfx/supercharge.mp3")
+	await get_tree().create_timer(2.0).timeout
 	if inventory_slot.item.id == "aether_chamber":
 		inventory_slot.item = inventory_slot.item.transform()
 		inventory_slot.update_visual()

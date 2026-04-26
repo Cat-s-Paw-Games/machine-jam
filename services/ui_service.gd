@@ -73,6 +73,7 @@ func close_console():
 
 func close_every_ui():
 	inventory_visible = false
+	inventory.clear()
 	ui_instance.inventory_button.visible = false
 	if inventory_open:
 		toggle_inventory()

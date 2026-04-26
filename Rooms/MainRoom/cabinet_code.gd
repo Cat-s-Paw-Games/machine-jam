@@ -8,14 +8,17 @@ var third: int;
 @onready var correct_combination = App.game_status.combination
 
 func _on_first_count_changed(new_value: int) -> void:
+	App.audio.play("sfx","res://assets/music/sfx/click.wav",{"volume_db":5.0})
 	first = new_value
 
 
 func _on_second_count_changed(new_value: int) -> void:
+	App.audio.play("sfx","res://assets/music/sfx/click.wav",{"volume_db":5.0})
 	second = new_value
 
 
 func _on_third_count_changed(new_value: int) -> void:
+	App.audio.play("sfx","res://assets/music/sfx/click.wav",{"volume_db":5.0})
 	third = new_value
 
 

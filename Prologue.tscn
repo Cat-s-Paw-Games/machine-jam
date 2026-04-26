@@ -36,6 +36,7 @@ It looks like the frigate is still powered by emergency subsystems. [pause]
 Moving in.[pause=0.3].[pause=0.3].[pause=0.3]"
 visible_characters = -1
 characters_for_second = 25.0
+beep_talk = false
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1335549150]
 anchors_preset = 3

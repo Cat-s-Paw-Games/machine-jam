@@ -95,7 +95,7 @@ position = Vector2(1920, 0)
 stream = ExtResource("4_mck4e")
 volume_db = 10.0
 autoplay = true
-bus = &"sfx"
+bus = &"main"
 
 [node name="Timer" type="Timer" parent="AudioStreamPlayer2D" unique_id=2082437778]
 wait_time = 4.0

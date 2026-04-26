@@ -156,6 +156,7 @@ func _input(event: InputEvent) -> void:
 				go_next_screen()
 
 func go_next_screen():
+	App.audio.play("sfx","res://assets/music/sfx/console_beep.wav")
 	var next_screen = get_next_screen()
 	if next_screen:
 		current_screen = next_screen
