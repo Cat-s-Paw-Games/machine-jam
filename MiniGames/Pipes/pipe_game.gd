@@ -221,11 +221,13 @@ func check_win_condition():
 		animate_water_flow(visited)
 
 func animate_water_flow(visited):
+	$AudioStreamPlayer2D.play()
 	for pos in visited:
 		var pipe = grid[pos.y][pos.x]
 		await pipe.shake()
 		await get_tree().create_timer(0.08).timeout
 	
+	$AudioStreamPlayer2D.stop()
 	pipes_connected.emit()
 
 
