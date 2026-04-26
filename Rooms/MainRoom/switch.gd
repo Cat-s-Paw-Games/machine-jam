@@ -13,6 +13,7 @@ func _ready():
 	start_scale = switch_light.scale
 	start_pulse()
 	App.events.switch_lights_on.connect(_on_switch_lights_on)
+	App.events.switch_lights_off.connect(_on_switch_lights_off)
 
 func _on_mouse_entered():
 	if App.game_status.lights_on: return
@@ -32,7 +33,11 @@ func start_pulse():
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 func _on_switch_lights_on():
-	App.audio.play("sfx","res://assets/music/sfx/lights_off.mp3")
 	texture_normal = preload("res://assets/images/switch_on.png")
 	switch_light.color = Color.GREEN
 	switch_light.position = Vector2(580,250)
+
+func _on_switch_lights_off():
+	texture_normal = preload("res://assets/images/switch_off.png")
+	switch_light.color = Color.RED
+	switch_light.position = Vector2(875.0,250.0)

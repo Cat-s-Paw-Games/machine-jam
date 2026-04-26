@@ -97,6 +97,7 @@ func end_one():
 	await App.show_popup("I will designate a place for you.", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("The lights… We should save as much power as we can.", {"title":App.MACHINE_NAME, "close_on_click": true})
 	App.events.switch_lights_off.emit()
+	App.audio.play("main","res://assets/music/sfx/lights_off.mp3",{"volume_db":7.5})
 	await App.show_popup("Besides[pause=0.3].[pause=0.3].[pause=0.3]. You have [color=#f00]me[/color] now.[pause] You won’t need your eyes.", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("[color=#f00][b][wave]I will take care of you...[pause] For the rest of your life.[/wave][/b][/color]", {"title":App.MACHINE_NAME, "close_on_click": true})
 	App.events.move_to_face.emit()
@@ -120,8 +121,9 @@ func _on_secret_ending():
 	await App.show_popup("I'm getᵗᶦⁿᵍ ˢᵐᵃᵃˡˡ", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await get_tree().create_timer(3).timeout
 	App.events.switch_lights_off.emit()
+	App.audio.play("main","res://assets/music/sfx/lights_off.mp3",{"volume_db":7.5})
 
-	App.MACHINE_NAME = "<portable machine>"
+	App.MACHINE_NAME = "Portable EN-54-M"
 	await App.show_popup("Are you... taking me with you?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("We can stay together?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await get_tree().create_timer(1).timeout
