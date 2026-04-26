@@ -10,7 +10,7 @@
 [ext_resource type="Shader" uid="uid://cu4pjs3btusgk" path="res://assets/shaders/vignette.gdshader" id="8_5vw27"]
 
 [sub_resource type="Gradient" id="Gradient_5vw27"]
-offsets = PackedFloat32Array(0, 0.10869565, 0.65217394, 1)
+offsets = PackedFloat32Array(0, 0.14673913, 0.65217394, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.95108694, 0.95108694, 0.95108694, 1, 0.046394527, 0.046394527, 0.046394527, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kek77"]
@@ -40,10 +40,12 @@ position = Vector2(820, 0)
 anchor_mode = 0
 
 [node name="Flashlight" type="PointLight2D" parent="GameView" unique_id=252623545]
-visible = false
 position = Vector2(930, 510)
+color = Color(1, 1, 0.80784315, 1)
+energy = 1.8
 range_layer_max = 1
 texture = SubResource("GradientTexture2D_kek77")
+texture_scale = 2.0
 script = ExtResource("2_kek77")
 
 [node name="Background" type="Parallax2D" parent="GameView" unique_id=2122227839]

@@ -133,7 +133,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.5626351, 0.8339252, 3.85046e-07, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_dve5e")
-text = "Text 404 incomplete feature"
+text = "EN-54-M Console"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -30,7 +30,7 @@ func _on_item_add(item_id : String):
 
 var floppy_menu_line = "Copy Floppy Log"
 var supercharge_line = "Install Supercharge protocol"
-var download_line = "Download <machine> on relic"
+var download_line = "Download %s on relic" % App.MACHINE_NAME
 
 func add_download_line():
 	if !console.screens["main_menu"]["lines"].has(download_line):
