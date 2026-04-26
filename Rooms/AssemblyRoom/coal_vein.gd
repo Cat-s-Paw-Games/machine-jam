@@ -4,6 +4,7 @@ var amount = 2
 
 func use_inventory_item(item_id : String) -> bool:
 	if item_id == "pickaxe" && amount > 0:
+		App.audio.play("sfx","res://assets/music/sfx/mining_coal.wav")
 		App.ui.inventory.add_item("coal")
 		amount -= 1
 		App.mouse.hover_out()
