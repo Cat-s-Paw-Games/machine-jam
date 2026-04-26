@@ -82,7 +82,7 @@ func empty_slot():
 	removed_item_from_slot.emit()
 	item = null
 	texture = null
-#
+
 	var wheel = get_parent()
 	if not wheel || !wheel.has_method("rotate_wheel"):
 		return
@@ -102,13 +102,7 @@ func empty_slot():
 	# Recalculate layout
 	if wheel.has_method("recalculate_slot_positions"):
 		wheel.recalculate_slot_positions()
-
-	# Force rotation to match new index (IMPORTANT)
-	if wheel.has_method("update_rotation_from_index"):
-		wheel.update_rotation_from_index()
 	
-	if wheel.has_method("shift_active_from_edges"):
-		wheel.shift_active_from_edges()
 
 func fill_slot(item_id : String):
 	item = App.items[item_id]
@@ -213,3 +207,6 @@ func _on_gui_input(event: InputEvent) -> void:
 		if event && event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && !event.pressed:
 			if App.ui.insert_item(item.id):
 				empty_slot()
+				var wheel = get_parent()
+				if wheel.has_method("highlight_first_slot"):
+					wheel.highlight_first_slot()

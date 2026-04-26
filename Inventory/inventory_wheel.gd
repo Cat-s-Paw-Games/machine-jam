@@ -91,8 +91,7 @@ func add_item(item_id : String):
 	if slot_id > -1:
 		App.events.item_added.emit(item_id)
 		get_child(slot_id).fill_slot(item_id)
-		if current_item_count < 2:
-			rotate_wheel(1)
+		highlight_first_slot()
 		return true
 	return false
 
@@ -169,22 +168,3 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	App.ui.enable_touch_btns()
-
-
-func update_rotation_from_index():
-	rotation = active_slot * step
-	for slot in get_children():
-		slot.rotation = -rotation
-
-func shift_active_from_edges():
-	var count = get_child_count()
-
-	if count <= 1:
-		return
-
-	if active_slot == 0:
-		active_slot = 1
-	elif active_slot == count - 1:
-		active_slot = count - 2
-
-	update_rotation_from_index()
