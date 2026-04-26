@@ -1,2 +1,0 @@
-extends DraggableItem
-class_name Straw
