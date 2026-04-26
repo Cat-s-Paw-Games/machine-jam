@@ -46,6 +46,7 @@ func _ready()->void:
 	items = item_service.items
 
 func start_game():
+	App.ui.inventory.clear()
 	App.game_status.reset()
 	navigation_enabled = true
 	ui.inventory.show()
