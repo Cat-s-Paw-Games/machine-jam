@@ -5,7 +5,17 @@ var first:int;
 var second:int;
 var third: int;
 
+@onready var first_icon: TextureRect = %FirstIcon
+@onready var second_icon: TextureRect = %SecondIcon
+@onready var third_icon: TextureRect = %ThirdIcon
+
 @onready var correct_combination = App.game_status.combination
+
+func _ready():
+	if App.game_status.cabinet_open:
+		first_icon.hide()
+		second_icon.hide()
+		third_icon.hide()
 
 func _on_first_count_changed(new_value: int) -> void:
 	App.audio.play("sfx","res://assets/music/sfx/click.wav",{"volume_db":5.0})
