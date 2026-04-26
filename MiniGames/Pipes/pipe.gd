@@ -109,9 +109,11 @@ func rotate_pipe(direction : int = 1):
 	if App.in_focus: return
 	if not enabled: return
 	if not App.game_status.pipe_touched: 
-		App.show_popup("There's something rattling inside these pipes", {
+		App.start_dialogue()
+		await App.show_popup("There's something rattling inside these pipes", {
 			"close_on_click": true
 		})
+		App.end_dialogue()
 		App.game_status.pipe_touched = true
 		return
 	var tracks = ["res://assets/music/sfx/metal_squeak_1.mp3", "res://assets/music/sfx/metal_squeak_2.mp3", "res://assets/music/sfx/metal_squeak_3.mp3"]

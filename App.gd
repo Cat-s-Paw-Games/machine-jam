@@ -72,9 +72,11 @@ func show_popup_choise(text: String, choises : Array[Dictionary] = [], options: 
 	await popup.open()
 
 func start_dialogue():
+	navigation_enabled = false
 	ui.disable_touch_btns()
 
 func end_dialogue():
+	navigation_enabled = true
 	ui.enable_touch_btns()
 
 func hide_popup():

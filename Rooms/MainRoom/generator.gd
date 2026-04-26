@@ -20,7 +20,9 @@ func check_state():
 	if not App.game_status.water_linked: checks_failed.append("to get a water supply")
 	if checks_failed.size() > 0:
 		var text = "This generator needs %s" % " and ".join(PackedStringArray(checks_failed))
-		App.show_popup(text, {"close_on_click": true})
+		App.start_dialogue()
+		await App.show_popup(text, {"close_on_click": true})
+		App.end_dialogue()
 
 func _on_activate_generator():
 	$SteamEmitter.emitting = true
