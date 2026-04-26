@@ -24,7 +24,7 @@ func check_state():
 
 func _on_activate_generator():
 	$SteamEmitter.emitting = true
-	$AudioStreamPlayer2D.play("res://assets/music/sfx/generator_loop.mp3")
+	$AudioStreamPlayer2D.play()
 
 func _on_touch_screen_button_pressed() -> void:
 	check_state()

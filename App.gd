@@ -2,7 +2,7 @@ extends Node
 
 signal game_end
 
-var MACHINE_NAME = "<machine>"
+var MACHINE_NAME = "EN-54-M"
 
 var mouse:MouseService
 var audio:AudioService
