@@ -23,6 +23,7 @@ func setup():
 func _on_switch_lights():
 	App.in_focus = true
 	App.game_status.lights_on = true
+	App.start_dialogue()
 	await get_tree().create_timer(1).timeout
 	await App.show_popup("[color=#f00][b]DANGER! [pause]DANGER! [pause]DANGER![pause][/b][/color]",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("[color=#f00]UNAUTHORIZED BIO-ORGANIC MATTER DETECTED![/color]",{"close_on_click": true, "title": App.MACHINE_NAME})
@@ -32,20 +33,23 @@ func _on_switch_lights():
 	await App.show_popup("My diagnostics dictate that it is in the company’s best interests that the facility enter lockdown.",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("The protection of the company’s assets is of utmost importance...",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("[color=#f00][wave]I apologize for any inconvenience.[/wave][/color]",{"close_on_click": true, "title": App.MACHINE_NAME})
-	App.in_focus = true
 	await get_tree().create_timer(1).timeout
+	App.end_dialogue()
 	App.in_focus = false
 	
 	
 func _on_activate_generator():
 	App.game_status.generator_active = true
+	App.start_dialogue()
 	await App.show_popup("Ah...[pause][wave][color=#f00]That’s better...[/color][/wave]",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("...You activated the Generator.",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("I appreciate the effort.",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("...",{"close_on_click": true, "title": App.MACHINE_NAME})
 	await App.show_popup("[b][i][color=#f00]But the lockdown will remain in effect. You are not leaving.[/color][/i][/b]",{"close_on_click": true, "title": App.MACHINE_NAME})
-
+	App.end_dialogue()
+	
 func _on_cabinet_open():
+	App.start_dialogue()
 	if !App.game_status.tesseract_found:
 		await App.show_popup("[color=#f00][b]DON’T - [/b][/color][wave][color=#ffd966]bzzrrtt-[/color][/wave]",{"close_on_click": true, "title": App.MACHINE_NAME})
 		await App.show_popup("...",{"close_on_click": true, "title": App.MACHINE_NAME})
@@ -57,8 +61,10 @@ func _on_cabinet_open():
 		await App.show_popup("What is that...?",{"close_on_click": true, "title": App.MACHINE_NAME})
 		await App.show_popup("...I have never seen this device before...",{"close_on_click": true, "title": App.MACHINE_NAME})
 		await App.show_popup("...How did it get in there...?",{"close_on_click": true, "title": App.MACHINE_NAME})
-
+	App.end_dialogue()
+	
 func _on_end_game():
+	App.start_dialogue()
 	await App.show_popup("The bound relic...[pause] How did you reconstruct it?!", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("You cannot open the hatch!", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("[b][color=#f00]THE LOCKDOWN IS STILL IN EFFECT.[/color][/b]", {"title":App.MACHINE_NAME, "close_on_click": true})
@@ -84,8 +90,10 @@ func _on_end_game():
 		},
 	]
 	await App.show_popup_choise("What will you do?", choises)
+	App.end_dialogue()
 
 func end_one():
+	App.start_dialogue()
 	App.game_status.end_reached = true
 	App.game_status.ending_chosen = 0
 	App.ui.close_every_ui()
@@ -103,6 +111,7 @@ func end_one():
 	App.events.move_to_face.emit()
 	App.audio.play("sfx","res://assets/music/sfx/scary_moment.mp3",{"volume_db":5.0})
 	await get_tree().create_timer(15).timeout
+	App.end_dialogue()
 	
 	handle_ending()
 
@@ -113,6 +122,7 @@ func end_two():
 	hatch_open.emit()
 
 func _on_secret_ending():
+	App.start_dialogue()
 	App.game_status.end_reached = true
 	App.game_status.ending_chosen = 2
 	App.ui.close_every_ui()
@@ -139,7 +149,8 @@ func _on_secret_ending():
 	await get_tree().create_timer(1).timeout
 	await App.show_popup("I can't wait to see how the outside looks like...", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("...friend.", {"title":App.MACHINE_NAME, "close_on_click": true})
-
+	App.end_dialogue()
+	
 func handle_ending():
 	App.mouse.hover_out()
 	match (App.game_status.ending_chosen):
