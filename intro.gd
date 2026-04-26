@@ -19,6 +19,7 @@ func _ready() -> void:
 	%EyesLight.enabled = true
 	noise.frequency = 5.0
 	await get_tree().create_timer(2).timeout
+	App.audio.play_loop("sfx","res://assets/music/sfx/lights_on.mp3")
 	%MainLight1.enabled = true
 	%MainLight2.enabled = true
 	var tween = create_tween().set_parallel()
