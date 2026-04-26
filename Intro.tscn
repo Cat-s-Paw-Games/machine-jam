@@ -164,29 +164,37 @@ theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
 text = "Credits
 
+Team:
+- D-beezee
+[url=https://github.com/d-beezee]Github[/url], [url=https://d-beezee.itch.io/]Itch.io[/url]
+- Kotrodenx
+[url=https://github.com/kotrodenx]Github[/url], [url=https://kotrodenx.itch.io/]Itch.io[/url]
+- Miuted
+[url=https://miuted.itch.io/]Itch.io[/url]
+
 Developers:
 - Kotrodenx
-- Cucucc
+- D-beezee
 
 Art:
-- [url=https://itch.io/profile/miuted]Miuted[/url]
+- [url=https://miuted.itch.io/]Miuted[/url]
 
 Project Manager:
-- Cucucc
+- D-beezee
 
 Game Design:
 - Kotrodenx
-- Cucucc
+- D-beezee
 
 UI:
 - Kotrodenx
 
 Story Building:
 - Miuted
-- Cucucc
+- D-beezee
 
 Narration:
-- Cucucc
+- D-beezee
 
 Music:
 - Menu: \"Beauty Flow\"
@@ -212,17 +220,17 @@ SFX:
 
 - Fire whoosh: Sound Effect by [url=https://pixabay.com/users/djartmusic-46653586/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=317280]Krzysztof Szymanski[/url] from [url=https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=317280]Pixabay[/url]
 
-- Pencil writing: Sound Effect by [url=https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=45629\">freesound_community[/url] from [url=https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=45629\">Pixabay[/url]
+- Pencil writing: Sound Effect by [url=https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=45629]freesound_community[/url] from [url=https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=45629]Pixabay[/url]
 
-- Steam hiss: Sound Effect by [url=https://pixabay.com/users/dragon-studio-38165424/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=386157\">DRAGON-STUDIO[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=386157\">Pixabay[/url]
+- Steam hiss: Sound Effect by [url=https://pixabay.com/users/dragon-studio-38165424/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=386157]DRAGON-STUDIO[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=386157]Pixabay[/url]
 
-- Steam engine: Sound Effect by [url=https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=87118\">freesound_community[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=87118\">Pixabay[/url]
+- Steam engine: Sound Effect by [url=https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=87118]freesound_community[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=87118]Pixabay[/url]
 
-- Drawer open: Sound Effect by [url=https://pixabay.com/users/litupsubway-55283183/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=513358\">litupsubway[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=513358\">Pixabay[/url]
+- Drawer open: Sound Effect by [url=https://pixabay.com/users/litupsubway-55283183/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=513358]litupsubway[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=513358]Pixabay[/url]
 
-- Click: Sound Effect by [url=https://pixabay.com/users/u_8g40a9z0la-45586904/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=234708\">u_8g40a9z0la[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=234708\">Pixabay[/url]
+- Click: Sound Effect by [url=https://pixabay.com/users/u_8g40a9z0la-45586904/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=234708]u_8g40a9z0la[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=234708]Pixabay[/url]
 
-- Supercharge: Sound Effect by [url=https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106412\">freesound_community[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106412\">Pixabay[/url]
+- Supercharge: Sound Effect by [url=https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106412]freesound_community[/url] from [url=https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106412]Pixabay[/url]
 
 Thanks to us, to the external providers, and to you the player!
 We hope you enjoyed!"
@@ -301,6 +309,7 @@ vertical_alignment = 1
 [node name="EyesLight" type="PointLight2D" parent="." unique_id=38218199]
 unique_name_in_owner = true
 position = Vector2(967, 548)
+enabled = false
 color = Color(0.6896342, 0.49705046, 0, 1)
 energy = 5.0
 range_layer_max = 1
