@@ -15,7 +15,7 @@ radius = 50.0
 height = 240.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j313q"]
-size = Vector2(20, 122)
+size = Vector2(46.513977, 127.8297)
 
 [node name="ConsoleRoom" type="Node2D" unique_id=536472085]
 script = ExtResource("1_mkgc1")
@@ -52,6 +52,7 @@ text = "On the side of the console there's a 3."
 metadata/_custom_type_script = "uid://gikcr4yg3njr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Console/HoverHint" unique_id=1710832934]
+position = Vector2(13.506531, 1.3482513)
 rotation = -0.116937056
 shape = SubResource("RectangleShape2D_j313q")
 debug_color = Color(0, 0.63318145, 0.4468348, 0.41960785)

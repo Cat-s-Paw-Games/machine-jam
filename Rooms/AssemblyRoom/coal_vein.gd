@@ -21,7 +21,9 @@ func disable_collisions():
 	mouse_exited.disconnect(_on_mouse_exited)
 
 func hover_text():
-	return "A coal vein"
+	if not App.game_status.generator_active:
+		return "A coal vein. But I can't pick it with my bare hands.\nMaybe I can use something else to power the generator"
+	return "A coal vein. But I can't pick it with my bare hands."
 
 func _on_mouse_entered() -> void:
 	App.mouse.hover_on(self, App.mouse.HOVER_TYPE.INSPECTABLE)
