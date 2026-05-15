@@ -14,7 +14,7 @@ permissions:
 env:
   GODOT_VERSION: 4.6.2
   ITCH_USERNAME: cats-paw
-  ITCH_GAME_ID: machine-jam
+  ITCH_GAME_ID: just-a-little-longer
 
 jobs:
   build:
