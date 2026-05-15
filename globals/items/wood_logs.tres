@@ -7,10 +7,11 @@
 script = ExtResource("1_muk6m")
 id = "wood_logs"
 name = "Wood Logs"
+inventory_text = "-"
 description = "Some wood logs"
 texture = ExtResource("3_x0x1e")
 compound = true
 material = "pointed_stick"
-station = "fire_pit"
 transforms_into = "wood_logs_hot"
+station = "fire_pit"
 metadata/_custom_type_script = "uid://cs02wdcdcca6e"

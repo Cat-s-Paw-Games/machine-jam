@@ -3,6 +3,7 @@ class_name DraggableItem
 
 signal dropped(item : DraggableItem)
 
+var disable_hover = false
 var dragging = false
 var drag_offset = Vector2()
 var hitbox: Area2D
@@ -33,6 +34,7 @@ func _ready():
 
 func _on_mouse_entered():
 	if not App.game_status.lights_on: return
+	if disable_hover : return
 	if App.in_focus: return
 	App.mouse.hover_on(self, 
 		MouseService.HOVER_TYPE.INVENTORY_DROP if App.mouse.hover_type == MouseService.HOVER_TYPE.INVENTORY_DROP
@@ -123,4 +125,6 @@ func _on_released():
 
 
 func hover_text():
-	return item.name
+	if item:
+		return item.name
+	return ""

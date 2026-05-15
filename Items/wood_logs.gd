@@ -23,7 +23,7 @@ func hover_text():
 			return "A full sheet won't really take"
 		return "I need some tinder"
 	if placed: return "I need something to start the fire"
-	return super()
+	return item.name
 
 
 func _on_mouse_entered():
