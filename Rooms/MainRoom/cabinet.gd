@@ -10,8 +10,13 @@ func _ready() -> void:
 			App.game_status.cabinet_open = true
 			var oscillator = preload("res://Items/oscillation_regulator.tscn").instantiate()
 			add_child(oscillator)
-			var floppy = preload("res://Items/floppy.tscn").instantiate()
-			floppy.position.x -= 100
-			add_child(floppy)
+			spawn_floppy()
 			$Sprite2D.texture = preload("res://assets/images/cabinet_open.png")
 	)
+
+func spawn_floppy():
+	var floppy = preload("res://Items/floppy.tscn").instantiate()
+	floppy.position.x -= 100
+	floppy.item = preload("res://globals/items/floppy_logs/floppy_cabinet_formula.tres")
+	
+	add_child(floppy)
