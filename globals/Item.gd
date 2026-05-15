@@ -3,6 +3,7 @@ class_name Item
 
 @export var id : String = "item_id"
 @export var name : String = "Item"
+@export_multiline var inventory_text: String
 @export_multiline var description : String = "Description"
 @export var texture : Texture2D
 @export var usable_once : bool = false

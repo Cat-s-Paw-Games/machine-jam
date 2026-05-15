@@ -201,6 +201,8 @@ func try_drop_into_world(_drag_data):
 
 func hover_text():
 	if item:
+		if item.inventory_text and item.inventory_text.length() > 0:
+			return item.inventory_text
 		return item.name
 	return ""
 
