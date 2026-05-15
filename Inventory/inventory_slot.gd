@@ -5,6 +5,7 @@ signal added_item_to_slot(item_id:String)
 signal removed_item_from_slot()
 @export var item : Item = null
 @export var take_on_click = false
+@export var disable_swap = false
 
 var hover_timer: float = 0.0
 var is_dragging_over: bool = false
@@ -143,6 +144,8 @@ func _drop_data(_at_position, data):
 	swap_items(source_slot)
 
 func swap_items(source_slot):
+	if disable_swap:
+		return
 	App.mouse.hover_type = MouseService.HOVER_TYPE.NORMAL
 	var source_item = source_slot.item
 	var temp = item
