@@ -40,7 +40,7 @@ jobs:
         uses: actions/deploy-pages@v4
       - name: Install butler
         run: |
-          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          curl -L -o butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
           unzip butler.zip
           chmod +x butler
           mv butler /usr/local/bin/butler
