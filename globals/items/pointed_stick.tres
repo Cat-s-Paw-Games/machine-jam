@@ -7,6 +7,9 @@
 script = ExtResource("1_kw7tl")
 id = "pointed_stick"
 name = "Pointed Stick"
+inventory_text = "It's a sharpened stick...
+Maybe I can start a
+friction fire with it?"
 description = "A pointed stick"
 texture = ExtResource("2_5gydj")
 usable_once = true

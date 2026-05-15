@@ -5,12 +5,30 @@ class_name GameCursor
 
 var tooltip: Label
 var preview: BoxContainer
+var h_position: String = "right"
+var right_position: Vector2
+
+var hover_position: String:
+	get():
+		return h_position
+	set(new_position):
+		h_position = new_position
+
+		await get_tree().process_frame
+		var w := tooltip.get_minimum_size().x
+
+		if new_position == "left":
+			tooltip.position.x = right_position.x - 40 - w
+		else:
+			tooltip.position.x = right_position.x + 40
+
 
 var text: String: 
 	get():
 		return tooltip.text
 	set(text):
 		tooltip.text = text
+		tooltip.reset_size()
 		
 		
 var preview_item: Node: 
@@ -30,6 +48,7 @@ func _ready() -> void:
 	tooltip.add_theme_font_size_override("font_size",30)
 	tooltip.position.x += 10
 	tooltip.position.y -= 30
+	right_position = tooltip.position
 	
 	preview = BoxContainer.new()
 	add_child(preview)

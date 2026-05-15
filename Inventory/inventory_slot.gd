@@ -205,6 +205,8 @@ func hover_text():
 			return item.inventory_text
 		return item.name
 	return ""
+func hover_position():
+	return "left"
 
 
 func _on_gui_input(event: InputEvent) -> void:

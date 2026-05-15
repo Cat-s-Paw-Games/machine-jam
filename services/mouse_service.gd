@@ -66,14 +66,18 @@ func is_hovered(node: Node) -> bool:
 func hover_on(item: Node, type: HOVER_TYPE = HOVER_TYPE.NORMAL) -> void:
 	current_item = item
 	hover_type = type
-	if current_item and current_item.has_method("hover_text"):
-		cursor_instance.text = current_item.hover_text()
+	if current_item:
+		if current_item.has_method("hover_text"):
+			cursor_instance.text = current_item.hover_text()
+		if current_item.has_method("hover_position"):
+			cursor_instance.hover_position = current_item.hover_position()
 	hover(true)
 
 func hover_out() -> void:
 	cursor_instance.set_texture(basic_cursor)
 	current_item = null
 	cursor_instance.text =""
+	cursor_instance.hover_position = "right"
 	hover(false)
 	
 
