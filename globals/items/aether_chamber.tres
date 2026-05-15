@@ -7,6 +7,7 @@
 script = ExtResource("1_cshw6")
 id = "aether_chamber"
 name = "Aether Chamber"
+inventory_text = "An aether chamber"
 description = ""
 texture = ExtResource("2_cshw6")
 is_pickable = true

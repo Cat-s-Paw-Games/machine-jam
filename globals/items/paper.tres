@@ -7,6 +7,9 @@
 script = ExtResource("1_0qgtv")
 id = "paper"
 name = "Paper"
+inventory_text = "A sheet of paper. If it were
+smaller, I could use it as 
+tinder."
 description = "A piece of paper"
 texture = ExtResource("2_u47w6")
 usable_once = true

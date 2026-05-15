@@ -7,6 +7,8 @@
 script = ExtResource("1_t15gc")
 id = "handle"
 name = "Handle"
+inventory_text = "A big stick, perfect 
+for a handle"
 description = "A big stick, perfect for a handle"
 texture = ExtResource("2_san07")
 is_pickable = true

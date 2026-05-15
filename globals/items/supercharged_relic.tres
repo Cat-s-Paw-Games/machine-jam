@@ -7,6 +7,7 @@
 script = ExtResource("1_fnk8a")
 id = "supercharged_relic"
 name = "Supercharged Relic"
+inventory_text = "The ultimate device for AI transportation!"
 description = "The ultimate device for AI transportation!"
 texture = ExtResource("2_lusrm")
 shiny = true

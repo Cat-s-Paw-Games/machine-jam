@@ -7,6 +7,8 @@
 script = ExtResource("1_a1w2h")
 id = "spring"
 name = "Spring"
+inventory_text = "A spring removed from
+some kind of mechanism"
 description = ""
 texture = ExtResource("2_a1w2h")
 is_pickable = true

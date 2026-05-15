@@ -7,6 +7,8 @@
 script = ExtResource("1_y6reb")
 id = "coal"
 name = "Coal"
+inventory_text = "A piece of coal... It burns 
+hotter than simple wood."
 description = "A bunch of coal"
 texture = ExtResource("2_n5mev")
 usable_once = true

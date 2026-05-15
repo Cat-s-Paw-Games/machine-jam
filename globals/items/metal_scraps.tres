@@ -7,6 +7,9 @@
 script = ExtResource("1_v7ebu")
 id = "metal_scraps"
 name = "Metal Scraps"
+inventory_text = "Some metal scraps, 
+i wonder if i can craft
+something with those..."
 description = "Some metal scraps, i wonder if i can craft something with those..."
 texture = ExtResource("2_kk1xc")
 is_pickable = true
