@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://xv6yvtng0ll1" path="res://Items/metal_scraps.tscn" id="5_22gm7"]
 [ext_resource type="PackedScene" uid="uid://2jwm115utw6p" path="res://Items/floppy.tscn" id="9_f2mhh"]
 [ext_resource type="Resource" uid="uid://r8vrnukjaoso" path="res://globals/items/floppy_logs/floppy_secret_recipe.tres" id="10_muvwl"]
-[ext_resource type="Resource" uid="uid://cgn4ioh3d7st1" path="res://globals/items/floppy_logs/floppy_cabinet_formula.tres" id="11_8c0ed"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxpps"]
 radius = 50.0
@@ -66,12 +65,8 @@ position = Vector2(972, 884)
 texture_normal = SubResource("CompressedTexture2D_fy26f")
 
 [node name="FloppyRecipe" parent="." unique_id=904767244 instance=ExtResource("9_f2mhh")]
-position = Vector2(1666, -76)
+position = Vector2(1631.0001, -49)
 item = ExtResource("10_muvwl")
-
-[node name="FloppyCode" parent="." unique_id=548943279 instance=ExtResource("9_f2mhh")]
-position = Vector2(503, 917)
-item = ExtResource("11_8c0ed")
 
 [node name="HoverHint2" type="Area2D" parent="." unique_id=1440250332]
 position = Vector2(884, 841)
