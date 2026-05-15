@@ -22,7 +22,7 @@ point_count = 3
 size = Vector2(400, 480)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvrwd"]
-size = Vector2(42, 45.5)
+size = Vector2(58, 108.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shm5r"]
 size = Vector2(118, 84)
@@ -58,6 +58,7 @@ script = ExtResource("4_mdg0c")
 text = "The number 7 is etched on the generator."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberHint" unique_id=346251891]
+position = Vector2(-8, 31.625)
 shape = SubResource("RectangleShape2D_nvrwd")
 debug_color = Color(1.92523e-07, 0.64021313, 0.35793507, 0.41960785)
 
