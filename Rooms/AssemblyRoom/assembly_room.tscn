@@ -65,7 +65,8 @@ position = Vector2(972, 884)
 texture_normal = SubResource("CompressedTexture2D_fy26f")
 
 [node name="FloppyRecipe" parent="." unique_id=904767244 instance=ExtResource("9_f2mhh")]
-position = Vector2(1631.0001, -49)
+position = Vector2(1601, -17)
+rotation = -0.29354814
 item = ExtResource("10_muvwl")
 
 [node name="HoverHint2" type="Area2D" parent="." unique_id=1440250332]

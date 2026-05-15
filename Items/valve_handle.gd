@@ -13,3 +13,6 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	if not App.game_status.lights_on: return
 	App.mouse.hover_out()
+
+func hover_text():
+	return "Valve handle"
