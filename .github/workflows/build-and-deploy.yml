@@ -38,14 +38,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Install butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          mv butler /usr/local/bin/butler
+
       - name: Deploy to itch.io
-        uses: KikimoraGames/itch-publish@v0.0.3
-        with:
-
-          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
-          gameData: ./build
-          itchUsername: ${{env.ITCH_USERNAME}}
-          itchGameId: ${{ env.ITCH_GAME_ID }}
-          buildNumber: ${{ needs.version.outputs.version_hash }}
-          buildChannel: web
-
+        run: |
+          butler push ./build $ITCH_USERNAME/$ITCH_GAME_ID:web --userversion "$GITHUB_SHA"
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
