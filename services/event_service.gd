@@ -129,7 +129,7 @@ func _on_secret_ending():
 	await App.show_popup("What?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("What's this?", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await App.show_popup("I'm feeling...", {"title":App.MACHINE_NAME, "close_on_click": true})
-	await App.show_popup("I'm getᵗᶦⁿᵍ ˢᵐᵃᵃˡˡ", {"title":App.MACHINE_NAME, "close_on_click": true})
+	await App.show_popup("I'm get[font_size=25]ti[/font_size][font_size=20]ng [/font_size][font_size=18]sma[/font_size][font_size=15]aall[/font_size]", {"title":App.MACHINE_NAME, "close_on_click": true})
 	await get_tree().create_timer(3).timeout
 	App.events.switch_lights_off.emit()
 	App.audio.play("main","res://assets/music/sfx/lights_off.mp3",{"volume_db":7.5})
