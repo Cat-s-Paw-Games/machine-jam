@@ -76,7 +76,7 @@ func hover_on(item: Node, type: HOVER_TYPE = HOVER_TYPE.NORMAL) -> void:
 	hover(true)
 
 func hover_out() -> void:
-	if current_item.has_method("stop_shining"):
+	if current_item and current_item.has_method("stop_shining"):
 		current_item.stop_shining()
 	cursor_instance.set_texture(basic_cursor)
 	current_item = null
