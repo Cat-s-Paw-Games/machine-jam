@@ -63,4 +63,15 @@ position = Vector2(116, 748)
 [node name="AetherChamber" parent="." unique_id=2025760680 instance=ExtResource("11_j313q")]
 position = Vector2(-222, 734)
 
+[node name="Label" type="Label" parent="." unique_id=1523238157]
+offset_left = 118.999985
+offset_top = 819.9999
+offset_right = 158.99998
+offset_bottom = 840.9999
+rotation = -0.13440801
+theme_override_colors/font_color = Color(0.32459491, 0.29928258, 0.2676586, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.16862746, 0.14509805, 1)
+theme_override_constants/outline_size = 1
+text = "3"
+
 [connection signal="pressed" from="Console" to="Console" method="_on_pressed"]
